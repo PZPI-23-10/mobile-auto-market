@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AutoMarket.SignUp"
+             Title=""
+             BackgroundColor="#121212"
+             Shell.NavBarIsVisible="True">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="InputFieldBorderStyle" TargetType="Border">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="Stroke" Value="#555555" />
+                <Setter Property="StrokeThickness" Value="1" />
+                <Setter Property="Padding" Value="15,0" />
+                <Setter Property="StrokeShape">
+                    <RoundRectangle CornerRadius="8" />
+                </Setter>
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="PlaceholderColor" Value="Gray" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+            </Style>
+
+            <Style x:Key="PasswordRequirementLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#A9A9A9"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="15" Padding="25, 10">
+
+            <Label 
+                Text="Реєстрація"
+                TextColor="White"
+                FontSize="28"
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Margin="100,0,0,40"/>
+
+            
+            
+            <Border Style="{StaticResource InputFieldBorderStyle}">
+                <Entry Placeholder="Ім'я" />
+            </Border>
+
+            <Border Style="{StaticResource InputFieldBorderStyle}">
+                <Entry x:Name="EmailEntry" Placeholder="Email"  />
+            </Border>
+            
+
+            <Border Style="{StaticResource InputFieldBorderStyle}">
+                <Grid ColumnDefinitions="*, Auto" MinimumHeightRequest="48">
+                    <Entry x:Name="PasswordEntry" Placeholder="Введіть пароль" IsPassword="True" TextChanged="OnPasswordTextChanged"/>
+                    <ImageButton 
+                        Grid.Column="1"
+                        Source="eye_icon2.png" 
+                        Clicked="OnPasswordVisibilityToggleClicked"
+                        HeightRequest="1"
+                        WidthRequest="1"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center">
+
+                        <ImageButton.Triggers>
+                            <DataTrigger TargetType="ImageButton" Binding="{Binding Source={x:Reference PasswordEntry}, Path=IsPassword}" Value="False">
+                                <Setter Property="Source" Value="eye_off_icon2.png" />
+                            </DataTrigger>
+                        </ImageButton.Triggers>
+                    </ImageButton>
+                </Grid>
+            </Border>
+
+            <VerticalStackLayout Margin="5,10,0,10" Spacing="8">
+                <Label Text="Надійний пароль містить" TextColor="White" FontSize="14" FontAttributes="Bold"/>
+
+                <HorizontalStackLayout Spacing="8">
+                    <Image x:Name="LengthCheckmark" Source="checkmark.png" WidthRequest="16" HeightRequest="16" Opacity="0.5"/>
+                    <Label x:Name="LengthRequirementLabel" Text="Мінімум 6 символів" Style="{StaticResource PasswordRequirementLabelStyle}" TextColor="Gray"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="8">
+                    <Image x:Name="DigitCheckmark" Source="checkmark.png" WidthRequest="16" HeightRequest="16" Opacity="0.5"/>
+                    <Label x:Name="DigitRequirementLabel" Text="Цифри" Style="{StaticResource PasswordRequirementLabelStyle}" TextColor="Gray"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="8">
+                    <Image x:Name="LettersCheckmark" Source="checkmark.png" WidthRequest="16" HeightRequest="16" Opacity="0.5"/>
+                    <Label x:Name="LettersRequirementLabel" Text="Великі і малі латинські літери" Style="{StaticResource PasswordRequirementLabelStyle}" TextColor="Gray"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+            <Grid ColumnDefinitions="*, Auto" Margin="0,10,0,0">
+                <Label TextColor="White" VerticalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Я приймаю умови " TextColor="White"/>
+                            <Span Text="Угоди про надання послуг" TextColor="DarkOrange" TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnTermsTapped"/>
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Switch x:Name="TermsSwitch" 
+            Grid.Column="1" 
+            OnColor="DarkOrange" 
+            ThumbColor="White"
+            Toggled="OnTermsSwitchToggled"/>
+            </Grid>
+
+            <Label TextColor="White" FontSize="12" Margin="0,0,0,20">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Ваші персональні дані будуть оброблені та захищені відповідно до " TextColor="White" />
+                        <Span Text="Політики приватності" TextColor="DarkOrange" TextDecorations="Underline">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnPrivacyPolicyTapped"/>
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Button  x:Name="RegisterButton" 
+                     Text="Зареєструватися"
+                     BackgroundColor="DarkOrange"
+                     TextColor="White"
+                     HeightRequest="50"
+                     CornerRadius="25"
+                     FontAttributes="Bold"
+                     Clicked="OnRegisterClicked"
+                     IsEnabled="False" 
+                     Opacity="0.5"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

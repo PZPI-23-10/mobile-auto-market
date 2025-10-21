@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AutoMarket.Login"
+             Title=""
+             BackgroundColor="#121212"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LoginBorderStyle" TargetType="Border">
+                <Setter Property="BackgroundColor" Value="DarkOrange" />
+                <Setter Property="Stroke" Value="#555555" />
+                <Setter Property="StrokeThickness" Value="1" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="Padding" Value="10,0" />
+                <Setter Property="StrokeShape">
+                    <RoundRectangle CornerRadius="25" />
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="*, Auto, *"
+          Padding="30,0">
+
+        <VerticalStackLayout Grid.Row="1"
+                             Spacing="15"
+                             VerticalOptions="Center">
+
+            <Image Source="autologo2.png" HeightRequest="130"
+                   Aspect="AspectFit"
+                   Margin="0,0,0,20" />
+
+            <Label Text="Увійдіть на AutoMarket"
+                   TextColor="White"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center" />
+
+            <Label Text="щоб переглянути свій профіль"
+                   TextColor="Gray"
+                   FontSize="16"
+                   HorizontalTextAlignment="Center"
+                   Margin="0,0,0,20"/>
+
+            <VerticalStackLayout Spacing="15">
+
+                <Border Style="{StaticResource LoginBorderStyle}">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnGoogleLoginTapped"/>
+                    </Border.GestureRecognizers>
+                    <Grid ColumnDefinitions="Auto, *">
+                        <Image Source="google_icon.png" HeightRequest="24"
+                               WidthRequest="24"
+                               VerticalOptions="Center"/>
+                        <Label Grid.Column="1"
+                               Text="Google"
+                               TextColor="White"
+                               FontSize="16"
+                               VerticalTextAlignment="Center"
+                               HorizontalTextAlignment="Center" />
+                    </Grid>
+                </Border>
+                
+                <Border Style="{StaticResource LoginBorderStyle}">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnEmailLoginTapped"/>
+                    </Border.GestureRecognizers>
+                    <Grid ColumnDefinitions="Auto, *">
+                        <Image Source="mail.png" HeightRequest="24"
+                               WidthRequest="24"
+                               VerticalOptions="Center"/>
+                        <Label Grid.Column="1"
+                               Text="Електронна пошта"
+                               TextColor="White"
+                               FontSize="16"
+                               VerticalTextAlignment="Center"
+                               HorizontalTextAlignment="Center" />
+                    </Grid>
+                </Border>
+
+                
+            </VerticalStackLayout>
+
+            <VerticalStackLayout HorizontalOptions="Center" Spacing="5" Margin="0,30,0,0">
+                <Label Text="Ще не маєте профілю на AutoMarket"
+                       TextColor="Gray"
+                       HorizontalTextAlignment="Center" />
+                <Label Text="Зареєструватися"
+                       TextColor="White"
+                       TextDecorations="Underline"
+                       HorizontalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnRegisterTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
