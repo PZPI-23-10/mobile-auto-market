@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AutoMarket.ProfilePage"
+             Title="Мій профіль"
+             BackgroundColor="#F5F5F5">
+    <ScrollView>
+        <VerticalStackLayout Spacing="0" Padding="0">
+
+            <Grid BackgroundColor="#FFFFFF" 
+                  Padding="20, 30, 20, 30"
+                  RowDefinitions="Auto, Auto"
+                  RowSpacing="15">
+
+                <HorizontalStackLayout Grid.Row="0" Spacing="15" VerticalOptions="Center">
+
+                    <Frame HeightRequest="60" WidthRequest="60"
+                           CornerRadius="30"
+                           Padding="0"
+                           IsClippedToBounds="True"
+                           BackgroundColor="#E64444"
+                           HasShadow="False">
+                        <Label Text="👤" 
+                               FontSize="30" 
+                               TextColor="White"
+                               HorizontalOptions="Center" 
+                               VerticalOptions="Center" />
+                    </Frame>
+
+                    <VerticalStackLayout VerticalOptions="Center" Spacing="5">
+                        <Label Text="Ім'я Користувача" FontSize="20" FontAttributes="Bold" TextColor="#1A1A1A" />
+                        <Label Text="В мережі" FontSize="12" TextColor="Green" />
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Grid.Row="1" Spacing="15">
+                    <Label Text="⭐️ 4.8 / 5" FontSize="14" TextColor="#1A1A1A" />
+                    <Label Text="•" FontSize="14" TextColor="#6B6B6B" />
+                    <Label Text="35 Відгуків" FontSize="14" TextColor="#007AFF" />
+                </HorizontalStackLayout>
+            </Grid>
+
+            <BoxView HeightRequest="10" BackgroundColor="#F5F5F5" />
+
+            <Grid Padding="20" BackgroundColor="White" ColumnDefinitions="Auto, *, Auto">
+                <Label Text="📋" Grid.Column="0" FontSize="20" VerticalOptions="Center" />
+                <Label Text="Мої оголошення" Grid.Column="1" VerticalOptions="Center" TextColor="#1A1A1A" Margin="15, 0" />
+                <Label Text=">" Grid.Column="2" FontSize="20" TextColor="#6B6B6B" VerticalOptions="Center" />
+            </Grid>
+            <BoxView HeightRequest="1" BackgroundColor="#E0E0E0" Margin="20, 0" />
+
+            <Grid Padding="20" BackgroundColor="White" ColumnDefinitions="Auto, *, Auto">
+                <Label Text="🔒" Grid.Column="0" FontSize="20" VerticalOptions="Center" />
+                <Label Text="Безпека та Конфіденційність" Grid.Column="1" VerticalOptions="Center" TextColor="#1A1A1A" Margin="15, 0" />
+                <Label Text=">" Grid.Column="2" FontSize="20" TextColor="#6B6B6B" VerticalOptions="Center" />
+            </Grid>
+            <BoxView HeightRequest="1" BackgroundColor="#E0E0E0" Margin="20, 0" />
+
+            <Grid Padding="20" BackgroundColor="White" ColumnDefinitions="Auto, *, Auto">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSettingsTapped" />
+                </Grid.GestureRecognizers>
+
+                <Label Text="⚙️" Grid.Column="0" FontSize="20" VerticalOptions="Center" />
+                <Label Text="Налаштування" Grid.Column="1" VerticalOptions="Center" TextColor="#1A1A1A" Margin="15, 0" />
+                <Label Text=">" Grid.Column="2" FontSize="20" TextColor="#6B6B6B" VerticalOptions="Center" />
+            </Grid>
+            <BoxView HeightRequest="1" BackgroundColor="#E0E0E0" Margin="20, 0" />
+
+            <Button Text="Вийти з профілю" 
+                    Margin="20, 20, 20, 0"
+                    BackgroundColor="#E64444"
+                    TextColor="White"
+                    CornerRadius="10" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
