@@ -5,10 +5,25 @@
              x:Class="AutoMarket.App">
     <Application.Resources>
         <ResourceDictionary>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="#121212" />
+
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+            <Style x:Key="InputFieldBorderStyle" TargetType="Border">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="Stroke" Value="#555555" />
+                <Setter Property="StrokeThickness" Value="1" />
+                <Setter Property="Padding" Value="15,0" />
+                <Setter Property="StrokeShape">
+                    <RoundRectangle CornerRadius="8" />
+                </Setter>
+            </Style>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

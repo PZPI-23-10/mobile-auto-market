@@ -5,10 +5,7 @@
         public AppShell()
         {
             InitializeComponent();
-
-            Routing.RegisterRoute("ProfileEdit", typeof(ProfileEdit));
-
+           
         }
-
     }
 }

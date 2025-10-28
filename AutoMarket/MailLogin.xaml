@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AutoMarket.MailLogin"
+             Title=""
+             BackgroundColor="#121212">
+    <ContentPage.Resources>
+            <ResourceDictionary>
+                <Style x:Key="InputFieldBorderStyle" TargetType="Border">
+                    <Setter Property="BackgroundColor" Value="Transparent" />
+                    <Setter Property="Stroke" Value="#555555" />
+                    <Setter Property="StrokeThickness" Value="1" />
+                    <Setter Property="Padding" Value="15,0" />
+                    <Setter Property="StrokeShape">
+                        <RoundRectangle CornerRadius="8" />
+                    </Setter>
+                </Style>
+
+                <Style TargetType="Entry">
+                    <Setter Property="TextColor" Value="White" />
+                    <Setter Property="PlaceholderColor" Value="Gray" />
+                    <Setter Property="VerticalOptions" Value="Center" />
+                    <Setter Property="BackgroundColor" Value="Transparent"/>
+                    <Setter Property="HeightRequest" Value="48"/>
+                </Style>
+            </ResourceDictionary>
+        </ContentPage.Resources>
+
+        <Grid >
+            <VerticalStackLayout Spacing="25">
+
+                <Label 
+                Text="Вхід"
+                TextColor="White"
+                FontSize="28"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Margin="25,0,25,90"/>
+                <Border Style="{StaticResource InputFieldBorderStyle}"
+                    Margin="25,0,25,0">
+                <Entry x:Name="EmailEntry" Placeholder="Введіть e-mail" Keyboard="Email" />
+                </Border>
+
+                <Border Style="{StaticResource InputFieldBorderStyle}"
+                    Margin="25,0,25,0">
+                    <Grid ColumnDefinitions="*, Auto">
+                        <Entry x:Name="PasswordEntry" Placeholder="Пароль" IsPassword="True" />
+                        <ImageButton 
+                        Grid.Column="1"
+                        Source="eye_icon.png"
+                        HeightRequest="22"
+                        WidthRequest="22"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        Margin="0,0,10,0"
+                        Clicked="OnPasswordVisibilityToggleClicked">
+                            <ImageButton.Triggers>
+                                <DataTrigger TargetType="ImageButton" Binding="{Binding Source={x:Reference PasswordEntry}, Path=IsPassword}" Value="False">
+                                    <Setter Property="Source" Value="eye_off_icon.png" />
+                                </DataTrigger>
+                            </ImageButton.Triggers>
+                        </ImageButton>
+                    </Grid>
+                </Border>
+
+                <Button 
+                Text="Увійти"
+                BackgroundColor="DarkOrange"
+                TextColor="White"
+                HeightRequest="50"
+                CornerRadius="25"
+                FontAttributes="Bold"
+                Margin="25,15,25,0"
+                Clicked="OnLoginClicked"/>
+                <Label 
+                Text="Забули пароль?"
+                TextColor="White"
+                HorizontalOptions="Center"
+                TextDecorations="Underline"
+                Margin="25,5,25,0">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnForgotPasswordTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+            </VerticalStackLayout>
+        </Grid>
+    </ContentPage>
