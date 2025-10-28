@@ -1,22 +1,25 @@
 namespace AutoMarket;
 
+using AutoMarket.Models;
 using System.Text.RegularExpressions;
 
 public partial class SignUp : ContentPage
 {
-	public SignUp()
+    private readonly ApiService _apiService;
+    public SignUp()
 	{
 		InitializeComponent();
-	}
+        _apiService = new ApiService();
+    }
     private void OnPasswordTextChanged(object sender, TextChangedEventArgs e)
     {
-        var password = e.NewTextValue ?? ""; // Отримуємо поточний текст пароля
+        var password = e.NewTextValue ?? ""; 
 
-        // Кольори для станів
-        var validColor = Colors.White; // Яскравий колір
-        var invalidColor = Colors.Gray;  // Тусклий колір
+      
+        var validColor = Colors.White; 
+        var invalidColor = Colors.Gray;  
 
-        // --- Перевірка правила 1: Довжина ---
+       
         bool isLengthValid = password.Length >= 6;
         LengthRequirementLabel.TextColor = isLengthValid ? validColor : invalidColor;
         LengthCheckmark.Opacity = isLengthValid ? 1.0 : 0.5;
@@ -58,39 +61,70 @@ public partial class SignUp : ContentPage
 
     private async void OnRegisterClicked(object sender, EventArgs e)
     {
-
-        string userEmail = EmailEntry.Text;
-        string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
-
-       
-
-      
-        if (string.IsNullOrWhiteSpace(userEmail))
+        // 1. Валідація: перевіряємо, чи всі основні поля заповнені
+        if (string.IsNullOrWhiteSpace(FirstNameEntry.Text) ||
+            string.IsNullOrWhiteSpace(LastNameEntry.Text) ||
+            string.IsNullOrWhiteSpace(EmailEntry.Text) ||
+            string.IsNullOrWhiteSpace(PasswordEntry.Text))
         {
-            await DisplayAlert("Помилка", "Будь ласка, введіть e-mail", "OK");
-            return; 
+            /*await DisplayAlert("Помилка", "Будь ласка, заповніть усі обов'язкові поля", "OK");
+            return;*/
+        }
+
+        // (Твоя валідація пошти залишається тут)
+        string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+        if (!Regex.IsMatch(EmailEntry.Text, emailPattern))
+        {
+            await DisplayAlert("Помилка", "Введіть коректну адресу пошти", "OK");
+            return;
         }
 
         
-        if (!Regex.IsMatch(userEmail, emailPattern))
+        var registerRequest = new RegisterRequest
         {
-            await DisplayAlert("Помилка", "Введіть коректну адресу пошти", "OK");
-            return; 
+            firstName = FirstNameEntry.Text,
+            lastName = LastNameEntry.Text,
+            email = EmailEntry.Text,
+            password = PasswordEntry.Text,
+            phoneNumber = PhoneNumberEntry.Text,
+            dateOfBirth = DateOfBirthPicker.Date, 
+            country = CountryEntry.Text,
+            address = AddressEntry.Text,
+            aboutYourself = AboutYourselfEditor.Text
+        };
+
+     
+        RegisterButton.IsEnabled = false;
+
+       
+        string errorResult = await _apiService.RegisterAsync(registerRequest);
+
+      
+        if (errorResult == null)
+        {
+           
+            await DisplayAlert("Успіх!", "Реєстрація пройшла успішно.", "OK");
+            await Navigation.PushAsync(new MailLogin());
+        }
+        else
+        {
+           
+            await DisplayAlert("Помилка реєстрації", errorResult, "OK");
         }
 
-
-        await Navigation.PushAsync(new ConfirmationPage(VerificationReason.EmailConfirmation, userEmail));
+       
+        RegisterButton.IsEnabled = true;
     }
 
     private void OnTermsTapped(object sender, TappedEventArgs e)
     {
-        // TODO: Відкрити посилання на Угоду про надання послуг
+       
         DisplayAlert("Навігація", "Перехід до Умов надання послуг", "OK");
     }
 
     private void OnPrivacyPolicyTapped(object sender, TappedEventArgs e)
     {
-        // TODO: Відкрити посилання на Політику приватності
+        
         DisplayAlert("Навігація", "Перехід до Політики приватності", "OK");
     }
 }

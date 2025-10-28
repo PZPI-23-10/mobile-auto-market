@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AutoMarket.ProfileEdit"
+             BackgroundColor="#121212"
+             Title="">
+    <ScrollView>
+        <VerticalStackLayout Spacing="15" Padding="25, 10">
+
+            <Label 
+        Text="Налаштування профіля"
+        TextColor="White"
+        FontSize="28"
+        FontAttributes="Bold"
+        HorizontalOptions="Center"
+        Margin="0,0,0,20"/>
+
+            <ImageButton x:Name="AvatarImageButton"
+             Source="profile_icon2.png" 
+             HeightRequest="100"
+             WidthRequest="100"
+             Aspect="AspectFill"
+             HorizontalOptions="Center"
+             Margin="0,0,0,10"
+             Clicked="OnAvatarClicked">
+                <ImageButton.Clip>
+                    <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50" />
+                </ImageButton.Clip>
+            </ImageButton>
+            <Button x:Name="VerifyEmailButton"
+            Text="Верифікувати пошту"
+            Clicked="OnVerifyEmailClicked"
+            BackgroundColor="Gray"
+            TextColor="White"
+            Margin="0,5,0,10"
+            HorizontalOptions="Start"/>
+            <Label Text="Ім'я" TextColor="Gray" Margin="5,-5,0,0"/>
+            <Border Style="{StaticResource InputFieldBorderStyle}">
+                <Entry x:Name="FirstNameEntry" Placeholder="Ім'я" TextColor="White" />
+            </Border>
+
+            <Label Text="Прізвище" TextColor="Gray" Margin="5,-5,0,0"/>
+            <Border Style="{StaticResource InputFieldBorderStyle}">
+                <Entry x:Name="LastNameEntry" Placeholder="Прізвище" TextColor="White" />
+            </Border>
+
+            <Label Text="Номер телефону" TextColor="Gray" Margin="5,-5,0,0"/>
+            <Border Style="{StaticResource InputFieldBorderStyle}">
+                <Entry x:Name="PhoneNumberEntry" Placeholder="Номер телефону" Keyboard="Telephone" TextColor="White"/>
+            </Border>
+
+
+
+            <Label Text="Дата народження:" TextColor="Gray" Margin="5,-5,0,0"/>
+            <Border Style="{StaticResource InputFieldBorderStyle}">
+                <DatePicker x:Name="DateOfBirthPicker" TextColor="White" Format="dd.MM.yyyy"/>
+            </Border>
+            <Label Text="Країна" TextColor="Gray" Margin="5,-5,0,0"/>
+            <Border Style="{StaticResource InputFieldBorderStyle}">
+                <Entry x:Name="CountryEntry" Placeholder="Країна" TextColor="White" />
+            </Border>
+
+            <Label Text="Адреса" TextColor="Gray" Margin="5,-5,0,0"/>
+            <Border Style="{StaticResource InputFieldBorderStyle}">
+                <Entry x:Name="AddressEntry" Placeholder="Адреса" TextColor="White" />
+            </Border>
+
+            <Label Text="Про себе" TextColor="Gray" Margin="5,-5,0,0"/>
+            <Border Style="{StaticResource InputFieldBorderStyle}" HeightRequest="100">
+                <Editor x:Name="AboutYourselfEditor" Placeholder="Про себе..." TextColor="White" AutoSize="TextChanges"/>
+            </Border>
+
+            <Button x:Name="ChangePassword" 
+Text="Змінити пароль" 
+BackgroundColor="DarkOrange" 
+TextColor="White" 
+HeightRequest="50" 
+CornerRadius="25" 
+FontAttributes="Bold"
+Clicked="OnChangePasswordClicked"/>
+            <Button x:Name="ChangeInfoButton" 
+        Text="Зберегти" 
+        BackgroundColor="DarkOrange" 
+        TextColor="White" 
+        HeightRequest="50" 
+        CornerRadius="25" 
+        FontAttributes="Bold"
+        Clicked="OnSaveClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
