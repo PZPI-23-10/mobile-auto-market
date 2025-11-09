@@ -104,7 +104,7 @@ public partial class SignUp : ContentPage
         {
            
             await DisplayAlert("Успіх!", "Реєстрація пройшла успішно.", "OK");
-            await Navigation.PushAsync(new MailLogin());
+            await Shell.Current.GoToAsync("//MainPage");
         }
         else
         {

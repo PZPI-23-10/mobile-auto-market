@@ -5,11 +5,12 @@
         public App()
         {
             InitializeComponent();
-        }
 
-        protected override Window CreateWindow(IActivationState? activationState)
-        {
-            return new Window(new NavigationPage(new Login()));
+            // ЗАМІНІТЬ ЦЕЙ БЛОК:
+            // MainPage = new Login();
+
+            // НА ЦЕЙ:
+            MainPage = new NavigationPage(new Login());
         }
     }
 }

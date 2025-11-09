@@ -5,45 +5,42 @@ using System.Text;
 using System.Text.Json;
 using AutoMarket.Models;
 
-
 namespace AutoMarket;
 
 public partial class Login : ContentPage
 {
     private readonly ApiService _apiService;
     public Login()
-	{
-		InitializeComponent();
+    {
+        InitializeComponent();
         _apiService = new ApiService();
     }
-    private async void OnGoogleLoginTapped(object sender, TappedEventArgs e) 
+    private async void OnGoogleLoginTapped(object sender, TappedEventArgs e)
     {
         try
         {
-            
-            string clientId = "186738573523-s0guvbfia4q8tfjlvn3l893svgr4bemh.apps.googleusercontent.com"; 
-            string redirectUri = "com.companyname.automarket:/auth";     
+
+            string clientId = "186738573523-s0guvbfia4q8tfjlvn3l893svgr4bemh.apps.googleusercontent.com";
+            string redirectUri = "com.companyname.automarket:/auth";
             string codeVerifier = Convert.ToBase64String(RandomNumberGenerator.GetBytes(32))
-                .Replace("+", "-").Replace("/", "").Replace("=", ""); 
+                .Replace("+", "-").Replace("/", "").Replace("=", "");
             using var sha256 = SHA256.Create();
             var challengeBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(codeVerifier));
             string codeChallenge = Convert.ToBase64String(challengeBytes)
-                              .Replace('+', '-')
-                              .Replace('/', '_')
-                              .TrimEnd('=');
+                                     .Replace('+', '-')
+                                     .Replace('/', '_')
+                                     .TrimEnd('=');
 
-            // 1. Відкриваємо вікно Google Sign-In
             var authResult = await WebAuthenticator.Default.AuthenticateAsync(
                 new Uri("https://accounts.google.com/o/oauth2/v2/auth" +
                         $"?client_id={clientId}" +
                         $"&redirect_uri={redirectUri}" +
                         "&response_type=code" +
-                        "&scope=openid%20email%20profile" + // Стандартні скоупи
-                        $"&code_challenge={codeChallenge}" + // Додаємо PKCE
-                        "&code_challenge_method=S256"),      // Метод для PKCE
-                new Uri(redirectUri)); // Сюди Google поверне нас
+                        "&scope=openid%20email%20profile" +
+                        $"&code_challenge={codeChallenge}" +
+                        "&code_challenge_method=S256"),
+                new Uri(redirectUri));
 
-            // 2. Отримуємо Authorization Code від Google
             string code = authResult?.Properties["code"];
             if (string.IsNullOrEmpty(code))
             {
@@ -51,15 +48,14 @@ public partial class Login : ContentPage
                 return;
             }
 
-            // 3. Обмінюємо Code на ID Token у Google
             var tokenRequestPayload = new Dictionary<string, string>
-        {
-            { "client_id", clientId },
-            { "code", code },
-            { "redirect_uri", redirectUri },
-            { "grant_type", "authorization_code" },
-            { "code_verifier", codeVerifier } // Додаємо verifier для PKCE
-        };
+            {
+                { "client_id", clientId },
+                { "code", code },
+                { "redirect_uri", redirectUri },
+                { "grant_type", "authorization_code" },
+                { "code_verifier", codeVerifier }
+            };
 
             using var httpTokenClient = new HttpClient();
             var tokenResponse = await httpTokenClient.PostAsync("https://oauth2.googleapis.com/token", new FormUrlEncodedContent(tokenRequestPayload));
@@ -73,43 +69,39 @@ public partial class Login : ContentPage
 
             var tokenJson = await tokenResponse.Content.ReadAsStringAsync();
             using var tokenDoc = JsonDocument.Parse(tokenJson);
-            // Нас цікавить саме id_token, бо його чекає твій бекенд
             var googleIdToken = tokenDoc.RootElement.GetProperty("id_token").GetString();
-            await DisplayAlert("ID Token", googleIdToken, "OK");
+
+            // Прибираємо DisplayAlert, бо він не потрібен для робочого процесу
+            // await DisplayAlert("ID Token", googleIdToken, "OK"); 
+
             if (string.IsNullOrEmpty(googleIdToken))
             {
                 await DisplayAlert("Помилка Google Token", "Не вдалося отримати id_token з відповіді.", "OK");
                 return;
             }
 
-            // 4. Відправляємо id_token на НАШ БЕКЕНД
-            // ✅ ВАЖЛИВО: Переконайся, що в тебе створено _apiService, як ми робили для логіна/реєстрації
             var (backendLoginResult, backendError) = await _apiService.LoginWithGoogleAsync(googleIdToken);
 
-            // 5. Обробляємо відповідь від НАШОГО БЕКЕНДА
             if (backendError != null)
             {
-                // ЯКЩО БЕКЕНД ПОВЕРНУВ ПОМИЛКУ - ПОКАЗУЄМО ЇЇ
                 await DisplayAlert("Помилка входу", backendError, "OK");
             }
-            else if (backendLoginResult != null && !string.IsNullOrEmpty(backendLoginResult.accessToken)) // Перевір назву поля токена
+            else if (backendLoginResult != null && !string.IsNullOrEmpty(backendLoginResult.accessToken))
             {
-                // ЯКЩО УСПІХ
                 await SecureStorage.SetAsync("auth_token", backendLoginResult.accessToken);
                 await SecureStorage.SetAsync("user_id", backendLoginResult.userId);
 
-                await DisplayAlert("Успішно", "Вхід через Google виконано!", "OK");
-                Application.Current.MainPage = new NavigationPage(new ProfileEdit());
+                // ЦЕЙ РЯДОК ВЖЕ ПРАВИЛЬНИЙ.
+                // Він замінює всю сторінку (NavigationPage(Login)) на ваш AppShell.
+                Application.Current.MainPage = new AppShell();
             }
             else
             {
-                // Рідкісний випадок: помилки нема, але й даних нема
                 await DisplayAlert("Помилка входу", "Не вдалося увійти через Google (невідома відповідь сервера).", "OK");
             }
         }
         catch (TaskCanceledException)
         {
-            // Користувач сам закрив вікно входу
             Debug.WriteLine("Вхід через Google скасовано.");
         }
         catch (Exception ex)
@@ -117,14 +109,22 @@ public partial class Login : ContentPage
             await DisplayAlert("Критична помилка", $"Сталася помилка: {ex.Message}", "ОК");
         }
     }
+
     private async void OnEmailLoginTapped(object sender, TappedEventArgs e)
     {
+        // ❌ БУЛО (падало, бо Shell не існує):
+        // await Shell.Current.GoToAsync(nameof(MailLogin));
+
+        // ✅ СТАЛО (працює, бо ми в NavigationPage):
         await Navigation.PushAsync(new MailLogin());
     }
 
     private async void OnRegisterTapped(object sender, TappedEventArgs e)
     {
+        // ❌ БУЛО (падало, бо Shell не існує):
+        // await Shell.Current.GoToAsync(nameof(SignUp));
 
+        // ✅ СТАЛО (працює, бо ми в NavigationPage):
         await Navigation.PushAsync(new SignUp());
     }
 }
