@@ -1,11 +1,15 @@
+using AutoMarket.ViewModels;
+
+
 namespace AutoMarket;
 
 public partial class ProfilePage : ContentPage
 {
-	public ProfilePage()
+	public ProfilePage(ProfilePageViewModel viewModel)
 	{
 		InitializeComponent();
-	}
+        BindingContext = viewModel;
+    }
 
     private async void OnSettingsTapped(object sender, TappedEventArgs e)
     {

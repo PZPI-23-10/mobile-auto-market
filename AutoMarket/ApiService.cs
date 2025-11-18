@@ -12,7 +12,8 @@ namespace AutoMarket
     {
         private readonly HttpClient _httpClient;
        
-        private readonly string _baseUrl = "https://backend-auto-market.onrender.com/api/Account";
+        private readonly string _baseUrl = "https://backend-auto-market.onrender.com";
+
 
         public ApiService()
         {
@@ -27,7 +28,7 @@ namespace AutoMarket
        
         public async Task<string> RegisterAsync(RegisterRequest request)
         {
-            string url = $"{_baseUrl}/register";
+            string url = $"{_baseUrl}/api/Auth/register";
             try
             {
                 HttpResponseMessage response = await _httpClient.PostAsJsonAsync(url, request);
@@ -64,7 +65,7 @@ namespace AutoMarket
                 rememberMe = true
             };
 
-            string url = $"{_baseUrl}/login";
+            string url = $"{_baseUrl}/api/Auth/login";
 
             try
             {
@@ -97,7 +98,7 @@ namespace AutoMarket
 
         public async Task<(UserProfile Profile, string Error)> GetUserProfileAsync(string userId, string token)
         {
-            string url = $"{_baseUrl}?userId={userId}";
+            string url = $"{_baseUrl}/api/Auth?userId={userId}";
             try
             {
                 var request = new HttpRequestMessage(HttpMethod.Get, url);
@@ -503,6 +504,147 @@ namespace AutoMarket
                 Debug.WriteLine($"Критична помилка зміни пароля: {ex.Message}");
                 return $"Помилка підключення: {ex.Message}";
             }
+        }
+
+        // ==========================================================
+        // == КОД, ЯКИЙ ПОТРІБНО ДОДАТИ (ФІЛЬТРИ ТА ОГОЛОШЕННЯ) ==
+        // ==========================================================
+
+        // Це наш "майстер-список" (заглушка замість БД)
+        // Коли API буде готовий, ми його видалимо.
+        private List<CarListing> _allCars = new List<CarListing>
+        {
+        new CarListing
+        {
+            Title = "Lexus GX 470 2007", ImageUrl = "https://hdpic.club/uploads/posts/2021-12/thumbs/1640655886_2-hdpic-club-p-leksus-470-gx-2.jpg",
+            PriceUSD = 13499, PriceUAH = 568443, Mileage = 191000, FuelType = "Газ/Бензин",
+            Location = "Харків", Transmission = "Автомат", PostedDate = "3 дні тому"
+        },
+        new CarListing
+        {
+            Title = "Skoda Octavia A8 2021", ImageUrl = "https://i.infocar.ua/i/2/6018/119011/1920x.jpg",
+            PriceUSD = 21500, PriceUAH = 905150, Mileage = 42000, FuelType = "Дизель",
+            Location = "Київ", Transmission = "Автомат", PostedDate = "1 день тому"
+        },
+        new CarListing
+        {
+            Title = "Volkswagen ID.4 2022", ImageUrl = "https://www.edmunds.com/assets/m/volkswagen/id4/2021/oem/2021_volkswagen_id4_4dr-suv_awd-pro-s-statement_fq_oem_1_600.jpg",
+            PriceUSD = 26900, PriceUAH = 1132190, Mileage = 0, FuelType = "Електро",
+            Location = "Львів", Transmission = "Автомат", PostedDate = "Сьогодні"
+        },
+        new CarListing
+        {
+            Title = "BMW X5 2012", ImageUrl = "https://cars.ua/thumb/car/20210504/w933/h622/q80/kupit-bmw-x5-kiev-2723523.jpeg",
+            PriceUSD = 18000, PriceUAH = 757800, Mileage = 240000, FuelType = "Дизель",
+            Location = "Одеса", Transmission = "Автомат", PostedDate = "5 днів тому"
+        }
+        };
+
+
+
+        // --- 2. ЛОГІКА ДЛЯ СПИСКУ АВТО (ЗАГЛУШКА) ---
+        public async Task<List<CarListing>> GetListingsAsync(string fuelType, int? vehicleTypeId, int? makeId, int? modelId, string condition)
+        {
+            // 1. ЗАВАНТАЖУЄМО ВСІ ОГОЛОШЕННЯ З СЕРВЕРА
+            List<CarListing> allCars;
+            try
+            {
+                // !! РЕАЛЬНИЙ ЗАПИТ !!
+                // TODO: Переконайтеся, що бекенд повертає CarListing у правильному форматі
+                string url = $"{_baseUrl}/api/VehicleListing";
+                allCars = await _httpClient.GetFromJsonAsync<List<CarListing>>(url);
+            }
+            catch (Exception ex)
+            {
+                // Якщо помилка (немає інтернету або API впав), повертаємо порожній список
+                Debug.WriteLine($"ПОМИЛКА завантаження /api/VehicleListing: {ex.Message}");
+                allCars = new List<CarListing>();
+            }
+
+            // 2. ФІЛЬТРУЄМО СПИСОК НА ТЕЛЕФОНІ (КЛІЄНТСЬКА ФІЛЬТРАЦІЯ)
+            IEnumerable<CarListing> filtered = allCars;
+
+            // Фільтр по пальному (поки що з заглушки)
+            if (!string.IsNullOrEmpty(fuelType))
+            {
+                filtered = filtered.Where(c => c.FuelType == fuelType);
+            }
+
+            // Фільтр по стану (Нові/Вживані)
+            if (condition == "Нові")
+            {
+                filtered = filtered.Where(c => c.Mileage == 0);
+            }
+            else if (condition == "Вживані")
+            {
+                filtered = filtered.Where(c => c.Mileage > 0);
+            }
+            if (vehicleTypeId.HasValue)
+            {
+                filtered = filtered.Where(c => c.VehicleTypeId == vehicleTypeId.Value);
+            }
+
+            // TODO: Додайте сюди решту логіки фільтрації (MakeId, ModelId...),
+            // коли ви додасте ці властивості до вашої моделі CarListing.
+
+            return filtered.ToList();
+        }
+
+        // Тип транспорту
+        // --- 2. ЛОГІКА ДЛЯ ФІЛЬТРІВ (РЕАЛЬНИЙ API) ---
+
+        // Тип транспорту
+        public async Task<List<VehicleType>> GetVehicleTypesAsync() // TODO: Створіть клас VehicleType у Models
+        {
+            string url = $"{_baseUrl}/api/VehicleType";
+            return await _httpClient.GetFromJsonAsync<List<VehicleType>>(url);
+        }
+
+        // Марка
+        public async Task<List<Make>> GetMakesAsync()
+        {
+            string url = $"{_baseUrl}/api/VehicleBrand";
+            return await _httpClient.GetFromJsonAsync<List<Make>>(url);
+        }
+
+        // Модель
+        public async Task<List<Model>> GetModelsAsync(int makeId)
+        {
+            // У вас немає /api/VehicleModel?makeId=...
+            // Тому ми завантажуємо ВСІ моделі і фільтруємо їх на телефоні
+            string url = $"{_baseUrl}/api/VehicleModel";
+            var allModels = await _httpClient.GetFromJsonAsync<List<Model>>(url);
+
+            // Фільтруємо по MakeId
+            return allModels.Where(m => m.MakeId == makeId).ToList();
+        }
+
+        // Стан
+        public async Task<List<VehicleCondition>> GetConditionsAsync() // TODO: Створіть клас VehicleCondition у Models
+        {
+            string url = $"{_baseUrl}/api/VehicleCondition";
+            return await _httpClient.GetFromJsonAsync<List<VehicleCondition>>(url);
+        }
+
+        // Регіон
+        public async Task<List<AutoMarket.Models.Region>> GetRegionsAsync() // TODO: Створіть клас Region у Models
+        {
+            string url = $"{_baseUrl}/api/Region";
+            return await _httpClient.GetFromJsonAsync<List<AutoMarket.Models.Region>>(url);
+        }
+
+        // --- ЗАГЛУШКИ, ЯКИХ НЕ ВИСТАЧАЄ В API ---
+
+        public async Task<List<string>> GetFuelTypesAsync()
+        {
+            await Task.Delay(100); // Залишаємо заглушку
+            return new List<string> { "Бензин", "Дизель", "Газ/Бензин", "Електро" };
+        }
+
+        public async Task<List<string>> GetTransmissionTypesAsync()
+        {
+            await Task.Delay(100); // Залишаємо заглушку
+            return new List<string> { "Автомат", "Механіка", "Варіатор" };
         }
 
     }
