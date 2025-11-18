@@ -78,15 +78,12 @@ public partial class MailLogin : ContentPage
         string userEmail = EmailEntry.Text;
         string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
 
-
-
-
+        // 1. Валідація (у тебе це було правильно)
         if (string.IsNullOrWhiteSpace(userEmail))
         {
             await DisplayAlert("Помилка", "Будь ласка, введіть e-mail", "OK");
             return;
         }
-
 
         if (!Regex.IsMatch(userEmail, emailPattern))
         {
@@ -94,7 +91,31 @@ public partial class MailLogin : ContentPage
             return;
         }
 
+        // --- ПОЧАТОК ВИПРАВЛЕННЯ ---
 
-        await Navigation.PushAsync(new ConfirmationPage(VerificationReason.PasswordReset, userEmail));
+        // 2. Блокуємо інтерфейс, поки йде запит
+        var tapGesture = sender as View;
+        if (tapGesture != null) tapGesture.IsEnabled = false;
+
+        // 3. Викликаємо ApiService, щоб ВІДПРАВИТИ КОД
+        // (Переконайся, що в тебе є метод SendPasswordResetCodeAsync в ApiService)
+        bool codeSent = await _apiService.SendPasswordResetCodeAsync(userEmail);
+
+        if (codeSent)
+        {
+            // 4. УСПІХ: Код відправлено, ТЕПЕР можна переходити
+            await DisplayAlert("Успіх", "Код для скидання пароля відправлено на вашу пошту.", "OK");
+            await Navigation.PushAsync(new ConfirmationPage(VerificationReason.PasswordReset, userEmail));
+        }
+        else
+        {
+            // 5. ПОМИЛКА: Не вдалося відправити код
+            await DisplayAlert("Помилка", "Не вдалося відправити запит. Перевірте e-mail або спробуйте пізніше.", "OK");
+        }
+
+        // 6. Вмикаємо кнопку/лейбл назад
+        if (tapGesture != null) tapGesture.IsEnabled = true;
+
+        // --- КІНЕЦЬ ВИПРАВЛЕННЯ ---
     }
 }

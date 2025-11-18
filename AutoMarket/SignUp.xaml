@@ -112,7 +112,7 @@
 
             
 
-            <Button x:Name="RegisterButton" Text="Зареєструватися" BackgroundColor="DarkOrange" TextColor="White" HeightRequest="50" CornerRadius="25" FontAttributes="Bold" Clicked="OnRegisterClicked" IsEnabled="False" Opacity="0.5"/>
+            <Button x:Name="RegisterButton" Text="Зареєструватися" BackgroundColor="DarkOrange" TextColor="White" HeightRequest="50" CornerRadius="25" Clicked="OnRegisterClicked" IsEnabled="True"/>
 
         </VerticalStackLayout>
     </ScrollView>
