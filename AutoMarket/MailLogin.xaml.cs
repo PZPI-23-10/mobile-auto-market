@@ -1,38 +1,24 @@
 ﻿namespace AutoMarket;
 using AutoMarket.Models;
+
 using System.Diagnostics;
 using System.Text.RegularExpressions;
-
 public partial class MailLogin : ContentPage
 {
     private readonly ApiService _apiService;
     public MailLogin()
-    {
-        InitializeComponent();
+	{
+		InitializeComponent();
         _apiService = new ApiService();
     }
     private void OnPasswordVisibilityToggleClicked(object sender, EventArgs e)
     {
-        // Додамо перевірку, щоб уникнути NullReferenceException, якщо XAML не встиг завантажитись
-        if (PasswordEntry != null)
-        {
-            PasswordEntry.IsPassword = !PasswordEntry.IsPassword;
-        }
+        PasswordEntry.IsPassword = !PasswordEntry.IsPassword;
     }
 
     private async void OnLoginClicked(object sender, EventArgs e)
     {
-        // ★★★ ЦЕ ПРИЧИНА ВАШОЇ NULLREFERENCEEXCEPTION ★★★
-        // Якщо EmailEntry або PasswordEntry null, код впаде.
-        // Це означає, що ваші x:Name в XAML не прив'язалися.
-        // Ця перевірка покаже вам це, замість "падіння".
-        if (EmailEntry == null || PasswordEntry == null)
-        {
-            await DisplayAlert("Помилка XAML", "Не вдалося знайти 'EmailEntry' або 'PasswordEntry'. Перевірте x:Name у MailLogin.xaml.", "OK");
-            return;
-        }
-
-        string emailInput = EmailEntry.Text;
+        string emailInput = EmailEntry.Text; // Перейменував, щоб не плутати з email з відповіді
         string password = PasswordEntry.Text;
 
         if (string.IsNullOrWhiteSpace(emailInput) || string.IsNullOrWhiteSpace(password))
@@ -41,42 +27,39 @@ public partial class MailLogin : ContentPage
             return;
         }
 
-        LoginResponse loginResult = null;
-        try
-        {
-            loginResult = await _apiService.LoginAsync(emailInput, password);
-        }
-        catch (Exception apiEx)
-        {
-            await DisplayAlert("Помилка API", $"Не вдалося підключитися: {apiEx.Message}", "OK");
-            return;
-        }
+        // 1. Робимо запит на логін
+        LoginResponse loginResult = await _apiService.LoginAsync(emailInput, password);
 
-
+        // 2. Перевіряємо, чи логін успішний і чи є токен/ID
         if (loginResult != null && !string.IsNullOrEmpty(loginResult.accessToken) && !string.IsNullOrEmpty(loginResult.userId))
         {
             try
             {
+                // 3. Зберігаємо ТОКЕН і ID (email поки що немає)
                 await SecureStorage.SetAsync("auth_token", loginResult.accessToken);
                 await SecureStorage.SetAsync("user_id", loginResult.userId);
 
+                // ✅ 4. ОДРАЗУ РОБИМО ДРУГИЙ ЗАПИТ - за профілем
                 var (profile, profileError) = await _apiService.GetUserProfileAsync(loginResult.userId, loginResult.accessToken);
 
+                // 5. Перевіряємо, чи вдалося завантажити профіль
                 if (profileError != null || profile == null)
                 {
+                    // Якщо не вдалося - попереджаємо, але все одно можемо продовжити
                     await DisplayAlert("Увага", $"Вхід виконано, але не вдалося одразу завантажити деталі профілю: {profileError}", "OK");
                 }
                 else
                 {
+                    // ✅ 6. Якщо профіль завантажено - ЗБЕРІГАЄМО EMAIL
                     await SecureStorage.SetAsync("user_email", profile.email);
+                    // Тут можна зберегти й інші дані профілю в Preferences, якщо треба
+                    // Preferences.Set("user_firstName", profile.firstName); 
                 }
 
-                // ★★★ ОСНОВНА ЗМІНА НОВІГАЦІЇ ★★★
-                // ❌ БУЛО (створювало MainPage БЕЗ вкладок):
-                // Application.Current.MainPage = new NavigationPage(new MainPage());
+                // 7. Переходимо на головну сторінку
+                await DisplayAlert("Успіх!", "Вхід виконано.", "OK");
+                Application.Current.MainPage = new NavigationPage(new ProfileEdit());
 
-                // ✅ СТАЛО (замінює все на AppShell З ВКЛАДКАМИ):
-                Application.Current.MainPage = new AppShell();
             }
             catch (Exception ex)
             {
@@ -85,22 +68,17 @@ public partial class MailLogin : ContentPage
         }
         else
         {
+            // Провал логіна
             await DisplayAlert("Помилка входу", "Невірний e-mail або пароль.", "OK");
         }
     }
 
     private async void OnForgotPasswordTapped(object sender, TappedEventArgs e)
     {
-        // Додамо перевірку
-        if (EmailEntry == null)
-        {
-            await DisplayAlert("Помилка XAML", "Не вдалося знайти 'EmailEntry'.", "OK");
-            return;
-        }
-
         string userEmail = EmailEntry.Text;
         string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
 
+        // 1. Валідація (у тебе це було правильно)
         if (string.IsNullOrWhiteSpace(userEmail))
         {
             await DisplayAlert("Помилка", "Будь ласка, введіть e-mail", "OK");
@@ -113,7 +91,31 @@ public partial class MailLogin : ContentPage
             return;
         }
 
-        // ✅ Цей код тепер ПРАЦЮЄ, тому що ми в NavigationPage (завдяки App.xaml.cs)
-        await Navigation.PushAsync(new ConfirmationPage(VerificationReason.PasswordReset, userEmail));
+        // --- ПОЧАТОК ВИПРАВЛЕННЯ ---
+
+        // 2. Блокуємо інтерфейс, поки йде запит
+        var tapGesture = sender as View;
+        if (tapGesture != null) tapGesture.IsEnabled = false;
+
+        // 3. Викликаємо ApiService, щоб ВІДПРАВИТИ КОД
+        // (Переконайся, що в тебе є метод SendPasswordResetCodeAsync в ApiService)
+        bool codeSent = await _apiService.SendPasswordResetCodeAsync(userEmail);
+
+        if (codeSent)
+        {
+            // 4. УСПІХ: Код відправлено, ТЕПЕР можна переходити
+            await DisplayAlert("Успіх", "Код для скидання пароля відправлено на вашу пошту.", "OK");
+            await Navigation.PushAsync(new ConfirmationPage(VerificationReason.PasswordReset, userEmail));
+        }
+        else
+        {
+            // 5. ПОМИЛКА: Не вдалося відправити код
+            await DisplayAlert("Помилка", "Не вдалося відправити запит. Перевірте e-mail або спробуйте пізніше.", "OK");
+        }
+
+        // 6. Вмикаємо кнопку/лейбл назад
+        if (tapGesture != null) tapGesture.IsEnabled = true;
+
+        // --- КІНЕЦЬ ВИПРАВЛЕННЯ ---
     }
 }
