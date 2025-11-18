@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:helpers="clr-namespace:AutoMarket.Helpers"
+             x:Class="AutoMarket.AddListingPage"
+             Title="{helpers:Translate AddListingTitle}"
+             BackgroundColor="#F4F4F4">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="15">
+
+            <toolkit:Expander>
+                <toolkit:Expander.Header>
+                    <Grid ColumnDefinitions="Auto, *" ColumnSpacing="15" Padding="10">
+                        <Label Grid.Column="0" Text="1" FontSize="18" FontAttributes="Bold" TextColor="#888"/>
+                        <VerticalStackLayout Grid.Column="1" Spacing="2">
+                            <Label Text="{helpers:Translate ListingStep1Title}" FontSize="16" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="{helpers:Translate ListingStep1Subtitle}" FontSize="13" TextColor="#555"/>
+                        </VerticalStackLayout>
+                    </Grid>
+                </toolkit:Expander.Header>
+                <toolkit:Expander.Content>
+                    <VerticalStackLayout Spacing="10" Padding="15" Margin="0,0,0,10" BackgroundColor="White">
+
+                        <Border BackgroundColor="#FAFAFA"
+                            StrokeShape="RoundRectangle 8"
+                            HeightRequest="100"
+                            WidthRequest="100"
+                            HorizontalOptions="Start">
+
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnPickImageClicked"/>
+                            </Border.GestureRecognizers>
+
+                            <VerticalStackLayout Spacing="5" HorizontalOptions="Center" VerticalOptions="Center">
+                                <Label Text="+" FontSize="30" TextColor="#888" HorizontalOptions="Center"/>
+                                <Label Text="{helpers:Translate ListingAddPhoto}" FontSize="12" TextColor="#888" HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+
+                        </Border>
+
+                        <ScrollView Orientation="Horizontal">
+                            <HorizontalStackLayout x:Name="ImagePreviewLayout" Spacing="10" Padding="0,5">
+                            </HorizontalStackLayout>
+                        </ScrollView>
+
+                    </VerticalStackLayout>
+                </toolkit:Expander.Content>
+            </toolkit:Expander>
+
+            <toolkit:Expander>
+                <toolkit:Expander.Header>
+                    <Grid ColumnDefinitions="Auto, *" ColumnSpacing="15" Padding="10">
+                        <Label Grid.Column="0" Text="2" FontSize="18" FontAttributes="Bold" TextColor="#888"/>
+                        <VerticalStackLayout Grid.Column="1" Spacing="2">
+                            <Label Text="{helpers:Translate ListingStep2Title}" FontSize="16" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="{helpers:Translate ListingStep2Subtitle}" FontSize="13" TextColor="#E63946"/>
+                        </VerticalStackLayout>
+                    </Grid>
+                </toolkit:Expander.Header>
+                <toolkit:Expander.Content>
+                    <Border Padding="15" Margin="0,0,0,10" BackgroundColor="White">
+
+                        <VerticalStackLayout Spacing="15">
+
+                            <VerticalStackLayout Spacing="5">
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{helpers:Translate FieldVehicleType}"/>
+                                            <Span Text=" *" TextColor="Red"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Border Stroke="#E0E0E0" StrokeThickness="1" BackgroundColor="#FAFAFA" StrokeShape="RoundRectangle 8">
+                                    <Picker Title="{helpers:Translate PickerDefault}">
+                                        <Picker.ItemsSource>
+                                            <x:Array Type="{x:Type x:String}">
+                                                <x:String>Легковий</x:String>
+                                                <x:String>Вантажний</x:String>
+                                                <x:String>Мото</x:String>
+                                            </x:Array>
+                                        </Picker.ItemsSource>
+                                    </Picker>
+                                </Border>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Spacing="5">
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{helpers:Translate FieldMake}"/>
+                                            <Span Text=" *" TextColor="Red"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Border Stroke="#E0E0E0" StrokeThickness="1" BackgroundColor="#FAFAFA" StrokeShape="RoundRectangle 8">
+                                    <Picker Title="{helpers:Translate PickerDefault}"/>
+                                </Border>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Spacing="5">
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{helpers:Translate FieldModel}"/>
+                                            <Span Text=" *" TextColor="Red"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Border Stroke="#E0E0E0" StrokeThickness="1" BackgroundColor="#FAFAFA" StrokeShape="RoundRectangle 8">
+                                    <Picker Title="{helpers:Translate PickerDefault}"/>
+                                </Border>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Spacing="5">
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{helpers:Translate FieldYear}"/>
+                                            <Span Text=" *" TextColor="Red"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Border Stroke="#E0E0E0" StrokeThickness="1" BackgroundColor="#FAFAFA" StrokeShape="RoundRectangle 8">
+                                    <Picker Title="{helpers:Translate PickerDefault}"/>
+                                </Border>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="{helpers:Translate FieldMileage}"/>
+                                <Border Stroke="#E0E0E0" StrokeThickness="1" BackgroundColor="#FAFAFA" StrokeShape="RoundRectangle 8">
+                                    <Grid ColumnDefinitions="*, Auto">
+                                        <Entry Grid.Column="0" Placeholder="0" Keyboard="Numeric" BackgroundColor="Transparent"/>
+                                        <Label Grid.Column="1" Text="{helpers:Translate FieldMileageUnit}" TextColor="#AAA" VerticalOptions="Center" Padding="0,0,10,0"/>
+                                    </Grid>
+                                </Border>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Spacing="5">
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{helpers:Translate FieldBodyType}"/>
+                                            <Span Text=" *" TextColor="Red"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Border Stroke="#E0E0E0" StrokeThickness="1" BackgroundColor="#FAFAFA" StrokeShape="RoundRectangle 8">
+                                    <Picker Title="{helpers:Translate PickerDefault}"/>
+                                </Border>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Spacing="5">
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{helpers:Translate FieldRegion}"/>
+                                            <Span Text=" *" TextColor="Red"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Border Stroke="#E0E0E0" StrokeThickness="1" BackgroundColor="#FAFAFA" StrokeShape="RoundRectangle 8">
+                                    <Picker Title="{helpers:Translate PickerDefault}"/>
+                                </Border>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Spacing="5">
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{helpers:Translate FieldCity}"/>
+                                            <Span Text=" *" TextColor="Red"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Border Stroke="#E0E0E0" StrokeThickness="1" BackgroundColor="#FAFAFA" StrokeShape="RoundRectangle 8">
+                                    <Picker Title="{helpers:Translate PickerDefault}"/>
+                                </Border>
+                            </VerticalStackLayout>
+
+                        </VerticalStackLayout>
+                    </Border>
+                </toolkit:Expander.Content>
+            </toolkit:Expander>
+
+            <toolkit:Expander>
+                <toolkit:Expander.Header>
+                    <Grid ColumnDefinitions="Auto, *" ColumnSpacing="15" Padding="10">
+                        <Label Grid.Column="0" Text="3" FontSize="18" FontAttributes="Bold" TextColor="#888"/>
+                        <Label Grid.Column="1" Text="{helpers:Translate ListingStep3Title}" FontSize="16" FontAttributes="Bold" TextColor="Black" VerticalOptions="Center"/>
+                    </Grid>
+                </toolkit:Expander.Header>
+                <toolkit:Expander.Content>
+                    <Border Margin="0,0,0,10" 
+                        Stroke="#E0E0E0" 
+                        StrokeThickness="1" 
+                        BackgroundColor="#FAFAFA" 
+                        StrokeShape="RoundRectangle 8">
+
+                        <Editor Placeholder="{helpers:Translate ListingStep3Subtitle}"
+                            TextColor="Black"
+                            PlaceholderColor="#AAA"
+                            HeightRequest="200"
+                            AutoSize="Disabled"
+                            BackgroundColor="Transparent"
+                            Margin="5"/>    
+                    </Border>
+                </toolkit:Expander.Content>
+            </toolkit:Expander>
+
+            <toolkit:Expander>
+                <toolkit:Expander.Header>
+                    <Grid ColumnDefinitions="Auto, *" ColumnSpacing="15" Padding="10">
+                        <Label Grid.Column="0" Text="4" FontSize="18" FontAttributes="Bold" TextColor="#888"/>
+                        <Label Grid.Column="1" Text="{helpers:Translate ListingStep4Title}" FontSize="16" FontAttributes="Bold" TextColor="Black" VerticalOptions="Center"/>
+                    </Grid>
+                </toolkit:Expander.Header>
+                <toolkit:Expander.Content>
+                    <Border Padding="15" Margin="0,0,0,10" BackgroundColor="White">
+
+                        <VerticalStackLayout Spacing="15">
+
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="Колір"/>
+                                <Border Stroke="#E0E0E0" StrokeThickness="1" BackgroundColor="#FAFAFA" StrokeShape="RoundRectangle 8">
+                                    <Picker Title="{helpers:Translate PickerColor}">
+                                        <Picker.ItemsSource>
+                                            <x:Array Type="{x:Type x:String}">
+                                                <x:String>Чорний</x:String>
+                                                <x:String>Білий</x:String>
+                                                <x:String>Сірий</x:String>
+                                                <x:String>Червоний</x:String>
+                                                <x:String>Синій</x:String>
+                                            </x:Array>
+                                        </Picker.ItemsSource>
+                                    </Picker>
+                                </Border>
+                            </VerticalStackLayout>
+
+                            <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                                <CheckBox/>
+                                <Label Text="{helpers:Translate FieldAccident}" VerticalOptions="Center"/>
+                            </HorizontalStackLayout>
+
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="{helpers:Translate FieldCondition}"/>
+                                <Border Stroke="#E0E0E0" StrokeThickness="1" BackgroundColor="#FAFAFA" StrokeShape="RoundRectangle 8">
+                                    <Picker Title="{helpers:Translate PickerCondition}">
+                                        <Picker.ItemsSource>
+                                            <x:Array Type="{x:Type x:String}">
+                                                <x:String>На ходу</x:String>
+                                                <x:String>Не на ходу</x:String>
+                                                <x:String>Після ДТП</x:String>
+                                                <x:String>Потребує ремонту</x:String>
+                                            </x:Array>
+                                        </Picker.ItemsSource>
+                                    </Picker>
+                                </Border>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="{helpers:Translate FieldLicensePlate}"/>
+                                <Border Stroke="#E0E0E0" StrokeThickness="1" BackgroundColor="#FAFAFA" StrokeShape="RoundRectangle 8">
+                                    <Entry Placeholder="{helpers:Translate LicensePlatePlaceholder}"
+                                           TextColor="Black"
+                                           PlaceholderColor="#AAA"
+                                           BackgroundColor="Transparent"
+                                           Margin="5"/> 
+                                </Border>
+                            </VerticalStackLayout>
+
+                        </VerticalStackLayout>
+                    </Border>
+                </toolkit:Expander.Content>
+            </toolkit:Expander>
+
+            <toolkit:Expander>
+                <toolkit:Expander.Header>
+                    <Grid ColumnDefinitions="Auto, *" ColumnSpacing="15" Padding="10">
+                        <Label Grid.Column="0" Text="5" FontSize="18" FontAttributes="Bold" TextColor="#888"/>
+                        <VerticalStackLayout Grid.Column="1" Spacing="2">
+                            <Label Text="{helpers:Translate ListingStep6Title}" FontSize="16" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="{helpers:Translate ListingStep6Subtitle}" FontSize="13" TextColor="#555"/>
+                        </VerticalStackLayout>
+                    </Grid>
+                </toolkit:Expander.Header>
+                <toolkit:Expander.Content>
+                    <Border Padding="15" Margin="0,0,0,10" BackgroundColor="White">
+
+                        <VerticalStackLayout Spacing="15">
+
+                            <VerticalStackLayout Spacing="5">
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{helpers:Translate FieldPriceLabel}"/>
+                                            <Span Text=" *" TextColor="Red"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
+                                <Grid ColumnDefinitions="*, Auto" ColumnSpacing="10">
+
+                                    <Border Grid.Column="0" 
+                            Stroke="#E0E0E0" 
+                            StrokeThickness="1" 
+                            BackgroundColor="#FAFAFA" 
+                            StrokeShape="RoundRectangle 8">
+                                        <Entry Placeholder="0"
+                               Keyboard="Numeric"
+                               TextColor="Black"
+                               PlaceholderColor="#AAA"
+                               BackgroundColor="Transparent"
+                               Margin="5"/>
+                                    </Border>
+
+                                    <Border Grid.Column="1" 
+                            Stroke="#E0E0E0" 
+                            StrokeThickness="1" 
+                            BackgroundColor="#FAFAFA" 
+                            StrokeShape="RoundRectangle 8">
+                                        <Picker WidthRequest="100">
+                                            <Picker.ItemsSource>
+                                                <x:Array Type="{x:Type x:String}">
+                                                    <x:String>$</x:String>
+                                                    <x:String>₴</x:String>
+                                                </x:Array>
+                                            </Picker.ItemsSource>
+                                            <Picker.SelectedIndex>
+                                                0
+                                            </Picker.SelectedIndex>
+                                        </Picker>
+                                    </Border>
+
+                                </Grid>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Spacing="10" Margin="0,10,0,0">
+                                <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                                    <CheckBox/>
+                                    <Label Text="{helpers:Translate FieldBargain}" VerticalOptions="Center"/>
+                                </HorizontalStackLayout>
+
+                                <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                                    <CheckBox/>
+                                    <Label Text="{helpers:Translate FieldTrade}" VerticalOptions="Center"/>
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+
+                        </VerticalStackLayout>
+                    </Border>
+                </toolkit:Expander.Content>
+            </toolkit:Expander>
+
+
+            <HorizontalStackLayout Spacing="10" Margin="0,15,0,0">
+                <CheckBox x:Name="AgreeCheckBox"/>
+                <Label FontSize="13" TextColor="#555" VerticalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{helpers:Translate ListingAgreeTerms}"/>
+                            <Span Text=" "/>
+                            <Span Text="{helpers:Translate ListingServiceAgreement}" TextColor="Blue" TextDecorations="Underline"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </HorizontalStackLayout>
+
+            <Button Text="{helpers:Translate ListingSubmitButton}"
+                    BackgroundColor="#80B918" 
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    HeightRequest="50"
+                    CornerRadius="8"
+                    Margin="0,15,0,0"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

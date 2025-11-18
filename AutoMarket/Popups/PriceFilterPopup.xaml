@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="AutoMarket.PriceFilterPopup"
+             Color="Transparent">
+
+    <VerticalStackLayout VerticalOptions="End">
+
+        <Border x:Name="MainBorder"
+                StrokeThickness="0"
+                StrokeShape="RoundRectangle 20,20,0,0"
+                BackgroundColor="White"
+                Padding="20"
+                HorizontalOptions="Fill">
+
+            <Grid RowDefinitions="Auto, Auto, Auto, Auto" RowSpacing="25">
+                <Grid Grid.Row="0" ColumnDefinitions="*, Auto">
+                    <Label Text="Вартість"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center"/>
+                    <Button Grid.Column="1"
+                            Text="X"
+                            FontAttributes="Bold"
+                            HeightRequest="40"
+                            WidthRequest="40"
+                            CornerRadius="20"
+                            BackgroundColor="#EEE"
+                            TextColor="#555"
+                            Clicked="OnCloseButtonClicked"/>
+                </Grid>
+
+                <Grid Grid.Row="1" ColumnDefinitions="*,*" ColumnSpacing="15">
+
+                    <Border Stroke="#E0E0E0" StrokeThickness="1" BackgroundColor="#FAFAFA" StrokeShape="RoundRectangle 8" Padding="15">
+                        <Entry Grid.Column="0"
+                               Placeholder="Від"
+                               PlaceholderColor="#AAA"
+                               TextColor="Black"
+                               Keyboard="Numeric"/>
+                    </Border>
+
+                    <Border Grid.Column="1" Stroke="#E0E0E0" StrokeThickness="1" BackgroundColor="#FAFAFA" StrokeShape="RoundRectangle 8" Padding="15">
+                        <Entry Grid.Column="1"
+                               Placeholder="До"
+                               PlaceholderColor="#AAA"
+                               TextColor="Black"
+                               Keyboard="Numeric"/>
+                    </Border>
+
+                </Grid>
+
+                <HorizontalStackLayout Grid.Row="2" Spacing="10" HorizontalOptions="Center">
+
+                    <Button x:Name="UsdButton" Text="$" Clicked="OnCurrencyClicked"
+                            BackgroundColor="#333" TextColor="White" 
+                            FontAttributes="Bold" FontSize="18"
+                            CornerRadius="25" HeightRequest="50" WidthRequest="50"/>
+
+                    <Button x:Name="EurButton" Text="€" Clicked="OnCurrencyClicked"
+                            BackgroundColor="#EEE" TextColor="Black" 
+                            FontAttributes="Bold" FontSize="18"
+                            CornerRadius="25" HeightRequest="50" WidthRequest="50"/>
+
+                    <Button x:Name="UahButton" Text="грн." Clicked="OnCurrencyClicked"
+                            BackgroundColor="#EEE" TextColor="Black" 
+                            FontSize="14"
+                            CornerRadius="25" HeightRequest="50" WidthRequest="50"/>
+
+                </HorizontalStackLayout>
+
+                <Button Grid.Row="3"
+                        Text="Застосувати"
+                        BackgroundColor="#E63946"
+                        TextColor="White"
+                        CornerRadius="8"
+                        HeightRequest="50"
+                        VerticalOptions="End"
+                        Margin="0,15,0,0"/>
+            </Grid>
+        </Border>
+    </VerticalStackLayout>
+</toolkit:Popup>
