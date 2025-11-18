@@ -12,15 +12,11 @@ namespace AutoMarket
     {
         private readonly HttpClient _httpClient;
        
-        private readonly string _baseUrl = "https://backend-auto-market.onrender.com";
-
+        private readonly string _baseUrl = "https://backend-auto-market.onrender.com/api";
 
         public ApiService()
         {
             _httpClient = new HttpClient();
-           
-        
-        
             
         }
 
@@ -28,7 +24,7 @@ namespace AutoMarket
        
         public async Task<string> RegisterAsync(RegisterRequest request)
         {
-            string url = $"{_baseUrl}/api/Auth/register";
+            string url = $"{_baseUrl}/register";
             try
             {
                 HttpResponseMessage response = await _httpClient.PostAsJsonAsync(url, request);
@@ -65,7 +61,7 @@ namespace AutoMarket
                 rememberMe = true
             };
 
-            string url = $"{_baseUrl}/api/Auth/login";
+            string url = $"{_baseUrl}/auth/login";
 
             try
             {
@@ -98,22 +94,27 @@ namespace AutoMarket
 
         public async Task<(UserProfile Profile, string Error)> GetUserProfileAsync(string userId, string token)
         {
-            string url = $"{_baseUrl}/api/Auth?userId={userId}";
+            string url = $"{_baseUrl}/Profile?userId={userId}";
             try
             {
                 var request = new HttpRequestMessage(HttpMethod.Get, url);
                 request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+                request.Headers.CacheControl = new System.Net.Http.Headers.CacheControlHeaderValue
+                {
+                    NoCache = true,
+                    NoStore = true,
+                    MustRevalidate = true
+                };
+
                 HttpResponseMessage response = await _httpClient.SendAsync(request);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    // Успіх! Повертаємо профіль і null для помилки
                     UserProfile profile = await response.Content.ReadFromJsonAsync<UserProfile>();
                     return (profile, null);
                 }
                 else
                 {
-                    // Помилка! Повертаємо null для профілю і текст помилки
                     string error = await response.Content.ReadAsStringAsync();
                     Debug.WriteLine($"Помилка завантаження профілю: {error}");
                     return (null, error);
@@ -121,7 +122,6 @@ namespace AutoMarket
             }
             catch (Exception ex)
             {
-                // Критична помилка! Повертаємо null для профілю і текст помилки
                 Debug.WriteLine($"Критична помилка профілю: {ex.Message}");
                 return (null, $"Помилка підключення: {ex.Message}");
             }
@@ -129,26 +129,75 @@ namespace AutoMarket
 
 
 
-        public async Task<string> UpdateUserProfileAsync(EditProfileRequest profileData, string token)
+
+   
+        public async Task<string> UpdateUserProfileAsync(EditProfileRequest profileData,
+                                                Stream photoStream, // Новий параметр
+                                                string photoFileName, // Новий параметр
+                                                string token)
         {
-            string userId = await SecureStorage.GetAsync("user_id");
-            string url = $"{_baseUrl}/edit?userId={userId}";
+            
+            string url = $"{_baseUrl}/Profile/update";
+           
+
             try
             {
                 var request = new HttpRequestMessage(HttpMethod.Put, url);
                 request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-                request.Content = JsonContent.Create(profileData);
 
+                // 2. Створюємо 'multipart' контейнер
+                var multipartContent = new MultipartFormDataContent();
+
+                // 3. Додаємо всі ТЕКСТОВІ поля з profileData
+                // Важливо: 'Key' (перший параметр) має точно відповідати тому, 
+                // що ти використовував у Postman (firstName, lastName і т.д.)
+                multipartContent.Add(new StringContent(profileData.firstName ?? ""), "firstName");
+                multipartContent.Add(new StringContent(profileData.lastName ?? ""), "lastName");
+                multipartContent.Add(new StringContent(profileData.phoneNumber ?? ""), "phoneNumber");
+                string dateString = profileData.dateOfBirth.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ");
+                multipartContent.Add(new StringContent(dateString), "dateOfBirth");
+                multipartContent.Add(new StringContent(profileData.address ?? ""), "address");
+                multipartContent.Add(new StringContent(profileData.country ?? ""), "country");
+                multipartContent.Add(new StringContent(profileData.aboutYourself ?? ""), "aboutYourself");
+
+                // Якщо у тебе є поле Password (як у Swagger), додай його теж
+                // if (!string.IsNullOrEmpty(profileData.Password))
+                // {
+                //     multipartContent.Add(new StringContent(profileData.Password), "Password"); // Або "password"
+                // }
+
+                // 4. Додаємо ФОТО (якщо воно є)
+                if (photoStream != null && photoStream.Length > 0)
+                {
+                    // Створюємо контент для файлу
+                    var fileContent = new StreamContent(photoStream);
+
+                    // Встановлюємо Content-Type для файлу
+                    // (можна зробити розумнішу логіку на основі photoFileName, але поки так)
+                    fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("image/jpeg"); // або "image/png"
+
+                    // Додаємо файл у 'multipart' контейнер
+                    // "Photo" - це 'Key' з API.
+                    // 'photoFileName' - це ім'я файлу, яке побачить сервер.
+                    multipartContent.Add(fileContent, "Photo", photoFileName);
+                }
+
+                // 5. Призначаємо наш зібраний 'multipart' контент як тіло запиту
+                request.Content = multipartContent;
+
+                // Далі твій код для відправки та обробки відповіді залишається без змін
                 HttpResponseMessage response = await _httpClient.SendAsync(request);
                 string responseContent = await response.Content.ReadAsStringAsync();
 
-                // Логування статусу та тіла завжди
                 Debug.WriteLine($"[UpdateUserProfileAsync] HTTP Status: {(int)response.StatusCode}");
                 Debug.WriteLine($"[UpdateUserProfileAsync] Response Body: '{responseContent}'");
 
                 if (response.IsSuccessStatusCode)
                 {
-                    return responseContent; // навіть якщо порожнє
+                    if (string.IsNullOrWhiteSpace(responseContent))
+                        return "OK";
+
+                    return responseContent;
                 }
                 else
                 {
@@ -168,9 +217,11 @@ namespace AutoMarket
 
 
 
+
         public async Task<bool> SendVerificationEmailAsync(string email)
         {
-            string url = $"{_baseUrl}/send-verification-email?email={Uri.EscapeDataString(email)}";
+            // Твоя оригінальна, ПРАВИЛЬНА URL
+            string url = $"{_baseUrl}/auth/send-verification-email?email={Uri.EscapeDataString(email)}";
 
             try
             {
@@ -186,12 +237,12 @@ namespace AutoMarket
 
                 HttpResponseMessage response = await _httpClient.PostAsync(url, null);
 
-                // Додаємо логування
+                // ... (решта коду залишається)
+
                 Debug.WriteLine($"Status code: {(int)response.StatusCode} {response.StatusCode}");
                 string rawResponse = await response.Content.ReadAsStringAsync();
                 Debug.WriteLine($"Response body: {rawResponse}");
 
-                // Тепер враховуємо можливі успішні коди (200 або 204)
                 if (response.IsSuccessStatusCode || response.StatusCode == System.Net.HttpStatusCode.NoContent)
                 {
                     return true;
@@ -205,162 +256,99 @@ namespace AutoMarket
                 return false;
             }
         }
+        public async Task<bool> SendPasswordResetCodeAsync(string email)
+        {
+            // 1. Використовуємо ТОЙ САМИЙ URL, що й для верифікації
+            string url = $"{_baseUrl}/auth/send-verification-email?email={Uri.EscapeDataString(email)}";
+
+            try
+            {
+                Debug.WriteLine("=== Відправка коду СКИДАННЯ ПАРОЛЯ ===");
+                Debug.WriteLine($"URL: {url}");
+                Debug.WriteLine($"Метод: POST");
+
+                // 2. Створюємо новий запит
+                var request = new HttpRequestMessage(HttpMethod.Post, url);
+
+                // 3. ❗️ВАЖЛИВО: Ми НЕ додаємо 'Authorization' header.
+                // Ми НЕ хочемо надсилати токен, навіть якщо він
+                // випадково зберігся у _httpClient з минулих запитів.
+                // Тому ми створюємо 'request' вручну, а не
+                // використовуємо 'PostAsync(url, null)' напряму.
+
+                // 4. Надсилаємо запит
+                // (null означає, що тіло запиту порожнє)
+                HttpResponseMessage response = await _httpClient.SendAsync(request);
+
+                Debug.WriteLine($"Status code: {(int)response.StatusCode} {response.StatusCode}");
+                string rawResponse = await response.Content.ReadAsStringAsync();
+                Debug.WriteLine($"Response body: {rawResponse}");
+
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Критична помилка SendPasswordResetCodeAsync: {ex.Message}");
+                return false;
+            }
+        }
 
 
-        /* public async Task<string> UpdateUserProfileAsync(EditProfileRequest profileData, string token)
+
+        /* public async Task<(string Url, string Error)> UploadToCloudinaryAsync(string filePath)
          {
-             string url = $"{_baseUrl}/edit";
+             string cloudName = "dbazwsili";
+             string uploadPreset = "automarket_app";
+             string url = $"https://api.cloudinary.com/v1_1/{cloudName}/image/upload?upload_preset={uploadPreset}";
+
              try
              {
-                 var request = new HttpRequestMessage(HttpMethod.Post, url);
-                 request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-                 request.Content = JsonContent.Create(profileData);
 
-                 HttpResponseMessage response = await _httpClient.SendAsync(request);
+                 using var fileStream = File.OpenRead(filePath);
+                 using var streamContent = new StreamContent(fileStream);
+
+
+                 streamContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("image/jpeg");
+
+                 using var multipartFormContent = new MultipartFormDataContent();
+
+                 // Додаємо сам файл. Третій параметр - це ім'я файлу, яке побачить сервер.
+                 multipartFormContent.Add(streamContent, "file", Path.GetFileName(filePath));
+
+                 // Додаємо назву пресету
+                 *//*multipartFormContent.Add(new StringContent(uploadPreset), "upload_preset");*//*
+
+                 // Відправляємо запит
+                 var response = await _httpClient.PostAsync(url, multipartFormContent);
 
                  if (response.IsSuccessStatusCode)
                  {
-                     return null; 
+                     var cloudinaryResponse = await response.Content.ReadFromJsonAsync<CloudinaryResponse>();
+                     // Перевір назву властивості у Models/CloudinaryResponse.cs
+                     return (cloudinaryResponse.secure_Url, null);
                  }
                  else
                  {
-
                      string error = await response.Content.ReadAsStringAsync();
-                     Debug.WriteLine($"Помилка оновлення профілю: {error}");
-                     return error;
+
+                     Debug.WriteLine($"Помилка Cloudinary (File Upload): {error}");
+                     return (null, error);
                  }
              }
              catch (Exception ex)
              {
-                 Debug.WriteLine($"Критична помилка оновлення профілю: {ex.Message}");
-                 return $"Помилка підключення: {ex.Message}";
+                 Debug.WriteLine($"Критична помилка Cloudinary (File Upload): {ex.Message}");
+                 return (null, $"Помилка підключення: {ex.Message}");
              }
          }*/
 
 
-        public async Task<(string Url, string Error)> UploadToCloudinaryAsync(string filePath)
+
+        // Прибираємо 'email' з параметрів, він більше не потрібен
+        public async Task<bool> VerifyEmailCodeAsync(string code, string token = null)
         {
-            string cloudName = "dbazwsili";
-            string uploadPreset = "automarket_app";
-            string url = $"https://api.cloudinary.com/v1_1/{cloudName}/image/upload?upload_preset={uploadPreset}";
+            string url = $"{_baseUrl}/Auth/verify-email";
 
-            try
-            {
-                
-                using var fileStream = File.OpenRead(filePath);
-                using var streamContent = new StreamContent(fileStream);
-
-               
-                streamContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("image/jpeg");
-
-                using var multipartFormContent = new MultipartFormDataContent();
-
-                // Додаємо сам файл. Третій параметр - це ім'я файлу, яке побачить сервер.
-                multipartFormContent.Add(streamContent, "file", Path.GetFileName(filePath));
-
-                // Додаємо назву пресету
-                /*multipartFormContent.Add(new StringContent(uploadPreset), "upload_preset");*/
-
-                // Відправляємо запит
-                var response = await _httpClient.PostAsync(url, multipartFormContent);
-
-                if (response.IsSuccessStatusCode)
-                {
-                    var cloudinaryResponse = await response.Content.ReadFromJsonAsync<CloudinaryResponse>();
-                    // Перевір назву властивості у Models/CloudinaryResponse.cs
-                    return (cloudinaryResponse.secure_Url, null);
-                }
-                else
-                {
-                    string error = await response.Content.ReadAsStringAsync();
-
-                    Debug.WriteLine($"Помилка Cloudinary (File Upload): {error}");
-                    return (null, error);
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Критична помилка Cloudinary (File Upload): {ex.Message}");
-                return (null, $"Помилка підключення: {ex.Message}");
-            }
-        }
-        /*public async Task<(string Url, string Error)> UploadToCloudinaryAsync(string filePath)
-        {
-            string cloudName = "dbazwsili";
-            string uploadPreset = "automarket_app";
-            string url = $"https://api.cloudinary.com/v1_1/{cloudName}/image/upload";
-            try
-            {
-                // 1. Читаємо файл і конвертуємо в Base64 рядок
-                byte[] imageBytes = File.ReadAllBytes(filePath);
-                string base64Image = Convert.ToBase64String(imageBytes);
-
-                // Додаємо префікс, який потрібен Cloudinary для Base64
-                string dataUri = $"data:image/jpeg;base64,{base64Image}";
-
-                // 2. Створюємо простий JSON-об'єкт для відправки
-                var payload = new
-                {
-                    file = dataUri, // Відправляємо Base64 рядок як "file"
-                    upload_preset = uploadPreset,
-                   
-                };
-
-                // 3. Відправляємо як звичайний JSON POST-запит
-                HttpResponseMessage response = await _httpClient.PostAsJsonAsync(url, payload);
-
-                if (response.IsSuccessStatusCode)
-                {
-                    var cloudinaryResponse = await response.Content.ReadFromJsonAsync<CloudinaryResponse>();
-                    return (cloudinaryResponse.secure_Url, null); // Або SecureUrl, перевір свій CloudinaryResponse.cs
-                }
-                else
-                {
-                    string error = await response.Content.ReadAsStringAsync();
-                    Debug.WriteLine($"Помилка Cloudinary (Base64): {error}");
-                    return (null, error);
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Критична помилка Cloudinary (Base64): {ex.Message}");
-                return (null, $"Помилка підключення: {ex.Message}");
-            }*/
-
-
-        /* try
-         {
-             using var fileStream = File.OpenRead(filePath);
-             using var streamContent = new StreamContent(fileStream);
-             streamContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("image/jpeg");
-             using var multipartFormContent = new MultipartFormDataContent();
-             multipartFormContent.Add(streamContent, "file", Path.GetFileName(filePath));
-             multipartFormContent.Add(new StringContent(uploadPreset), "upload_preset");
-
-             var response = await _httpClient.PostAsync(url, multipartFormContent);
-
-             if (response.IsSuccessStatusCode)
-             {
-                 var cloudinaryResponse = await response.Content.ReadFromJsonAsync<CloudinaryResponse>();
-                 return (cloudinaryResponse.secure_Url, null);
-             }
-             else
-             {
-                 string error = await response.Content.ReadAsStringAsync();
-                 Debug.WriteLine($"Помилка Cloudinary: {error}");
-                 return (null, error);
-             }
-         }
-         catch (Exception ex)
-         {
-             Debug.WriteLine($"Критична помилка Cloudinary: {ex.Message}");
-             return (null, $"Помилка підключення: {ex.Message}");
-         }*/
-
-
-        public async Task<bool> VerifyEmailCodeAsync(string email, string code, string token = null)
-        {
-            string url = $"{_baseUrl}/verify-email";
             // Якщо потрібен токен – додаємо:
             if (!string.IsNullOrEmpty(token))
             {
@@ -368,13 +356,11 @@ namespace AutoMarket
                     new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
             }
 
-            // Підготовка тіла запиту (JSON):
-            var body = new
-            {
-                email = email,
-                code = code
-            };
-            var content = new StringContent(JsonSerializer.Serialize(body), Encoding.UTF8, "application/json");
+            // --- ГОЛОВНА ЗМІНА ТУТ ---
+            // Сервер очікує не JSON-об'єкт, а просто JSON-рядок
+            // JsonSerializer.Serialize(code) перетворить "123456" на "\"123456\""
+            // Це і є "application/json" версія простого рядка
+            var content = new StringContent(JsonSerializer.Serialize(code), Encoding.UTF8, "application/json");
 
             HttpResponseMessage response = await _httpClient.PostAsync(url, content);
             string responseBody = await response.Content.ReadAsStringAsync();
@@ -397,44 +383,6 @@ namespace AutoMarket
 
 
 
-
-        // Це ДОДАТИ в ApiService.cs
-        /*public async Task<LoginResponse> LoginWithGoogleAsync(string googleToken)
-        {
-            var requestData = new GoogleLoginRequest
-            {
-                googleToken = googleToken,
-                rememberMe = true
-            };
-
-            // ❗ Переконайся, що цей URL правильний для твого бекенда
-            string url = $"{_baseUrl}/web/google";
-
-            try
-            {
-                HttpResponseMessage response = await _httpClient.PostAsJsonAsync(url, requestData);
-
-                if (response.IsSuccessStatusCode)
-                {
-                    // Бекенд має повернути той самий LoginResponse (з токеном/ID)
-                    LoginResponse loginResponse = await response.Content.ReadFromJsonAsync<LoginResponse>();
-                    return loginResponse;
-                }
-                else
-                {
-                    string error = await response.Content.ReadAsStringAsync();
-                    Debug.WriteLine($"Помилка Google логіна на бекенді: {error}");
-                    return null;
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Критична помилка Google логіна: {ex.Message}");
-                return null;
-            }
-        }*/
-        // --- МЕТОД GOOGLE ЛОГІНА (ОНОВЛЕНИЙ) ---
-        // Повертає кортеж: (Відповідь, Помилка)
         public async Task<(LoginResponse Response, string Error)> LoginWithGoogleAsync(string googleToken)
         {
             var requestData = new GoogleLoginRequest
@@ -443,7 +391,7 @@ namespace AutoMarket
                 rememberMe = true
             };
 
-            string url = $"{_baseUrl}/web/google";
+            string url = $"{_baseUrl}/auth/android/google";
 
             try
             {
@@ -477,7 +425,7 @@ namespace AutoMarket
         public async Task<string> ChangePasswordAsync(ChangePasswordRequest requestData, string token)
         {
            
-            string url = $"{_baseUrl}/ChangePassword";
+            string url = $"{_baseUrl}/auth/change-password";
             try
             {
                 var request = new HttpRequestMessage(HttpMethod.Post, url);
@@ -506,146 +454,101 @@ namespace AutoMarket
             }
         }
 
-        // ==========================================================
-        // == КОД, ЯКИЙ ПОТРІБНО ДОДАТИ (ФІЛЬТРИ ТА ОГОЛОШЕННЯ) ==
-        // ==========================================================
 
-        // Це наш "майстер-список" (заглушка замість БД)
-        // Коли API буде готовий, ми його видалимо.
-        private List<CarListing> _allCars = new List<CarListing>
-        {
-        new CarListing
-        {
-            Title = "Lexus GX 470 2007", ImageUrl = "https://hdpic.club/uploads/posts/2021-12/thumbs/1640655886_2-hdpic-club-p-leksus-470-gx-2.jpg",
-            PriceUSD = 13499, PriceUAH = 568443, Mileage = 191000, FuelType = "Газ/Бензин",
-            Location = "Харків", Transmission = "Автомат", PostedDate = "3 дні тому"
-        },
-        new CarListing
-        {
-            Title = "Skoda Octavia A8 2021", ImageUrl = "https://i.infocar.ua/i/2/6018/119011/1920x.jpg",
-            PriceUSD = 21500, PriceUAH = 905150, Mileage = 42000, FuelType = "Дизель",
-            Location = "Київ", Transmission = "Автомат", PostedDate = "1 день тому"
-        },
-        new CarListing
-        {
-            Title = "Volkswagen ID.4 2022", ImageUrl = "https://www.edmunds.com/assets/m/volkswagen/id4/2021/oem/2021_volkswagen_id4_4dr-suv_awd-pro-s-statement_fq_oem_1_600.jpg",
-            PriceUSD = 26900, PriceUAH = 1132190, Mileage = 0, FuelType = "Електро",
-            Location = "Львів", Transmission = "Автомат", PostedDate = "Сьогодні"
-        },
-        new CarListing
-        {
-            Title = "BMW X5 2012", ImageUrl = "https://cars.ua/thumb/car/20210504/w933/h622/q80/kupit-bmw-x5-kiev-2723523.jpeg",
-            PriceUSD = 18000, PriceUAH = 757800, Mileage = 240000, FuelType = "Дизель",
-            Location = "Одеса", Transmission = "Автомат", PostedDate = "5 днів тому"
-        }
-        };
+        // Прибираємо приватний клас EmailExistsResponse, він не потрібен
 
-
-
-        // --- 2. ЛОГІКА ДЛЯ СПИСКУ АВТО (ЗАГЛУШКА) ---
-        public async Task<List<CarListing>> GetListingsAsync(string fuelType, int? vehicleTypeId, int? makeId, int? modelId, string condition)
+        public async Task<bool?> CheckEmailExistsAsync(string email)
         {
-            // 1. ЗАВАНТАЖУЄМО ВСІ ОГОЛОШЕННЯ З СЕРВЕРА
-            List<CarListing> allCars;
+            string url = $"{_baseUrl}/auth/email-exists?email={Uri.EscapeDataString(email)}";
+
             try
             {
-                // !! РЕАЛЬНИЙ ЗАПИТ !!
-                // TODO: Переконайтеся, що бекенд повертає CarListing у правильному форматі
-                string url = $"{_baseUrl}/api/VehicleListing";
-                allCars = await _httpClient.GetFromJsonAsync<List<CarListing>>(url);
+                HttpResponseMessage response = await _httpClient.GetAsync(url);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    // --- ОСЬ ВИПРАВЛЕННЯ ---
+                    // Читаємо відповідь як простий рядок (який буде "true" або "false")
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    // Конвертуємо рядок "true" у bool true
+                    if (bool.TryParse(responseBody, out bool emailExists))
+                    {
+                        return emailExists; // Поверне true або false
+                    }
+
+                    // Якщо сервер повернув щось дивне (не "true" і не "false")
+                    Debug.WriteLine($"[CheckEmailExistsAsync] Незрозуміла відповідь: {responseBody}");
+                    return null;
+                }
+                else
+                {
+                    // API повернуло помилку (500, 404 тощо)
+                    Debug.WriteLine($"[CheckEmailExistsAsync] Помилка API: {response.StatusCode}");
+                    return null; // Повертаємо null, щоб позначити помилку
+                }
             }
             catch (Exception ex)
             {
-                // Якщо помилка (немає інтернету або API впав), повертаємо порожній список
-                Debug.WriteLine($"ПОМИЛКА завантаження /api/VehicleListing: {ex.Message}");
-                allCars = new List<CarListing>();
+                Debug.WriteLine($"[CheckEmailExistsAsync] Критична помилка: {ex.Message}");
+                return null; // Помилка (немає інтернету тощо)
             }
+        }
 
-            // 2. ФІЛЬТРУЄМО СПИСОК НА ТЕЛЕФОНІ (КЛІЄНТСЬКА ФІЛЬТРАЦІЯ)
-            IEnumerable<CarListing> filtered = allCars;
+        public async Task<bool> ConfirmPasswordResetCodeAsync(string email, string code)
+        {
+            // Припускаємо, що параметри передаються у посиланні (query string)
+            string url = $"{_baseUrl}/Auth/confirm-password-change?email={Uri.EscapeDataString(email)}&code={Uri.EscapeDataString(code)}";
 
-            // Фільтр по пальному (поки що з заглушки)
-            if (!string.IsNullOrEmpty(fuelType))
+            // Цей запит НЕ надсилає Bearer Token, бо юзер не залогінений
+
+            try
             {
-                filtered = filtered.Where(c => c.FuelType == fuelType);
-            }
+                Debug.WriteLine($"[ConfirmPasswordResetCodeAsync] URL: {url}");
+                HttpResponseMessage response = await _httpClient.GetAsync(url);
+                Debug.WriteLine($"[ConfirmPasswordResetCodeAsync] Status: {response.StatusCode}");
 
-            // Фільтр по стану (Нові/Вживані)
-            if (condition == "Нові")
+                // Припускаємо, що 200 OK означає, що код вірний
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception ex)
             {
-                filtered = filtered.Where(c => c.Mileage == 0);
+                Debug.WriteLine($"[ConfirmPasswordResetCodeAsync] Critical Error: {ex.Message}");
+                return false;
             }
-            else if (condition == "Вживані")
+        }
+
+        
+        public async Task<bool> ResetPasswordAsync(ResetPasswordRequest request)
+        {
+            string url = $"{_baseUrl}/Auth/reset-password";
+
+            // Цей запит не надсилає токен
+            try
             {
-                filtered = filtered.Where(c => c.Mileage > 0);
+                Debug.WriteLine($"[ResetPasswordAsync] URL: {url}");
+
+                HttpResponseMessage response = await _httpClient.PostAsJsonAsync(url, request);
+
+                Debug.WriteLine($"[ResetPasswordAsync] Status: {response.StatusCode}");
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    string error = await response.Content.ReadAsStringAsync();
+                    Debug.WriteLine($"[ResetPasswordAsync] Error: {error}");
+                }
+                return response.IsSuccessStatusCode;
             }
-            if (vehicleTypeId.HasValue)
+            catch (Exception ex)
             {
-                filtered = filtered.Where(c => c.VehicleTypeId == vehicleTypeId.Value);
+                Debug.WriteLine($"[ResetPasswordAsync] Critical Error: {ex.Message}");
+                return false;
             }
-
-            // TODO: Додайте сюди решту логіки фільтрації (MakeId, ModelId...),
-            // коли ви додасте ці властивості до вашої моделі CarListing.
-
-            return filtered.ToList();
         }
 
-        // Тип транспорту
-        // --- 2. ЛОГІКА ДЛЯ ФІЛЬТРІВ (РЕАЛЬНИЙ API) ---
 
-        // Тип транспорту
-        public async Task<List<VehicleType>> GetVehicleTypesAsync() // TODO: Створіть клас VehicleType у Models
-        {
-            string url = $"{_baseUrl}/api/VehicleType";
-            return await _httpClient.GetFromJsonAsync<List<VehicleType>>(url);
-        }
 
-        // Марка
-        public async Task<List<Make>> GetMakesAsync()
-        {
-            string url = $"{_baseUrl}/api/VehicleBrand";
-            return await _httpClient.GetFromJsonAsync<List<Make>>(url);
-        }
 
-        // Модель
-        public async Task<List<Model>> GetModelsAsync(int makeId)
-        {
-            // У вас немає /api/VehicleModel?makeId=...
-            // Тому ми завантажуємо ВСІ моделі і фільтруємо їх на телефоні
-            string url = $"{_baseUrl}/api/VehicleModel";
-            var allModels = await _httpClient.GetFromJsonAsync<List<Model>>(url);
-
-            // Фільтруємо по MakeId
-            return allModels.Where(m => m.MakeId == makeId).ToList();
-        }
-
-        // Стан
-        public async Task<List<VehicleCondition>> GetConditionsAsync() // TODO: Створіть клас VehicleCondition у Models
-        {
-            string url = $"{_baseUrl}/api/VehicleCondition";
-            return await _httpClient.GetFromJsonAsync<List<VehicleCondition>>(url);
-        }
-
-        // Регіон
-        public async Task<List<AutoMarket.Models.Region>> GetRegionsAsync() // TODO: Створіть клас Region у Models
-        {
-            string url = $"{_baseUrl}/api/Region";
-            return await _httpClient.GetFromJsonAsync<List<AutoMarket.Models.Region>>(url);
-        }
-
-        // --- ЗАГЛУШКИ, ЯКИХ НЕ ВИСТАЧАЄ В API ---
-
-        public async Task<List<string>> GetFuelTypesAsync()
-        {
-            await Task.Delay(100); // Залишаємо заглушку
-            return new List<string> { "Бензин", "Дизель", "Газ/Бензин", "Електро" };
-        }
-
-        public async Task<List<string>> GetTransmissionTypesAsync()
-        {
-            await Task.Delay(100); // Залишаємо заглушку
-            return new List<string> { "Автомат", "Механіка", "Варіатор" };
-        }
 
     }
 

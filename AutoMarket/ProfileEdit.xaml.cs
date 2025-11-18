@@ -6,8 +6,9 @@ namespace AutoMarket;
 public partial class ProfileEdit : ContentPage
 {
     private readonly ApiService _apiService;
-    private string _newAvatarFilePath = null;
+    private FileResult _newAvatarFileResult = null; 
     private string _currentAvatarUrl = null;
+    private string _currentUserEmail = null; 
 
     public ProfileEdit()
     {
@@ -47,7 +48,17 @@ public partial class ProfileEdit : ContentPage
             FirstNameEntry.Text = profile.firstName;
             LastNameEntry.Text = profile.lastName;
             PhoneNumberEntry.Text = profile.phoneNumber;
-            DateOfBirthPicker.Date = profile.dateOfBirth.ToLocalTime();
+            if (profile.dateOfBirth.HasValue)
+            {
+                // Якщо дата є, встановлюємо її
+                DateOfBirthPicker.Date = profile.dateOfBirth.Value.ToLocalTime();
+            }
+            else
+            {
+                // Якщо дати немає (null), ставимо якусь дату за замовчуванням
+                // Наприклад, 18 років тому
+                DateOfBirthPicker.Date = DateTime.Now.AddYears(-18);
+            }
             CountryEntry.Text = profile.country;
             AddressEntry.Text = profile.address;
             AboutYourselfEditor.Text = profile.aboutYourself;
@@ -95,8 +106,8 @@ public partial class ProfileEdit : ContentPage
 
             if (result == null) return;
 
-            _newAvatarFilePath = result.FullPath;
-            AvatarImageButton.Source = ImageSource.FromFile(_newAvatarFilePath);
+            _newAvatarFileResult = result; // <-- НОВИЙ КОД
+            AvatarImageButton.Source = ImageSource.FromFile(result.FullPath); // <-- НОВИЙ КОD
         }
         catch (Exception ex)
         {
@@ -106,190 +117,162 @@ public partial class ProfileEdit : ContentPage
 
     private async void OnSaveClicked(object sender, EventArgs e)
     {
-        
-        ChangeInfoButton.IsEnabled = false; 
+        ChangeInfoButton.IsEnabled = false;
 
         // 1. Перевіряємо токен сесії
         string token = await SecureStorage.GetAsync("auth_token");
         if (string.IsNullOrEmpty(token))
         {
             await DisplayAlert("Помилка", "Сесія не знайдена. Будь ласка, увійдіть знову.", "OK");
-            ChangeInfoButton.IsEnabled = true; 
-                                               
+            ChangeInfoButton.IsEnabled = true;
             return;
         }
 
-        string finalAvatarUrl = _currentAvatarUrl; 
-        string uploadError = null; 
+        // --- ПОЧАТОК НОВОГО БЛОКУ: Валідація полів ---
 
-      
-        if (_newAvatarFilePath != null)
+        // 2. Перевіряємо, чи заповнені обов'язкові поля
+        if (string.IsNullOrWhiteSpace(FirstNameEntry.Text))
         {
-            
-
-            var (newUrl, error) = await _apiService.UploadToCloudinaryAsync(_newAvatarFilePath);
-
-            
-
-            if (error != null)
-            {
-              
-                uploadError = error;
-            }
-            else
-            {
-           
-                finalAvatarUrl = newUrl;
-                _currentAvatarUrl = finalAvatarUrl; 
-                _newAvatarFilePath = null; 
-            }
+            await DisplayAlert("Порожнє поле", "Будь ласка, введіть ваше ім'я.", "OK");
+            ChangeInfoButton.IsEnabled = true; // Вмикаємо кнопку назад
+            return; // Зупиняємо виконання
         }
 
-        // 3. Якщо була помилка завантаження аватара - показуємо її і виходимо
-        if (uploadError != null)
+        if (string.IsNullOrWhiteSpace(LastNameEntry.Text))
         {
-            await DisplayAlert("Помилка завантаження аватара", uploadError, "OK");
-            ChangeInfoButton.IsEnabled = true; // Розблоковуємо кнопку
+            await DisplayAlert("Порожнє поле", "Будь ласка, введіть ваше прізвище.", "OK");
+            ChangeInfoButton.IsEnabled = true;
             return;
         }
 
-        // 4. Збираємо дані з усіх полів форми
-        var profileData = new EditProfileRequest
+        if (string.IsNullOrWhiteSpace(PhoneNumberEntry.Text))
         {
-            password = "string",
-            firstName = FirstNameEntry.Text,
-            lastName = LastNameEntry.Text,
-            phoneNumber = PhoneNumberEntry.Text,
-            dateOfBirth = DateOfBirthPicker.Date.ToUniversalTime(), 
-            country = CountryEntry.Text,
-            address = AddressEntry.Text,
-            aboutYourself = AboutYourselfEditor.Text,
-            urlPhoto = finalAvatarUrl 
-        };
+            await DisplayAlert("Порожнє поле", "Будь ласка, введіть ваш номер телефону.", "OK");
+            ChangeInfoButton.IsEnabled = true;
+            return;
+        }
+        if (string.IsNullOrWhiteSpace(CountryEntry.Text))
+        {
+            await DisplayAlert("Порожнє поле", "Будь ласка, введіть вашу країну.", "OK");
+            ChangeInfoButton.IsEnabled = true;
+            return;
+        }
+        if (string.IsNullOrWhiteSpace(AddressEntry.Text))
+        {
+            await DisplayAlert("Порожнє поле", "Будь ласка, введіть вашу адресу.", "OK");
+            ChangeInfoButton.IsEnabled = true;
+            return;
+        }
 
-        // Логуємо дані, які відправляємо (для дебагу)
-        System.Diagnostics.Debug.WriteLine($"Відправляємо дані: {System.Text.Json.JsonSerializer.Serialize(profileData)}");
+        // (Можеш додати сюди інші перевірки, наприклад, на 'Country' або 'Address', якщо вони обов'язкові)
 
-        // 5. Викликаємо ApiService для відправки даних на наш бекенд
-        string serverResponse = await _apiService.UpdateUserProfileAsync(profileData, token);
+        // --- КІНЕЦЬ НОВОГО БЛОКУ ---
 
-        // Логуємо відповідь сервера (для дебагу)
+
+        // --- ПОЧАТОК ТВОЄЇ ЛОГІКИ API ---
+
+        Stream photoStream = null;
+        string photoFileName = null;
+        string serverResponse = null;
+
+        try
+        {
+            // 3. Збираємо дані з полів (тепер ми знаємо, що вони не порожні)
+            var profileData = new EditProfileRequest
+            {
+                firstName = FirstNameEntry.Text.Trim(), // .Trim() прибирає зайві пробіли
+                lastName = LastNameEntry.Text.Trim(),
+                phoneNumber = PhoneNumberEntry.Text.Trim(),
+                dateOfBirth = DateOfBirthPicker.Date.ToUniversalTime(),
+                country = CountryEntry.Text.Trim(),
+                address = AddressEntry.Text.Trim(),
+                aboutYourself = AboutYourselfEditor.Text.Trim(),
+            };
+
+            // 4. Готуємо файл, ЯКЩО він був обраний
+            if (_newAvatarFileResult != null)
+            {
+                photoStream = await _newAvatarFileResult.OpenReadAsync();
+                photoFileName = _newAvatarFileResult.FileName;
+            }
+
+            // 5. Викликаємо НОВИЙ метод ApiService
+            serverResponse = await _apiService.UpdateUserProfileAsync(
+                profileData,
+                photoStream,
+                photoFileName,
+                token
+            );
+        }
+        catch (Exception ex)
+        {
+            // Ловимо будь-які помилки під час підготовки або відправки
+            Debug.WriteLine($"[OnSaveClicked] Critical Error: {ex.Message}");
+            serverResponse = $"Критична помилка: {ex.Message}";
+        }
+        finally
+        {
+            // 6. ДУЖЕ ВАЖЛИВО: закриваємо стрім файлу, щоб звільнити пам'ять
+            photoStream?.Close();
+        }
+
+        // --- КІНЕЦЬ ЛОГІКИ API ---
+
+        // 7. Обробляємо відповідь сервера
         System.Diagnostics.Debug.WriteLine($"Відповідь сервера: '{serverResponse}'");
 
-        // 6. Показуємо відповідь сервера користувачу
-        await DisplayAlert("Відповідь сервера", serverResponse ?? "Сервер не відповів", "OK");
+        bool isSuccess = serverResponse == "OK" ||
+                         (serverResponse != null &&
+                          !serverResponse.Contains("Помилка", StringComparison.OrdinalIgnoreCase) &&
+                          !serverResponse.Contains("Статус:", StringComparison.OrdinalIgnoreCase));
 
-        // 7. Оновлюємо дані на екрані ТІЛЬКИ якщо не було явної помилки
-        // (Цю перевірку можна зробити точнішою, якщо знати формат успішної відповіді)
-        bool updateSeemsSuccessful = serverResponse != null &&
-                                    !serverResponse.Contains("Помилка", StringComparison.OrdinalIgnoreCase) &&
-                                    !serverResponse.Contains("Статус:", StringComparison.OrdinalIgnoreCase) &&
-                                    !serverResponse.Contains("Error", StringComparison.OrdinalIgnoreCase);
-
-        if (updateSeemsSuccessful)
+        if (isSuccess)
         {
-            await LoadUserProfile(); 
+            await DisplayAlert("Успіх", "Профіль оновлено.", "OK");
+
+            _newAvatarFileResult = null; // Скидаємо вибраний файл
+            await LoadUserProfile(); // Оновлюємо дані на екрані з сервера
         }
-        
+        else
+        {
+            // Показуємо помилку, яку повернув сервер
+            await DisplayAlert("Помилка оновлення", serverResponse ?? "Невідома помилка", "OK");
+        }
+
+        // 8. Вмикаємо кнопку назад
         ChangeInfoButton.IsEnabled = true;
     }
     private async void OnVerifyEmailClicked(object sender, EventArgs e)
     {
-     
-        string userEmail = await SecureStorage.GetAsync("user_email");
+        // НЕПРАВИЛЬНО (бере старі дані):
+        // string userEmail = await SecureStorage.GetAsync("user_email"); 
 
-     
+        // ПРАВИЛЬНО (бере актуальні дані, завантажені щойно):
+        string userEmail = _currentUserEmail;
+
         if (string.IsNullOrWhiteSpace(userEmail))
         {
-            await DisplayAlert("Помилка", "Не вдалося отримати ваш Email зі сховища. Спробуйте увійти знову.", "OK");
-            return; 
+            await DisplayAlert("Помилка", "Не вдалося отримати ваш Email з профілю. Спробуйте перезавантажити сторінку.", "OK");
+            return;
         }
 
-        
         bool success = await _apiService.SendVerificationEmailAsync(userEmail);
 
         if (success)
         {
-            
+            // Тепер 'userEmail' - це АКТУАЛЬНА пошта
             await Navigation.PushAsync(new ConfirmationPage(VerificationReason.EmailConfirmation, userEmail));
         }
         else
         {
-            
             await DisplayAlert("Помилка", "Не вдалося відправити код підтвердження. Спробуйте ще раз.", "OK");
         }
     }
-
     private async void OnChangePasswordClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new ChangePassword());
     }
-    /* private async void OnSaveClicked(object sender, EventArgs e)
-     {
-         string token = await SecureStorage.GetAsync("auth_token");
-         if (string.IsNullOrEmpty(token))
-         {
-             await DisplayAlert("Помилка", "Сесія не знайдена.", "OK");
-             return;
-         }
-
-         string finalAvatarUrl = _currentAvatarUrl; 
-         string uploadError = null; 
-
-
-         if (_newAvatarFilePath != null)
-         {
-
-             var (newUrl, error) = await _apiService.UploadToCloudinaryAsync(_newAvatarFilePath);
-
-
-             if (error != null)
-             {
-
-                 uploadError = error;
-             }
-             else
-             {
-
-                 finalAvatarUrl = newUrl;
-                 _currentAvatarUrl = finalAvatarUrl;
-                 _newAvatarFilePath = null;
-             }
-         }
-
-
-         if (uploadError != null)
-         {
-             await DisplayAlert("Помилка завантаження аватара", uploadError, "OK");
-             return; 
-         }
-         var profileData = new EditProfileRequest
-         {
-             firstName = FirstNameEntry.Text,
-             lastName = LastNameEntry.Text,
-             phoneNumber = PhoneNumberEntry.Text,
-             *//*password = string.IsNullOrWhiteSpace(PasswordEntry.Text) ? null : PasswordEntry.Text,*//*
-             dateOfBirth = DateOfBirthPicker.Date.ToUniversalTime(), 
-             country = CountryEntry.Text,
-             address = AddressEntry.Text,
-             aboutYourself = AboutYourselfEditor.Text,
-             urlPhoto = finalAvatarUrl 
-         };
-         System.Diagnostics.Debug.WriteLine($"Відправляємо дані: {System.Text.Json.JsonSerializer.Serialize(profileData)}");
-         string updateError = await _apiService.UpdateUserProfileAsync(profileData, token);
-         System.Diagnostics.Debug.WriteLine($"updateError: '{updateError}'");
-         if (updateError == null)
-         {
-             // УСПІХ!
-             await DisplayAlert("Успіх!", "Дані профілю оновлено.", "OK");
-             await LoadUserProfile(); 
-         }
-         else
-         {
-             // ПОМИЛКА! Показуємо те, що повернув сервер
-             await DisplayAlert("Помилка оновлення", updateError, "OK");
-         }
-     }*/
+    
 
 
 

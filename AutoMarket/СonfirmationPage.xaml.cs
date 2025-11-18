@@ -37,22 +37,7 @@ namespace AutoMarket
                 InstructionsLabel.Text = "Ви отримаєте код на пошту";
             }
         }
-        private async Task SendVerificationCode()
-        {
-            // Можна показати індикатор завантаження
-            bool success = await _apiService.SendVerificationEmailAsync(_email);
-            // Можна сховати індикатор
-
-            if (!success)
-            {
-                await DisplayAlert("Помилка", "Не вдалося відправити код підтвердження. Спробуйте ще раз.", "OK");
-            }
-            else
-            {
-                // Можна показати повідомлення типу "Код відправлено"
-                Debug.WriteLine("Код підтвердження відправлено на " + _email);
-            }
-        }
+      
 
         
         private void OnCodeEntryTextChanged(object sender, TextChangedEventArgs e)
@@ -75,40 +60,152 @@ namespace AutoMarket
                 }
             }
         }
-
         private async void ProcessEnteredCode()
         {
             string fullCode = $"{CodeEntry1.Text}{CodeEntry2.Text}{CodeEntry3.Text}{CodeEntry4.Text}{CodeEntry5.Text}{CodeEntry6.Text}";
-            if (fullCode.Length == 6)
-            {
-                // Отримай токен, якщо потрібен:
-                string token = await SecureStorage.GetAsync("auth_token");
+            System.Diagnostics.Debug.WriteLine($"[ProcessEnteredCode] Зібраний код для відправки: '{fullCode}'");
 
-                bool success = await _apiService.VerifyEmailCodeAsync(_email, fullCode, token);
+            if (fullCode.Length != 6)
+            {
+                await DisplayAlert("Увага", "Введіть повний 6-значний код.", "OK");
+                return;
+            }
+
+            // --- ✅ ПОЧАТОК НОВОЇ ЛОГІКИ ---
+
+            if (_reason == VerificationReason.EmailConfirmation)
+            {
+                // === 1. ЛОГІКА ПІДТВЕРДЖЕННЯ ПОШТИ (Юзер залогінений) ===
+                string token = await SecureStorage.GetAsync("auth_token");
+                if (string.IsNullOrEmpty(token))
+                {
+                    await DisplayAlert("Помилка", "Сесія не знайдена. Увійдіть знову.", "OK");
+                    return;
+                }
+
+                // Викликаємо старий, правильний метод
+                bool success = await _apiService.VerifyEmailCodeAsync(fullCode, token);
 
                 if (success)
                 {
                     await DisplayAlert("Успіх", "Ваш e-mail підтверджено!", "OK");
-                    // Перенаправити куди треба, наприклад:
                     await Navigation.PopToRootAsync();
                 }
                 else
                 {
                     await DisplayAlert("Помилка", "Невірний або прострочений код.", "OK");
+                    ClearCodeEntries(); // Очищуємо поля
                 }
             }
-            else
+            else if (_reason == VerificationReason.PasswordReset)
             {
-                await DisplayAlert("Увага", "Введіть повний 6-значний код.", "OK");
+                // === 2. ЛОГІКА СКИДАННЯ ПАРОЛЯ (Юзер НЕ залогінений) ===
+
+                // Викликаємо новий метод API, який не потребує токена
+                bool codeIsValid = await _apiService.ConfirmPasswordResetCodeAsync(_email, fullCode);
+
+                if (codeIsValid)
+                {
+                    // УСПІХ! Код вірний.
+                    // Тепер ми маємо перекинути юзера на НОВУ сторінку,
+                    // де він введе НОВИЙ пароль.
+
+                    await DisplayAlert("Код вірний!", "Тепер введіть новий пароль.", "OK");
+
+                    // Тобі потрібно створити нову сторінку 'SetNewPasswordPage'
+                    // і передати їй email, щоб вона знала, для кого міняти пароль.
+                    // (Код, схоже, вже не потрібен для наступного API)
+                    await Navigation.PushAsync(new PasswordReset(_email));
+                }
+                else
+                {
+                    // ПОМИЛКА: Код невірний
+                    await DisplayAlert("Помилка", "Невірний або прострочений код.", "OK");
+                    ClearCodeEntries(); // Очищуємо поля
+                }
             }
         }
 
-
-
-        private void OnResendCodeTapped(object sender, TappedEventArgs e)
+        // Додай цей допоміжний метод у свій клас, щоб очищувати поля
+        private void ClearCodeEntries()
         {
-            // TODO: Повторна відправка коду
-            DisplayAlert("Інфо", "Запит на повторну відправку коду", "OK");
+            CodeEntry1.Text = "";
+            CodeEntry2.Text = "";
+            CodeEntry3.Text = "";
+            CodeEntry4.Text = "";
+            CodeEntry5.Text = "";
+            CodeEntry6.Text = "";
+            CodeEntry1.Focus();
+        }
+        /* private async void ProcessEnteredCode()
+         {
+             string fullCode = $"{CodeEntry1.Text}{CodeEntry2.Text}{CodeEntry3.Text}{CodeEntry4.Text}{CodeEntry5.Text}{CodeEntry6.Text}";
+
+             // ДОДАЙ ЦЕЙ РЯДОК, щоб бачити, що саме ми відправляємо
+             System.Diagnostics.Debug.WriteLine($"[ProcessEnteredCode] Зібраний код для відправки: '{fullCode}'");
+
+             if (fullCode.Length == 6)
+             {
+                 string token = await SecureStorage.GetAsync("auth_token");
+
+                 // Викликаємо оновлений метод
+                 bool success = await _apiService.VerifyEmailCodeAsync(fullCode, token);
+
+                 if (success)
+                 {
+                     await DisplayAlert("Успіх", "Ваш e-mail підтверджено!", "OK");
+                     await Navigation.PopToRootAsync();
+                 }
+                 else
+                 {
+                     await DisplayAlert("Помилка", "Невірний або прострочений код.", "OK");
+                     // Можливо, тут варто очистити поля вводу
+                     CodeEntry1.Text = "";
+                     CodeEntry2.Text = "";
+                     CodeEntry3.Text = "";
+                     CodeEntry4.Text = "";
+                     CodeEntry5.Text = "";
+                     CodeEntry6.Text = "";
+                     CodeEntry1.Focus();
+                 }
+             }
+             else
+             {
+                 await DisplayAlert("Увага", "Введіть повний 6-значний код.", "OK");
+             }
+         }*/
+
+
+
+        private async void OnResendCodeTapped(object sender, TappedEventArgs e)
+        {
+            // 1. Блокуємо кнопку/лейбл, щоб уникнути повторних натискань
+            if (sender is View resendView)
+            {
+                resendView.IsEnabled = false;
+            }
+
+            // 2. Викликаємо сервіс для відправки коду
+            // Ми використовуємо '_email', який зберегли при відкритті сторінки
+            bool success = await _apiService.SendVerificationEmailAsync(_email);
+
+            // 3. Обробляємо результат
+            if (success)
+            {
+                await DisplayAlert("Успіх", "Новий код відправлено на вашу пошту.", "OK");
+            }
+            else
+            {
+                await DisplayAlert("Помилка", "Не вдалося відправити код повторно. Спробуйте пізніше.", "OK");
+            }
+
+            // 4. (Опціонально) Робимо паузу перед тим, як знову ввімкнути кнопку
+            await Task.Delay(10000); // 10-секундний кулдаун
+
+            if (sender is View resendViewAfterDelay)
+            {
+                resendViewAfterDelay.IsEnabled = true;
+            }
         }
     }
 }

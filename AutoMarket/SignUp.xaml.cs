@@ -36,24 +36,7 @@ public partial class SignUp : ContentPage
         LettersCheckmark.Opacity = (hasLower && hasUpper) ? 1.0 : 0.5;
     }
 
-    private void OnTermsSwitchToggled(object sender, ToggledEventArgs e)
-    {
-       
-        bool isToggled = e.Value;
-
-        if (isToggled)
-        {
-            
-            RegisterButton.IsEnabled = true;
-            RegisterButton.Opacity = 1.0;
-        }
-        else
-        {
-            
-            RegisterButton.IsEnabled = false;
-            RegisterButton.Opacity = 0.5;
-        }
-    }
+    
     private void OnPasswordVisibilityToggleClicked(object sender, EventArgs e)
     {
         PasswordEntry.IsPassword = !PasswordEntry.IsPassword;
@@ -94,7 +77,7 @@ public partial class SignUp : ContentPage
         };
 
      
-        RegisterButton.IsEnabled = false;
+        RegisterButton.IsEnabled = true;
 
        
         string errorResult = await _apiService.RegisterAsync(registerRequest);
