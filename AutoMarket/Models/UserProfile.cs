@@ -15,7 +15,7 @@ namespace AutoMarket.Models
         public string aboutYourself { get; set; }
 
         public bool isVerified { get; set; }
-        public string urlPhoto { get; set; }
+        public string avatarUrl { get; set; }
 
     }
 }

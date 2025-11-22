@@ -24,7 +24,7 @@ namespace AutoMarket
        
         public async Task<string> RegisterAsync(RegisterRequest request)
         {
-            string url = $"{_baseUrl}/register";
+            string url = $"{_baseUrl}/auth/register";
             try
             {
                 HttpResponseMessage response = await _httpClient.PostAsJsonAsync(url, request);
@@ -546,324 +546,170 @@ namespace AutoMarket
             }
         }
 
-        // --------------------------------------------------------------------------------------- ниже для вивода авто api 
-        // 1. Отримати Типи транспорту
-        public async Task<List<VehicleTypeDto>> GetVehicleTypesAsync()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private List<CarListing> _allCars = new List<CarListing>
+{
+new CarListing
+{
+    Title = "Lexus GX 470 2007", ImageUrl = "https://hdpic.club/uploads/posts/2021-12/thumbs/1640655886_2-hdpic-club-p-leksus-470-gx-2.jpg",
+    PriceUSD = 13499, PriceUAH = 568443, Mileage = 191000, FuelType = "Газ/Бензин",
+    Location = "Харків", Transmission = "Автомат", PostedDate = "3 дні тому"
+},
+new CarListing
+{
+    Title = "Skoda Octavia A8 2021", ImageUrl = "https://i.infocar.ua/i/2/6018/119011/1920x.jpg",
+    PriceUSD = 21500, PriceUAH = 905150, Mileage = 42000, FuelType = "Дизель",
+    Location = "Київ", Transmission = "Автомат", PostedDate = "1 день тому"
+},
+new CarListing
+{
+    Title = "Volkswagen ID.4 2022", ImageUrl = "https://www.edmunds.com/assets/m/volkswagen/id4/2021/oem/2021_volkswagen_id4_4dr-suv_awd-pro-s-statement_fq_oem_1_600.jpg",
+    PriceUSD = 26900, PriceUAH = 1132190, Mileage = 0, FuelType = "Електро",
+    Location = "Львів", Transmission = "Автомат", PostedDate = "Сьогодні"
+},
+new CarListing
+{
+    Title = "BMW X5 2012", ImageUrl = "https://cars.ua/thumb/car/20210504/w933/h622/q80/kupit-bmw-x5-kiev-2723523.jpeg",
+    PriceUSD = 18000, PriceUAH = 757800, Mileage = 240000, FuelType = "Дизель",
+    Location = "Одеса", Transmission = "Автомат", PostedDate = "5 днів тому"
+}
+};
+
+
+
+        // --- 2. ЛОГІКА ДЛЯ СПИСКУ АВТО (ЗАГЛУШКА) ---
+        public async Task<List<CarListing>> GetListingsAsync(string fuelType, int? vehicleTypeId, int? makeId, int? modelId, string condition)
         {
+            // 1. ЗАВАНТАЖУЄМО ВСІ ОГОЛОШЕННЯ З СЕРВЕРА
+            List<CarListing> allCars;
             try
             {
-                // Формуємо повне посилання: .../api/VehicleType
-                string url = $"{_baseUrl}/VehicleType";
-                return await _httpClient.GetFromJsonAsync<List<VehicleTypeDto>>(url);
+                // !! РЕАЛЬНИЙ ЗАПИТ !!
+                // TODO: Переконайтеся, що бекенд повертає CarListing у правильному форматі
+                string url = $"{_baseUrl}/api/VehicleListing";
+                allCars = await _httpClient.GetFromJsonAsync<List<CarListing>>(url);
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"Помилка отримання типів: {ex.Message}");
-                return new List<VehicleTypeDto>(); // Повертаємо пустий список, щоб програма не впала
+                // Якщо помилка (немає інтернету або API впав), повертаємо порожній список
+                Debug.WriteLine($"ПОМИЛКА завантаження /api/VehicleListing: {ex.Message}");
+                allCars = new List<CarListing>();
             }
+
+            // 2. ФІЛЬТРУЄМО СПИСОК НА ТЕЛЕФОНІ (КЛІЄНТСЬКА ФІЛЬТРАЦІЯ)
+            IEnumerable<CarListing> filtered = allCars;
+
+            // Фільтр по пальному (поки що з заглушки)
+            if (!string.IsNullOrEmpty(fuelType))
+            {
+                filtered = filtered.Where(c => c.FuelType == fuelType);
+            }
+
+            // Фільтр по стану (Нові/Вживані)
+            if (condition == "Нові")
+            {
+                filtered = filtered.Where(c => c.Mileage == 0);
+            }
+            else if (condition == "Вживані")
+            {
+                filtered = filtered.Where(c => c.Mileage > 0);
+            }
+            if (vehicleTypeId.HasValue)
+            {
+                filtered = filtered.Where(c => c.VehicleTypeId == vehicleTypeId.Value);
+            }
+
+            // TODO: Додайте сюди решту логіки фільтрації (MakeId, ModelId...),
+            // коли ви додасте ці властивості до вашої моделі CarListing.
+
+            return filtered.ToList();
         }
 
-        // 2. Отримати Марки (залежить від Типу транспорту)
-        public async Task<List<VehicleBrandDto>> GetBrandsByTypeAsync(int typeId)
+        // Тип транспорту
+        // --- 2. ЛОГІКА ДЛЯ ФІЛЬТРІВ (РЕАЛЬНИЙ API) ---
+
+        // Тип транспорту
+        public async Task<List<VehicleType>> GetVehicleTypesAsync() // TODO: Створіть клас VehicleType у Models
         {
-            try
-            {
-                string url = $"{_baseUrl}/VehicleBrand/for-type/{typeId}";
-                return await _httpClient.GetFromJsonAsync<List<VehicleBrandDto>>(url);
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Помилка отримання марок: {ex.Message}");
-                return new List<VehicleBrandDto>();
-            }
+            string url = $"{_baseUrl}/api/VehicleType";
+            return await _httpClient.GetFromJsonAsync<List<VehicleType>>(url);
         }
 
-        // 3. Отримати Моделі(по марці)
-        public async Task<List<VehicleModelDto>> GetModelsByBrandAsync(int brandId)
+        // Марка
+        public async Task<List<Make>> GetMakesAsync()
         {
-            // Формуємо URL
-            string url = $"{_baseUrl}/VehicleModel?brandId={brandId}";
-
-            try
-            {
-                // 1. Робимо запит
-                var response = await _httpClient.GetAsync(url);
-
-                // 2. Читаємо відповідь як просто текст (JSON-рядок)
-                string jsonResponse = await response.Content.ReadAsStringAsync();
-
-                // --- ЛОГИ (Дивись у вікно Output у Visual Studio) ---
-                System.Diagnostics.Debug.WriteLine($"[API REQUEST] URL: {url}");
-                System.Diagnostics.Debug.WriteLine($"[API RESPONSE] STATUS: {response.StatusCode}");
-                System.Diagnostics.Debug.WriteLine($"[API RESPONSE] BODY: {jsonResponse}");
-                // -----------------------------------------------------
-
-                if (response.IsSuccessStatusCode)
-                {
-                    // 3. Пробуємо перетворити текст у об'єкти
-                    var options = new System.Text.Json.JsonSerializerOptions
-                    {
-                        PropertyNameCaseInsensitive = true // Ігнорувати великі/малі літери
-                    };
-
-                    var result = System.Text.Json.JsonSerializer.Deserialize<List<VehicleModelDto>>(jsonResponse, options);
-
-                    System.Diagnostics.Debug.WriteLine($"[API RESULT] Знайдено моделей: {result?.Count ?? 0}");
-                    return result ?? new List<VehicleModelDto>();
-                }
-                else
-                {
-                    System.Diagnostics.Debug.WriteLine($"[API ERROR] Сервер повернув помилку: {response.ReasonPhrase}");
-                    return new List<VehicleModelDto>();
-                }
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine($"[API CRITICAL] {ex.Message}");
-                return new List<VehicleModelDto>();
-            }
+            string url = $"{_baseUrl}/api/VehicleBrand";
+            return await _httpClient.GetFromJsonAsync<List<Make>>(url);
         }
 
-        // 4. Отримати Регіони
-        public async Task<List<RegionDto>> GetRegionsAsync()
+        // Модель
+        public async Task<List<Model>> GetModelsAsync(int makeId)
         {
-            try
-            {
-                string url = $"{_baseUrl}/Region";
-                return await _httpClient.GetFromJsonAsync<List<RegionDto>>(url);
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Помилка отримання регіонів: {ex.Message}");
-                return new List<RegionDto>();
-            }
-        }
+            // У вас немає /api/VehicleModel?makeId=...
+            // Тому ми завантажуємо ВСІ моделі і фільтруємо їх на телефоні
+            string url = $"{_baseUrl}/api/VehicleModel";
+            var allModels = await _httpClient.GetFromJsonAsync<List<Model>>(url);
 
-        // 5. Отримати Міста (залежить від Регіону)
-        public async Task<List<CityDto>> GetCitiesByRegionAsync(int regionId)
+            // Фільтруємо по MakeId
+            return allModels.Where(m => m.MakeId == makeId).ToList();
+        }
+        // Стан
+        public async Task<List<VehicleCondition>> GetConditionsAsync() // TODO: Створіть клас VehicleCondition у Models
         {
-            try
-            {
-                string url = $"{_baseUrl}/City/for-region/{regionId}";
-                return await _httpClient.GetFromJsonAsync<List<CityDto>>(url);
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Помилка отримання міст: {ex.Message}");
-                return new List<CityDto>();
-            }
+            string url = $"{_baseUrl}/api/VehicleCondition";
+            return await _httpClient.GetFromJsonAsync<List<VehicleCondition>>(url);
         }
 
-        // 6. Отримати Пальне
-        public async Task<List<FuelTypeDto>> GetFuelTypesAsync()
+        // Регіон
+        public async Task<List<AutoMarket.Models.Region>> GetRegionsAsync() // TODO: Створіть клас Region у Models
         {
-            try
-            {
-                string url = $"{_baseUrl}/FuelType";
-                return await _httpClient.GetFromJsonAsync<List<FuelTypeDto>>(url);
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Помилка отримання пального: {ex.Message}");
-                return new List<FuelTypeDto>();
-            }
+            string url = $"{_baseUrl}/api/Region";
+            return await _httpClient.GetFromJsonAsync<List<AutoMarket.Models.Region>>(url);
         }
 
-        // 7. Отримати КПП
-        public async Task<List<GearTypeDto>> GetGearTypesAsync()
+        // --- ЗАГЛУШКИ, ЯКИХ НЕ ВИСТАЧАЄ В API ---
+
+        public async Task<List<string>> GetFuelTypesAsync()
         {
-            try
-            {
-                string url = $"{_baseUrl}/GearType";
-                return await _httpClient.GetFromJsonAsync<List<GearTypeDto>>(url);
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Помилка отримання КПП: {ex.Message}");
-                return new List<GearTypeDto>();
-            }
+            await Task.Delay(100); // Залишаємо заглушку
+            return new List<string> { "Бензин", "Дизель", "Газ/Бензин", "Електро" };
         }
 
-
-
-
-
-
-
-
-        // --- ГАРАНТОВАНЕ ОТРИМАННЯ СПИСКУ (БЕЗ ФІЛЬТРІВ) ---
-        public async Task<List<CarListing>> GetAllListingsAsync()
+        public async Task<List<string>> GetTransmissionTypesAsync()
         {
-            // Перевір, чи точно Listing з великої. Якщо сервер Linux - це важливо.
-            string url = $"{_baseUrl}/Listing";
-
-            try
-            {
-                // 1. Отримуємо "сиру" відповідь
-                var response = await _httpClient.GetAsync(url);
-                string jsonResponse = await response.Content.ReadAsStringAsync();
-
-                // --- ДІАГНОСТИКА (ДИВИСЬ У ВІКНО OUTPUT) ---
-                System.Diagnostics.Debug.WriteLine("=================================");
-                System.Diagnostics.Debug.WriteLine($"[LISTING API] STATUS: {response.StatusCode}");
-                System.Diagnostics.Debug.WriteLine($"[LISTING API] JSON: {jsonResponse}");
-                System.Diagnostics.Debug.WriteLine("=================================");
-
-                if (response.IsSuccessStatusCode)
-                {
-                    var options = new System.Text.Json.JsonSerializerOptions
-                    {
-                        PropertyNameCaseInsensitive = true
-                    };
-
-                    var result = System.Text.Json.JsonSerializer.Deserialize<List<CarListing>>(jsonResponse, options);
-
-                    System.Diagnostics.Debug.WriteLine($"[LISTING API] Розпізнано авто: {result?.Count ?? 0}");
-                    return result ?? new List<CarListing>();
-                }
-                else
-                {
-                    System.Diagnostics.Debug.WriteLine($"[LISTING API] ERROR: {response.ReasonPhrase}");
-                    return new List<CarListing>();
-                }
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine($"[LISTING API] CRITICAL ERROR: {ex.Message}");
-                return new List<CarListing>();
-            }
+            await Task.Delay(100); // Залишаємо заглушку
+            return new List<string> { "Автомат", "Механіка", "Варіатор" };
         }
 
-        // ... тут залиш інші свої методи (Login, Register, GetMakes...), не чіпай їх
-        // Додай сюди методи для фільтрів (GetMakesAsync і т.д.) з минулих разів, 
-        // якщо вони видалилися, але головне зараз - Listings.
 
-        // Отримати Типи Кузова
-        // (Можна брати всі, або якщо є ендпоінт /for-type/{id} - краще його, але поки візьмемо загальний)
-        
-
-        public async Task<List<BaseDto>> GetConditionsAsync()
-        {
-            string url = $"{_baseUrl}/VehicleCondition";
-            try
-            {
-                return await _httpClient.GetFromJsonAsync<List<BaseDto>>(url);
-            }
-            catch { return new List<BaseDto>(); }
-        }
-
-        public async Task<List<BaseDto>> GetBodyTypesAsync()
-        {
-            string url = $"{_baseUrl}/VehicleBodyType";
-            try
-            {
-                return await _httpClient.GetFromJsonAsync<List<BaseDto>>(url);
-            }
-            catch { return new List<BaseDto>(); }
-        }
-
-        public async Task<List<ColorDto>> GetColorsAsync()
-        {
-            string url = $"{_baseUrl}/Color";
-            try
-            {
-                return await _httpClient.GetFromJsonAsync<List<ColorDto>>(url);
-            }
-            catch { return new List<ColorDto>(); }
-        }
-
-        // --- МЕТОД СТВОРЕННЯ ОГОЛОШЕННЯ ---
-        public async Task<bool> CreateListingAsync(
-            int modelId,
-            int bodyTypeId,
-            int gearTypeId,
-            int fuelTypeId,
-            int conditionId,
-            int cityId,
-            int year,
-            int mileage,
-            string number,
-            string colorHex,
-            double price,
-            string description,
-            bool hasAccident,
-            List<FileResult> photos)
-        {
-            string url = $"{_baseUrl}/Listing";
-
-            try
-            {
-                using var content = new MultipartFormDataContent();
-
-                // 1. Додаємо текстові/числові поля
-                content.Add(new StringContent(modelId.ToString()), "ModelId");
-                content.Add(new StringContent(bodyTypeId.ToString()), "BodyTypeId");
-                content.Add(new StringContent(gearTypeId.ToString()), "GearTypeId");
-                content.Add(new StringContent(fuelTypeId.ToString()), "FuelTypeId");
-                content.Add(new StringContent(conditionId.ToString()), "ConditionId");
-                content.Add(new StringContent(cityId.ToString()), "CityId");
-                content.Add(new StringContent(year.ToString()), "Year");
-                content.Add(new StringContent(mileage.ToString()), "Mileage");
-                content.Add(new StringContent(number ?? ""), "Number"); // Номер може бути пустим
-                content.Add(new StringContent(colorHex ?? "#FFFFFF"), "ColorHex");
-                content.Add(new StringContent(price.ToString(System.Globalization.CultureInfo.InvariantCulture)), "Price"); // Щоб була крапка, а не кома
-                content.Add(new StringContent(description ?? ""), "Description");
-                content.Add(new StringContent(hasAccident.ToString().ToLower()), "HasAccident"); // true/false
-
-                // 2. Додаємо фотографії (ВИПРАВЛЕНО)
-                if (photos != null)
-                {
-                    foreach (var file in photos)
-                    {
-                        // 1. Відкриваємо потік
-                        using var stream = await file.OpenReadAsync();
-
-                        // 2. Копіюємо в пам'ять (MemoryStream), щоб точно зберегти дані
-                        using var memoryStream = new MemoryStream();
-                        await stream.CopyToAsync(memoryStream);
-
-                        // 3. Перетворюємо на масив байтів
-                        var fileBytes = memoryStream.ToArray();
-
-                        // ДІАГНОСТИКА: Виводимо розмір файлу в консоль, щоб переконатися, що він не пустий
-                        System.Diagnostics.Debug.WriteLine($"[UPLOAD] Файл: {file.FileName}, Розмір: {fileBytes.Length} байт");
-
-                        // 4. Створюємо контент з байтів (це надійніше для Android)
-                        var fileContent = new ByteArrayContent(fileBytes);
-
-                        // 5. Вказуємо тип (обов'язково)
-                        fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("image/jpeg");
-
-                        // 6. Додаємо в запит. "NewPhotos" - це назва поля, яку чекає сервер.
-                        content.Add(fileContent, "NewPhotos", file.FileName);
-                    }
-                }
-
-                // 3. Додаємо Токен (Авторизація)
-                var token = await SecureStorage.GetAsync("auth_token");
-                if (!string.IsNullOrEmpty(token))
-                {
-                    _httpClient.DefaultRequestHeaders.Authorization =
-                        new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-                }
-
-                // 4. Відправляємо
-                var response = await _httpClient.PostAsync(url, content);
-
-                if (!response.IsSuccessStatusCode)
-                {
-                    var error = await response.Content.ReadAsStringAsync();
-                    System.Diagnostics.Debug.WriteLine($"[CREATE LISTING ERROR] {response.StatusCode}: {error}");
-                }
-
-                return response.IsSuccessStatusCode;
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine($"[CREATE LISTING CRITICAL] {ex.Message}");
-                return false;
-            }
-        }
 
     }
 

@@ -63,7 +63,7 @@ public partial class ProfileEdit : ContentPage
             AddressEntry.Text = profile.address;
             AboutYourselfEditor.Text = profile.aboutYourself;
 
-            _currentAvatarUrl = profile.urlPhoto;
+            _currentAvatarUrl = profile.avatarUrl;
             if (!string.IsNullOrEmpty(_currentAvatarUrl))
             {
 
@@ -186,7 +186,7 @@ public partial class ProfileEdit : ContentPage
                 dateOfBirth = DateOfBirthPicker.Date.ToUniversalTime(),
                 country = CountryEntry.Text.Trim(),
                 address = AddressEntry.Text.Trim(),
-                aboutYourself = AboutYourselfEditor.Text.Trim(),
+                aboutYourself = AboutYourselfEditor.Text?.Trim() ?? "",
             };
 
             // 4. Готуємо файл, ЯКЩО він був обраний
@@ -232,6 +232,7 @@ public partial class ProfileEdit : ContentPage
 
             _newAvatarFileResult = null; // Скидаємо вибраний файл
             await LoadUserProfile(); // Оновлюємо дані на екрані з сервера
+            await Shell.Current.GoToAsync($"//{nameof(ProfilePage)}");
         }
         else
         {

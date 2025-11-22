@@ -1,43 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Shell
+    x:Class="AutoMarket.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:AutoMarket"
+<<<<<<< Updated upstream
+    Title="AutoMarket">
+=======
+    xmlns:helpers="clr-namespace:AutoMarket.Helpers"
     x:Class="AutoMarket.AppShell"
-    
+
     Shell.TabBarBackgroundColor="#FFFFFF"
     Shell.TabBarTitleColor="#1A1A1A"
     Shell.TabBarUnselectedColor="#6B6B6B"
     Shell.TabBarDisabledColor="#FF3333"
     Shell.TabBarForegroundColor="#1A1A1A">
-    
+
     <TabBar>
+>>>>>>> Stashed changes
 
-        <Tab Title="Головна" Icon="home.svg">
-            <ShellContent
-                ContentTemplate="{DataTemplate local:MainPage}"
-                Route="MainPage" />
-        </Tab>
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
 
-        <Tab Title="Обране" Icon="heart.svg">
+<<<<<<< Updated upstream
+</Shell>
+=======
+        <Tab Title="{helpers:Translate TabFavorites }" Icon="heart.svg">
             <ShellContent
                 ContentTemplate="{DataTemplate local:FavoritesPage}"
                 Route="FavoritesPage" />
         </Tab>
 
-        <Tab Title="Продати" Icon="plus_circle.png">
+        <Tab Title="{helpers:Translate TabSell}" Icon="plus_circle.png">
             <ShellContent
-                ContentTemplate="{DataTemplate local:SellPage}"
-                Route="SellPage" />
+                ContentTemplate="{DataTemplate local:AddListingPage}"
+                Route="AddListingPage" />
         </Tab>
 
-        <Tab Title="Чат" Icon="chat.svg">
+        <Tab Title="{helpers:Translate TabChat}" Icon="chat.svg">
             <ShellContent
                 ContentTemplate="{DataTemplate local:ChatPage}"
                 Route="ChatPage" />
         </Tab>
 
-        <Tab Title="Профіль" Icon="menu.svg">
+        <Tab Title="{helpers:Translate TabProfile}" Icon="menu.svg">
             <ShellContent
                 ContentTemplate="{DataTemplate local:ProfilePage}"
                 Route="ProfilePage" />
@@ -45,4 +53,9 @@
 
     </TabBar>
 
+    <ShellItem Route="Login" FlyoutItemIsVisible="False">
+        <ShellContent ContentTemplate="{DataTemplate local:Login}" />
+    </ShellItem>
+
 </Shell>
+>>>>>>> Stashed changes
