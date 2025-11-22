@@ -297,4 +297,28 @@
   <data name="FieldTrade" xml:space="preserve">
     <value>Обмін</value>
   </data>
+  <data name="Fuel_BENSIN" xml:space="preserve">
+    <value>Бензин</value>
+  </data>
+  <data name="Fuel_DIESEL" xml:space="preserve">
+    <value>Дизель</value>
+  </data>
+  <data name="Fuel_GAS" xml:space="preserve">
+    <value>Газ</value>
+  </data>
+  <data name="Fuel_ELECTRIC" xml:space="preserve">
+    <value>Електро</value>
+  </data>
+  <data name="Gear_AUTOMATIC" xml:space="preserve">
+    <value>Автомат</value>
+  </data>
+  <data name="Gear_MANUAL" xml:space="preserve">
+    <value>Механіка</value>
+  </data>
+  <data name="Gear_ROBOT" xml:space="preserve">
+    <value>Робот</value>
+  </data>
+  <data name="Gear_VARIATOR" xml:space="preserve">
+    <value>Варіатор</value>
+  </data>
 </root>

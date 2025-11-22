@@ -322,11 +322,83 @@ namespace AutoMarket.Resources.Strings {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Бензин.
+        /// </summary>
+        public static string Fuel_BENSIN {
+            get {
+                return ResourceManager.GetString("Fuel_BENSIN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Дизель.
+        /// </summary>
+        public static string Fuel_DIESEL {
+            get {
+                return ResourceManager.GetString("Fuel_DIESEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Електро.
+        /// </summary>
+        public static string Fuel_ELECTRIC {
+            get {
+                return ResourceManager.GetString("Fuel_ELECTRIC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Газ.
+        /// </summary>
+        public static string Fuel_GAS {
+            get {
+                return ResourceManager.GetString("Fuel_GAS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Пальне.
         /// </summary>
         public static string FuelFilterText {
             get {
                 return ResourceManager.GetString("FuelFilterText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Автомат.
+        /// </summary>
+        public static string Gear_AUTOMATIC {
+            get {
+                return ResourceManager.GetString("Gear_AUTOMATIC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Механіка.
+        /// </summary>
+        public static string Gear_MANUAL {
+            get {
+                return ResourceManager.GetString("Gear_MANUAL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Робот.
+        /// </summary>
+        public static string Gear_ROBOT {
+            get {
+                return ResourceManager.GetString("Gear_ROBOT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Варіатор.
+        /// </summary>
+        public static string Gear_VARIATOR {
+            get {
+                return ResourceManager.GetString("Gear_VARIATOR", resourceCulture);
             }
         }
         

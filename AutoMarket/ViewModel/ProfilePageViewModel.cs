@@ -8,35 +8,46 @@ namespace AutoMarket.ViewModels
     {
         public ProfilePageViewModel()
         {
-            // Конструктор поки що порожній
+            // Конструктор
         }
 
-        //
-        // Команди для кнопок зміни мови
-        //
+        // --- ЛОГІКА ВИХОДУ ---
+
+
+        [RelayCommand]
+        private async Task LogoutAsync()
+        {
+            // Питаємо підтвердження, щоб користувач не вийшов випадково
+            bool answer = await Shell.Current.DisplayAlert("Вихід", "Ви дійсно хочете вийти з профілю?", "Так", "Ні");
+
+            if (answer)
+            {
+                // Викликаємо статичний метод очищення токена
+                App.Logout();
+            }
+        }
+
+        // --- ЛОГІКА МОВИ ---
+
         [RelayCommand]
         private async Task SwitchToUk()
         {
-            // 1. Перемикаємо мову
             LocalizationManager.Instance.SwitchLanguage("uk-UA");
-
-            // 2. Показуємо повідомлення (вже новою, українською мовою)
-            await Shell.Current.DisplayAlert(
-                LocalizationManager.Instance["LanguageChangeTitle"], // "Мову змінено"
-                LocalizationManager.Instance["LanguageChangeMessage"], // "Мову... оновлено."
-                "OK");
+            await ShowLanguageAlert();
         }
 
         [RelayCommand]
         private async Task SwitchToEn()
         {
-            // 1. Перемикаємо мову
             LocalizationManager.Instance.SwitchLanguage("en-US");
+            await ShowLanguageAlert();
+        }
 
-            // 2. Показуємо повідомлення (вже новою, англійською мовою)
+        private async Task ShowLanguageAlert()
+        {
             await Shell.Current.DisplayAlert(
-                LocalizationManager.Instance["LanguageChangeTitle"], // "Language Changed"
-                LocalizationManager.Instance["LanguageChangeMessage"], // "The interface language..."
+                LocalizationManager.Instance["LanguageChangeTitle"],
+                LocalizationManager.Instance["LanguageChangeMessage"],
                 "OK");
         }
     }

@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-    
 <Shell
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:AutoMarket"
-    xmlns:helpers="clr-namespace:AutoMarket.Helpers"
     x:Class="AutoMarket.AppShell"
     
     Shell.TabBarBackgroundColor="#FFFFFF"
@@ -15,31 +13,31 @@
     
     <TabBar>
 
-        <Tab Title="{helpers:Translate TabHome}" Icon="home.svg">
+        <Tab Title="Головна" Icon="home.svg">
             <ShellContent
                 ContentTemplate="{DataTemplate local:MainPage}"
                 Route="MainPage" />
         </Tab>
 
-        <Tab Title="{helpers:Translate TabFavorites }" Icon="heart.svg">
+        <Tab Title="Обране" Icon="heart.svg">
             <ShellContent
                 ContentTemplate="{DataTemplate local:FavoritesPage}"
                 Route="FavoritesPage" />
         </Tab>
 
-        <Tab Title="{helpers:Translate TabSell}" Icon="plus_circle.png">
+        <Tab Title="Продати" Icon="plus_circle.png">
             <ShellContent
-                ContentTemplate="{DataTemplate local:AddListingPage}"
-                Route="AddListingPage" />
+                ContentTemplate="{DataTemplate local:SellPage}"
+                Route="SellPage" />
         </Tab>
 
-        <Tab Title="{helpers:Translate TabChat}" Icon="chat.svg">
+        <Tab Title="Чат" Icon="chat.svg">
             <ShellContent
                 ContentTemplate="{DataTemplate local:ChatPage}"
                 Route="ChatPage" />
         </Tab>
 
-        <Tab Title="{helpers:Translate TabProfile}" Icon="menu.svg">
+        <Tab Title="Профіль" Icon="menu.svg">
             <ShellContent
                 ContentTemplate="{DataTemplate local:ProfilePage}"
                 Route="ProfilePage" />

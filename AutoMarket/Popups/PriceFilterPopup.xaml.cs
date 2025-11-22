@@ -1,76 +1,95 @@
 using CommunityToolkit.Maui.Views;
 
-namespace AutoMarket
+namespace AutoMarket.Popups
 {
     public partial class PriceFilterPopup : Popup
     {
+        // Курси валют (можна взяти приблизні, бо це для фільтру)
+        private const double RateUahToUsd = 41.5;
+        private const double RateEurToUsd = 1.05; // 1 Євро = 1.05 Долара
+
+        private string _currentCurrency = "USD"; // За замовчуванням долар
+
         public PriceFilterPopup()
         {
             InitializeComponent();
-            SetPopupSize();
-        }
 
-        private void SetPopupSize()
-        {
-            // 1. Отримуємо інформацію про екран (розміри, щільність пікселів)
+            // Розмір вікна
             var displayInfo = DeviceDisplay.Current.MainDisplayInfo;
-
-            // 2. Обчислюємо "справжню" висоту екрану в незалежних одиницях.
-            //    (ділимо пікселі на щільність)
-            double screenHeight = displayInfo.Height / displayInfo.Density;
-            double screenWidth = displayInfo.Width / displayInfo.Density;
-
-            // 3. Встановлюємо висоту нашого Border (який ми назвали MainBorder в XAML)
-            //    на 75% від висоти екрану.
-            MainBorder.HeightRequest = screenHeight * 0.79;
-            MainBorder.WidthRequest = screenWidth;
+            MainBorder.WidthRequest = (displayInfo.Width / displayInfo.Density) * 0.95;
         }
 
-        private void OnCloseButtonClicked(object sender, EventArgs e)
+        private void OnCurrencySelected(object sender, TappedEventArgs e)
         {
-            Close();
+            string selected = e.Parameter.ToString();
+            _currentCurrency = selected;
+
+            // Оновлюємо вигляд кнопок (хто активний - темний, інші - білі)
+            UpdateButtonStyles(selected);
         }
 
-        // ==========================================================
-        //     НОВИЙ МЕТОД: ЛОГІКА ПЕРЕМИКАННЯ ВАЛЮТ
-        // ==========================================================
-        private void OnCurrencyClicked(object sender, EventArgs e)
+        private void UpdateButtonStyles(string selected)
         {
-            // 1. Спочатку скидаємо всі кнопки до "неактивного" стилю
-            ResetCurrencyButtons();
+            // Скидаємо стилі
+            SetStyle(BtnUsd, false);
+            SetStyle(BtnEur, false);
+            SetStyle(BtnUah, false);
 
-            // 2. Визначаємо, яка кнопка була натиснута
-            if (sender is Button clickedButton)
+            // Активуємо обрану
+            if (selected == "USD") SetStyle(BtnUsd, true);
+            if (selected == "EUR") SetStyle(BtnEur, true);
+            if (selected == "UAH") SetStyle(BtnUah, true);
+        }
+
+        private void SetStyle(Border btn, bool isActive)
+        {
+            if (isActive)
             {
-                // 3. Встановлюємо "активний" стиль для натиснутої кнопки
-                clickedButton.BackgroundColor = Color.FromHex("#333");
-                clickedButton.TextColor = Colors.White;
-
-                // $ та € мають бути жирним шрифтом, грн. - ні
-                if (clickedButton == UsdButton || clickedButton == EurButton)
-                {
-                    clickedButton.FontAttributes = FontAttributes.Bold;
-                }
+                btn.BackgroundColor = Color.FromArgb("#333333"); // Темний фон
+                btn.Stroke = Colors.Transparent;
+                if (btn.Content is Label lbl) lbl.TextColor = Colors.White;
+            }
+            else
+            {
+                btn.BackgroundColor = Colors.White;
+                btn.Stroke = Color.FromArgb("#E0E0E0");
+                if (btn.Content is Label lbl) lbl.TextColor = Colors.Black;
             }
         }
 
-        // Допоміжний метод, який скидає стилі всіх кнопок
-        private void ResetCurrencyButtons()
+        private void OnApplyClicked(object sender, EventArgs e)
         {
-            // Стиль для $
-            UsdButton.BackgroundColor = Color.FromHex("#EEE");
-            UsdButton.TextColor = Colors.Black;
-            UsdButton.FontAttributes = FontAttributes.Bold; // $ завжди жирний
+            // 1. Зчитуємо текст
+            string textFrom = EntryFrom.Text;
+            string textTo = EntryTo.Text;
 
-            // Стиль для €
-            EurButton.BackgroundColor = Color.FromHex("#EEE");
-            EurButton.TextColor = Colors.Black;
-            EurButton.FontAttributes = FontAttributes.Bold; // € завжди жирний
+            int? priceFromUsd = null;
+            int? priceToUsd = null;
 
-            // Стиль для грн.
-            UahButton.BackgroundColor = Color.FromHex("#EEE");
-            UahButton.TextColor = Colors.Black;
-            UahButton.FontAttributes = FontAttributes.None; // грн. не жирний
+            // 2. Конвертуємо ВІД
+            if (int.TryParse(textFrom, out int valFrom))
+            {
+                priceFromUsd = ConvertToUsd(valFrom);
+            }
+
+            // 3. Конвертуємо ДО
+            if (int.TryParse(textTo, out int valTo))
+            {
+                priceToUsd = ConvertToUsd(valTo);
+            }
+
+            // 4. Повертаємо результат у доларах (int?, int?)
+            Close((priceFromUsd, priceToUsd));
         }
+
+        private int ConvertToUsd(int amount)
+        {
+            if (_currentCurrency == "USD") return amount;
+            if (_currentCurrency == "EUR") return (int)(amount * RateEurToUsd);
+            if (_currentCurrency == "UAH") return (int)(amount / RateUahToUsd);
+            return amount;
+        }
+
+        private void OnCloseClicked(object sender, EventArgs e) => Close();
     }
 }

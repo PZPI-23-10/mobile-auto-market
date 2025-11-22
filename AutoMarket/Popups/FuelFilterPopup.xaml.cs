@@ -1,42 +1,30 @@
 using CommunityToolkit.Maui.Views;
+using AutoMarket.Models;
 
-namespace AutoMarket
+namespace AutoMarket.Popups
 {
     public partial class FuelFilterPopup : Popup
     {
-        // Ми передаємо список пального СЮДИ при створенні
-        public FuelFilterPopup(List<string> fuelTypes)
+        public FuelFilterPopup(List<FuelTypeDto> fuels)
         {
             InitializeComponent();
-            // Встановлюємо "контекст даних" pop-up на список, який ми отримали
-            BindingContext = new { FuelTypes = fuelTypes };
+            BindingContext = new { FuelTypes = fuels };
 
-            SetPopupSize();
-        }
-
-        private void SetPopupSize()
-        {
+            // Висота десь 40%, бо видів пального небагато (Бензин, Дизель, Газ, Електро...)
             var displayInfo = DeviceDisplay.Current.MainDisplayInfo;
-            double screenHeight = displayInfo.Height / displayInfo.Density;
-            MainBorder.HeightRequest = screenHeight * 0.6;
+            MainBorder.HeightRequest = (displayInfo.Height / displayInfo.Density) * 0.4;
             MainBorder.WidthRequest = -1;
         }
 
-        // Коли користувач обирає елемент зі списку
         private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var selectedFuel = e.CurrentSelection.FirstOrDefault() as string;
-            if (selectedFuel != null)
+            var item = e.CurrentSelection.FirstOrDefault() as FuelTypeDto;
+            if (item != null)
             {
-                // Закриваємо pop-up і ПОВЕРТАЄМО обране значення
-                Close(selectedFuel);
+                Close(item);
             }
         }
 
-        // Кнопка X
-        private void OnCloseButtonClicked(object sender, EventArgs e) => Close(); // Повертає null
-
-        // Кнопка "Скинути"
-        private void OnClearClicked(object sender, EventArgs e) => Close(string.Empty); // Повертає порожній рядок
+        private void OnCloseButtonClicked(object sender, EventArgs e) => Close();
     }
 }
