@@ -4,11 +4,58 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:AutoMarket"
+<<<<<<< Updated upstream
     Title="AutoMarket">
+=======
+    xmlns:helpers="clr-namespace:AutoMarket.Helpers"
+    x:Class="AutoMarket.AppShell"
+
+    Shell.TabBarBackgroundColor="#FFFFFF"
+    Shell.TabBarTitleColor="#1A1A1A"
+    Shell.TabBarUnselectedColor="#6B6B6B"
+    Shell.TabBarDisabledColor="#FF3333"
+    Shell.TabBarForegroundColor="#1A1A1A">
+
+    <TabBar>
+>>>>>>> Stashed changes
 
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
+<<<<<<< Updated upstream
 </Shell>
+=======
+        <Tab Title="{helpers:Translate TabFavorites }" Icon="heart.svg">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:FavoritesPage}"
+                Route="FavoritesPage" />
+        </Tab>
+
+        <Tab Title="{helpers:Translate TabSell}" Icon="plus_circle.png">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:AddListingPage}"
+                Route="AddListingPage" />
+        </Tab>
+
+        <Tab Title="{helpers:Translate TabChat}" Icon="chat.svg">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:ChatPage}"
+                Route="ChatPage" />
+        </Tab>
+
+        <Tab Title="{helpers:Translate TabProfile}" Icon="menu.svg">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:ProfilePage}"
+                Route="ProfilePage" />
+        </Tab>
+
+    </TabBar>
+
+    <ShellItem Route="Login" FlyoutItemIsVisible="False">
+        <ShellContent ContentTemplate="{DataTemplate local:Login}" />
+    </ShellItem>
+
+</Shell>
+>>>>>>> Stashed changes

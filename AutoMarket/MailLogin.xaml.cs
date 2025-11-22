@@ -58,7 +58,7 @@ public partial class MailLogin : ContentPage
 
                 // 7. Переходимо на головну сторінку
                 await DisplayAlert("Успіх!", "Вхід виконано.", "OK");
-                Application.Current.MainPage = new NavigationPage(new ProfileEdit());
+                Application.Current.MainPage = new AppShell();
 
             }
             catch (Exception ex)

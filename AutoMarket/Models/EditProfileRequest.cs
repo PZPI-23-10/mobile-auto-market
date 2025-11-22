@@ -13,7 +13,7 @@ namespace AutoMarket.Models
             public string lastName { get; set; }
             public string phoneNumber { get; set; }
             public DateTime dateOfBirth { get; set; }
-            public string urlPhoto { get; set; }
+            public string avatarUrl { get; set; }
             public string address { get; set; }
             public string country { get; set; }
             public string aboutYourself { get; set; }
