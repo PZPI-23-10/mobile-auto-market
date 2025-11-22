@@ -1,0 +1,679 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\mobile-auto-market\\AutoMarket\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\ApiService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ApiService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\ProfilePage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ProfilePage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\ViewModel\\MainPageViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ViewModel\\MainPageViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\AppShell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AppShell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Resources\\Strings\\AppResources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Resources\\Strings\\AppResources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Popups\\ColorPopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Popups\\ColorPopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Popups\\ColorPopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Popups\\ColorPopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Models\\ColorDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\ColorDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Popups\\ConditionPopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Popups\\ConditionPopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Popups\\ConditionPopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Popups\\ConditionPopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Popups\\SingleYearPopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Popups\\SingleYearPopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Popups\\SingleYearPopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Popups\\SingleYearPopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Popups\\BodyTypePopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Popups\\BodyTypePopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Popups\\BodyTypePopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Popups\\BodyTypePopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\AddListingPage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AddListingPage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\AddListingPage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AddListingPage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\ViewModel\\AddListingViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ViewModel\\AddListingViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Platforms\\Android\\AndroidManifest.xml||{4E01A4BC-CFCF-452C-8C08-51352512D197}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Platforms\\Android\\AndroidManifest.xml||{4E01A4BC-CFCF-452C-8C08-51352512D197}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Popups\\GearFilterPopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Popups\\GearFilterPopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Popups\\GearFilterPopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Popups\\GearFilterPopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Popups\\FuelFilterPopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Popups\\FuelFilterPopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Popups\\FuelFilterPopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Popups\\FuelFilterPopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Popups\\CityFilterPopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Popups\\CityFilterPopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Popups\\CityFilterPopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Popups\\CityFilterPopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Popups\\RegionFilterPopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Popups\\RegionFilterPopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Popups\\RegionFilterPopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Popups\\RegionFilterPopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Popups\\PriceFilterPopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Popups\\PriceFilterPopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Popups\\PriceFilterPopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Popups\\PriceFilterPopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Popups\\YearFilterPopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Popups\\YearFilterPopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Popups\\YearFilterPopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Popups\\YearFilterPopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Models\\FilterModels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\FilterModels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Popups\\ModelFilterPopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Popups\\ModelFilterPopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Popups\\ModelFilterPopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Popups\\ModelFilterPopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Popups\\BrandFilterPopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Popups\\BrandFilterPopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Popups\\BrandFilterPopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Popups\\BrandFilterPopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\MainPage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MainPage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Popups\\VehicleTypeFilterPopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Popups\\VehicleTypeFilterPopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\MainPage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MainPage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Popups\\VehicleTypeFilterPopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Popups\\VehicleTypeFilterPopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\MauiProgram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MauiProgram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\mobile-auto-market\\AutoMarket\\Models\\CarListing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\CarListing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 29,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProfilePage.xaml",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\ProfilePage.xaml",
+              "RelativeDocumentMoniker": "ProfilePage.xaml",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\ProfilePage.xaml",
+              "RelativeToolTip": "ProfilePage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-18T14:39:18.5Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainPageViewModel.cs",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\ViewModel\\MainPageViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\MainPageViewModel.cs",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\ViewModel\\MainPageViewModel.cs",
+              "RelativeToolTip": "ViewModel\\MainPageViewModel.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T16:48:22.033Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppShell.xaml.cs",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\AppShell.xaml.cs",
+              "RelativeDocumentMoniker": "AppShell.xaml.cs",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\AppShell.xaml.cs",
+              "RelativeToolTip": "AppShell.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T13:42:27.9Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AppResources.resx",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Resources\\Strings\\AppResources.resx",
+              "RelativeDocumentMoniker": "Resources\\Strings\\AppResources.resx",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Resources\\Strings\\AppResources.resx",
+              "RelativeToolTip": "Resources\\Strings\\AppResources.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-11-18T19:32:47.319Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ColorPopup.xaml.cs",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Popups\\ColorPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\ColorPopup.xaml.cs",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Popups\\ColorPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\ColorPopup.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T10:53:23.718Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ColorPopup.xaml",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Popups\\ColorPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\ColorPopup.xaml",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Popups\\ColorPopup.xaml",
+              "RelativeToolTip": "Popups\\ColorPopup.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-22T10:53:06.836Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ColorDto.cs",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Models\\ColorDto.cs",
+              "RelativeDocumentMoniker": "Models\\ColorDto.cs",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Models\\ColorDto.cs",
+              "RelativeToolTip": "Models\\ColorDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T10:52:44.961Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ConditionPopup.xaml.cs",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Popups\\ConditionPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\ConditionPopup.xaml.cs",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Popups\\ConditionPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\ConditionPopup.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T10:48:09.791Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ConditionPopup.xaml",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Popups\\ConditionPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\ConditionPopup.xaml",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Popups\\ConditionPopup.xaml",
+              "RelativeToolTip": "Popups\\ConditionPopup.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-22T10:47:59.856Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SingleYearPopup.xaml.cs",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Popups\\SingleYearPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\SingleYearPopup.xaml.cs",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Popups\\SingleYearPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\SingleYearPopup.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T09:55:58.51Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SingleYearPopup.xaml",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Popups\\SingleYearPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\SingleYearPopup.xaml",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Popups\\SingleYearPopup.xaml",
+              "RelativeToolTip": "Popups\\SingleYearPopup.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-22T09:55:49.359Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "BodyTypePopup.xaml.cs",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Popups\\BodyTypePopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\BodyTypePopup.xaml.cs",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Popups\\BodyTypePopup.xaml.cs",
+              "RelativeToolTip": "Popups\\BodyTypePopup.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T09:55:27.231Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "BodyTypePopup.xaml",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Popups\\BodyTypePopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\BodyTypePopup.xaml",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Popups\\BodyTypePopup.xaml",
+              "RelativeToolTip": "Popups\\BodyTypePopup.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-22T09:55:18.805Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AddListingPage.xaml",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\AddListingPage.xaml",
+              "RelativeDocumentMoniker": "AddListingPage.xaml",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\AddListingPage.xaml",
+              "RelativeToolTip": "AddListingPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-22T09:21:09.928Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AddListingPage.xaml.cs",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\AddListingPage.xaml.cs",
+              "RelativeDocumentMoniker": "AddListingPage.xaml.cs",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\AddListingPage.xaml.cs",
+              "RelativeToolTip": "AddListingPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAowAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T09:20:20.311Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AddListingViewModel.cs",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\ViewModel\\AddListingViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\AddListingViewModel.cs",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\ViewModel\\AddListingViewModel.cs",
+              "RelativeToolTip": "ViewModel\\AddListingViewModel.cs",
+              "ViewState": "AgIAAOgBAAAAAAAAAAAwwAoCAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T09:19:41.225Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AndroidManifest.xml",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Platforms\\Android\\AndroidManifest.xml",
+              "RelativeDocumentMoniker": "Platforms\\Android\\AndroidManifest.xml",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Platforms\\Android\\AndroidManifest.xml",
+              "RelativeToolTip": "Platforms\\Android\\AndroidManifest.xml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-11-20T14:51:00.425Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "GearFilterPopup.xaml.cs",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Popups\\GearFilterPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\GearFilterPopup.xaml.cs",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Popups\\GearFilterPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\GearFilterPopup.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T14:21:09.682Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "GearFilterPopup.xaml",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Popups\\GearFilterPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\GearFilterPopup.xaml",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Popups\\GearFilterPopup.xaml",
+              "RelativeToolTip": "Popups\\GearFilterPopup.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-20T14:21:02.64Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "FuelFilterPopup.xaml.cs",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Popups\\FuelFilterPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\FuelFilterPopup.xaml.cs",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Popups\\FuelFilterPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\FuelFilterPopup.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAkwB0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T14:16:56.513Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "FuelFilterPopup.xaml",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Popups\\FuelFilterPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\FuelFilterPopup.xaml",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Popups\\FuelFilterPopup.xaml",
+              "RelativeToolTip": "Popups\\FuelFilterPopup.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAcwCIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-20T14:16:49.133Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "CityFilterPopup.xaml.cs",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Popups\\CityFilterPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\CityFilterPopup.xaml.cs",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Popups\\CityFilterPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\CityFilterPopup.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T14:10:32.767Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "CityFilterPopup.xaml",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Popups\\CityFilterPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\CityFilterPopup.xaml",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Popups\\CityFilterPopup.xaml",
+              "RelativeToolTip": "Popups\\CityFilterPopup.xaml",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAIwCcAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-20T14:10:20.046Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "RegionFilterPopup.xaml.cs",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Popups\\RegionFilterPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\RegionFilterPopup.xaml.cs",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Popups\\RegionFilterPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\RegionFilterPopup.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAIwB0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T14:03:53.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "RegionFilterPopup.xaml",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Popups\\RegionFilterPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\RegionFilterPopup.xaml",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Popups\\RegionFilterPopup.xaml",
+              "RelativeToolTip": "Popups\\RegionFilterPopup.xaml",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAIwCcAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-20T14:03:43.389Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "PriceFilterPopup.xaml.cs",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Popups\\PriceFilterPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\PriceFilterPopup.xaml.cs",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Popups\\PriceFilterPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\PriceFilterPopup.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T13:38:24.168Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "PriceFilterPopup.xaml",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Popups\\PriceFilterPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\PriceFilterPopup.xaml",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Popups\\PriceFilterPopup.xaml",
+              "RelativeToolTip": "Popups\\PriceFilterPopup.xaml",
+              "ViewState": "AgIAACsAAAAAAAAAAAAAAEkAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-20T13:38:15.53Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "YearFilterPopup.xaml.cs",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Popups\\YearFilterPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\YearFilterPopup.xaml.cs",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Popups\\YearFilterPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\YearFilterPopup.xaml.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAADkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T12:39:23.982Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "YearFilterPopup.xaml",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Popups\\YearFilterPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\YearFilterPopup.xaml",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Popups\\YearFilterPopup.xaml",
+              "RelativeToolTip": "Popups\\YearFilterPopup.xaml",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAuwIQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-20T12:39:09.05Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ApiService.cs",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\ApiService.cs",
+              "RelativeDocumentMoniker": "ApiService.cs",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\ApiService.cs",
+              "RelativeToolTip": "ApiService.cs",
+              "ViewState": "AgIAALACAAAAAAAAAAAAwEgDAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T15:40:17.89Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "FilterModels.cs",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Models\\FilterModels.cs",
+              "RelativeDocumentMoniker": "Models\\FilterModels.cs",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Models\\FilterModels.cs",
+              "RelativeToolTip": "Models\\FilterModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T15:39:56.081Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ModelFilterPopup.xaml.cs",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Popups\\ModelFilterPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\ModelFilterPopup.xaml.cs",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Popups\\ModelFilterPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\ModelFilterPopup.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T16:24:05.465Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "ModelFilterPopup.xaml",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Popups\\ModelFilterPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\ModelFilterPopup.xaml",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Popups\\ModelFilterPopup.xaml",
+              "RelativeToolTip": "Popups\\ModelFilterPopup.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-19T16:23:51.974Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "BrandFilterPopup.xaml",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Popups\\BrandFilterPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\BrandFilterPopup.xaml",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Popups\\BrandFilterPopup.xaml",
+              "RelativeToolTip": "Popups\\BrandFilterPopup.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-19T16:22:58.028Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "BrandFilterPopup.xaml.cs",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Popups\\BrandFilterPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\BrandFilterPopup.xaml.cs",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Popups\\BrandFilterPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\BrandFilterPopup.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T16:23:08.638Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "MainPage.xaml.cs",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\MainPage.xaml.cs",
+              "RelativeToolTip": "MainPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T15:50:03.093Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "VehicleTypeFilterPopup.xaml.cs",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Popups\\VehicleTypeFilterPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\VehicleTypeFilterPopup.xaml.cs",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Popups\\VehicleTypeFilterPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\VehicleTypeFilterPopup.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T15:49:12.168Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\MainPage.xaml",
+              "RelativeDocumentMoniker": "MainPage.xaml",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\MainPage.xaml",
+              "RelativeToolTip": "MainPage.xaml",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAMwIcAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-18T20:15:25.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "VehicleTypeFilterPopup.xaml",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Popups\\VehicleTypeFilterPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\VehicleTypeFilterPopup.xaml",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Popups\\VehicleTypeFilterPopup.xaml",
+              "RelativeToolTip": "Popups\\VehicleTypeFilterPopup.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-19T15:54:26.193Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "MauiProgram.cs",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\MauiProgram.cs",
+              "RelativeToolTip": "MauiProgram.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T15:52:14.183Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "CarListing.cs",
+              "DocumentMoniker": "E:\\mobile-auto-market\\AutoMarket\\Models\\CarListing.cs",
+              "RelativeDocumentMoniker": "Models\\CarListing.cs",
+              "ToolTip": "E:\\mobile-auto-market\\AutoMarket\\Models\\CarListing.cs",
+              "RelativeToolTip": "Models\\CarListing.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAuwH8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T14:50:37.743Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

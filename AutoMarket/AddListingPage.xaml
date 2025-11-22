@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:viewmodels="clr-namespace:AutoMarket.ViewModel"
+             xmlns:helpers="clr-namespace:AutoMarket.Helpers"
+             x:Class="AutoMarket.AddListingPage"
+             Title="{helpers:Translate AddListingTitle}"
+             BackgroundColor="#F4F4F4">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="15">
+
+            <toolkit:Expander IsExpanded="True">
+                <toolkit:Expander.Header>
+                    <Grid ColumnDefinitions="Auto, *" ColumnSpacing="15" Padding="10">
+                        <Label Grid.Column="0" Text="1" FontSize="18" FontAttributes="Bold" TextColor="#888"/>
+                        <VerticalStackLayout Grid.Column="1" Spacing="2">
+                            <Label Text="{helpers:Translate ListingStep1Title}" FontSize="16" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="{helpers:Translate ListingStep1Subtitle}" FontSize="13" TextColor="#555"/>
+                        </VerticalStackLayout>
+                    </Grid>
+                </toolkit:Expander.Header>
+
+                <toolkit:Expander.Content>
+                    <VerticalStackLayout Spacing="10" Padding="15" Margin="0,0,0,10" BackgroundColor="White">
+
+                        <Border BackgroundColor="#FAFAFA"
+                                StrokeShape="RoundRectangle 8"
+                                HeightRequest="100"
+                                WidthRequest="100"
+                                HorizontalOptions="Start">
+
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding AddPhotoCommand}"/>
+                            </Border.GestureRecognizers>
+
+                            <VerticalStackLayout Spacing="5" HorizontalOptions="Center" VerticalOptions="Center">
+                                <Label Text="+" FontSize="30" TextColor="#888" HorizontalOptions="Center"/>
+                                <Label Text="{helpers:Translate ListingAddPhoto}" FontSize="12" TextColor="#888" HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <CollectionView ItemsSource="{Binding DisplayPhotos}" 
+                                        HeightRequest="110"
+                                        ItemsLayout="HorizontalList">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Padding="0,0,10,0">
+                                        <Border StrokeShape="RoundRectangle 8" StrokeThickness="0" HeightRequest="100" WidthRequest="100">
+                                            <Image Source="{Binding .}" Aspect="AspectFill" />
+                                        </Border>
+
+                                        <Border BackgroundColor="White"
+                                                StrokeThickness="0"
+                                                StrokeShape="RoundRectangle 10"
+                                                HorizontalOptions="End"
+                                                VerticalOptions="Start"
+                                                HeightRequest="20"
+                                                WidthRequest="20"
+                                                Margin="4"
+                                                Padding="0">
+                                            <Border.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:AddListingViewModel}}, Path=RemovePhotoCommand}"
+                                                                      CommandParameter="{Binding .}"/>
+                                            </Border.GestureRecognizers>
+
+                                            <Label Text="X"
+                                                   TextColor="Red"
+                                                   FontSize="12"
+                                                   FontAttributes="Bold"
+                                                   HorizontalOptions="Center"
+                                                   VerticalOptions="Center"/>
+                                        </Border>
+                                    </Grid>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+
+                    </VerticalStackLayout>
+                </toolkit:Expander.Content>
+            </toolkit:Expander>
+
+            <toolkit:Expander>
+                <toolkit:Expander.Header>
+                    <Grid ColumnDefinitions="Auto, *" ColumnSpacing="15" Padding="10">
+                        <Label Grid.Column="0" Text="2" FontSize="18" FontAttributes="Bold" TextColor="#888"/>
+                        <VerticalStackLayout Grid.Column="1" Spacing="2">
+                            <Label Text="{helpers:Translate ListingStep2Title}" FontSize="16" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="{helpers:Translate ListingStep2Subtitle}" FontSize="13" TextColor="#E63946"/>
+                        </VerticalStackLayout>
+                    </Grid>
+                </toolkit:Expander.Header>
+
+                <toolkit:Expander.Content>
+                    <Border Padding="15" Margin="0,0,0,10" BackgroundColor="White" StrokeShape="RoundRectangle 10" StrokeThickness="0">
+                        <VerticalStackLayout Spacing="15">
+
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="Тип транспорту *" TextColor="#555"/>
+                                <Border Stroke="#E0E0E0" StrokeThickness="1" BackgroundColor="#FAFAFA" StrokeShape="RoundRectangle 8" HeightRequest="50" Padding="10,0">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectTypeCommand}"/>
+                                    </Border.GestureRecognizers>
+                                    <Label Text="{Binding SelectedTypeName}" VerticalOptions="Center" TextColor="Black"/>
+                                </Border>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="Марка авто *" TextColor="#555"/>
+                                <Border Stroke="#E0E0E0" StrokeThickness="1" BackgroundColor="#FAFAFA" StrokeShape="RoundRectangle 8" HeightRequest="50" Padding="10,0">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectBrandCommand}"/>
+                                    </Border.GestureRecognizers>
+                                    <Label Text="{Binding SelectedBrandName}" VerticalOptions="Center" TextColor="Black"/>
+                                </Border>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="Модель авто *" TextColor="#555"/>
+                                <Border Stroke="#E0E0E0" StrokeThickness="1" BackgroundColor="#FAFAFA" StrokeShape="RoundRectangle 8" HeightRequest="50" Padding="10,0">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectModelCommand}"/>
+                                    </Border.GestureRecognizers>
+                                    <Label Text="{Binding SelectedModelName}" VerticalOptions="Center" TextColor="Black"/>
+                                </Border>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="Рік випуску *" TextColor="#555"/>
+                                <Border Stroke="#E0E0E0" StrokeThickness="1" BackgroundColor="#FAFAFA" StrokeShape="RoundRectangle 8" HeightRequest="50" Padding="10,0">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectYearCommand}"/>
+                                    </Border.GestureRecognizers>
+                                    <Label Text="{Binding SelectedYearName}" VerticalOptions="Center" TextColor="Black"/>
+                                </Border>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="Пробіг" TextColor="#555"/>
+                                <Border Stroke="#E0E0E0" StrokeThickness="1" BackgroundColor="#FAFAFA" StrokeShape="RoundRectangle 8" HeightRequest="50" Padding="10,0">
+                                    <Grid ColumnDefinitions="*, Auto">
+                                        <Entry Grid.Column="0" Text="{Binding Mileage}" Placeholder="0" Keyboard="Numeric" TextColor="Black" BackgroundColor="Transparent"/>
+                                        <Label Grid.Column="1" Text="км" TextColor="#AAA" VerticalOptions="Center"/>
+                                    </Grid>
+                                </Border>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="Тип кузова *" TextColor="#555"/>
+                                <Border Stroke="#E0E0E0" StrokeThickness="1" BackgroundColor="#FAFAFA" StrokeShape="RoundRectangle 8" HeightRequest="50" Padding="10,0">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectBodyTypeCommand}"/>
+                                    </Border.GestureRecognizers>
+                                    <Label Text="{Binding SelectedBodyTypeName}" VerticalOptions="Center" TextColor="Black"/>
+                                </Border>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="Регіон *" TextColor="#555"/>
+                                <Border Stroke="#E0E0E0" StrokeThickness="1" BackgroundColor="#FAFAFA" StrokeShape="RoundRectangle 8" HeightRequest="50" Padding="10,0">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectRegionCommand}"/>
+                                    </Border.GestureRecognizers>
+                                    <Label Text="{Binding SelectedRegionName}" VerticalOptions="Center" TextColor="Black"/>
+                                </Border>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="Місто *" TextColor="#555"/>
+                                <Border Stroke="#E0E0E0" StrokeThickness="1" BackgroundColor="#FAFAFA" StrokeShape="RoundRectangle 8" HeightRequest="50" Padding="10,0">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectCityCommand}"/>
+                                    </Border.GestureRecognizers>
+                                    <Label Text="{Binding SelectedCityName}" VerticalOptions="Center" TextColor="Black"/>
+                                </Border>
+                            </VerticalStackLayout>
+
+                        </VerticalStackLayout>
+                    </Border>
+                </toolkit:Expander.Content>
+            </toolkit:Expander>
+
+            <toolkit:Expander>
+                <toolkit:Expander.Header>
+                    <Grid ColumnDefinitions="Auto, *" ColumnSpacing="15" Padding="10">
+                        <Label Grid.Column="0" Text="3" FontSize="18" FontAttributes="Bold" TextColor="#888"/>
+                        <Label Grid.Column="1" Text="{helpers:Translate ListingStep3Title}" FontSize="16" FontAttributes="Bold" TextColor="Black" VerticalOptions="Center"/>
+                    </Grid>
+                </toolkit:Expander.Header>
+
+                <toolkit:Expander.Content>
+                    <Border Margin="0,0,0,10" 
+                            Stroke="#E0E0E0" 
+                            StrokeThickness="1" 
+                            BackgroundColor="#FAFAFA" 
+                            StrokeShape="RoundRectangle 8"
+                            Padding="5">
+
+                        <Editor Text="{Binding Description}"
+                                Placeholder="{helpers:Translate ListingStep3Subtitle}"
+                                TextColor="Black"
+                                PlaceholderColor="#AAA"
+                                HeightRequest="150"
+                                AutoSize="Disabled"
+                                BackgroundColor="Transparent"/>
+                    </Border>
+                </toolkit:Expander.Content>
+            </toolkit:Expander>
+
+            <toolkit:Expander>
+                <toolkit:Expander.Header>
+                    <Grid ColumnDefinitions="Auto, *" ColumnSpacing="15" Padding="10">
+                        <Label Grid.Column="0" Text="4" FontSize="18" FontAttributes="Bold" TextColor="#888"/>
+                        <Label Grid.Column="1" Text="{helpers:Translate ListingStep4Title}" FontSize="16" FontAttributes="Bold" TextColor="Black" VerticalOptions="Center"/>
+                    </Grid>
+                </toolkit:Expander.Header>
+
+                <toolkit:Expander.Content>
+                    <Border Padding="15" Margin="0,0,0,10" BackgroundColor="White">
+                        <VerticalStackLayout Spacing="15">
+
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="Колір"/>
+                                <Border Stroke="#E0E0E0" StrokeThickness="1" BackgroundColor="#FAFAFA" StrokeShape="RoundRectangle 8" HeightRequest="50" Padding="10,0">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectColorCommand}"/>
+                                    </Border.GestureRecognizers>
+                                    <Grid ColumnDefinitions="Auto, *">
+                                        <Border Grid.Column="0" 
+                                                BackgroundColor="{Binding SelectedColorValue}" 
+                                                Stroke="Gray" StrokeThickness="1"
+                                                HeightRequest="20" WidthRequest="20" 
+                                                StrokeShape="RoundRectangle 10" 
+                                                VerticalOptions="Center"
+                                                Margin="0,0,10,0"
+                                                IsVisible="{Binding SelectedColor, Converter={toolkit:IsNotNullConverter}}"/>
+                                        <Label Grid.Column="1" Text="{Binding SelectedColorName}" VerticalOptions="Center" TextColor="Black"/>
+                                    </Grid>
+                                </Border>
+                            </VerticalStackLayout>
+
+                            <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                                <CheckBox IsChecked="{Binding HasAccident}" Color="#80B918"/>
+                                <Label Text="{helpers:Translate FieldAccident}" VerticalOptions="Center" TextColor="Black"/>
+                            </HorizontalStackLayout>
+
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="{helpers:Translate FieldCondition}"/>
+                                <Border Stroke="#E0E0E0" StrokeThickness="1" BackgroundColor="#FAFAFA" StrokeShape="RoundRectangle 8" HeightRequest="50" Padding="10,0">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectConditionCommand}"/>
+                                    </Border.GestureRecognizers>
+                                    <Label Text="{Binding SelectedConditionName}" VerticalOptions="Center" TextColor="Black"/>
+                                </Border>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Spacing="5">
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Пальне" TextColor="#555"/>
+                                            <Span Text=" *" TextColor="Red"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Border Stroke="#E0E0E0" StrokeThickness="1" BackgroundColor="#FAFAFA" StrokeShape="RoundRectangle 8" HeightRequest="50" Padding="10,0">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectFuelCommand}"/>
+                                    </Border.GestureRecognizers>
+                                    <Label Text="{Binding SelectedFuelName}" VerticalOptions="Center" TextColor="Black"/>
+                                </Border>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Spacing="5">
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Коробка передач" TextColor="#555"/>
+                                            <Span Text=" *" TextColor="Red"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Border Stroke="#E0E0E0" StrokeThickness="1" BackgroundColor="#FAFAFA" StrokeShape="RoundRectangle 8" HeightRequest="50" Padding="10,0">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectGearCommand}"/>
+                                    </Border.GestureRecognizers>
+                                    <Label Text="{Binding SelectedGearName}" VerticalOptions="Center" TextColor="Black"/>
+                                </Border>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="{helpers:Translate FieldLicensePlate}"/>
+                                <Border Stroke="#E0E0E0" StrokeThickness="1" BackgroundColor="#FAFAFA" StrokeShape="RoundRectangle 8">
+                                    <Entry Text="{Binding LicensePlate}" 
+                                           Placeholder="{helpers:Translate LicensePlatePlaceholder}"
+                                           TextColor="Black"
+                                           PlaceholderColor="#AAA"
+                                           BackgroundColor="Transparent"
+                                           Margin="5"/>
+                                </Border>
+                            </VerticalStackLayout>
+
+                        </VerticalStackLayout>
+                    </Border>
+                </toolkit:Expander.Content>
+            </toolkit:Expander>
+
+            <toolkit:Expander>
+                <toolkit:Expander.Header>
+                    <Grid ColumnDefinitions="Auto, *" ColumnSpacing="15" Padding="10">
+                        <Label Grid.Column="0" Text="5" FontSize="18" FontAttributes="Bold" TextColor="#888"/>
+                        <VerticalStackLayout Grid.Column="1" Spacing="2">
+                            <Label Text="{helpers:Translate ListingStep6Title}" FontSize="16" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="{helpers:Translate ListingStep6Subtitle}" FontSize="13" TextColor="#555"/>
+                        </VerticalStackLayout>
+                    </Grid>
+                </toolkit:Expander.Header>
+
+                <toolkit:Expander.Content>
+                    <Border Padding="15" Margin="0,0,0,10" BackgroundColor="White">
+                        <VerticalStackLayout Spacing="15">
+
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{helpers:Translate FieldPriceLabel}" TextColor="#555"/>
+                                        <Span Text=" *" TextColor="Red"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Grid ColumnDefinitions="*, Auto" ColumnSpacing="10">
+
+                                <Border Grid.Column="0" 
+                                        Stroke="#E0E0E0" 
+                                        StrokeThickness="1" 
+                                        BackgroundColor="#FAFAFA" 
+                                        StrokeShape="RoundRectangle 8"
+                                        HeightRequest="50">
+                                    <Entry Text="{Binding InputPrice}"
+                                           Placeholder="0"
+                                           Keyboard="Numeric"
+                                           TextColor="Black"
+                                           PlaceholderColor="#AAA"
+                                           BackgroundColor="Transparent"
+                                           Margin="5"/>
+                                </Border>
+
+                                <Border Grid.Column="1" 
+                                        Stroke="#E0E0E0" 
+                                        StrokeThickness="1" 
+                                        BackgroundColor="#FAFAFA" 
+                                        StrokeShape="RoundRectangle 8"
+                                        WidthRequest="80"
+                                        HeightRequest="50">
+                                    <Picker ItemsSource="{Binding Currencies}"
+                                            SelectedItem="{Binding SelectedCurrency}"
+                                            TextColor="Black"
+                                            TitleColor="#AAA"
+                                            HorizontalTextAlignment="Center"/>
+                                </Border>
+
+                            </Grid>
+
+                            <Label Text="* Ціна буде збережена у USD по курсу НБУ" 
+                                   FontSize="11" 
+                                   TextColor="#999" 
+                                   IsVisible="{Binding SelectedCurrency, Converter={toolkit:IsNotEqualConverter}, ConverterParameter='$'}"/>
+
+                        </VerticalStackLayout>
+                    </Border>
+                </toolkit:Expander.Content>
+            </toolkit:Expander>
+
+
+            <HorizontalStackLayout Spacing="10" Margin="0,15,0,0">
+                <CheckBox x:Name="AgreeCheckBox"/>
+                <Label FontSize="13" TextColor="#555" VerticalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{helpers:Translate ListingAgreeTerms}"/>
+                            <Span Text=" "/>
+                            <Span Text="{helpers:Translate ListingServiceAgreement}" TextColor="Blue" TextDecorations="Underline"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </HorizontalStackLayout>
+
+            <Button Text="{helpers:Translate ListingSubmitButton}"
+                    Command="{Binding SubmitCommand}"
+                    BackgroundColor="#80B918" 
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    HeightRequest="50"
+                    CornerRadius="8"
+                    Margin="0,15,0,0">
+
+                <Button.Triggers>
+                    <DataTrigger TargetType="Button" Binding="{Binding IsBusy}" Value="True">
+                        <Setter Property="BackgroundColor" Value="Gray"/>
+                        <Setter Property="Text" Value="Зачекайте..."/>
+                    </DataTrigger>
+                </Button.Triggers>
+            </Button>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

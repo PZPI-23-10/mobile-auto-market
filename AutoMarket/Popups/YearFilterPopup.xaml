@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               x:Class="AutoMarket.Popups.YearFilterPopup"
+               Color="Transparent">
+
+    <Border x:Name="MainBorder" 
+            BackgroundColor="White" 
+            StrokeShape="RoundRectangle 20,20,0,0"
+            VerticalOptions="End" 
+            HorizontalOptions="Fill">
+
+        <Grid RowDefinitions="Auto, *, Auto" Padding="20">
+
+            <Grid Grid.Row="0" ColumnDefinitions="*, Auto" Margin="0,0,0,15">
+                <Label Text="Рік випуску" TextColor="Black" FontSize="20" FontAttributes="Bold" VerticalOptions="Center"/>
+                <Button Grid.Column="1" Text="X" TextColor="Black" FontSize="18" BackgroundColor="Transparent" Clicked="OnCloseClicked"/>
+            </Grid>
+
+            <Grid Grid.Row="1" ColumnDefinitions="*, *" ColumnSpacing="15">
+
+                <Grid Grid.Column="0" RowDefinitions="Auto, *">
+                    <Label Grid.Row="0" Text="Від" TextColor="#777777" FontSize="14" HorizontalOptions="Center" Margin="0,0,0,10"/>
+                    <CollectionView Grid.Row="1" 
+                                    ItemsSource="{Binding Years}" 
+                                    SelectionMode="Single"
+                                    SelectionChanged="OnFromSelectionChanged">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Padding="5, 8" ColumnDefinitions="30, *">
+
+                                    <Border x:Name="RadioCircle" 
+                                            Grid.Column="0" 
+                                            Stroke="#CCCCCC" 
+                                            StrokeThickness="2" 
+                                            HeightRequest="22" 
+                                            WidthRequest="22" 
+                                            StrokeShape="RoundRectangle 11" 
+                                            BackgroundColor="Transparent"
+                                            VerticalOptions="Center"/>
+
+                                    <Label x:Name="YearLabel" 
+                                           Grid.Column="1" 
+                                           Text="{Binding .}" 
+                                           TextColor="#333333" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center" 
+                                           Margin="10,0,0,0"/>
+
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup Name="CommonStates">
+                                            <VisualState Name="Selected">
+                                                <VisualState.Setters>
+                                                    <Setter TargetName="RadioCircle" Property="Border.BackgroundColor" Value="#E53935" />
+                                                    <Setter TargetName="RadioCircle" Property="Border.Stroke" Value="#E53935" />
+                                                    <Setter TargetName="YearLabel" Property="Label.FontAttributes" Value="Bold" />
+                                                    <Setter TargetName="YearLabel" Property="Label.TextColor" Value="Black" />
+                                                    <Setter Property="BackgroundColor" Value="#F5F5F5" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                            <VisualState Name="Normal">
+                                                <VisualState.Setters>
+                                                    <Setter TargetName="RadioCircle" Property="Border.BackgroundColor" Value="Transparent" />
+                                                    <Setter TargetName="RadioCircle" Property="Border.Stroke" Value="#CCCCCC" />
+                                                    <Setter TargetName="YearLabel" Property="Label.FontAttributes" Value="None" />
+                                                    <Setter Property="BackgroundColor" Value="Transparent" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+
+                <Grid Grid.Column="1" RowDefinitions="Auto, *">
+                    <Label Grid.Row="0" Text="До" TextColor="#777777" FontSize="14" HorizontalOptions="Center" Margin="0,0,0,10"/>
+                    <CollectionView Grid.Row="1" 
+                                    ItemsSource="{Binding Years}" 
+                                    SelectionMode="Single"
+                                    SelectionChanged="OnToSelectionChanged">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Padding="5, 8" ColumnDefinitions="30, *">
+                                    <Border x:Name="RadioCircle" 
+                                            Grid.Column="0" 
+                                            Stroke="#CCCCCC" 
+                                            StrokeThickness="2" 
+                                            HeightRequest="22" 
+                                            WidthRequest="22" 
+                                            StrokeShape="RoundRectangle 11" 
+                                            BackgroundColor="Transparent"
+                                            VerticalOptions="Center"/>
+
+                                    <Label x:Name="YearLabel" 
+                                           Grid.Column="1" 
+                                           Text="{Binding .}" 
+                                           TextColor="#333333" 
+                                           FontSize="16" 
+                                           VerticalOptions="Center" 
+                                           Margin="10,0,0,0"/>
+
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup Name="CommonStates">
+                                            <VisualState Name="Selected">
+                                                <VisualState.Setters>
+                                                    <Setter TargetName="RadioCircle" Property="Border.BackgroundColor" Value="#E53935" />
+                                                    <Setter TargetName="RadioCircle" Property="Border.Stroke" Value="#E53935" />
+                                                    <Setter TargetName="YearLabel" Property="Label.FontAttributes" Value="Bold" />
+                                                    <Setter TargetName="YearLabel" Property="Label.TextColor" Value="Black" />
+                                                    <Setter Property="BackgroundColor" Value="#F5F5F5" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                            <VisualState Name="Normal">
+                                                <VisualState.Setters>
+                                                    <Setter TargetName="RadioCircle" Property="Border.BackgroundColor" Value="Transparent" />
+                                                    <Setter TargetName="RadioCircle" Property="Border.Stroke" Value="#CCCCCC" />
+                                                    <Setter TargetName="YearLabel" Property="Label.FontAttributes" Value="None" />
+                                                    <Setter Property="BackgroundColor" Value="Transparent" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+            </Grid>
+
+            <Button Grid.Row="2" 
+                    Text="Застосувати" 
+                    BackgroundColor="#E53935" 
+                    TextColor="White" 
+                    FontAttributes="Bold"
+                    CornerRadius="10" 
+                    HeightRequest="50" 
+                    Margin="0,15,0,0"
+                    Clicked="OnApplyClicked"/>
+        </Grid>
+    </Border>
+</toolkit:Popup>

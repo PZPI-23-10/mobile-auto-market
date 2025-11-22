@@ -71,7 +71,8 @@
                     Margin="20, 20, 20, 0"
                     BackgroundColor="#E64444"
                     TextColor="White"
-                    CornerRadius="10" />
+                    CornerRadius="10" 
+                    Command="{Binding LogoutCommand}"/>
 
         </VerticalStackLayout>
     </ScrollView>

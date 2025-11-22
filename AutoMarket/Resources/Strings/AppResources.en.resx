@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddListingTitle" xml:space="preserve">
+    <value>Add Listing</value>
+  </data>
+  <data name="ConditionAll" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="ConditionNew" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="ConditionUsed" xml:space="preserve">
+    <value>Used</value>
+  </data>
+  <data name="FilterMake" xml:space="preserve">
+    <value>Make</value>
+  </data>
+  <data name="FilterModel" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="FilterPrice" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="FilterRegion" xml:space="preserve">
+    <value>Region</value>
+  </data>
+  <data name="FilterTransmission" xml:space="preserve">
+    <value>Transmission</value>
+  </data>
+  <data name="FilterVehicleType" xml:space="preserve">
+    <value>Vehicle Type</value>
+  </data>
+  <data name="FilterYear" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="FuelFilterText" xml:space="preserve">
+    <value>Fuel</value>
+  </data>
+  <data name="HotOffersLabel" xml:space="preserve">
+    <value>Hot Offers</value>
+  </data>
+  <data name="LanguageChangeMessage" xml:space="preserve">
+    <value>The interface language has been successfully updated.</value>
+  </data>
+  <data name="LanguageChangeTitle" xml:space="preserve">
+    <value>Language Changed</value>
+  </data>
+  <data name="ListingAddPhoto" xml:space="preserve">
+    <value>Add photo</value>
+  </data>
+  <data name="ListingAgreeTerms" xml:space="preserve">
+    <value>I agree with the</value>
+  </data>
+  <data name="ListingMileageUnit" xml:space="preserve">
+    <value>km</value>
+  </data>
+  <data name="ListingServiceAgreement" xml:space="preserve">
+    <value>Service Agreement</value>
+  </data>
+  <data name="ListingStep1Subtitle" xml:space="preserve">
+    <value>to auto-fill technical data</value>
+  </data>
+  <data name="ListingStep1Title" xml:space="preserve">
+    <value>Add 2-3 photos...</value>
+  </data>
+  <data name="FieldVehicleType" xml:space="preserve">
+    <value>Vehicle Type</value>
+  </data>
+  <data name="ListingStep2Subtitle" xml:space="preserve">
+    <value>* Required fields</value>
+  </data>
+  <data name="ListingStep2Title" xml:space="preserve">
+    <value>Basic Information</value>
+  </data>
+  <data name="ListingStep3Subtitle" xml:space="preserve">
+    <value>Write a description of your vehicle (e.g. condition, history, maintenance)...</value>
+  </data>
+  <data name="ListingStep3Title" xml:space="preserve">
+    <value>Car Description</value>
+  </data>
+  <data name="ListingStep4Title" xml:space="preserve">
+    <value>Car Features</value>
+  </data>
+  <data name="ListingStep5Title" xml:space="preserve">
+    <value>Additional Options</value>
+  </data>
+  <data name="ListingStep6Subtitle" xml:space="preserve">
+    <value>price, currency, bargain, trade</value>
+  </data>
+  <data name="ListingStep6Title" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="ListingSubmitButton" xml:space="preserve">
+    <value>Post Listing</value>
+  </data>
+  <data name="ListingVerifiedVin" xml:space="preserve">
+    <value>Verified VIN</value>
+  </data>
+  <data name="PageTitleMain" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="SearchButtonText" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="TabChat" xml:space="preserve">
+    <value>Chat</value>
+  </data>
+  <data name="TabFavorites" xml:space="preserve">
+    <value>Favorites</value>
+  </data>
+  <data name="TabHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="TabProfile" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="TabSell" xml:space="preserve">
+    <value>Sell</value>
+  </data>
+  <data name="PickerDefault" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="FieldMake" xml:space="preserve">
+    <value>Make</value>
+  </data>
+  <data name="FieldModel" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="FieldYear" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="FieldMileage" xml:space="preserve">
+    <value>Mileage</value>
+  </data>
+  <data name="FieldMileagePlaceholder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="FieldMileageUnit" xml:space="preserve">
+    <value>km</value>
+  </data>
+  <data name="FieldBodyType" xml:space="preserve">
+    <value>Body Type</value>
+  </data>
+  <data name="FieldRegion" xml:space="preserve">
+    <value>Region</value>
+  </data>
+  <data name="FieldCity" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="FieldColor" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="PickerColor" xml:space="preserve">
+    <value>Select color</value>
+  </data>
+  <data name="FieldAccident" xml:space="preserve">
+    <value>In an accident</value>
+  </data>
+  <data name="FieldCondition" xml:space="preserve">
+    <value>Technical condition</value>
+  </data>
+  <data name="PickerCondition" xml:space="preserve">
+    <value>Select condition</value>
+  </data>
+  <data name="FieldLicensePlate" xml:space="preserve">
+    <value>License plate</value>
+  </data>
+  <data name="LicensePlatePlaceholder" xml:space="preserve">
+    <value>e.g., AA 1234 BB</value>
+  </data>
+  <data name="FieldPriceLabel" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="FieldPricePlaceholder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="FieldBargain" xml:space="preserve">
+    <value>Bargain</value>
+  </data>
+  <data name="FieldTrade" xml:space="preserve">
+    <value>Trade</value>
+  </data>
+  <data name="Fuel_BENSIN" xml:space="preserve">
+    <value>Petrol</value>
+  </data>
+  <data name="Fuel_DIESEL" xml:space="preserve">
+    <value>Diesel</value>
+  </data>
+  <data name="Fuel_GAS" xml:space="preserve">
+    <value>Gas</value>
+  </data>
+  <data name="Fuel_ELECTRIC" xml:space="preserve">
+    <value>Electric</value>
+  </data>
+  <data name="Gear_AUTOMATIC" xml:space="preserve">
+    <value>Automatic</value>
+  </data>
+  <data name="Gear_MANUAL" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="Gear_ROBOT" xml:space="preserve">
+    <value>Robot</value>
+  </data>
+  <data name="Gear_VARIATOR" xml:space="preserve">
+    <value>CVT</value>
+  </data>
+</root>
