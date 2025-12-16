@@ -1,23 +1,41 @@
-﻿namespace AutoMarket.Models
+﻿using System.Text.Json.Serialization;
+
+namespace AutoMarket.Models
 {
-    // Для GET /api/VehicleType
-    public class VehicleType
+    // Базовий клас, бо майже всі довідники мають ID та Name
+    public class BaseDto
     {
+
+        [JsonPropertyName("id")]   // <--- Кажемо, що в JSON це поле "id"
         public int Id { get; set; }
+
+        [JsonPropertyName("name")] // <--- Кажемо, що в JSON це поле "name"
         public string Name { get; set; }
     }
 
-    // Для GET /api/VehicleCondition
-    public class VehicleCondition
+    public class VehicleTypeDto : BaseDto { }
+
+    public class VehicleBrandDto : BaseDto
     {
-        public int Id { get; set; }
-        public string Name { get; set; } // Ймовірно "Нові", "Вживані"
+        public int VehicleTypeId { get; set; } // Щоб ми знали, до якого типу належить
     }
 
-    // Для GET /api/Region
-    public class Region
+    public class VehicleModelDto : BaseDto
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public int BrandId { get; set; } // Модель прив'язана до марки
     }
+
+    public class RegionDto : BaseDto { }
+
+    public class CityDto : BaseDto
+    {
+        public int RegionId { get; set; } // Місто прив'язане до регіону
+    }
+
+    public class FuelTypeDto : BaseDto { }
+
+    public class GearTypeDto : BaseDto { }
+
+    // Для перемикача Всі/Вживані/Нові
+    public class VehicleConditionDto : BaseDto { }
 }

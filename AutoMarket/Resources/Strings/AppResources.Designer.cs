@@ -61,6 +61,15 @@ namespace AutoMarket.Resources.Strings {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Скинути фільтри.
+        /// </summary>
+        public static string Action_ResetFilters {
+            get {
+                return ResourceManager.GetString("Action_ResetFilters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Додавання оголошення.
         /// </summary>
         public static string AddListingTitle {
@@ -70,29 +79,2432 @@ namespace AutoMarket.Resources.Strings {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Всі.
+        ///   Ищет локализованную строку, похожую на Увага.
         /// </summary>
-        public static string ConditionAll {
+        public static string Alert_Attention {
             get {
-                return ResourceManager.GetString("ConditionAll", resourceCulture);
+                return ResourceManager.GetString("Alert_Attention", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Нові.
+        ///   Ищет локализованную строку, похожую на Помилка.
         /// </summary>
-        public static string ConditionNew {
+        public static string Alert_Error {
             get {
-                return ResourceManager.GetString("ConditionNew", resourceCulture);
+                return ResourceManager.GetString("Alert_Error", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Вживані.
+        ///   Ищет локализованную строку, похожую на Інфо.
         /// </summary>
-        public static string ConditionUsed {
+        public static string Alert_Info {
             get {
-                return ResourceManager.GetString("ConditionUsed", resourceCulture);
+                return ResourceManager.GetString("Alert_Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Квадроцикл.
+        /// </summary>
+        public static string BodyType_ATV {
+            get {
+                return ResourceManager.GetString("BodyType_ATV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Шасі.
+        /// </summary>
+        public static string BodyType_CHASSIS_CAB {
+            get {
+                return ResourceManager.GetString("BodyType_CHASSIS_CAB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Кабріолет.
+        /// </summary>
+        public static string BodyType_CONVERTIBLE {
+            get {
+                return ResourceManager.GetString("BodyType_CONVERTIBLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Купе.
+        /// </summary>
+        public static string BodyType_COUPE {
+            get {
+                return ResourceManager.GetString("BodyType_COUPE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Кросовер.
+        /// </summary>
+        public static string BodyType_CROSSOVER {
+            get {
+                return ResourceManager.GetString("BodyType_CROSSOVER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Самоскид.
+        /// </summary>
+        public static string BodyType_DUMP_TRUCK {
+            get {
+                return ResourceManager.GetString("BodyType_DUMP_TRUCK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Бортовий.
+        /// </summary>
+        public static string BodyType_FLATBED {
+            get {
+                return ResourceManager.GetString("BodyType_FLATBED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Хетчбек.
+        /// </summary>
+        public static string BodyType_HATCHBACK {
+            get {
+                return ResourceManager.GetString("BodyType_HATCHBACK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ліфтбек.
+        /// </summary>
+        public static string BodyType_LIFTBACK {
+            get {
+                return ResourceManager.GetString("BodyType_LIFTBACK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Лімузин.
+        /// </summary>
+        public static string BodyType_LIMOUSINE {
+            get {
+                return ResourceManager.GetString("BodyType_LIMOUSINE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Мікроавтобус.
+        /// </summary>
+        public static string BodyType_MINIBUS {
+            get {
+                return ResourceManager.GetString("BodyType_MINIBUS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Мінівен.
+        /// </summary>
+        public static string BodyType_MINIVAN {
+            get {
+                return ResourceManager.GetString("BodyType_MINIVAN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Мотоцикл.
+        /// </summary>
+        public static string BodyType_MOTORCYCLE {
+            get {
+                return ResourceManager.GetString("BodyType_MOTORCYCLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Пікап.
+        /// </summary>
+        public static string BodyType_PICKUP {
+            get {
+                return ResourceManager.GetString("BodyType_PICKUP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Родстер.
+        /// </summary>
+        public static string BodyType_ROADSTER {
+            get {
+                return ResourceManager.GetString("BodyType_ROADSTER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Скутер.
+        /// </summary>
+        public static string BodyType_SCOOTER {
+            get {
+                return ResourceManager.GetString("BodyType_SCOOTER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Седан.
+        /// </summary>
+        public static string BodyType_SEDAN {
+            get {
+                return ResourceManager.GetString("BodyType_SEDAN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Позашляховик.
+        /// </summary>
+        public static string BodyType_SUV {
+            get {
+                return ResourceManager.GetString("BodyType_SUV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Тягач.
+        /// </summary>
+        public static string BodyType_TRUCK_CAB {
+            get {
+                return ResourceManager.GetString("BodyType_TRUCK_CAB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Фургон.
+        /// </summary>
+        public static string BodyType_VAN {
+            get {
+                return ResourceManager.GetString("BodyType_VAN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Універсал.
+        /// </summary>
+        public static string BodyType_WAGON {
+            get {
+                return ResourceManager.GetString("BodyType_WAGON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Оберіть марку.
+        /// </summary>
+        public static string BrandPopupTitle {
+            get {
+                return ResourceManager.GetString("BrandPopupTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Застосувати.
+        /// </summary>
+        public static string BtnApply {
+            get {
+                return ResourceManager.GetString("BtnApply", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Шукати.
+        /// </summary>
+        public static string Button_Search {
+            get {
+                return ResourceManager.GetString("Button_Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Місто.
+        /// </summary>
+        public static string CarDescriptionCity {
+            get {
+                return ResourceManager.GetString("CarDescriptionCity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Тип палива.
+        /// </summary>
+        public static string CarDescriptionFuelType {
+            get {
+                return ResourceManager.GetString("CarDescriptionFuelType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Тип коробки передач.
+        /// </summary>
+        public static string CarDescriptionGear {
+            get {
+                return ResourceManager.GetString("CarDescriptionGear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Держ.номер.
+        /// </summary>
+        public static string CarDescriptionLicensePlate {
+            get {
+                return ResourceManager.GetString("CarDescriptionLicensePlate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Пробіг.
+        /// </summary>
+        public static string CarDescriptionMileage {
+            get {
+                return ResourceManager.GetString("CarDescriptionMileage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Опис.
+        /// </summary>
+        public static string CarDescriptionTitle {
+            get {
+                return ResourceManager.GetString("CarDescriptionTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Дані з відкритого реєстру МВС.
+        /// </summary>
+        public static string CheckByNumberSubtitle {
+            get {
+                return ResourceManager.GetString("CheckByNumberSubtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Перевірка за номером.
+        /// </summary>
+        public static string CheckByNumberTitle {
+            get {
+                return ResourceManager.GetString("CheckByNumberTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Інформацію не знайдено.
+        /// </summary>
+        public static string CheckInfoNotFound {
+            get {
+                return ResourceManager.GetString("CheckInfoNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на КОЛІР.
+        /// </summary>
+        public static string CheckLabelColor {
+            get {
+                return ResourceManager.GetString("CheckLabelColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ДАТА РЕЄСТРАЦІЇ.
+        /// </summary>
+        public static string CheckLabelDate {
+            get {
+                return ResourceManager.GetString("CheckLabelDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ОБ&apos;ЄМ ДВИГУНА.
+        /// </summary>
+        public static string CheckLabelEngine {
+            get {
+                return ResourceManager.GetString("CheckLabelEngine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на МАРКА/МОДЕЛЬ.
+        /// </summary>
+        public static string CheckLabelMakeModel {
+            get {
+                return ResourceManager.GetString("CheckLabelMakeModel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ОСТАННЯ ОПЕРАЦІЯ.
+        /// </summary>
+        public static string CheckLabelOperation {
+            get {
+                return ResourceManager.GetString("CheckLabelOperation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на РІК ВИПУСКУ.
+        /// </summary>
+        public static string CheckLabelYear {
+            get {
+                return ResourceManager.GetString("CheckLabelYear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ЮРИДИЧНО ЧИСТА.
+        /// </summary>
+        public static string CheckStatusClean {
+            get {
+                return ResourceManager.GetString("CheckStatusClean", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Алчевськ.
+        /// </summary>
+        public static string City_ALCHEVSK {
+            get {
+                return ResourceManager.GetString("City_ALCHEVSK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Алмазна.
+        /// </summary>
+        public static string City_ALMAZNA {
+            get {
+                return ResourceManager.GetString("City_ALMAZNA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Антонівка.
+        /// </summary>
+        public static string City_ANTONIVKA {
+            get {
+                return ResourceManager.GetString("City_ANTONIVKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Антрацит.
+        /// </summary>
+        public static string City_ANTRATSYT {
+            get {
+                return ResourceManager.GetString("City_ANTRATSYT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Армянськ.
+        /// </summary>
+        public static string City_ARMIANSK {
+            get {
+                return ResourceManager.GetString("City_ARMIANSK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Бахмут.
+        /// </summary>
+        public static string City_BAKHMUT {
+            get {
+                return ResourceManager.GetString("City_BAKHMUT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Балабине.
+        /// </summary>
+        public static string City_BALABYNE {
+            get {
+                return ResourceManager.GetString("City_BALABYNE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Бердянськ.
+        /// </summary>
+        public static string City_BERDIANSK {
+            get {
+                return ResourceManager.GetString("City_BERDIANSK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Біла Церква.
+        /// </summary>
+        public static string City_BILA_TSERKVA {
+            get {
+                return ResourceManager.GetString("City_BILA TSERKVA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Біленьке.
+        /// </summary>
+        public static string City_BILENKE {
+            get {
+                return ResourceManager.GetString("City_BILENKE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Білгород-Дністровський.
+        /// </summary>
+        public static string City_BILHOROD_DNISTROVSKYI {
+            get {
+                return ResourceManager.GetString("City_BILHOROD-DNISTROVSKYI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Білки.
+        /// </summary>
+        public static string City_BILKY {
+            get {
+                return ResourceManager.GetString("City_BILKY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Білогородка.
+        /// </summary>
+        public static string City_BILOHORODKA {
+            get {
+                return ResourceManager.GetString("City_BILOHORODKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Білицьке.
+        /// </summary>
+        public static string City_BILYTSKE {
+            get {
+                return ResourceManager.GetString("City_BILYTSKE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ближнє.
+        /// </summary>
+        public static string City_BLYZHNIE {
+            get {
+                return ResourceManager.GetString("City_BLYZHNIE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Борислав.
+        /// </summary>
+        public static string City_BORYSLAV {
+            get {
+                return ResourceManager.GetString("City_BORYSLAV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Боярка.
+        /// </summary>
+        public static string City_BOYARKA {
+            get {
+                return ResourceManager.GetString("City_BOYARKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Брянка.
+        /// </summary>
+        public static string City_BRIANKA {
+            get {
+                return ResourceManager.GetString("City_BRIANKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Бровари.
+        /// </summary>
+        public static string City_BROVARY {
+            get {
+                return ResourceManager.GetString("City_BROVARY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Бритівка.
+        /// </summary>
+        public static string City_BRYTIVKA {
+            get {
+                return ResourceManager.GetString("City_BRYTIVKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Брюховичі.
+        /// </summary>
+        public static string City_BRYUKHOVYCHI {
+            get {
+                return ResourceManager.GetString("City_BRYUKHOVYCHI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Буча.
+        /// </summary>
+        public static string City_BUCHA {
+            get {
+                return ResourceManager.GetString("City_BUCHA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Булавинське.
+        /// </summary>
+        public static string City_BULAVYNSKE {
+            get {
+                return ResourceManager.GetString("City_BULAVYNSKE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Чабани.
+        /// </summary>
+        public static string City_CHABANY {
+            get {
+                return ResourceManager.GetString("City_CHABANY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Часів Яр.
+        /// </summary>
+        public static string City_CHASIV_YAR {
+            get {
+                return ResourceManager.GetString("City_CHASIV YAR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Черкаси.
+        /// </summary>
+        public static string City_CHERKASY {
+            get {
+                return ResourceManager.GetString("City_CHERKASY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Чернігів.
+        /// </summary>
+        public static string City_CHERNIHIV {
+            get {
+                return ResourceManager.GetString("City_CHERNIHIV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Чернівці.
+        /// </summary>
+        public static string City_CHERNIVTSI {
+            get {
+                return ResourceManager.GetString("City_CHERNIVTSI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Червоноград.
+        /// </summary>
+        public static string City_CHERVONOHRAD {
+            get {
+                return ResourceManager.GetString("City_CHERVONOHRAD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Червонопартизанськ (Вознесенівка).
+        /// </summary>
+        public static string City_CHERVONOPARTYZANSK {
+            get {
+                return ResourceManager.GetString("City_CHERVONOPARTYZANSK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Чорноморськ.
+        /// </summary>
+        public static string City_CHORNOMORSK {
+            get {
+                return ResourceManager.GetString("City_CHORNOMORSK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Чорнухине.
+        /// </summary>
+        public static string City_CHORNUKHYNE {
+            get {
+                return ResourceManager.GetString("City_CHORNUKHYNE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Чугуїв.
+        /// </summary>
+        public static string City_CHUHUIV {
+            get {
+                return ResourceManager.GetString("City_CHUHUIV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Чистякове (Торез).
+        /// </summary>
+        public static string City_CHYSTIAKOVE {
+            get {
+                return ResourceManager.GetString("City_CHYSTIAKOVE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Дебальцеве.
+        /// </summary>
+        public static string City_DEBALTSEVE {
+            get {
+                return ResourceManager.GetString("City_DEBALTSEVE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Дніпро.
+        /// </summary>
+        public static string City_DNIPRO {
+            get {
+                return ResourceManager.GetString("City_DNIPRO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Добропілля.
+        /// </summary>
+        public static string City_DOBROPILLIA {
+            get {
+                return ResourceManager.GetString("City_DOBROPILLIA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Донецьк.
+        /// </summary>
+        public static string City_DONETSK {
+            get {
+                return ResourceManager.GetString("City_DONETSK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Довжанськ.
+        /// </summary>
+        public static string City_DOVZHANSK {
+            get {
+                return ResourceManager.GetString("City_DOVZHANSK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Дрогобич.
+        /// </summary>
+        public static string City_DROHOBYCH {
+            get {
+                return ResourceManager.GetString("City_DROHOBYCH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Дружківка.
+        /// </summary>
+        public static string City_DRUZHKIVKA {
+            get {
+                return ResourceManager.GetString("City_DRUZHKIVKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Дубно.
+        /// </summary>
+        public static string City_DUBNO {
+            get {
+                return ResourceManager.GetString("City_DUBNO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Дубове.
+        /// </summary>
+        public static string City_DUBOVE {
+            get {
+                return ResourceManager.GetString("City_DUBOVE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Фастів.
+        /// </summary>
+        public static string City_FASTIV {
+            get {
+                return ResourceManager.GetString("City_FASTIV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Феодосія.
+        /// </summary>
+        public static string City_FEDOSIIA {
+            get {
+                return ResourceManager.GetString("City_FEDOSIIA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Галич.
+        /// </summary>
+        public static string City_HALYCH {
+            get {
+                return ResourceManager.GetString("City_HALYCH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Гаспра.
+        /// </summary>
+        public static string City_HASPRA {
+            get {
+                return ResourceManager.GetString("City_HASPRA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Гатне.
+        /// </summary>
+        public static string City_HATNE {
+            get {
+                return ResourceManager.GetString("City_HATNE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Гірник.
+        /// </summary>
+        public static string City_HIRNYK {
+            get {
+                return ResourceManager.GetString("City_HIRNYK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Гольмівський.
+        /// </summary>
+        public static string City_HOLMIVSKYI {
+            get {
+                return ResourceManager.GetString("City_HOLMIVSKYI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Голубівське.
+        /// </summary>
+        public static string City_HOLUBIVSKE {
+            get {
+                return ResourceManager.GetString("City_HOLUBIVSKE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Горенка.
+        /// </summary>
+        public static string City_HORENKA {
+            get {
+                return ResourceManager.GetString("City_HORENKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Горішні Плавні.
+        /// </summary>
+        public static string City_HORISHNI_PLAVNI {
+            get {
+                return ResourceManager.GetString("City_HORISHNI PLAVNI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Горлівка.
+        /// </summary>
+        public static string City_HORLIVKA {
+            get {
+                return ResourceManager.GetString("City_HORLIVKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Городенка.
+        /// </summary>
+        public static string City_HORODENKA {
+            get {
+                return ResourceManager.GetString("City_HORODENKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Гостомель.
+        /// </summary>
+        public static string City_HOSTOMEL {
+            get {
+                return ResourceManager.GetString("City_HOSTOMEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Гурзуф.
+        /// </summary>
+        public static string City_HURZUF {
+            get {
+                return ResourceManager.GetString("City_HURZUF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Інкерман.
+        /// </summary>
+        public static string City_INKERMAN {
+            get {
+                return ResourceManager.GetString("City_INKERMAN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ірпінь.
+        /// </summary>
+        public static string City_IRPIN {
+            get {
+                return ResourceManager.GetString("City_IRPIN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Івано-Франківськ.
+        /// </summary>
+        public static string City_IVANO_FRANKIVSK {
+            get {
+                return ResourceManager.GetString("City_IVANO-FRANKIVSK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Кам&apos;янець-Подільський.
+        /// </summary>
+        public static string City_KAMIANETS_PODILSKYI {
+            get {
+                return ResourceManager.GetString("City_KAMIANETS-PODILSKYI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Кам&apos;янське.
+        /// </summary>
+        public static string City_KAMIANSKE {
+            get {
+                return ResourceManager.GetString("City_KAMIANSKE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Карнаухівка.
+        /// </summary>
+        public static string City_KARNAUKHIVKA {
+            get {
+                return ResourceManager.GetString("City_KARNAUKHIVKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Керч.
+        /// </summary>
+        public static string City_KERCH {
+            get {
+                return ResourceManager.GetString("City_KERCH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Харків.
+        /// </summary>
+        public static string City_KHARKIV {
+            get {
+                return ResourceManager.GetString("City_KHARKIV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Харцизьк.
+        /// </summary>
+        public static string City_KHARTSYZK {
+            get {
+                return ResourceManager.GetString("City_KHARTSYZK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Херсон.
+        /// </summary>
+        public static string City_KHERSON {
+            get {
+                return ResourceManager.GetString("City_KHERSON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Хмельницький.
+        /// </summary>
+        public static string City_KHMELNYTSKYI {
+            get {
+                return ResourceManager.GetString("City_KHMELNYTSKYI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Хмільник.
+        /// </summary>
+        public static string City_KHMILNYK {
+            get {
+                return ResourceManager.GetString("City_KHMILNYK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Хотів.
+        /// </summary>
+        public static string City_KHOTIV {
+            get {
+                return ResourceManager.GetString("City_KHOTIV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Хрустальний (Красний Луч).
+        /// </summary>
+        public static string City_KHRUSTALNYI {
+            get {
+                return ResourceManager.GetString("City_KHRUSTALNYI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Кіровськ (Голубівка).
+        /// </summary>
+        public static string City_KIROVSK {
+            get {
+                return ResourceManager.GetString("City_KIROVSK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Коломия.
+        /// </summary>
+        public static string City_KOLOMYIA {
+            get {
+                return ResourceManager.GetString("City_KOLOMYIA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Комишани.
+        /// </summary>
+        public static string City_KOMYSHANY {
+            get {
+                return ResourceManager.GetString("City_KOMYSHANY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Конотоп.
+        /// </summary>
+        public static string City_KONOTOP {
+            get {
+                return ResourceManager.GetString("City_KONOTOP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Кореїз.
+        /// </summary>
+        public static string City_KOREIZ {
+            get {
+                return ResourceManager.GetString("City_KOREIZ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Королево.
+        /// </summary>
+        public static string City_KOROLEVO {
+            get {
+                return ResourceManager.GetString("City_KOROLEVO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Коростень.
+        /// </summary>
+        public static string City_KOROSTEN {
+            get {
+                return ResourceManager.GetString("City_KOROSTEN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Костянтинівка.
+        /// </summary>
+        public static string City_KOSTIANTYNIVKA {
+            get {
+                return ResourceManager.GetString("City_KOSTIANTYNIVKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ковель.
+        /// </summary>
+        public static string City_KOVEL {
+            get {
+                return ResourceManager.GetString("City_KOVEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Краматорськ.
+        /// </summary>
+        public static string City_KRAMATORSK {
+            get {
+                return ResourceManager.GetString("City_KRAMATORSK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Краснодон (Сорокине).
+        /// </summary>
+        public static string City_KRASNODON {
+            get {
+                return ResourceManager.GetString("City_KRASNODON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Красноторка.
+        /// </summary>
+        public static string City_KRASNOTORKA {
+            get {
+                return ResourceManager.GetString("City_KRASNOTORKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Кременчук.
+        /// </summary>
+        public static string City_KREMENCHUK {
+            get {
+                return ResourceManager.GetString("City_KREMENCHUK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Кропивницький.
+        /// </summary>
+        public static string City_KROPYVNYTSKYI {
+            get {
+                return ResourceManager.GetString("City_KROPYVNYTSKYI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Крихівці.
+        /// </summary>
+        public static string City_KRYKHIVTSI {
+            get {
+                return ResourceManager.GetString("City_KRYKHIVTSI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Крюківщина.
+        /// </summary>
+        public static string City_KRYUKIVSHCHYNA {
+            get {
+                return ResourceManager.GetString("City_KRYUKIVSHCHYNA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Кривий Ріг.
+        /// </summary>
+        public static string City_KRYVYI_RIH {
+            get {
+                return ResourceManager.GetString("City_KRYVYI RIH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Кулиничі.
+        /// </summary>
+        public static string City_KULYNYCHI {
+            get {
+                return ResourceManager.GetString("City_KULYNYCHI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Куп&apos;янськ.
+        /// </summary>
+        public static string City_KUPIANSK {
+            get {
+                return ResourceManager.GetString("City_KUPIANSK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Київ.
+        /// </summary>
+        public static string City_KYIV {
+            get {
+                return ResourceManager.GetString("City_KYIV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ларине.
+        /// </summary>
+        public static string City_LARYNE {
+            get {
+                return ResourceManager.GetString("City_LARYNE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Любимівка.
+        /// </summary>
+        public static string City_LIUBYMIVKA {
+            get {
+                return ResourceManager.GetString("City_LIUBYMIVKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Лозова.
+        /// </summary>
+        public static string City_LOZOVA {
+            get {
+                return ResourceManager.GetString("City_LOZOVA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Лубни.
+        /// </summary>
+        public static string City_LUBNY {
+            get {
+                return ResourceManager.GetString("City_LUBNY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Луганськ.
+        /// </summary>
+        public static string City_LUHANSK {
+            get {
+                return ResourceManager.GetString("City_LUHANSK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Луцьк.
+        /// </summary>
+        public static string City_LUTSK {
+            get {
+                return ResourceManager.GetString("City_LUTSK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Львів.
+        /// </summary>
+        public static string City_LVIV {
+            get {
+                return ResourceManager.GetString("City_LVIV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Лиманка.
+        /// </summary>
+        public static string City_LYMANKA {
+            get {
+                return ResourceManager.GetString("City_LYMANKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Лисичанськ.
+        /// </summary>
+        public static string City_LYSYCHANSK {
+            get {
+                return ResourceManager.GetString("City_LYSYCHANSK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Макіївка.
+        /// </summary>
+        public static string City_MAKIIVKA {
+            get {
+                return ResourceManager.GetString("City_MAKIIVKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Малокатеринівка.
+        /// </summary>
+        public static string City_MALOKATERYNIVKA {
+            get {
+                return ResourceManager.GetString("City_MALOKATERYNIVKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Маріуполь.
+        /// </summary>
+        public static string City_MARIUPOL {
+            get {
+                return ResourceManager.GetString("City_MARIUPOL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Масандра.
+        /// </summary>
+        public static string City_MASANDRA {
+            get {
+                return ResourceManager.GetString("City_MASANDRA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Мелітополь.
+        /// </summary>
+        public static string City_MELITOPOL {
+            get {
+                return ResourceManager.GetString("City_MELITOPOL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Мерефа.
+        /// </summary>
+        public static string City_MEREFA {
+            get {
+                return ResourceManager.GetString("City_MEREFA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Могилів-Подільський.
+        /// </summary>
+        public static string City_MOHYLIV_PODILSKYI {
+            get {
+                return ResourceManager.GetString("City_MOHYLIV-PODILSKYI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Молодогвардійськ.
+        /// </summary>
+        public static string City_MOLODOHVARDIISK {
+            get {
+                return ResourceManager.GetString("City_MOLODOHVARDIISK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Мукачево.
+        /// </summary>
+        public static string City_MUKACHEVE {
+            get {
+                return ResourceManager.GetString("City_MUKACHEVE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Михайлівка.
+        /// </summary>
+        public static string City_MYKHAILIVKA {
+            get {
+                return ResourceManager.GetString("City_MYKHAILIVKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Михайлівка-Рубежівка.
+        /// </summary>
+        public static string City_MYKHAYLIVKA_RUBEZHIVKA {
+            get {
+                return ResourceManager.GetString("City_MYKHAYLIVKA-RUBEZHIVKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Миколаїв.
+        /// </summary>
+        public static string City_MYKOLAIV {
+            get {
+                return ResourceManager.GetString("City_MYKOLAIV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Миколаївка.
+        /// </summary>
+        public static string City_MYKOLAIVKA {
+            get {
+                return ResourceManager.GetString("City_MYKOLAIVKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Миргород.
+        /// </summary>
+        public static string City_MYRHOROD {
+            get {
+                return ResourceManager.GetString("City_MYRHOROD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Мирноград.
+        /// </summary>
+        public static string City_MYRNOHRAD {
+            get {
+                return ResourceManager.GetString("City_MYRNOHRAD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Нікополь.
+        /// </summary>
+        public static string City_NIKOPOL {
+            get {
+                return ResourceManager.GetString("City_NIKOPOL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ніжин.
+        /// </summary>
+        public static string City_NIZHYN {
+            get {
+                return ResourceManager.GetString("City_NIZHYN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Новгородське (Нью-Йорк).
+        /// </summary>
+        public static string City_NOVGORODSKOYE {
+            get {
+                return ResourceManager.GetString("City_NOVGORODSKOYE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Новодружеськ.
+        /// </summary>
+        public static string City_NOVODRUZHESK {
+            get {
+                return ResourceManager.GetString("City_NOVODRUZHESK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Новоград-Волинський (Звягель).
+        /// </summary>
+        public static string City_NOVOHRAD_VOLYNSKYI {
+            get {
+                return ResourceManager.GetString("City_NOVOHRAD-VOLYNSKYI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Новоолександрівка.
+        /// </summary>
+        public static string City_NOVOOLEKSANDRIVKA {
+            get {
+                return ResourceManager.GetString("City_NOVOOLEKSANDRIVKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Новопілля.
+        /// </summary>
+        public static string City_NOVOPILLIA {
+            get {
+                return ResourceManager.GetString("City_NOVOPILLIA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Новосілки.
+        /// </summary>
+        public static string City_NOVOSILKY {
+            get {
+                return ResourceManager.GetString("City_NOVOSILKY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Новояворівське.
+        /// </summary>
+        public static string City_NOVOYAVOROVSKOYE {
+            get {
+                return ResourceManager.GetString("City_NOVOYAVOROVSKOYE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Нижня Кринка.
+        /// </summary>
+        public static string City_NYZHNIA_KRYNKA {
+            get {
+                return ResourceManager.GetString("City_NYZHNIA KRYNKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Оброшине.
+        /// </summary>
+        public static string City_OBROSHINO {
+            get {
+                return ResourceManager.GetString("City_OBROSHINO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Одеса.
+        /// </summary>
+        public static string City_ODESA {
+            get {
+                return ResourceManager.GetString("City_ODESA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Охтирка.
+        /// </summary>
+        public static string City_OKHTYRKA {
+            get {
+                return ResourceManager.GetString("City_OKHTYRKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Олександрівка.
+        /// </summary>
+        public static string City_OLEKSANDRIVKA {
+            get {
+                return ResourceManager.GetString("City_OLEKSANDRIVKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Олексієво-Дружківка.
+        /// </summary>
+        public static string City_OLEKSIIEVO_DRUZHKIVKA {
+            get {
+                return ResourceManager.GetString("City_OLEKSIIEVO-DRUZHKIVKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Павлоград.
+        /// </summary>
+        public static string City_PAVLOHRAD {
+            get {
+                return ResourceManager.GetString("City_PAVLOHRAD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Пелагіївка.
+        /// </summary>
+        public static string City_PELAHIIVKA {
+            get {
+                return ResourceManager.GetString("City_PELAHIIVKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Перевальськ.
+        /// </summary>
+        public static string City_PEREVALSK {
+            get {
+                return ResourceManager.GetString("City_PEREVALSK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Первомайськ.
+        /// </summary>
+        public static string City_PERVOMAISK {
+            get {
+                return ResourceManager.GetString("City_PERVOMAISK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Первомайський.
+        /// </summary>
+        public static string City_PERVOMAISKYI {
+            get {
+                return ResourceManager.GetString("City_PERVOMAISKYI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Петровське.
+        /// </summary>
+        public static string City_PETROVSKE {
+            get {
+                return ResourceManager.GetString("City_PETROVSKE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на П&apos;ятипілля.
+        /// </summary>
+        public static string City_PIATYPILLIA {
+            get {
+                return ResourceManager.GetString("City_PIATYPILLIA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Пісківка.
+        /// </summary>
+        public static string City_PISKIVKA {
+            get {
+                return ResourceManager.GetString("City_PISKIVKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Північне.
+        /// </summary>
+        public static string City_PIVNICHNE {
+            get {
+                return ResourceManager.GetString("City_PIVNICHNE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Почаїв.
+        /// </summary>
+        public static string City_POCHAIV {
+            get {
+                return ResourceManager.GetString("City_POCHAIV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Подільськ.
+        /// </summary>
+        public static string City_PODILSK {
+            get {
+                return ResourceManager.GetString("City_PODILSK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Покровськ.
+        /// </summary>
+        public static string City_POKROVSK {
+            get {
+                return ResourceManager.GetString("City_POKROVSK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Полтава.
+        /// </summary>
+        public static string City_POLTAVA {
+            get {
+                return ResourceManager.GetString("City_POLTAVA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Приморський.
+        /// </summary>
+        public static string City_PRYMORSKYI {
+            get {
+                return ResourceManager.GetString("City_PRYMORSKYI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Рівне.
+        /// </summary>
+        public static string City_RIVNE {
+            get {
+                return ResourceManager.GetString("City_RIVNE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ромни.
+        /// </summary>
+        public static string City_ROMNY {
+            get {
+                return ResourceManager.GetString("City_ROMNY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ровеньки.
+        /// </summary>
+        public static string City_ROVENKY {
+            get {
+                return ResourceManager.GetString("City_ROVENKY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Розкішне.
+        /// </summary>
+        public static string City_ROZKISHNE {
+            get {
+                return ResourceManager.GetString("City_ROZKISHNE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Рубіжне.
+        /// </summary>
+        public static string City_RUBIZHNE {
+            get {
+                return ResourceManager.GetString("City_RUBIZHNE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Садки.
+        /// </summary>
+        public static string City_SADKY {
+            get {
+                return ResourceManager.GetString("City_SADKY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Саки.
+        /// </summary>
+        public static string City_SAKY {
+            get {
+                return ResourceManager.GetString("City_SAKY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Самбір.
+        /// </summary>
+        public static string City_SAMBIR {
+            get {
+                return ResourceManager.GetString("City_SAMBIR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Сартана.
+        /// </summary>
+        public static string City_SARTANA {
+            get {
+                return ResourceManager.GetString("City_SARTANA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Селидове.
+        /// </summary>
+        public static string City_SELYDOVE {
+            get {
+                return ResourceManager.GetString("City_SELYDOVE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Севастополь.
+        /// </summary>
+        public static string City_SEVASTOPOL {
+            get {
+                return ResourceManager.GetString("City_SEVASTOPOL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Шабельківка.
+        /// </summary>
+        public static string City_SHABELKIVKA {
+            get {
+                return ResourceManager.GetString("City_SHABELKIVKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Шахтарськ.
+        /// </summary>
+        public static string City_SHAKHTARSK {
+            get {
+                return ResourceManager.GetString("City_SHAKHTARSK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Шахтарське.
+        /// </summary>
+        public static string City_SHAKHTARSKE {
+            get {
+                return ResourceManager.GetString("City_SHAKHTARSKE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Щербинівка.
+        /// </summary>
+        public static string City_SHCHERBYNIVKA {
+            get {
+                return ResourceManager.GetString("City_SHCHERBYNIVKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Шепетівка.
+        /// </summary>
+        public static string City_SHEPETIVKA {
+            get {
+                return ResourceManager.GetString("City_SHEPETIVKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Шостка.
+        /// </summary>
+        public static string City_SHOSTKA {
+            get {
+                return ResourceManager.GetString("City_SHOSTKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Сєверне.
+        /// </summary>
+        public static string City_SIEVERNE {
+            get {
+                return ResourceManager.GetString("City_SIEVERNE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Сєвєродонецьк.
+        /// </summary>
+        public static string City_SIEVIERODONETSK {
+            get {
+                return ResourceManager.GetString("City_SIEVIERODONETSK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Сімеїз.
+        /// </summary>
+        public static string City_SIMEIZ {
+            get {
+                return ResourceManager.GetString("City_SIMEIZ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Сімферополь.
+        /// </summary>
+        public static string City_SIMFEROPOL {
+            get {
+                return ResourceManager.GetString("City_SIMFEROPOL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Славута.
+        /// </summary>
+        public static string City_SLAVUTA {
+            get {
+                return ResourceManager.GetString("City_SLAVUTA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Слов&apos;янськ.
+        /// </summary>
+        public static string City_SLOVIANSK {
+            get {
+                return ResourceManager.GetString("City_SLOVIANSK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Сміла.
+        /// </summary>
+        public static string City_SMILA {
+            get {
+                return ResourceManager.GetString("City_SMILA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Снятин.
+        /// </summary>
+        public static string City_SNIATYN {
+            get {
+                return ResourceManager.GetString("City_SNIATYN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Сніжне.
+        /// </summary>
+        public static string City_SNIZHNE {
+            get {
+                return ResourceManager.GetString("City_SNIZHNE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Софіївка.
+        /// </summary>
+        public static string City_SOFIIVKA {
+            get {
+                return ResourceManager.GetString("City_SOFIIVKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Соледар.
+        /// </summary>
+        public static string City_SOLEDAR {
+            get {
+                return ResourceManager.GetString("City_SOLEDAR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Стаханов (Кадіївка).
+        /// </summary>
+        public static string City_STAKHANOV {
+            get {
+                return ResourceManager.GetString("City_STAKHANOV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Старий Крим.
+        /// </summary>
+        public static string City_STARYI_KRYM {
+            get {
+                return ResourceManager.GetString("City_STARYI KRYM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Стрий.
+        /// </summary>
+        public static string City_STRYI {
+            get {
+                return ResourceManager.GetString("City_STRYI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Суходільськ.
+        /// </summary>
+        public static string City_SUKHODILSK {
+            get {
+                return ResourceManager.GetString("City_SUKHODILSK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Суми.
+        /// </summary>
+        public static string City_SUMY {
+            get {
+                return ResourceManager.GetString("City_SUMY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Таромське.
+        /// </summary>
+        public static string City_TAROMSKE {
+            get {
+                return ResourceManager.GetString("City_TAROMSKE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Тепле.
+        /// </summary>
+        public static string City_TEPLE {
+            get {
+                return ResourceManager.GetString("City_TEPLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Теплогірськ (Ірміно).
+        /// </summary>
+        public static string City_TEPLOHIRSK {
+            get {
+                return ResourceManager.GetString("City_TEPLOHIRSK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Тернопіль.
+        /// </summary>
+        public static string City_TERNOPIL {
+            get {
+                return ResourceManager.GetString("City_TERNOPIL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Торецьк.
+        /// </summary>
+        public static string City_TORETSK {
+            get {
+                return ResourceManager.GetString("City_TORETSK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Товсте.
+        /// </summary>
+        public static string City_TOVSTE {
+            get {
+                return ResourceManager.GetString("City_TOVSTE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Трускавець.
+        /// </summary>
+        public static string City_TRUSKAVETS {
+            get {
+                return ResourceManager.GetString("City_TRUSKAVETS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Умань.
+        /// </summary>
+        public static string City_UMAN {
+            get {
+                return ResourceManager.GetString("City_UMAN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ужгород.
+        /// </summary>
+        public static string City_UZHHOROD {
+            get {
+                return ResourceManager.GetString("City_UZHHOROD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вахрушеве (Боково-Хрустальне).
+        /// </summary>
+        public static string City_VAKHRUSHEVE {
+            get {
+                return ResourceManager.GetString("City_VAKHRUSHEVE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вальянівське.
+        /// </summary>
+        public static string City_VALIANIVSKE {
+            get {
+                return ResourceManager.GetString("City_VALIANIVSKE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Васильків.
+        /// </summary>
+        public static string City_VASYLKIV {
+            get {
+                return ResourceManager.GetString("City_VASYLKIV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ведмеже.
+        /// </summary>
+        public static string City_VEDMEZHE {
+            get {
+                return ResourceManager.GetString("City_VEDMEZHE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Велика Березовиця.
+        /// </summary>
+        public static string City_VELIKAYA_BERËZOVITSA {
+            get {
+                return ResourceManager.GetString("City_VELIKAYA BERËZOVITSA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вінниця.
+        /// </summary>
+        public static string City_VINNYTSIA {
+            get {
+                return ResourceManager.GetString("City_VINNYTSIA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Володимир-Волинський (Володимир).
+        /// </summary>
+        public static string City_VOLODYMYR_VOLYNSKYI {
+            get {
+                return ResourceManager.GetString("City_VOLODYMYR-VOLYNSKYI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ворзель.
+        /// </summary>
+        public static string City_VORZEL {
+            get {
+                return ResourceManager.GetString("City_VORZEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вуглегірськ.
+        /// </summary>
+        public static string City_VUHLEHIRSK {
+            get {
+                return ResourceManager.GetString("City_VUHLEHIRSK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вилок.
+        /// </summary>
+        public static string City_VYLOK {
+            get {
+                return ResourceManager.GetString("City_VYLOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Винники.
+        /// </summary>
+        public static string City_VYNNYKY {
+            get {
+                return ResourceManager.GetString("City_VYNNYKY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Виноградів.
+        /// </summary>
+        public static string City_VYNOHRADIV {
+            get {
+                return ResourceManager.GetString("City_VYNOHRADIV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вишневе.
+        /// </summary>
+        public static string City_VYSHNEVE {
+            get {
+                return ResourceManager.GetString("City_VYSHNEVE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ялта.
+        /// </summary>
+        public static string City_YALTA {
+            get {
+                return ResourceManager.GetString("City_YALTA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ясенівський.
+        /// </summary>
+        public static string City_YASENIVSKYI {
+            get {
+                return ResourceManager.GetString("City_YASENIVSKYI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ясногірка.
+        /// </summary>
+        public static string City_YASNOHIRKA {
+            get {
+                return ResourceManager.GetString("City_YASNOHIRKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ясинівка.
+        /// </summary>
+        public static string City_YASYNIVKA {
+            get {
+                return ResourceManager.GetString("City_YASYNIVKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ясинувата.
+        /// </summary>
+        public static string City_YASYNUVATA {
+            get {
+                return ResourceManager.GetString("City_YASYNUVATA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Єнакієве.
+        /// </summary>
+        public static string City_YENAKIIEVE {
+            get {
+                return ResourceManager.GetString("City_YENAKIIEVE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Євпаторія.
+        /// </summary>
+        public static string City_YEVPATORIIA {
+            get {
+                return ResourceManager.GetString("City_YEVPATORIIA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Южна Ломуватка.
+        /// </summary>
+        public static string City_YUZHNA_LOMUVATKA {
+            get {
+                return ResourceManager.GetString("City_YUZHNA LOMUVATKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Зайцеве.
+        /// </summary>
+        public static string City_ZAITSEVE {
+            get {
+                return ResourceManager.GetString("City_ZAITSEVE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Залізне.
+        /// </summary>
+        public static string City_ZALIZNE {
+            get {
+                return ResourceManager.GetString("City_ZALIZNE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Заозерне.
+        /// </summary>
+        public static string City_ZAOZERNE {
+            get {
+                return ResourceManager.GetString("City_ZAOZERNE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Запоріжжя.
+        /// </summary>
+        public static string City_ZAPORIZHZHIA {
+            get {
+                return ResourceManager.GetString("City_ZAPORIZHZHIA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Зеленівка.
+        /// </summary>
+        public static string City_ZELENIVKA {
+            get {
+                return ResourceManager.GetString("City_ZELENIVKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Жданівка.
+        /// </summary>
+        public static string City_ZHDANIVKA {
+            get {
+                return ResourceManager.GetString("City_ZHDANIVKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Жмеринка.
+        /// </summary>
+        public static string City_ZHMERYNKA {
+            get {
+                return ResourceManager.GetString("City_ZHMERYNKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Житомир.
+        /// </summary>
+        public static string City_ZHYTOMYR {
+            get {
+                return ResourceManager.GetString("City_ZHYTOMYR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Зоринськ.
+        /// </summary>
+        public static string City_ZORYNSK {
+            get {
+                return ResourceManager.GetString("City_ZORYNSK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Міста не знайдено.
+        /// </summary>
+        public static string CityListEmpty {
+            get {
+                return ResourceManager.GetString("CityListEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Оберіть місто.
+        /// </summary>
+        public static string CityPopupTitle {
+            get {
+                return ResourceManager.GetString("CityPopupTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Список марок завантажується або порожній.
+        /// </summary>
+        public static string Error_ListEmpty_Brand {
+            get {
+                return ResourceManager.GetString("Error_ListEmpty_Brand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Список міст порожній.
+        /// </summary>
+        public static string Error_ListEmpty_City {
+            get {
+                return ResourceManager.GetString("Error_ListEmpty_City", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Список пального порожній.
+        /// </summary>
+        public static string Error_ListEmpty_Fuel {
+            get {
+                return ResourceManager.GetString("Error_ListEmpty_Fuel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Список КПП порожній.
+        /// </summary>
+        public static string Error_ListEmpty_Gear {
+            get {
+                return ResourceManager.GetString("Error_ListEmpty_Gear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Список моделей порожній.
+        /// </summary>
+        public static string Error_ListEmpty_Model {
+            get {
+                return ResourceManager.GetString("Error_ListEmpty_Model", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Список типів порожній.
+        /// </summary>
+        public static string Error_ListEmpty_Type {
+            get {
+                return ResourceManager.GetString("Error_ListEmpty_Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Оберіть марку.
+        /// </summary>
+        public static string Error_SelectBrandFirst {
+            get {
+                return ResourceManager.GetString("Error_SelectBrandFirst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Спочатку оберіть Область (Регіон)!.
+        /// </summary>
+        public static string Error_SelectRegionFirst {
+            get {
+                return ResourceManager.GetString("Error_SelectRegionFirst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Спочатку оберіть Тип транспорту!.
+        /// </summary>
+        public static string Error_SelectTypeFirst {
+            get {
+                return ResourceManager.GetString("Error_SelectTypeFirst", resourceCulture);
             }
         }
         
@@ -261,72 +2673,180 @@ namespace AutoMarket.Resources.Strings {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Марка.
         /// </summary>
-        public static string FilterMake {
+        public static string Filter_Brand {
             get {
-                return ResourceManager.GetString("FilterMake", resourceCulture);
+                return ResourceManager.GetString("Filter_Brand", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Модель.
+        ///   Ищет локализованную строку, похожую на Місто.
         /// </summary>
-        public static string FilterModel {
+        public static string Filter_City {
             get {
-                return ResourceManager.GetString("FilterModel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Вартість.
-        /// </summary>
-        public static string FilterPrice {
-            get {
-                return ResourceManager.GetString("FilterPrice", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Регіон.
-        /// </summary>
-        public static string FilterRegion {
-            get {
-                return ResourceManager.GetString("FilterRegion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Коробка передач.
-        /// </summary>
-        public static string FilterTransmission {
-            get {
-                return ResourceManager.GetString("FilterTransmission", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Тип транспорту.
-        /// </summary>
-        public static string FilterVehicleType {
-            get {
-                return ResourceManager.GetString("FilterVehicleType", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Рік випуску.
-        /// </summary>
-        public static string FilterYear {
-            get {
-                return ResourceManager.GetString("FilterYear", resourceCulture);
+                return ResourceManager.GetString("Filter_City", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Ищет локализованную строку, похожую на Пальне.
         /// </summary>
+        public static string Filter_Fuel {
+            get {
+                return ResourceManager.GetString("Filter_Fuel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Коробка передач.
+        /// </summary>
+        public static string Filter_Gearbox {
+            get {
+                return ResourceManager.GetString("Filter_Gearbox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Модель.
+        /// </summary>
+        public static string Filter_Model {
+            get {
+                return ResourceManager.GetString("Filter_Model", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вартість.
+        /// </summary>
+        public static string Filter_Price {
+            get {
+                return ResourceManager.GetString("Filter_Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Регіон.
+        /// </summary>
+        public static string Filter_Region {
+            get {
+                return ResourceManager.GetString("Filter_Region", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Тип транспорту.
+        /// </summary>
+        public static string Filter_TransportType {
+            get {
+                return ResourceManager.GetString("Filter_TransportType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Рік випуску.
+        /// </summary>
+        public static string Filter_Year {
+            get {
+                return ResourceManager.GetString("Filter_Year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Від.
+        /// </summary>
+        public static string From {
+            get {
+                return ResourceManager.GetString("From", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Бензин.
+        /// </summary>
+        public static string Fuel_BENSIN {
+            get {
+                return ResourceManager.GetString("Fuel_BENSIN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Дизель.
+        /// </summary>
+        public static string Fuel_DIESEL {
+            get {
+                return ResourceManager.GetString("Fuel_DIESEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Електро.
+        /// </summary>
+        public static string Fuel_ELECTRIC {
+            get {
+                return ResourceManager.GetString("Fuel_ELECTRIC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Газ.
+        /// </summary>
+        public static string Fuel_GAS {
+            get {
+                return ResourceManager.GetString("Fuel_GAS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Паливо.
+        /// </summary>
         public static string FuelFilterText {
             get {
                 return ResourceManager.GetString("FuelFilterText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Автомат.
+        /// </summary>
+        public static string Gear_AUTOMATIC {
+            get {
+                return ResourceManager.GetString("Gear_AUTOMATIC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Механіка.
+        /// </summary>
+        public static string Gear_MANUAL {
+            get {
+                return ResourceManager.GetString("Gear_MANUAL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Робот.
+        /// </summary>
+        public static string Gear_ROBOTIC {
+            get {
+                return ResourceManager.GetString("Gear_ROBOTIC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Варіатор.
+        /// </summary>
+        public static string Gear_VARIATOR {
+            get {
+                return ResourceManager.GetString("Gear_VARIATOR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Оберіть КПП.
+        /// </summary>
+        public static string GearPopupTitle {
+            get {
+                return ResourceManager.GetString("GearPopupTitle", resourceCulture);
             }
         }
         
@@ -475,7 +2995,7 @@ namespace AutoMarket.Resources.Strings {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на ціна, валюта, торг, обмін.
+        ///   Ищет локализованную строку, похожую на ціна, валюта.
         /// </summary>
         public static string ListingStep6Subtitle {
             get {
@@ -511,11 +3031,29 @@ namespace AutoMarket.Resources.Strings {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Оберіть модель.
+        /// </summary>
+        public static string ModelPopupTitle {
+            get {
+                return ResourceManager.GetString("ModelPopupTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на За вашими фільтрами нічого не знайдено.
+        /// </summary>
+        public static string Msg_NothingFound {
+            get {
+                return ResourceManager.GetString("Msg_NothingFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Головна.
         /// </summary>
-        public static string PageTitleMain {
+        public static string PageTitle_Main {
             get {
-                return ResourceManager.GetString("PageTitleMain", resourceCulture);
+                return ResourceManager.GetString("PageTitle_Main", resourceCulture);
             }
         }
         
@@ -547,11 +3085,308 @@ namespace AutoMarket.Resources.Strings {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Вартість.
+        /// </summary>
+        public static string PricePopupTitle {
+            get {
+                return ResourceManager.GetString("PricePopupTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Черкаська область.
+        /// </summary>
+        public static string Region_CHERKASKA_OBLAST {
+            get {
+                return ResourceManager.GetString("Region_CHERKASKA OBLAST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Чернігівська область.
+        /// </summary>
+        public static string Region_CHERNIHIVSKA_OBLAST {
+            get {
+                return ResourceManager.GetString("Region_CHERNIHIVSKA OBLAST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Чернівецька область.
+        /// </summary>
+        public static string Region_CHERNIVETSKA_OBLAST {
+            get {
+                return ResourceManager.GetString("Region_CHERNIVETSKA OBLAST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Дніпропетровська область.
+        /// </summary>
+        public static string Region_DNIPROPETROVSKA_OBLAST {
+            get {
+                return ResourceManager.GetString("Region_DNIPROPETROVSKA OBLAST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Донецька область.
+        /// </summary>
+        public static string Region_DONETSKA_OBLAST {
+            get {
+                return ResourceManager.GetString("Region_DONETSKA OBLAST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Івано-Франківська область.
+        /// </summary>
+        public static string Region_IVANO_FRANKIVSKA_OBLAST {
+            get {
+                return ResourceManager.GetString("Region_IVANO-FRANKIVSKA OBLAST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Харківська область.
+        /// </summary>
+        public static string Region_KHARKIVSKA_OBLAST {
+            get {
+                return ResourceManager.GetString("Region_KHARKIVSKA OBLAST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Херсонська область.
+        /// </summary>
+        public static string Region_KHERSONSKA_OBLAST {
+            get {
+                return ResourceManager.GetString("Region_KHERSONSKA OBLAST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Хмельницька область.
+        /// </summary>
+        public static string Region_KHMELNYTSKA_OBLAST {
+            get {
+                return ResourceManager.GetString("Region_KHMELNYTSKA OBLAST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Кіровоградська область.
+        /// </summary>
+        public static string Region_KIROVOHRADSKA_OBLAST {
+            get {
+                return ResourceManager.GetString("Region_KIROVOHRADSKA OBLAST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на АР Крим.
+        /// </summary>
+        public static string Region_KRYM__AVTONOMNA_RESPUBLIKA {
+            get {
+                return ResourceManager.GetString("Region_KRYM, AVTONOMNA RESPUBLIKA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Київ (місто).
+        /// </summary>
+        public static string Region_KYIV__MISTO {
+            get {
+                return ResourceManager.GetString("Region_KYIV, MISTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Київська область.
+        /// </summary>
+        public static string Region_KYIVSKA_OBLAST {
+            get {
+                return ResourceManager.GetString("Region_KYIVSKA OBLAST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Луганська область.
+        /// </summary>
+        public static string Region_LUHANSKA_OBLAST {
+            get {
+                return ResourceManager.GetString("Region_LUHANSKA OBLAST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Львівська область.
+        /// </summary>
+        public static string Region_LVIVSKA_OBLAST {
+            get {
+                return ResourceManager.GetString("Region_LVIVSKA OBLAST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Миколаївська область.
+        /// </summary>
+        public static string Region_MYKOLAIVSKA_OBLAST {
+            get {
+                return ResourceManager.GetString("Region_MYKOLAIVSKA OBLAST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Одеська область.
+        /// </summary>
+        public static string Region_ODESKA_OBLAST {
+            get {
+                return ResourceManager.GetString("Region_ODESKA OBLAST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Полтавська область.
+        /// </summary>
+        public static string Region_POLTAVSKA_OBLAST {
+            get {
+                return ResourceManager.GetString("Region_POLTAVSKA OBLAST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Рівненська область.
+        /// </summary>
+        public static string Region_RIVNENSKA_OBLAST {
+            get {
+                return ResourceManager.GetString("Region_RIVNENSKA OBLAST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Севастополь (місто).
+        /// </summary>
+        public static string Region_SEVASTOPOL__MISTO {
+            get {
+                return ResourceManager.GetString("Region_SEVASTOPOL, MISTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Сумська область.
+        /// </summary>
+        public static string Region_SUMSKA_OBLAST {
+            get {
+                return ResourceManager.GetString("Region_SUMSKA OBLAST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Тернопільська область.
+        /// </summary>
+        public static string Region_TERNOPILSKA_OBLAST {
+            get {
+                return ResourceManager.GetString("Region_TERNOPILSKA OBLAST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вінницька область.
+        /// </summary>
+        public static string Region_VINNYTSKA_OBLAST {
+            get {
+                return ResourceManager.GetString("Region_VINNYTSKA OBLAST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Волинська область.
+        /// </summary>
+        public static string Region_VOLYNSKA_OBLAST {
+            get {
+                return ResourceManager.GetString("Region_VOLYNSKA OBLAST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Закарпатська область.
+        /// </summary>
+        public static string Region_ZAKARPATSKA_OBLAST {
+            get {
+                return ResourceManager.GetString("Region_ZAKARPATSKA OBLAST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Запорізька область.
+        /// </summary>
+        public static string Region_ZAPORIZKA_OBLAST {
+            get {
+                return ResourceManager.GetString("Region_ZAPORIZKA OBLAST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Житомирська область.
+        /// </summary>
+        public static string Region_ZHYTOMYRSKA_OBLAST {
+            get {
+                return ResourceManager.GetString("Region_ZHYTOMYRSKA OBLAST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Оберіть область.
+        /// </summary>
+        public static string RegionPopupTitle {
+            get {
+                return ResourceManager.GetString("RegionPopupTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Оберіть область.
+        /// </summary>
+        public static string RegionPopupTitle1 {
+            get {
+                return ResourceManager.GetString("RegionPopupTitle1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Шукати.
         /// </summary>
         public static string SearchButtonText {
             get {
                 return ResourceManager.GetString("SearchButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Всі.
+        /// </summary>
+        public static string Tab_All {
+            get {
+                return ResourceManager.GetString("Tab_All", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Нові.
+        /// </summary>
+        public static string Tab_New {
+            get {
+                return ResourceManager.GetString("Tab_New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вживані.
+        /// </summary>
+        public static string Tab_Used {
+            get {
+                return ResourceManager.GetString("Tab_Used", resourceCulture);
             }
         }
         
@@ -597,6 +3432,87 @@ namespace AutoMarket.Resources.Strings {
         public static string TabSell {
             get {
                 return ResourceManager.GetString("TabSell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на До.
+        /// </summary>
+        public static string To {
+            get {
+                return ResourceManager.GetString("To", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Автобуси.
+        /// </summary>
+        public static string VehicleType_BUS {
+            get {
+                return ResourceManager.GetString("VehicleType_BUS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Мотоцикли.
+        /// </summary>
+        public static string VehicleType_MOTORCYCLE {
+            get {
+                return ResourceManager.GetString("VehicleType_MOTORCYCLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Легкові.
+        /// </summary>
+        public static string VehicleType_PASSENGER_CAR {
+            get {
+                return ResourceManager.GetString("VehicleType_PASSENGER_CAR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Причепи.
+        /// </summary>
+        public static string VehicleType_TRAILER {
+            get {
+                return ResourceManager.GetString("VehicleType_TRAILER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вантажівки.
+        /// </summary>
+        public static string VehicleType_TRUCK {
+            get {
+                return ResourceManager.GetString("VehicleType_TRUCK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Оберіть тип.
+        /// </summary>
+        public static string VehicleTypePopupTitle {
+            get {
+                return ResourceManager.GetString("VehicleTypePopupTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Перевірити.
+        /// </summary>
+        public static string Verify {
+            get {
+                return ResourceManager.GetString("Verify", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Оберіть рік.
+        /// </summary>
+        public static string YearPopupTitle {
+            get {
+                return ResourceManager.GetString("YearPopupTitle", resourceCulture);
             }
         }
     }

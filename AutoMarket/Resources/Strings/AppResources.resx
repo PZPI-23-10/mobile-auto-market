@@ -120,37 +120,37 @@
   <data name="AddListingTitle" xml:space="preserve">
     <value>Додавання оголошення</value>
   </data>
-  <data name="ConditionAll" xml:space="preserve">
+  <data name="Tab_All" xml:space="preserve">
     <value>Всі</value>
   </data>
-  <data name="ConditionNew" xml:space="preserve">
+  <data name="Tab_New" xml:space="preserve">
     <value>Нові</value>
   </data>
-  <data name="ConditionUsed" xml:space="preserve">
+  <data name="Tab_Used" xml:space="preserve">
     <value>Вживані</value>
   </data>
-  <data name="FilterMake" xml:space="preserve">
+  <data name="Filter_Brand" xml:space="preserve">
     <value>Марка</value>
   </data>
-  <data name="FilterModel" xml:space="preserve">
+  <data name="Filter_Model" xml:space="preserve">
     <value>Модель</value>
   </data>
-  <data name="FilterPrice" xml:space="preserve">
+  <data name="Filter_Price" xml:space="preserve">
     <value>Вартість</value>
   </data>
-  <data name="FilterRegion" xml:space="preserve">
+  <data name="Filter_Region" xml:space="preserve">
     <value>Регіон</value>
   </data>
-  <data name="FilterTransmission" xml:space="preserve">
+  <data name="Filter_Gearbox" xml:space="preserve">
     <value>Коробка передач</value>
   </data>
-  <data name="FilterVehicleType" xml:space="preserve">
+  <data name="Filter_TransportType" xml:space="preserve">
     <value>Тип транспорту</value>
   </data>
-  <data name="FilterYear" xml:space="preserve">
+  <data name="Filter_Year" xml:space="preserve">
     <value>Рік випуску</value>
   </data>
-  <data name="FuelFilterText" xml:space="preserve">
+  <data name="Filter_Fuel" xml:space="preserve">
     <value>Пальне</value>
   </data>
   <data name="HotOffersLabel" xml:space="preserve">
@@ -202,7 +202,7 @@
     <value>Додаткові опції</value>
   </data>
   <data name="ListingStep6Subtitle" xml:space="preserve">
-    <value>ціна, валюта, торг, обмін</value>
+    <value>ціна, валюта</value>
   </data>
   <data name="ListingStep6Title" xml:space="preserve">
     <value>Вартість</value>
@@ -213,9 +213,6 @@
   <data name="ListingVerifiedVin" xml:space="preserve">
     <value>Перевірений VIN</value>
   </data>
-  <data name="PageTitleMain" xml:space="preserve">
-    <value>Головна</value>
-  </data>
   <data name="SearchButtonText" xml:space="preserve">
     <value>Шукати</value>
   </data>
@@ -225,7 +222,7 @@
   <data name="TabFavorites" xml:space="preserve">
     <value>Обране</value>
   </data>
-  <data name="TabHome" xml:space="preserve">
+  <data name="PageTitle_Main" xml:space="preserve">
     <value>Головна</value>
   </data>
   <data name="TabProfile" xml:space="preserve">
@@ -296,5 +293,995 @@
   </data>
   <data name="FieldTrade" xml:space="preserve">
     <value>Обмін</value>
+  </data>
+  <data name="Fuel_BENSIN" xml:space="preserve">
+    <value>Бензин</value>
+  </data>
+  <data name="Fuel_DIESEL" xml:space="preserve">
+    <value>Дизель</value>
+  </data>
+  <data name="Fuel_GAS" xml:space="preserve">
+    <value>Газ</value>
+  </data>
+  <data name="Fuel_ELECTRIC" xml:space="preserve">
+    <value>Електро</value>
+  </data>
+  <data name="Gear_AUTOMATIC" xml:space="preserve">
+    <value>Автомат</value>
+  </data>
+  <data name="Gear_MANUAL" xml:space="preserve">
+    <value>Механіка</value>
+  </data>
+  <data name="Gear_ROBOTIC" xml:space="preserve">
+    <value>Робот</value>
+  </data>
+  <data name="Gear_VARIATOR" xml:space="preserve">
+    <value>Варіатор</value>
+  </data>
+  <data name="Action_ResetFilters" xml:space="preserve">
+    <value>Скинути фільтри</value>
+  </data>
+  <data name="Button_Search" xml:space="preserve">
+    <value>Шукати</value>
+  </data>
+  <data name="TabHome" xml:space="preserve">
+    <value>Головна</value>
+  </data>
+  <data name="Filter_City" xml:space="preserve">
+    <value>Місто</value>
+  </data>
+  <data name="FuelFilterText" xml:space="preserve">
+    <value>Паливо</value>
+  </data>
+  <data name="VehicleTypePopupTitle" xml:space="preserve">
+    <value>Оберіть тип</value>
+  </data>
+  <data name="VehicleType_PASSENGER_CAR" xml:space="preserve">
+    <value>Легкові</value>
+  </data>
+  <data name="VehicleType_TRUCK" xml:space="preserve">
+    <value>Вантажівки</value>
+  </data>
+  <data name="VehicleType_MOTORCYCLE" xml:space="preserve">
+    <value>Мотоцикли</value>
+  </data>
+  <data name="VehicleType_BUS" xml:space="preserve">
+    <value>Автобуси</value>
+  </data>
+  <data name="VehicleType_TRAILER" xml:space="preserve">
+    <value>Причепи</value>
+  </data>
+  <data name="BrandPopupTitle" xml:space="preserve">
+    <value>Оберіть марку</value>
+  </data>
+  <data name="ModelPopupTitle" xml:space="preserve">
+    <value>Оберіть модель</value>
+  </data>
+  <data name="YearPopupTitle" xml:space="preserve">
+    <value>Оберіть рік</value>
+  </data>
+  <data name="PricePopupTitle" xml:space="preserve">
+    <value>Вартість</value>
+  </data>
+  <data name="GearPopupTitle" xml:space="preserve">
+    <value>Оберіть КПП</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>Від</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>До</value>
+  </data>
+  <data name="BtnApply" xml:space="preserve">
+    <value>Застосувати</value>
+  </data>
+  <data name="Alert_Attention" xml:space="preserve">
+    <value>Увага</value>
+  </data>
+  <data name="Alert_Info" xml:space="preserve">
+    <value>Інфо</value>
+  </data>
+  <data name="Alert_Error" xml:space="preserve">
+    <value>Помилка</value>
+  </data>
+  <data name="Error_SelectTypeFirst" xml:space="preserve">
+    <value>Спочатку оберіть Тип транспорту!</value>
+  </data>
+  <data name="Error_SelectBrandFirst" xml:space="preserve">
+    <value>Оберіть марку</value>
+  </data>
+  <data name="Error_SelectRegionFirst" xml:space="preserve">
+    <value>Спочатку оберіть Область (Регіон)!</value>
+  </data>
+  <data name="Error_ListEmpty_Brand" xml:space="preserve">
+    <value>Список марок завантажується або порожній</value>
+  </data>
+  <data name="Error_ListEmpty_Model" xml:space="preserve">
+    <value>Список моделей порожній</value>
+  </data>
+  <data name="Error_ListEmpty_City" xml:space="preserve">
+    <value>Список міст порожній</value>
+  </data>
+  <data name="Error_ListEmpty_Fuel" xml:space="preserve">
+    <value>Список пального порожній</value>
+  </data>
+  <data name="Error_ListEmpty_Gear" xml:space="preserve">
+    <value>Список КПП порожній</value>
+  </data>
+  <data name="Error_ListEmpty_Type" xml:space="preserve">
+    <value>Список типів порожній</value>
+  </data>
+  <data name="Msg_NothingFound" xml:space="preserve">
+    <value>За вашими фільтрами нічого не знайдено</value>
+  </data>
+  <data name="RegionPopupTitle" xml:space="preserve">
+    <value>Оберіть область</value>
+  </data>
+  <data name="RegionPopupTitle1" xml:space="preserve">
+    <value>Оберіть область</value>
+  </data>
+  <data name="Region_KYIV, MISTO" xml:space="preserve">
+    <value>Київ (місто)</value>
+  </data>
+  <data name="Region_SEVASTOPOL, MISTO" xml:space="preserve">
+    <value>Севастополь (місто)</value>
+  </data>
+  <data name="Region_KRYM, AVTONOMNA RESPUBLIKA" xml:space="preserve">
+    <value>АР Крим</value>
+  </data>
+  <data name="Region_VINNYTSKA OBLAST" xml:space="preserve">
+    <value>Вінницька область</value>
+  </data>
+  <data name="Region_VOLYNSKA OBLAST" xml:space="preserve">
+    <value>Волинська область</value>
+  </data>
+  <data name="Region_DNIPROPETROVSKA OBLAST" xml:space="preserve">
+    <value>Дніпропетровська область</value>
+  </data>
+  <data name="Region_DONETSKA OBLAST" xml:space="preserve">
+    <value>Донецька область</value>
+  </data>
+  <data name="Region_ZHYTOMYRSKA OBLAST" xml:space="preserve">
+    <value>Житомирська область</value>
+  </data>
+  <data name="Region_ZAKARPATSKA OBLAST" xml:space="preserve">
+    <value>Закарпатська область</value>
+  </data>
+  <data name="Region_ZAPORIZKA OBLAST" xml:space="preserve">
+    <value>Запорізька область</value>
+  </data>
+  <data name="Region_IVANO-FRANKIVSKA OBLAST" xml:space="preserve">
+    <value>Івано-Франківська область</value>
+  </data>
+  <data name="Region_KYIVSKA OBLAST" xml:space="preserve">
+    <value>Київська область</value>
+  </data>
+  <data name="Region_KIROVOHRADSKA OBLAST" xml:space="preserve">
+    <value>Кіровоградська область</value>
+  </data>
+  <data name="Region_LUHANSKA OBLAST" xml:space="preserve">
+    <value>Луганська область</value>
+  </data>
+  <data name="Region_LVIVSKA OBLAST" xml:space="preserve">
+    <value>Львівська область</value>
+  </data>
+  <data name="Region_MYKOLAIVSKA OBLAST" xml:space="preserve">
+    <value>Миколаївська область</value>
+  </data>
+  <data name="Region_ODESKA OBLAST" xml:space="preserve">
+    <value>Одеська область</value>
+  </data>
+  <data name="Region_POLTAVSKA OBLAST" xml:space="preserve">
+    <value>Полтавська область</value>
+  </data>
+  <data name="Region_RIVNENSKA OBLAST" xml:space="preserve">
+    <value>Рівненська область</value>
+  </data>
+  <data name="Region_SUMSKA OBLAST" xml:space="preserve">
+    <value>Сумська область</value>
+  </data>
+  <data name="Region_TERNOPILSKA OBLAST" xml:space="preserve">
+    <value>Тернопільська область</value>
+  </data>
+  <data name="Region_KHARKIVSKA OBLAST" xml:space="preserve">
+    <value>Харківська область</value>
+  </data>
+  <data name="Region_KHERSONSKA OBLAST" xml:space="preserve">
+    <value>Херсонська область</value>
+  </data>
+  <data name="Region_KHMELNYTSKA OBLAST" xml:space="preserve">
+    <value>Хмельницька область</value>
+  </data>
+  <data name="Region_CHERKASKA OBLAST" xml:space="preserve">
+    <value>Черкаська область</value>
+  </data>
+  <data name="Region_CHERNIVETSKA OBLAST" xml:space="preserve">
+    <value>Чернівецька область</value>
+  </data>
+  <data name="Region_CHERNIHIVSKA OBLAST" xml:space="preserve">
+    <value>Чернігівська область</value>
+  </data>
+  <data name="CityPopupTitle" xml:space="preserve">
+    <value>Оберіть місто</value>
+  </data>
+  <data name="CityListEmpty" xml:space="preserve">
+    <value>Міста не знайдено</value>
+  </data>
+  <data name="City_KYIV" xml:space="preserve">
+    <value>Київ</value>
+  </data>
+  <data name="City_KHARKIV" xml:space="preserve">
+    <value>Харків</value>
+  </data>
+  <data name="City_ODESA" xml:space="preserve">
+    <value>Одеса</value>
+  </data>
+  <data name="City_DNIPRO" xml:space="preserve">
+    <value>Дніпро</value>
+  </data>
+  <data name="City_DONETSK" xml:space="preserve">
+    <value>Донецьк</value>
+  </data>
+  <data name="City_LVIV" xml:space="preserve">
+    <value>Львів</value>
+  </data>
+  <data name="City_ZAPORIZHZHIA" xml:space="preserve">
+    <value>Запоріжжя</value>
+  </data>
+  <data name="City_BAZAL’TOVE" xml:space="preserve">
+    <value>Базальтове</value>
+  </data>
+  <data name="City_KRYVYI RIH" xml:space="preserve">
+    <value>Кривий Ріг</value>
+  </data>
+  <data name="City_SEVASTOPOL" xml:space="preserve">
+    <value>Севастополь</value>
+  </data>
+  <data name="City_MYKOLAIV" xml:space="preserve">
+    <value>Миколаїв</value>
+  </data>
+  <data name="City_MARIUPOL" xml:space="preserve">
+    <value>Маріуполь</value>
+  </data>
+  <data name="City_LUHANSK" xml:space="preserve">
+    <value>Луганськ</value>
+  </data>
+  <data name="City_VINNYTSIA" xml:space="preserve">
+    <value>Вінниця</value>
+  </data>
+  <data name="City_MAKIIVKA" xml:space="preserve">
+    <value>Макіївка</value>
+  </data>
+  <data name="City_SIMFEROPOL" xml:space="preserve">
+    <value>Сімферополь</value>
+  </data>
+  <data name="City_CHERNIHIV" xml:space="preserve">
+    <value>Чернігів</value>
+  </data>
+  <data name="City_POLTAVA" xml:space="preserve">
+    <value>Полтава</value>
+  </data>
+  <data name="City_KHERSON" xml:space="preserve">
+    <value>Херсон</value>
+  </data>
+  <data name="City_KHMELNYTSKYI" xml:space="preserve">
+    <value>Хмельницький</value>
+  </data>
+  <data name="City_CHERKASY" xml:space="preserve">
+    <value>Черкаси</value>
+  </data>
+  <data name="City_SUMY" xml:space="preserve">
+    <value>Суми</value>
+  </data>
+  <data name="City_CHERNIVTSI" xml:space="preserve">
+    <value>Чернівці</value>
+  </data>
+  <data name="City_ZHYTOMYR" xml:space="preserve">
+    <value>Житомир</value>
+  </data>
+  <data name="City_HORLIVKA" xml:space="preserve">
+    <value>Горлівка</value>
+  </data>
+  <data name="City_RIVNE" xml:space="preserve">
+    <value>Рівне</value>
+  </data>
+  <data name="City_IVANO-FRANKIVSK" xml:space="preserve">
+    <value>Івано-Франківськ</value>
+  </data>
+  <data name="City_KROPYVNYTSKYI" xml:space="preserve">
+    <value>Кропивницький</value>
+  </data>
+  <data name="City_KAMIANSKE" xml:space="preserve">
+    <value>Кам'янське</value>
+  </data>
+  <data name="City_TERNOPIL" xml:space="preserve">
+    <value>Тернопіль</value>
+  </data>
+  <data name="City_KREMENCHUK" xml:space="preserve">
+    <value>Кременчук</value>
+  </data>
+  <data name="City_LUTSK" xml:space="preserve">
+    <value>Луцьк</value>
+  </data>
+  <data name="City_BILA TSERKVA" xml:space="preserve">
+    <value>Біла Церква</value>
+  </data>
+  <data name="City_SIEVIERODONETSK" xml:space="preserve">
+    <value>Сєвєродонецьк</value>
+  </data>
+  <data name="City_KERCH" xml:space="preserve">
+    <value>Керч</value>
+  </data>
+  <data name="City_MELITOPOL" xml:space="preserve">
+    <value>Мелітополь</value>
+  </data>
+  <data name="City_KRAMATORSK" xml:space="preserve">
+    <value>Краматорськ</value>
+  </data>
+  <data name="City_KHRUSTALNYI" xml:space="preserve">
+    <value>Хрустальний (Красний Луч)</value>
+  </data>
+  <data name="City_UZHHOROD" xml:space="preserve">
+    <value>Ужгород</value>
+  </data>
+  <data name="City_SLOVIANSK" xml:space="preserve">
+    <value>Слов'янськ</value>
+  </data>
+  <data name="City_BROVARY" xml:space="preserve">
+    <value>Бровари</value>
+  </data>
+  <data name="City_YEVPATORIIA" xml:space="preserve">
+    <value>Євпаторія</value>
+  </data>
+  <data name="City_BERDIANSK" xml:space="preserve">
+    <value>Бердянськ</value>
+  </data>
+  <data name="City_ALCHEVSK" xml:space="preserve">
+    <value>Алчевськ</value>
+  </data>
+  <data name="City_NIKOPOL" xml:space="preserve">
+    <value>Нікополь</value>
+  </data>
+  <data name="City_PAVLOHRAD" xml:space="preserve">
+    <value>Павлоград</value>
+  </data>
+  <data name="City_KAMIANETS-PODILSKYI" xml:space="preserve">
+    <value>Кам'янець-Подільський</value>
+  </data>
+  <data name="City_LYSYCHANSK" xml:space="preserve">
+    <value>Лисичанськ</value>
+  </data>
+  <data name="City_DOVZHANSK" xml:space="preserve">
+    <value>Довжанськ</value>
+  </data>
+  <data name="City_MUKACHEVE" xml:space="preserve">
+    <value>Мукачево</value>
+  </data>
+  <data name="City_KONOTOP" xml:space="preserve">
+    <value>Конотоп</value>
+  </data>
+  <data name="City_UMAN" xml:space="preserve">
+    <value>Умань</value>
+  </data>
+  <data name="City_YENAKIIEVE" xml:space="preserve">
+    <value>Єнакієве</value>
+  </data>
+  <data name="City_YALTA" xml:space="preserve">
+    <value>Ялта</value>
+  </data>
+  <data name="City_SHOSTKA" xml:space="preserve">
+    <value>Шостка</value>
+  </data>
+  <data name="City_STAKHANOV" xml:space="preserve">
+    <value>Стаханов (Кадіївка)</value>
+  </data>
+  <data name="City_DROHOBYCH" xml:space="preserve">
+    <value>Дрогобич</value>
+  </data>
+  <data name="City_KOSTIANTYNIVKA" xml:space="preserve">
+    <value>Костянтинівка</value>
+  </data>
+  <data name="City_BAKHMUT" xml:space="preserve">
+    <value>Бахмут</value>
+  </data>
+  <data name="City_FEDOSIIA" xml:space="preserve">
+    <value>Феодосія</value>
+  </data>
+  <data name="City_KOVEL" xml:space="preserve">
+    <value>Ковель</value>
+  </data>
+  <data name="City_NIZHYN" xml:space="preserve">
+    <value>Ніжин</value>
+  </data>
+  <data name="City_SMILA" xml:space="preserve">
+    <value>Сміла</value>
+  </data>
+  <data name="City_CHERVONOHRAD" xml:space="preserve">
+    <value>Червоноград</value>
+  </data>
+  <data name="City_POKROVSK" xml:space="preserve">
+    <value>Покровськ</value>
+  </data>
+  <data name="City_PERVOMAISK" xml:space="preserve">
+    <value>Первомайськ</value>
+  </data>
+  <data name="City_KOROSTEN" xml:space="preserve">
+    <value>Коростень</value>
+  </data>
+  <data name="City_KOLOMYIA" xml:space="preserve">
+    <value>Коломия</value>
+  </data>
+  <data name="City_RUBIZHNE" xml:space="preserve">
+    <value>Рубіжне</value>
+  </data>
+  <data name="City_KHARTSYZK" xml:space="preserve">
+    <value>Харцизьк</value>
+  </data>
+  <data name="City_DRUZHKIVKA" xml:space="preserve">
+    <value>Дружківка</value>
+  </data>
+  <data name="City_CHORNOMORSK" xml:space="preserve">
+    <value>Чорноморськ</value>
+  </data>
+  <data name="City_BILHOROD-DNISTROVSKYI" xml:space="preserve">
+    <value>Білгород-Дністровський</value>
+  </data>
+  <data name="City_IRPIN" xml:space="preserve">
+    <value>Ірпінь</value>
+  </data>
+  <data name="City_CHYSTIAKOVE" xml:space="preserve">
+    <value>Чистякове (Торез)</value>
+  </data>
+  <data name="City_STRYI" xml:space="preserve">
+    <value>Стрий</value>
+  </data>
+  <data name="City_NOVOHRAD-VOLYNSKYI" xml:space="preserve">
+    <value>Новоград-Волинський (Звягель)</value>
+  </data>
+  <data name="City_LOZOVA" xml:space="preserve">
+    <value>Лозова</value>
+  </data>
+  <data name="City_ANTRATSYT" xml:space="preserve">
+    <value>Антрацит</value>
+  </data>
+  <data name="City_HORISHNI PLAVNI" xml:space="preserve">
+    <value>Горішні Плавні</value>
+  </data>
+  <data name="City_MYRNOHRAD" xml:space="preserve">
+    <value>Мирноград</value>
+  </data>
+  <data name="City_SHAKHTARSK" xml:space="preserve">
+    <value>Шахтарськ</value>
+  </data>
+  <data name="City_OKHTYRKA" xml:space="preserve">
+    <value>Охтирка</value>
+  </data>
+  <data name="City_SNIZHNE" xml:space="preserve">
+    <value>Сніжне</value>
+  </data>
+  <data name="City_ROVENKY" xml:space="preserve">
+    <value>Ровеньки</value>
+  </data>
+  <data name="City_FASTIV" xml:space="preserve">
+    <value>Фастів</value>
+  </data>
+  <data name="City_LUBNY" xml:space="preserve">
+    <value>Лубни</value>
+  </data>
+  <data name="City_BRIANKA" xml:space="preserve">
+    <value>Брянка</value>
+  </data>
+  <data name="City_KRASNODON" xml:space="preserve">
+    <value>Краснодон (Сорокине)</value>
+  </data>
+  <data name="City_ROMNY" xml:space="preserve">
+    <value>Ромни</value>
+  </data>
+  <data name="City_MYRHOROD" xml:space="preserve">
+    <value>Миргород</value>
+  </data>
+  <data name="City_PODILSK" xml:space="preserve">
+    <value>Подільськ</value>
+  </data>
+  <data name="City_VYSHNEVE" xml:space="preserve">
+    <value>Вишневе</value>
+  </data>
+  <data name="City_VASYLKIV" xml:space="preserve">
+    <value>Васильків</value>
+  </data>
+  <data name="City_DUBNO" xml:space="preserve">
+    <value>Дубно</value>
+  </data>
+  <data name="City_BORYSLAV" xml:space="preserve">
+    <value>Борислав</value>
+  </data>
+  <data name="City_BUCHA" xml:space="preserve">
+    <value>Буча</value>
+  </data>
+  <data name="City_HOLUBIVSKE" xml:space="preserve">
+    <value>Голубівське</value>
+  </data>
+  <data name="City_BOYARKA" xml:space="preserve">
+    <value>Боярка</value>
+  </data>
+  <data name="City_YASYNUVATA" xml:space="preserve">
+    <value>Ясинувата</value>
+  </data>
+  <data name="City_SLAVUTA" xml:space="preserve">
+    <value>Славута</value>
+  </data>
+  <data name="City_SAMBIR" xml:space="preserve">
+    <value>Самбір</value>
+  </data>
+  <data name="City_TORETSK" xml:space="preserve">
+    <value>Торецьк</value>
+  </data>
+  <data name="City_ZHMERYNKA" xml:space="preserve">
+    <value>Жмеринка</value>
+  </data>
+  <data name="City_CHUHUIV" xml:space="preserve">
+    <value>Чугуїв</value>
+  </data>
+  <data name="City_NOVOYAVOROVSKOYE" xml:space="preserve">
+    <value>Новояворівське</value>
+  </data>
+  <data name="City_MOHYLIV-PODILSKYI" xml:space="preserve">
+    <value>Могилів-Подільський</value>
+  </data>
+  <data name="City_TRUSKAVETS" xml:space="preserve">
+    <value>Трускавець</value>
+  </data>
+  <data name="City_DOBROPILLIA" xml:space="preserve">
+    <value>Добропілля</value>
+  </data>
+  <data name="City_KUPIANSK" xml:space="preserve">
+    <value>Куп'янськ</value>
+  </data>
+  <data name="City_PEREYASLAV-KHMEL’NYTS’KYY" xml:space="preserve">
+    <value>Переяслав-Хмельницький</value>
+  </data>
+  <data name="City_KHMILNYK" xml:space="preserve">
+    <value>Хмільник</value>
+  </data>
+  <data name="City_KIROVSK" xml:space="preserve">
+    <value>Кіровськ (Голубівка)</value>
+  </data>
+  <data name="City_SOFIYIVS’KA BORSHCHAHIVKA" xml:space="preserve">
+    <value>Софіївська Борщагівка</value>
+  </data>
+  <data name="City_PEREVALSK" xml:space="preserve">
+    <value>Перевальськ</value>
+  </data>
+  <data name="City_VYNOHRADIV" xml:space="preserve">
+    <value>Виноградів</value>
+  </data>
+  <data name="City_ARMIANSK" xml:space="preserve">
+    <value>Армянськ</value>
+  </data>
+  <data name="City_SAKY" xml:space="preserve">
+    <value>Саки</value>
+  </data>
+  <data name="City_DEBALTSEVE" xml:space="preserve">
+    <value>Дебальцеве</value>
+  </data>
+  <data name="City_SELYDOVE" xml:space="preserve">
+    <value>Селидове</value>
+  </data>
+  <data name="City_MOLODOHVARDIISK" xml:space="preserve">
+    <value>Молодогвардійськ</value>
+  </data>
+  <data name="City_MEREFA" xml:space="preserve">
+    <value>Мерефа</value>
+  </data>
+  <data name="City_BILOHORODKA" xml:space="preserve">
+    <value>Білогородка</value>
+  </data>
+  <data name="City_SUKHODILSK" xml:space="preserve">
+    <value>Суходільськ</value>
+  </data>
+  <data name="City_PELAHIIVKA" xml:space="preserve">
+    <value>Пелагіївка</value>
+  </data>
+  <data name="City_HOSTOMEL" xml:space="preserve">
+    <value>Гостомель</value>
+  </data>
+  <data name="City_TAROMSKE" xml:space="preserve">
+    <value>Таромське</value>
+  </data>
+  <data name="City_VYNNYKY" xml:space="preserve">
+    <value>Винники</value>
+  </data>
+  <data name="City_CHERVONOPARTYZANSK" xml:space="preserve">
+    <value>Червонопартизанськ (Вознесенівка)</value>
+  </data>
+  <data name="City_MYKOLAIVKA" xml:space="preserve">
+    <value>Миколаївка</value>
+  </data>
+  <data name="City_NYZHNIA KRYNKA" xml:space="preserve">
+    <value>Нижня Кринка</value>
+  </data>
+  <data name="City_ANTONIVKA" xml:space="preserve">
+    <value>Антонівка</value>
+  </data>
+  <data name="City_PETROVSKE" xml:space="preserve">
+    <value>Петровське</value>
+  </data>
+  <data name="City_PRYMORSKYI" xml:space="preserve">
+    <value>Приморський</value>
+  </data>
+  <data name="City_CHASIV YAR" xml:space="preserve">
+    <value>Часів Яр</value>
+  </data>
+  <data name="City_ZHDANIVKA" xml:space="preserve">
+    <value>Жданівка</value>
+  </data>
+  <data name="City_VAKHRUSHEVE" xml:space="preserve">
+    <value>Вахрушеве (Боково-Хрустальне)</value>
+  </data>
+  <data name="City_HIRNYK" xml:space="preserve">
+    <value>Гірник</value>
+  </data>
+  <data name="City_LYMANKA" xml:space="preserve">
+    <value>Лиманка</value>
+  </data>
+  <data name="City_SOLEDAR" xml:space="preserve">
+    <value>Соледар</value>
+  </data>
+  <data name="City_SARTANA" xml:space="preserve">
+    <value>Сартана</value>
+  </data>
+  <data name="City_HASPRA" xml:space="preserve">
+    <value>Гаспра</value>
+  </data>
+  <data name="City_INKERMAN" xml:space="preserve">
+    <value>Інкерман</value>
+  </data>
+  <data name="City_KOROLEVO" xml:space="preserve">
+    <value>Королево</value>
+  </data>
+  <data name="City_SNIATYN" xml:space="preserve">
+    <value>Снятин</value>
+  </data>
+  <data name="City_NOVGORODSKOYE" xml:space="preserve">
+    <value>Новгородське (Нью-Йорк)</value>
+  </data>
+  <data name="City_SIEVERNE" xml:space="preserve">
+    <value>Сєверне</value>
+  </data>
+  <data name="City_SOFIIVKA" xml:space="preserve">
+    <value>Софіївка</value>
+  </data>
+  <data name="City_TEPLOHIRSK" xml:space="preserve">
+    <value>Теплогірськ (Ірміно)</value>
+  </data>
+  <data name="City_BILENKE" xml:space="preserve">
+    <value>Біленьке</value>
+  </data>
+  <data name="City_HURZUF" xml:space="preserve">
+    <value>Гурзуф</value>
+  </data>
+  <data name="City_HORODENKA" xml:space="preserve">
+    <value>Городенка</value>
+  </data>
+  <data name="City_PIVNICHNE" xml:space="preserve">
+    <value>Північне</value>
+  </data>
+  <data name="City_YASENIVSKYI" xml:space="preserve">
+    <value>Ясенівський</value>
+  </data>
+  <data name="City_LIUBYMIVKA" xml:space="preserve">
+    <value>Любимівка</value>
+  </data>
+  <data name="City_MASANDRA" xml:space="preserve">
+    <value>Масандра</value>
+  </data>
+  <data name="City_BILKY" xml:space="preserve">
+    <value>Білки</value>
+  </data>
+  <data name="City_YASNOHIRKA" xml:space="preserve">
+    <value>Ясногірка</value>
+  </data>
+  <data name="City_BILYTSKE" xml:space="preserve">
+    <value>Білицьке</value>
+  </data>
+  <data name="City_POCHAIV" xml:space="preserve">
+    <value>Почаїв</value>
+  </data>
+  <data name="City_OLEKSANDRIVKA" xml:space="preserve">
+    <value>Олександрівка</value>
+  </data>
+  <data name="City_VUHLEHIRSK" xml:space="preserve">
+    <value>Вуглегірськ</value>
+  </data>
+  <data name="City_ZORYNSK" xml:space="preserve">
+    <value>Зоринськ</value>
+  </data>
+  <data name="City_KOMYSHANY" xml:space="preserve">
+    <value>Комишани</value>
+  </data>
+  <data name="City_OLEKSIIEVO-DRUZHKIVKA" xml:space="preserve">
+    <value>Олексієво-Дружківка</value>
+  </data>
+  <data name="City_PISKIVKA" xml:space="preserve">
+    <value>Пісківка</value>
+  </data>
+  <data name="City_HOLMIVSKYI" xml:space="preserve">
+    <value>Гольмівський</value>
+  </data>
+  <data name="City_NOVODRUZHESK" xml:space="preserve">
+    <value>Новодружеськ</value>
+  </data>
+  <data name="City_KARNAUKHIVKA" xml:space="preserve">
+    <value>Карнаухівка</value>
+  </data>
+  <data name="City_VELIKAYA BERËZOVITSA" xml:space="preserve">
+    <value>Велика Березовиця</value>
+  </data>
+  <data name="City_ROZKISHNE" xml:space="preserve">
+    <value>Розкішне</value>
+  </data>
+  <data name="City_VORZEL" xml:space="preserve">
+    <value>Ворзель</value>
+  </data>
+  <data name="City_SHEPETIVKA" xml:space="preserve">
+    <value>Шепетівка</value>
+  </data>
+  <data name="City_HALYCH" xml:space="preserve">
+    <value>Галич</value>
+  </data>
+  <data name="City_PETROPAVLIVS’KA BORSHCHAHIVKA" xml:space="preserve">
+    <value>Петропавлівська Борщагівка</value>
+  </data>
+  <data name="City_BALABYNE" xml:space="preserve">
+    <value>Балабине</value>
+  </data>
+  <data name="City_STARYI KRYM" xml:space="preserve">
+    <value>Старий Крим</value>
+  </data>
+  <data name="City_ZELENIVKA" xml:space="preserve">
+    <value>Зеленівка</value>
+  </data>
+  <data name="City_CHORNUKHYNE" xml:space="preserve">
+    <value>Чорнухине</value>
+  </data>
+  <data name="City_KOTSYUBYNS’KE" xml:space="preserve">
+    <value>Коцюбинське</value>
+  </data>
+  <data name="City_KOREIZ" xml:space="preserve">
+    <value>Кореїз</value>
+  </data>
+  <data name="City_BRYUKHOVYCHI" xml:space="preserve">
+    <value>Брюховичі</value>
+  </data>
+  <data name="City_HORENKA" xml:space="preserve">
+    <value>Горенка</value>
+  </data>
+  <data name="City_CHABANY" xml:space="preserve">
+    <value>Чабани</value>
+  </data>
+  <data name="City_TEPLE" xml:space="preserve">
+    <value>Тепле</value>
+  </data>
+  <data name="City_ZALIZNE" xml:space="preserve">
+    <value>Залізне</value>
+  </data>
+  <data name="City_KHOTIV" xml:space="preserve">
+    <value>Хотів</value>
+  </data>
+  <data name="City_NOVOOLEKSANDRIVKA" xml:space="preserve">
+    <value>Новоолександрівка</value>
+  </data>
+  <data name="City_ZAOZERNE" xml:space="preserve">
+    <value>Заозерне</value>
+  </data>
+  <data name="City_ALMAZNA" xml:space="preserve">
+    <value>Алмазна</value>
+  </data>
+  <data name="City_SHABELKIVKA" xml:space="preserve">
+    <value>Шабельківка</value>
+  </data>
+  <data name="City_OBROSHINO" xml:space="preserve">
+    <value>Оброшине</value>
+  </data>
+  <data name="City_KRYKHIVTSI" xml:space="preserve">
+    <value>Крихівці</value>
+  </data>
+  <data name="City_NOVOPILLIA" xml:space="preserve">
+    <value>Новопілля</value>
+  </data>
+  <data name="City_ZAITSEVE" xml:space="preserve">
+    <value>Зайцеве</value>
+  </data>
+  <data name="City_SIMEIZ" xml:space="preserve">
+    <value>Сімеїз</value>
+  </data>
+  <data name="City_NOVOSILKY" xml:space="preserve">
+    <value>Новосілки</value>
+  </data>
+  <data name="City_YASYNIVKA" xml:space="preserve">
+    <value>Ясинівка</value>
+  </data>
+  <data name="City_KRYUKIVSHCHYNA" xml:space="preserve">
+    <value>Крюківщина</value>
+  </data>
+  <data name="City_SHAKHTARSKE" xml:space="preserve">
+    <value>Шахтарське</value>
+  </data>
+  <data name="City_MYKHAYLIVKA-RUBEZHIVKA" xml:space="preserve">
+    <value>Михайлівка-Рубежівка</value>
+  </data>
+  <data name="City_VALIANIVSKE" xml:space="preserve">
+    <value>Вальянівське</value>
+  </data>
+  <data name="City_MALOKATERYNIVKA" xml:space="preserve">
+    <value>Малокатеринівка</value>
+  </data>
+  <data name="City_YUZHNA LOMUVATKA" xml:space="preserve">
+    <value>Южна Ломуватка</value>
+  </data>
+  <data name="City_SHCHERBYNIVKA" xml:space="preserve">
+    <value>Щербинівка</value>
+  </data>
+  <data name="City_VYLOK" xml:space="preserve">
+    <value>Вилок</value>
+  </data>
+  <data name="City_TOVSTE" xml:space="preserve">
+    <value>Товсте</value>
+  </data>
+  <data name="City_PIATYPILLIA" xml:space="preserve">
+    <value>П'ятипілля</value>
+  </data>
+  <data name="City_HATNE" xml:space="preserve">
+    <value>Гатне</value>
+  </data>
+  <data name="City_BULAVYNSKE" xml:space="preserve">
+    <value>Булавинське</value>
+  </data>
+  <data name="City_DUBOVE" xml:space="preserve">
+    <value>Дубове</value>
+  </data>
+  <data name="City_KULYNYCHI" xml:space="preserve">
+    <value>Кулиничі</value>
+  </data>
+  <data name="City_SADKY" xml:space="preserve">
+    <value>Садки</value>
+  </data>
+  <data name="City_KRASNOTORKA" xml:space="preserve">
+    <value>Красноторка</value>
+  </data>
+  <data name="City_PERVOMAISKYI" xml:space="preserve">
+    <value>Первомайський</value>
+  </data>
+  <data name="City_BRYTIVKA" xml:space="preserve">
+    <value>Бритівка</value>
+  </data>
+  <data name="City_BLYZHNIE" xml:space="preserve">
+    <value>Ближнє</value>
+  </data>
+  <data name="City_MYKHAILIVKA" xml:space="preserve">
+    <value>Михайлівка</value>
+  </data>
+  <data name="City_LARYNE" xml:space="preserve">
+    <value>Ларине</value>
+  </data>
+  <data name="City_VEDMEZHE" xml:space="preserve">
+    <value>Ведмеже</value>
+  </data>
+  <data name="City_VOLODYMYR-VOLYNSKYI" xml:space="preserve">
+    <value>Володимир-Волинський (Володимир)</value>
+  </data>
+  <data name="Verify" xml:space="preserve">
+    <value>Перевірити</value>
+  </data>
+  <data name="CheckByNumberTitle" xml:space="preserve">
+    <value>Перевірка за номером</value>
+  </data>
+  <data name="CheckByNumberSubtitle" xml:space="preserve">
+    <value>Дані з відкритого реєстру МВС</value>
+  </data>
+  <data name="CheckStatusClean" xml:space="preserve">
+    <value>ЮРИДИЧНО ЧИСТА</value>
+  </data>
+  <data name="CheckLabelMakeModel" xml:space="preserve">
+    <value>МАРКА/МОДЕЛЬ</value>
+  </data>
+  <data name="CheckLabelYear" xml:space="preserve">
+    <value>РІК ВИПУСКУ</value>
+  </data>
+  <data name="CheckLabelColor" xml:space="preserve">
+    <value>КОЛІР</value>
+  </data>
+  <data name="CheckLabelEngine" xml:space="preserve">
+    <value>ОБ'ЄМ ДВИГУНА</value>
+  </data>
+  <data name="CheckLabelDate" xml:space="preserve">
+    <value>ДАТА РЕЄСТРАЦІЇ</value>
+  </data>
+  <data name="CheckLabelOperation" xml:space="preserve">
+    <value>ОСТАННЯ ОПЕРАЦІЯ</value>
+  </data>
+  <data name="CheckInfoNotFound" xml:space="preserve">
+    <value>Інформацію не знайдено</value>
+  </data>
+  <data name="CarDescriptionMileage" xml:space="preserve">
+    <value>Пробіг</value>
+  </data>
+  <data name="CarDescriptionGear" xml:space="preserve">
+    <value>Тип коробки передач</value>
+  </data>
+  <data name="CarDescriptionFuelType" xml:space="preserve">
+    <value>Тип палива</value>
+  </data>
+  <data name="CarDescriptionCity" xml:space="preserve">
+    <value>Місто</value>
+  </data>
+  <data name="CarDescriptionLicensePlate" xml:space="preserve">
+    <value>Держ.номер</value>
+  </data>
+  <data name="CarDescriptionTitle" xml:space="preserve">
+    <value>Опис</value>
+  </data>
+  <data name="BodyType_SEDAN" xml:space="preserve">
+    <value>Седан</value>
+  </data>
+  <data name="BodyType_HATCHBACK" xml:space="preserve">
+    <value>Хетчбек</value>
+  </data>
+  <data name="BodyType_WAGON" xml:space="preserve">
+    <value>Універсал</value>
+  </data>
+  <data name="BodyType_LIFTBACK" xml:space="preserve">
+    <value>Ліфтбек</value>
+  </data>
+  <data name="BodyType_COUPE" xml:space="preserve">
+    <value>Купе</value>
+  </data>
+  <data name="BodyType_CONVERTIBLE" xml:space="preserve">
+    <value>Кабріолет</value>
+  </data>
+  <data name="BodyType_ROADSTER" xml:space="preserve">
+    <value>Родстер</value>
+  </data>
+  <data name="BodyType_LIMOUSINE" xml:space="preserve">
+    <value>Лімузин</value>
+  </data>
+  <data name="BodyType_SUV" xml:space="preserve">
+    <value>Позашляховик</value>
+  </data>
+  <data name="BodyType_CROSSOVER" xml:space="preserve">
+    <value>Кросовер</value>
+  </data>
+  <data name="BodyType_PICKUP" xml:space="preserve">
+    <value>Пікап</value>
+  </data>
+  <data name="BodyType_MINIVAN" xml:space="preserve">
+    <value>Мінівен</value>
+  </data>
+  <data name="BodyType_VAN" xml:space="preserve">
+    <value>Фургон</value>
+  </data>
+  <data name="BodyType_MINIBUS" xml:space="preserve">
+    <value>Мікроавтобус</value>
+  </data>
+  <data name="BodyType_TRUCK_CAB" xml:space="preserve">
+    <value>Тягач</value>
+  </data>
+  <data name="BodyType_CHASSIS_CAB" xml:space="preserve">
+    <value>Шасі</value>
+  </data>
+  <data name="BodyType_FLATBED" xml:space="preserve">
+    <value>Бортовий</value>
+  </data>
+  <data name="BodyType_DUMP_TRUCK" xml:space="preserve">
+    <value>Самоскид</value>
+  </data>
+  <data name="BodyType_MOTORCYCLE" xml:space="preserve">
+    <value>Мотоцикл</value>
+  </data>
+  <data name="BodyType_SCOOTER" xml:space="preserve">
+    <value>Скутер</value>
+  </data>
+  <data name="BodyType_ATV" xml:space="preserve">
+    <value>Квадроцикл</value>
   </data>
 </root>

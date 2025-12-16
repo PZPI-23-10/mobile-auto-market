@@ -1,7 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using CommunityToolkit.Maui;
 using AutoMarket.ViewModels;
-using AutoMarket.Models; // !! Додайте це, щоб MAUI знав про CarListing
+using AutoMarket.ViewModel;
+using AutoMarket.Views;// !! Додайте це, щоб MAUI знав про CarListing
 
 namespace AutoMarket
 {
@@ -23,6 +24,23 @@ namespace AutoMarket
             builder.Services.AddTransient<MainPageViewModel>();
             builder.Services.AddTransient<ProfilePage>();
             builder.Services.AddTransient<ProfilePageViewModel>();
+            builder.Services.AddTransient<AddListingViewModel>();
+            builder.Services.AddTransient<Login>();
+            builder.Services.AddTransient<SignUp>();
+            builder.Services.AddTransient<MailLogin>();
+            builder.Services.AddTransient<ProfileEdit>();
+            builder.Services.AddTransient<CarDetailsViewModel>();
+            builder.Services.AddTransient<CarDetailsPage>();
+            builder.Services.AddTransient<FavoritesPage>();
+            builder.Services.AddTransient<FavoritesViewModel>();
+            builder.Services.AddTransient<MyListingsPage>();
+            builder.Services.AddTransient<MyListingsViewModel>();
+            builder.Services.AddTransient<ChatsViewModel>();
+            builder.Services.AddTransient<ChatPage>();
+            builder.Services.AddTransient<ConversationViewModel>();
+            builder.Services.AddTransient<ConversationPage>();
+            builder.Services.AddTransient<FullMapPage>();
+            builder.Services.AddSingleton<ChatHubService>();
 #if DEBUG
             builder.Logging.AddDebug();
 #endif

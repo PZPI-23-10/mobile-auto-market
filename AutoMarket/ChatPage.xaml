@@ -1,12 +1,98 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:AutoMarket.ViewModels"
+             xmlns:models="clr-namespace:AutoMarket.Models"
              x:Class="AutoMarket.ChatPage"
-             Title="ChatPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Повідомлення"
+             BackgroundColor="#F5F5F5">
+
+    <Grid RowDefinitions="Auto, *">
+        <Button Grid.Row="0" Text="➕ Створити тест-чат" Command="{Binding CreateTestChatCommand}" IsVisible="False"/>
+
+        <RefreshView Grid.Row="1" IsRefreshing="{Binding IsRefreshing}" Command="{Binding LoadChatsCommand}">
+
+            <CollectionView ItemsSource="{Binding Chats}"
+                            SelectionMode="Single"
+                            SelectionChanged="OnSelectionChanged">
+
+                <CollectionView.EmptyView>
+                    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="10">
+                        <Button Text="➕ Створити тест-чат" Command="{Binding CreateTestChatCommand}" />
+                        <Label Text="📭" FontSize="50" HorizontalOptions="Center"/>
+                        <Label Text="У вас поки немає повідомлень" 
+                               TextColor="Gray" 
+                               HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                </CollectionView.EmptyView>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Chat">
+                        <Grid Padding="15, 10" ColumnDefinitions="60, *, Auto" BackgroundColor="White">
+
+                            <Image Grid.Column="0" 
+                                   Source="{Binding ImageUrl}" 
+                                   Aspect="AspectFill"
+                                   HeightRequest="50" WidthRequest="50"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center">
+                                <Image.Clip>
+                                    <EllipseGeometry Center="25,25" RadiusX="25" RadiusY="25"/>
+                                </Image.Clip>
+                            </Image>
+
+                            <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Margin="10, 0">
+
+                                <Label Text="{Binding Title}" 
+                                       FontAttributes="Bold" 
+                                       FontSize="16" 
+                                       TextColor="#1A1A1A"
+                                       LineBreakMode="TailTruncation"/>
+                                <Label Text="Натисніть, щоб відкрити..." 
+                                       FontSize="14" 
+                                       TextColor="Gray" 
+                                       LineBreakMode="TailTruncation"/>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Grid.Column="2" 
+                                                 Spacing="5" 
+                                                 HorizontalOptions="End" 
+                                                 VerticalOptions="Center">
+
+                                <Label Text="{Binding createdAt, StringFormat='{0:HH:mm}'}" 
+                                       TextColor="#999" 
+                                       FontSize="12" 
+                                       HorizontalOptions="End"/>
+
+                                <Border BackgroundColor="#FF3B30" 
+                                        StrokeThickness="0"
+                                        StrokeShape="RoundRectangle 10"
+                                        HeightRequest="20"
+                                        MinimumWidthRequest="20"
+                                        Padding="5,0"
+                                        HorizontalOptions="End">
+
+                                    <Label Text="{Binding UnreadCount}" 
+                                           TextColor="White" 
+                                           FontSize="11" 
+                                           FontAttributes="Bold"
+                                           HorizontalOptions="Center" 
+                                           VerticalOptions="Center"/>
+
+                                    <Border.Triggers>
+                                        <DataTrigger TargetType="Border" Binding="{Binding UnreadCount}" Value="0">
+                                            <Setter Property="IsVisible" Value="False"/>
+                                        </DataTrigger>
+                                    </Border.Triggers>
+                                </Border>
+
+                            </VerticalStackLayout>
+
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+    </Grid>
+
 </ContentPage>

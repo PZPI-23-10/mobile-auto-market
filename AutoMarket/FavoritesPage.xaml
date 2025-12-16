@@ -1,12 +1,164 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AutoMarket.FavoritesPage"
-             Title="FavoritesPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             xmlns:viewmodels="clr-namespace:AutoMarket.ViewModel"
+             xmlns:models="clr-namespace:AutoMarket.Models"
+             xmlns:helpers="clr-namespace:AutoMarket.Helpers"
+             x:Class="AutoMarket.Views.FavoritesPage"
+             Title="Favorites"
+             BackgroundColor="#F5F5F5">
+
+    <ContentPage.Resources>
+        <helpers:DynamicTranslateConverter x:Key="DynamicTranslate"/>
+        <helpers:InverseBoolConverter x:Key="InverseBoolConverter"/>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Label Text="Список обраного порожній"
+               FontSize="18"
+               TextColor="Gray"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               IsVisible="{Binding FavoriteListings.Count, Converter={StaticResource InverseBoolConverter}}"/>
+
+        <CollectionView ItemsSource="{Binding FavoriteListings}"
+                        SelectionMode="None"
+                        Margin="0,10,0,0">
+
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="0"/>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:CarListing">
+                    <VerticalStackLayout Padding="20, 0, 20, 15">
+
+                        <Border StrokeShape="RoundRectangle 12" 
+                                BackgroundColor="White" 
+                                Stroke="#E0E0E0" 
+                                StrokeThickness="1">
+
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:FavoritesViewModel}}, Path=OpenDetailsCommand}"
+                                    CommandParameter="{Binding .}"/>
+                            </Border.GestureRecognizers>
+
+                            <Grid RowDefinitions="200, Auto" BackgroundColor="White">
+
+                                <Grid Grid.Row="0">
+                                    <Image Source="{Binding CurrentPhotoUrl}" 
+                                           Aspect="AspectFill" 
+                                           HeightRequest="200"/>
+
+                                    <ImageButton Command="{Binding PrevPhotoCommand}"
+                                                 IsVisible="{Binding HasMultiplePhotos}"
+                                                 HorizontalOptions="Start"
+                                                 VerticalOptions="Center"
+                                                 BackgroundColor="#80000000" 
+                                                 CornerRadius="20"
+                                                 HeightRequest="40"
+                                                 WidthRequest="40"
+                                                 Margin="10,0,0,0">
+                                        <ImageButton.Source>
+                                            <FontImageSource Glyph="&lt;" Color="White" Size="25" FontFamily="OpenSansSemibold"/>
+                                        </ImageButton.Source>
+                                    </ImageButton>
+
+                                    <ImageButton Command="{Binding NextPhotoCommand}"
+                                                 IsVisible="{Binding HasMultiplePhotos}"
+                                                 HorizontalOptions="End"
+                                                 VerticalOptions="Center"
+                                                 BackgroundColor="#80000000" 
+                                                 CornerRadius="20"
+                                                 HeightRequest="40"
+                                                 WidthRequest="40"
+                                                 Margin="0,0,10,0">
+                                        <ImageButton.Source>
+                                            <FontImageSource Glyph="&gt;" Color="White" Size="25" FontFamily="OpenSansSemibold"/>
+                                        </ImageButton.Source>
+                                    </ImageButton>
+
+                                    <Label FontSize="32"
+                                           HorizontalOptions="End"
+                                           VerticalOptions="End"
+                                           Margin="10">
+
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:FavoritesViewModel}}, Path=RemoveFromFavoritesCommand}"
+                                                                  CommandParameter="{Binding .}"/>
+                                        </Label.GestureRecognizers>
+
+                                        <Label.Triggers>
+                                            <DataTrigger TargetType="Label" Binding="{Binding IsFavorite}" Value="False">
+                                                <Setter Property="Text" Value="♡" />
+                                                <Setter Property="TextColor" Value="White" />
+                                            </DataTrigger>
+                                            <DataTrigger TargetType="Label" Binding="{Binding IsFavorite}" Value="True">
+                                                <Setter Property="Text" Value="♥" />
+                                                <Setter Property="TextColor" Value="Red" />
+                                            </DataTrigger>
+                                        </Label.Triggers>
+                                    </Label>
+                                </Grid>
+
+                                <StackLayout Grid.Row="1" Padding="15">
+
+                                    <HorizontalStackLayout Spacing="5" Margin="0,0,0,5">
+                                        <Border BackgroundColor="#333333" StrokeThickness="0" Padding="5,2" StrokeShape="RoundRectangle 4">
+                                            <HorizontalStackLayout Spacing="3">
+                                                <Label Text="✓" TextColor="White" FontSize="10"/>
+                                                <Label Text="Перевірений VIN" TextColor="White" FontSize="10" FontAttributes="Bold"/>
+                                            </HorizontalStackLayout>
+                                        </Border>
+                                        <Border BackgroundColor="White" Stroke="Black" StrokeThickness="1" Padding="0" StrokeShape="RoundRectangle 4" WidthRequest="80">
+                                            <Grid ColumnDefinitions="15, *">
+                                                <BoxView Grid.Column="0" Color="#0057B8"/>
+                                                <BoxView Grid.Column="0" Color="#FFD700" VerticalOptions="End" HeightRequest="10"/>
+                                                <Label Grid.Column="1" Text="{Binding LicensePlate}" TextColor="Black" FontSize="11" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                            </Grid>
+                                        </Border>
+                                    </HorizontalStackLayout>
+
+                                    <Label Text="{Binding FullTitle}" TextColor="Black" FontSize="18" FontAttributes="Bold"/>
+
+                                    <HorizontalStackLayout Spacing="8" Margin="0,5">
+                                        <Label Text="{Binding PriceUsdFormatted}" TextColor="#4CAF50" FontSize="20" FontAttributes="Bold"/>
+                                        <Label Text="•" TextColor="Gray"/>
+                                        <Label Text="{Binding PriceUahFormatted}" TextColor="Gray" FontSize="14" VerticalOptions="Center"/>
+                                    </HorizontalStackLayout>
+
+                                    <Grid ColumnDefinitions="*,*,*" Margin="0,5">
+                                        <HorizontalStackLayout Grid.Column="0" Spacing="5">
+                                            <Label Text="⏱" TextColor="Gray"/>
+                                            <Label Text="{Binding Mileage, StringFormat='{0} км'}" TextColor="Black" FontSize="12"/>
+                                        </HorizontalStackLayout>
+                                        <HorizontalStackLayout Grid.Column="1" Spacing="5">
+                                            <Label Text="⛽" TextColor="Gray"/>
+                                            <Label Text="{Binding FuelType, Converter={StaticResource DynamicTranslate}, ConverterParameter='Fuel_'}" TextColor="Black" FontSize="12"/>
+                                        </HorizontalStackLayout>
+                                        <HorizontalStackLayout Grid.Column="2" Spacing="5">
+                                            <Label Text="⚙️" TextColor="Gray"/>
+                                            <Label Text="{Binding GearType, Converter={StaticResource DynamicTranslate}, ConverterParameter='Gear_'}" TextColor="Black" FontSize="12"/>
+                                        </HorizontalStackLayout>
+                                    </Grid>
+
+                                    <HorizontalStackLayout Spacing="5" Margin="0,5,0,0">
+                                        <Label Text="📍" TextColor="Gray"/>
+                                        <Label Text="{Binding City, Converter={StaticResource DynamicTranslate}, ConverterParameter='City_'}" TextColor="Black" FontSize="13"/>
+                                    </HorizontalStackLayout>
+                                </StackLayout>
+                            </Grid>
+                        </Border>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <ActivityIndicator IsRunning="{Binding IsBusy}" 
+                           IsVisible="{Binding IsBusy}"
+                           HorizontalOptions="Center" 
+                           VerticalOptions="Center" 
+                           Color="Red"/>
+    </Grid>
 </ContentPage>

@@ -1,4 +1,5 @@
 ﻿using System.Text.Json.Serialization;
+using AutoMarket.Models;
 
 namespace AutoMarket.Models
 {
@@ -15,7 +16,10 @@ namespace AutoMarket.Models
         public string aboutYourself { get; set; }
 
         public bool isVerified { get; set; }
-        public string urlPhoto { get; set; }
+        public string avatarUrl { get; set; }
+
+        [JsonPropertyName("favouriteVehicles")]
+        public List<CarListing> FavouriteVehicles { get; set; }
 
     }
 }

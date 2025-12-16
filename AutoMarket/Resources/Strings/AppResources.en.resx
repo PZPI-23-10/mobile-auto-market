@@ -120,37 +120,37 @@
   <data name="AddListingTitle" xml:space="preserve">
     <value>Add Listing</value>
   </data>
-  <data name="ConditionAll" xml:space="preserve">
+  <data name="Tab_All" xml:space="preserve">
     <value>All</value>
   </data>
-  <data name="ConditionNew" xml:space="preserve">
+  <data name="Tab_New" xml:space="preserve">
     <value>New</value>
   </data>
-  <data name="ConditionUsed" xml:space="preserve">
+  <data name="Tab_Used" xml:space="preserve">
     <value>Used</value>
   </data>
-  <data name="FilterMake" xml:space="preserve">
-    <value>Make</value>
+  <data name="Filter_Brand" xml:space="preserve">
+    <value>Brand</value>
   </data>
-  <data name="FilterModel" xml:space="preserve">
+  <data name="Filter_Model" xml:space="preserve">
     <value>Model</value>
   </data>
-  <data name="FilterPrice" xml:space="preserve">
+  <data name="Filter_Price" xml:space="preserve">
     <value>Price</value>
   </data>
-  <data name="FilterRegion" xml:space="preserve">
+  <data name="Filter_Region" xml:space="preserve">
     <value>Region</value>
   </data>
-  <data name="FilterTransmission" xml:space="preserve">
+  <data name="Filter_Gearbox" xml:space="preserve">
     <value>Transmission</value>
   </data>
-  <data name="FilterVehicleType" xml:space="preserve">
+  <data name="Filter_TransportType" xml:space="preserve">
     <value>Vehicle Type</value>
   </data>
-  <data name="FilterYear" xml:space="preserve">
+  <data name="Filter_Year" xml:space="preserve">
     <value>Year</value>
   </data>
-  <data name="FuelFilterText" xml:space="preserve">
+  <data name="Filter_Fuel" xml:space="preserve">
     <value>Fuel</value>
   </data>
   <data name="HotOffersLabel" xml:space="preserve">
@@ -202,7 +202,7 @@
     <value>Additional Options</value>
   </data>
   <data name="ListingStep6Subtitle" xml:space="preserve">
-    <value>price, currency, bargain, trade</value>
+    <value>price, currency</value>
   </data>
   <data name="ListingStep6Title" xml:space="preserve">
     <value>Price</value>
@@ -213,9 +213,6 @@
   <data name="ListingVerifiedVin" xml:space="preserve">
     <value>Verified VIN</value>
   </data>
-  <data name="PageTitleMain" xml:space="preserve">
-    <value>Main</value>
-  </data>
   <data name="SearchButtonText" xml:space="preserve">
     <value>Search</value>
   </data>
@@ -225,7 +222,7 @@
   <data name="TabFavorites" xml:space="preserve">
     <value>Favorites</value>
   </data>
-  <data name="TabHome" xml:space="preserve">
+  <data name="PageTitle_Main" xml:space="preserve">
     <value>Home</value>
   </data>
   <data name="TabProfile" xml:space="preserve">
@@ -296,5 +293,995 @@
   </data>
   <data name="FieldTrade" xml:space="preserve">
     <value>Trade</value>
+  </data>
+  <data name="Fuel_BENSIN" xml:space="preserve">
+    <value>Petrol</value>
+  </data>
+  <data name="Fuel_DIESEL" xml:space="preserve">
+    <value>Diesel</value>
+  </data>
+  <data name="Fuel_GAS" xml:space="preserve">
+    <value>Gas</value>
+  </data>
+  <data name="Fuel_ELECTRIC" xml:space="preserve">
+    <value>Electric</value>
+  </data>
+  <data name="Gear_AUTOMATIC" xml:space="preserve">
+    <value>Automatic</value>
+  </data>
+  <data name="Gear_MANUAL" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="Gear_ROBOTIC" xml:space="preserve">
+    <value>Robotic</value>
+  </data>
+  <data name="Gear_VARIATOR" xml:space="preserve">
+    <value>CVT</value>
+  </data>
+  <data name="Action_ResetFilters" xml:space="preserve">
+    <value>Reset filters</value>
+  </data>
+  <data name="Button_Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="TabHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Filter_City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="FuelFilterText" xml:space="preserve">
+    <value>Fuel</value>
+  </data>
+  <data name="VehicleTypePopupTitle" xml:space="preserve">
+    <value>Choose type</value>
+  </data>
+  <data name="VehicleType_PASSENGER_CAR" xml:space="preserve">
+    <value>Passenger Car</value>
+  </data>
+  <data name="VehicleType_TRUCK" xml:space="preserve">
+    <value>Truck</value>
+  </data>
+  <data name="VehicleType_MOTORCYCLE" xml:space="preserve">
+    <value>Motorcycle</value>
+  </data>
+  <data name="VehicleType_BUS" xml:space="preserve">
+    <value>Bus</value>
+  </data>
+  <data name="VehicleType_TRAILER" xml:space="preserve">
+    <value>Trailer</value>
+  </data>
+  <data name="BrandPopupTitle" xml:space="preserve">
+    <value>Choose brand</value>
+  </data>
+  <data name="ModelPopupTitle" xml:space="preserve">
+    <value>Choose model</value>
+  </data>
+  <data name="YearPopupTitle" xml:space="preserve">
+    <value>Choose a year</value>
+  </data>
+  <data name="PricePopupTitle" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="GearPopupTitle" xml:space="preserve">
+    <value>Choose gearbox</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="BtnApply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="Alert_Attention" xml:space="preserve">
+    <value>Attention</value>
+  </data>
+  <data name="Alert_Info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="Alert_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Error_SelectTypeFirst" xml:space="preserve">
+    <value>First, choose the Type of Transport!</value>
+  </data>
+  <data name="Error_SelectBrandFirst" xml:space="preserve">
+    <value>Choose a brand</value>
+  </data>
+  <data name="Error_SelectRegionFirst" xml:space="preserve">
+    <value>First, choose an Area (Region)!</value>
+  </data>
+  <data name="Error_ListEmpty_Brand" xml:space="preserve">
+    <value>The brand list is loading or empty</value>
+  </data>
+  <data name="Error_ListEmpty_Model" xml:space="preserve">
+    <value>Model list is empty</value>
+  </data>
+  <data name="Error_ListEmpty_City" xml:space="preserve">
+    <value>The list of cities is empty</value>
+  </data>
+  <data name="Error_ListEmpty_Fuel" xml:space="preserve">
+    <value>Fuel list is empty</value>
+  </data>
+  <data name="Error_ListEmpty_Gear" xml:space="preserve">
+    <value>The checkpoint list is empty</value>
+  </data>
+  <data name="Error_ListEmpty_Type" xml:space="preserve">
+    <value>The type list is empty</value>
+  </data>
+  <data name="Msg_NothingFound" xml:space="preserve">
+    <value>Nothing found for your filters</value>
+  </data>
+  <data name="RegionPopupTitle" xml:space="preserve">
+    <value>Select region</value>
+  </data>
+  <data name="RegionPopupTitle1" xml:space="preserve">
+    <value>Select region</value>
+  </data>
+  <data name="Region_KYIV, MISTO" xml:space="preserve">
+    <value>Kyiv City</value>
+  </data>
+  <data name="Region_SEVASTOPOL, MISTO" xml:space="preserve">
+    <value>Sevastopol City</value>
+  </data>
+  <data name="Region_KRYM, AVTONOMNA RESPUBLIKA" xml:space="preserve">
+    <value>Crimea</value>
+  </data>
+  <data name="Region_VINNYTSKA OBLAST" xml:space="preserve">
+    <value>Vinnytsia Oblast</value>
+  </data>
+  <data name="Region_VOLYNSKA OBLAST" xml:space="preserve">
+    <value>Volyn Oblast</value>
+  </data>
+  <data name="Region_DNIPROPETROVSKA OBLAST" xml:space="preserve">
+    <value>Dnipropetrovsk Oblast</value>
+  </data>
+  <data name="Region_DONETSKA OBLAST" xml:space="preserve">
+    <value>Donetsk Oblast</value>
+  </data>
+  <data name="Region_ZHYTOMYRSKA OBLAST" xml:space="preserve">
+    <value>Zhytomyr Oblast</value>
+  </data>
+  <data name="Region_ZAKARPATSKA OBLAST" xml:space="preserve">
+    <value>Zakarpattia Oblast</value>
+  </data>
+  <data name="Region_ZAPORIZKA OBLAST" xml:space="preserve">
+    <value>Zaporizhzhia Oblast</value>
+  </data>
+  <data name="Region_IVANO-FRANKIVSKA OBLAST" xml:space="preserve">
+    <value>Ivano-Frankivsk Oblast</value>
+  </data>
+  <data name="Region_KYIVSKA OBLAST" xml:space="preserve">
+    <value>Kyiv Oblast</value>
+  </data>
+  <data name="Region_KIROVOHRADSKA OBLAST" xml:space="preserve">
+    <value>Kirovohrad Oblast</value>
+  </data>
+  <data name="Region_LUHANSKA OBLAST" xml:space="preserve">
+    <value>Luhansk Oblast</value>
+  </data>
+  <data name="Region_LVIVSKA OBLAST" xml:space="preserve">
+    <value>Lviv Oblast</value>
+  </data>
+  <data name="Region_MYKOLAIVSKA OBLAST" xml:space="preserve">
+    <value>Mykolaiv Oblast</value>
+  </data>
+  <data name="Region_ODESKA OBLAST" xml:space="preserve">
+    <value>Odesa Oblast</value>
+  </data>
+  <data name="Region_POLTAVSKA OBLAST" xml:space="preserve">
+    <value>Poltava Oblast</value>
+  </data>
+  <data name="Region_RIVNENSKA OBLAST" xml:space="preserve">
+    <value>Rivne Oblast</value>
+  </data>
+  <data name="Region_SUMSKA OBLAST" xml:space="preserve">
+    <value>Sumy Oblast</value>
+  </data>
+  <data name="Region_TERNOPILSKA OBLAST" xml:space="preserve">
+    <value>Ternopil Oblast</value>
+  </data>
+  <data name="Region_KHARKIVSKA OBLAST" xml:space="preserve">
+    <value>Kharkiv Oblast</value>
+  </data>
+  <data name="Region_KHERSONSKA OBLAST" xml:space="preserve">
+    <value>Kherson Oblast</value>
+  </data>
+  <data name="Region_KHMELNYTSKA OBLAST" xml:space="preserve">
+    <value>Khmelnytskyi Oblast</value>
+  </data>
+  <data name="Region_CHERKASKA OBLAST" xml:space="preserve">
+    <value>Cherkasy Oblast</value>
+  </data>
+  <data name="Region_CHERNIVETSKA OBLAST" xml:space="preserve">
+    <value>Chernivtsi Oblast</value>
+  </data>
+  <data name="Region_CHERNIHIVSKA OBLAST" xml:space="preserve">
+    <value>Chernihiv Oblast</value>
+  </data>
+  <data name="CityPopupTitle" xml:space="preserve">
+    <value>Select city</value>
+  </data>
+  <data name="CityListEmpty" xml:space="preserve">
+    <value>No cities found</value>
+  </data>
+  <data name="City_KYIV" xml:space="preserve">
+    <value>Kyiv</value>
+  </data>
+  <data name="City_KHARKIV" xml:space="preserve">
+    <value>Kharkiv</value>
+  </data>
+  <data name="City_ODESA" xml:space="preserve">
+    <value>Odesa</value>
+  </data>
+  <data name="City_DNIPRO" xml:space="preserve">
+    <value>Dnipro</value>
+  </data>
+  <data name="City_DONETSK" xml:space="preserve">
+    <value>Donetsk</value>
+  </data>
+  <data name="City_LVIV" xml:space="preserve">
+    <value>Lviv</value>
+  </data>
+  <data name="City_ZAPORIZHZHIA" xml:space="preserve">
+    <value>Zaporizhzhia</value>
+  </data>
+  <data name="City_BAZAL’TOVE" xml:space="preserve">
+    <value>Bazal’tove</value>
+  </data>
+  <data name="City_KRYVYI RIH" xml:space="preserve">
+    <value>Kryvyi Rih</value>
+  </data>
+  <data name="City_SEVASTOPOL" xml:space="preserve">
+    <value>Sevastopol</value>
+  </data>
+  <data name="City_MYKOLAIV" xml:space="preserve">
+    <value>Mykolaiv</value>
+  </data>
+  <data name="City_MARIUPOL" xml:space="preserve">
+    <value>Mariupol</value>
+  </data>
+  <data name="City_LUHANSK" xml:space="preserve">
+    <value>Luhansk</value>
+  </data>
+  <data name="City_VINNYTSIA" xml:space="preserve">
+    <value>Vinnytsia</value>
+  </data>
+  <data name="City_MAKIIVKA" xml:space="preserve">
+    <value>Makiivka</value>
+  </data>
+  <data name="City_SIMFEROPOL" xml:space="preserve">
+    <value>Simferopol</value>
+  </data>
+  <data name="City_CHERNIHIV" xml:space="preserve">
+    <value>Chernihiv</value>
+  </data>
+  <data name="City_POLTAVA" xml:space="preserve">
+    <value>Poltava</value>
+  </data>
+  <data name="City_KHERSON" xml:space="preserve">
+    <value>Kherson</value>
+  </data>
+  <data name="City_KHMELNYTSKYI" xml:space="preserve">
+    <value>Khmelnytskyi</value>
+  </data>
+  <data name="City_CHERKASY" xml:space="preserve">
+    <value>Cherkasy</value>
+  </data>
+  <data name="City_SUMY" xml:space="preserve">
+    <value>Sumy</value>
+  </data>
+  <data name="City_CHERNIVTSI" xml:space="preserve">
+    <value>Chernivtsi</value>
+  </data>
+  <data name="City_ZHYTOMYR" xml:space="preserve">
+    <value>Zhytomyr</value>
+  </data>
+  <data name="City_HORLIVKA" xml:space="preserve">
+    <value>Horlivka</value>
+  </data>
+  <data name="City_RIVNE" xml:space="preserve">
+    <value>Rivne</value>
+  </data>
+  <data name="City_IVANO-FRANKIVSK" xml:space="preserve">
+    <value>Ivano-Frankivsk</value>
+  </data>
+  <data name="City_KROPYVNYTSKYI" xml:space="preserve">
+    <value>Kropyvnytskyi</value>
+  </data>
+  <data name="City_KAMIANSKE" xml:space="preserve">
+    <value>Kamianske</value>
+  </data>
+  <data name="City_TERNOPIL" xml:space="preserve">
+    <value>Ternopil</value>
+  </data>
+  <data name="City_KREMENCHUK" xml:space="preserve">
+    <value>Kremenchuk</value>
+  </data>
+  <data name="City_LUTSK" xml:space="preserve">
+    <value>Lutsk</value>
+  </data>
+  <data name="City_BILA TSERKVA" xml:space="preserve">
+    <value>Bila Tserkva</value>
+  </data>
+  <data name="City_SIEVIERODONETSK" xml:space="preserve">
+    <value>Sievierodonetsk</value>
+  </data>
+  <data name="City_KERCH" xml:space="preserve">
+    <value>Kerch</value>
+  </data>
+  <data name="City_MELITOPOL" xml:space="preserve">
+    <value>Melitopol</value>
+  </data>
+  <data name="City_KRAMATORSK" xml:space="preserve">
+    <value>Kramatorsk</value>
+  </data>
+  <data name="City_KHRUSTALNYI" xml:space="preserve">
+    <value>Khrustalnyi</value>
+  </data>
+  <data name="City_UZHHOROD" xml:space="preserve">
+    <value>Uzhhorod</value>
+  </data>
+  <data name="City_SLOVIANSK" xml:space="preserve">
+    <value>Sloviansk</value>
+  </data>
+  <data name="City_BROVARY" xml:space="preserve">
+    <value>Brovary</value>
+  </data>
+  <data name="City_YEVPATORIIA" xml:space="preserve">
+    <value>Yevpatoriia</value>
+  </data>
+  <data name="City_BERDIANSK" xml:space="preserve">
+    <value>Berdiansk</value>
+  </data>
+  <data name="City_ALCHEVSK" xml:space="preserve">
+    <value>Alchevsk</value>
+  </data>
+  <data name="City_NIKOPOL" xml:space="preserve">
+    <value>Nikopol</value>
+  </data>
+  <data name="City_PAVLOHRAD" xml:space="preserve">
+    <value>Pavlohrad</value>
+  </data>
+  <data name="City_KAMIANETS-PODILSKYI" xml:space="preserve">
+    <value>Kamianets-Podilskyi</value>
+  </data>
+  <data name="City_LYSYCHANSK" xml:space="preserve">
+    <value>Lysychansk</value>
+  </data>
+  <data name="City_DOVZHANSK" xml:space="preserve">
+    <value>Dovzhansk</value>
+  </data>
+  <data name="City_MUKACHEVE" xml:space="preserve">
+    <value>Mukacheve</value>
+  </data>
+  <data name="City_KONOTOP" xml:space="preserve">
+    <value>Konotop</value>
+  </data>
+  <data name="City_UMAN" xml:space="preserve">
+    <value>Uman</value>
+  </data>
+  <data name="City_YENAKIIEVE" xml:space="preserve">
+    <value>Yenakiieve</value>
+  </data>
+  <data name="City_YALTA" xml:space="preserve">
+    <value>Yalta</value>
+  </data>
+  <data name="City_SHOSTKA" xml:space="preserve">
+    <value>Shostka</value>
+  </data>
+  <data name="City_STAKHANOV" xml:space="preserve">
+    <value>Stakhanov</value>
+  </data>
+  <data name="City_DROHOBYCH" xml:space="preserve">
+    <value>Drohobych</value>
+  </data>
+  <data name="City_KOSTIANTYNIVKA" xml:space="preserve">
+    <value>Kostiantynivka</value>
+  </data>
+  <data name="City_BAKHMUT" xml:space="preserve">
+    <value>Bakhmut</value>
+  </data>
+  <data name="City_FEDOSIIA" xml:space="preserve">
+    <value>Fedosiia</value>
+  </data>
+  <data name="City_KOVEL" xml:space="preserve">
+    <value>Kovel</value>
+  </data>
+  <data name="City_NIZHYN" xml:space="preserve">
+    <value>Nizhyn</value>
+  </data>
+  <data name="City_SMILA" xml:space="preserve">
+    <value>Smila</value>
+  </data>
+  <data name="City_CHERVONOHRAD" xml:space="preserve">
+    <value>Chervonohrad</value>
+  </data>
+  <data name="City_POKROVSK" xml:space="preserve">
+    <value>Pokrovsk</value>
+  </data>
+  <data name="City_PERVOMAISK" xml:space="preserve">
+    <value>Pervomaisk</value>
+  </data>
+  <data name="City_KOROSTEN" xml:space="preserve">
+    <value>Korosten</value>
+  </data>
+  <data name="City_KOLOMYIA" xml:space="preserve">
+    <value>Kolomyia</value>
+  </data>
+  <data name="City_RUBIZHNE" xml:space="preserve">
+    <value>Rubizhne</value>
+  </data>
+  <data name="City_KHARTSYZK" xml:space="preserve">
+    <value>Khartsyzk</value>
+  </data>
+  <data name="City_DRUZHKIVKA" xml:space="preserve">
+    <value>Druzhkivka</value>
+  </data>
+  <data name="City_CHORNOMORSK" xml:space="preserve">
+    <value>Chornomorsk</value>
+  </data>
+  <data name="City_BILHOROD-DNISTROVSKYI" xml:space="preserve">
+    <value>Bilhorod-Dnistrovskyi</value>
+  </data>
+  <data name="City_IRPIN" xml:space="preserve">
+    <value>Irpin</value>
+  </data>
+  <data name="City_CHYSTIAKOVE" xml:space="preserve">
+    <value>Chystiakove</value>
+  </data>
+  <data name="City_STRYI" xml:space="preserve">
+    <value>Stryi</value>
+  </data>
+  <data name="City_NOVOHRAD-VOLYNSKYI" xml:space="preserve">
+    <value>Novohrad-Volynskyi</value>
+  </data>
+  <data name="City_LOZOVA" xml:space="preserve">
+    <value>Lozova</value>
+  </data>
+  <data name="City_ANTRATSYT" xml:space="preserve">
+    <value>Antratsyt</value>
+  </data>
+  <data name="City_HORISHNI PLAVNI" xml:space="preserve">
+    <value>Horishni Plavni</value>
+  </data>
+  <data name="City_MYRNOHRAD" xml:space="preserve">
+    <value>Myrnohrad</value>
+  </data>
+  <data name="City_SHAKHTARSK" xml:space="preserve">
+    <value>Shakhtarsk</value>
+  </data>
+  <data name="City_OKHTYRKA" xml:space="preserve">
+    <value>Okhtyrka</value>
+  </data>
+  <data name="City_SNIZHNE" xml:space="preserve">
+    <value>Snizhne</value>
+  </data>
+  <data name="City_ROVENKY" xml:space="preserve">
+    <value>Rovenky</value>
+  </data>
+  <data name="City_FASTIV" xml:space="preserve">
+    <value>Fastiv</value>
+  </data>
+  <data name="City_LUBNY" xml:space="preserve">
+    <value>Lubny</value>
+  </data>
+  <data name="City_BRIANKA" xml:space="preserve">
+    <value>Brianka</value>
+  </data>
+  <data name="City_KRASNODON" xml:space="preserve">
+    <value>Krasnodon</value>
+  </data>
+  <data name="City_ROMNY" xml:space="preserve">
+    <value>Romny</value>
+  </data>
+  <data name="City_MYRHOROD" xml:space="preserve">
+    <value>Myrhorod</value>
+  </data>
+  <data name="City_PODILSK" xml:space="preserve">
+    <value>Podilsk</value>
+  </data>
+  <data name="City_VYSHNEVE" xml:space="preserve">
+    <value>Vyshneve</value>
+  </data>
+  <data name="City_VASYLKIV" xml:space="preserve">
+    <value>Vasylkiv</value>
+  </data>
+  <data name="City_DUBNO" xml:space="preserve">
+    <value>Dubno</value>
+  </data>
+  <data name="City_BORYSLAV" xml:space="preserve">
+    <value>Boryslav</value>
+  </data>
+  <data name="City_BUCHA" xml:space="preserve">
+    <value>Bucha</value>
+  </data>
+  <data name="City_HOLUBIVSKE" xml:space="preserve">
+    <value>Holubivske</value>
+  </data>
+  <data name="City_BOYARKA" xml:space="preserve">
+    <value>Boyarka</value>
+  </data>
+  <data name="City_YASYNUVATA" xml:space="preserve">
+    <value>Yasynuvata</value>
+  </data>
+  <data name="City_SLAVUTA" xml:space="preserve">
+    <value>Slavuta</value>
+  </data>
+  <data name="City_SAMBIR" xml:space="preserve">
+    <value>Sambir</value>
+  </data>
+  <data name="City_TORETSK" xml:space="preserve">
+    <value>Toretsk</value>
+  </data>
+  <data name="City_ZHMERYNKA" xml:space="preserve">
+    <value>Zhmerynka</value>
+  </data>
+  <data name="City_CHUHUIV" xml:space="preserve">
+    <value>Chuhuiv</value>
+  </data>
+  <data name="City_NOVOYAVOROVSKOYE" xml:space="preserve">
+    <value>Novoyavorovskoye</value>
+  </data>
+  <data name="City_MOHYLIV-PODILSKYI" xml:space="preserve">
+    <value>Mohyliv-Podilskyi</value>
+  </data>
+  <data name="City_TRUSKAVETS" xml:space="preserve">
+    <value>Truskavets</value>
+  </data>
+  <data name="City_DOBROPILLIA" xml:space="preserve">
+    <value>Dobropillia</value>
+  </data>
+  <data name="City_KUPIANSK" xml:space="preserve">
+    <value>Kupiansk</value>
+  </data>
+  <data name="City_PEREYASLAV-KHMEL’NYTS’KYY" xml:space="preserve">
+    <value>Pereyaslav-Khmel’nyts’kyy</value>
+  </data>
+  <data name="City_KHMILNYK" xml:space="preserve">
+    <value>Khmilnyk</value>
+  </data>
+  <data name="City_KIROVSK" xml:space="preserve">
+    <value>Kirovsk</value>
+  </data>
+  <data name="City_SOFIYIVS’KA BORSHCHAHIVKA" xml:space="preserve">
+    <value>Sofiyivs’ka Borshchahivka</value>
+  </data>
+  <data name="City_PEREVALSK" xml:space="preserve">
+    <value>Perevalsk</value>
+  </data>
+  <data name="City_VYNOHRADIV" xml:space="preserve">
+    <value>Vynohradiv</value>
+  </data>
+  <data name="City_ARMIANSK" xml:space="preserve">
+    <value>Armiansk</value>
+  </data>
+  <data name="City_SAKY" xml:space="preserve">
+    <value>Saky</value>
+  </data>
+  <data name="City_DEBALTSEVE" xml:space="preserve">
+    <value>Debaltseve</value>
+  </data>
+  <data name="City_SELYDOVE" xml:space="preserve">
+    <value>Selydove</value>
+  </data>
+  <data name="City_MOLODOHVARDIISK" xml:space="preserve">
+    <value>Molodohvardiisk</value>
+  </data>
+  <data name="City_MEREFA" xml:space="preserve">
+    <value>Merefa</value>
+  </data>
+  <data name="City_BILOHORODKA" xml:space="preserve">
+    <value>Bilohorodka</value>
+  </data>
+  <data name="City_SUKHODILSK" xml:space="preserve">
+    <value>Sukhodilsk</value>
+  </data>
+  <data name="City_PELAHIIVKA" xml:space="preserve">
+    <value>Pelahiivka</value>
+  </data>
+  <data name="City_HOSTOMEL" xml:space="preserve">
+    <value>Hostomel</value>
+  </data>
+  <data name="City_TAROMSKE" xml:space="preserve">
+    <value>Taromske</value>
+  </data>
+  <data name="City_VYNNYKY" xml:space="preserve">
+    <value>Vynnyky</value>
+  </data>
+  <data name="City_CHERVONOPARTYZANSK" xml:space="preserve">
+    <value>Chervonopartyzansk</value>
+  </data>
+  <data name="City_MYKOLAIVKA" xml:space="preserve">
+    <value>Mykolaivka</value>
+  </data>
+  <data name="City_NYZHNIA KRYNKA" xml:space="preserve">
+    <value>Nyzhnia Krynka</value>
+  </data>
+  <data name="City_ANTONIVKA" xml:space="preserve">
+    <value>Antonivka</value>
+  </data>
+  <data name="City_PETROVSKE" xml:space="preserve">
+    <value>Petrovske</value>
+  </data>
+  <data name="City_PRYMORSKYI" xml:space="preserve">
+    <value>Prymorskyi</value>
+  </data>
+  <data name="City_CHASIV YAR" xml:space="preserve">
+    <value>Chasiv Yar</value>
+  </data>
+  <data name="City_ZHDANIVKA" xml:space="preserve">
+    <value>Zhdanivka</value>
+  </data>
+  <data name="City_VAKHRUSHEVE" xml:space="preserve">
+    <value>Vakhrusheve</value>
+  </data>
+  <data name="City_HIRNYK" xml:space="preserve">
+    <value>Hirnyk</value>
+  </data>
+  <data name="City_LYMANKA" xml:space="preserve">
+    <value>Lymanka</value>
+  </data>
+  <data name="City_SOLEDAR" xml:space="preserve">
+    <value>Soledar</value>
+  </data>
+  <data name="City_SARTANA" xml:space="preserve">
+    <value>Sartana</value>
+  </data>
+  <data name="City_HASPRA" xml:space="preserve">
+    <value>Haspra</value>
+  </data>
+  <data name="City_INKERMAN" xml:space="preserve">
+    <value>Inkerman</value>
+  </data>
+  <data name="City_KOROLEVO" xml:space="preserve">
+    <value>Korolevo</value>
+  </data>
+  <data name="City_SNIATYN" xml:space="preserve">
+    <value>Sniatyn</value>
+  </data>
+  <data name="City_NOVGORODSKOYE" xml:space="preserve">
+    <value>Novgorodskoye</value>
+  </data>
+  <data name="City_SIEVERNE" xml:space="preserve">
+    <value>Sieverne</value>
+  </data>
+  <data name="City_SOFIIVKA" xml:space="preserve">
+    <value>Sofiivka</value>
+  </data>
+  <data name="City_TEPLOHIRSK" xml:space="preserve">
+    <value>Teplohirsk</value>
+  </data>
+  <data name="City_BILENKE" xml:space="preserve">
+    <value>Bilenke</value>
+  </data>
+  <data name="City_HURZUF" xml:space="preserve">
+    <value>Hurzuf</value>
+  </data>
+  <data name="City_HORODENKA" xml:space="preserve">
+    <value>Horodenka</value>
+  </data>
+  <data name="City_PIVNICHNE" xml:space="preserve">
+    <value>Pivnichne</value>
+  </data>
+  <data name="City_YASENIVSKYI" xml:space="preserve">
+    <value>Yasenivskyi</value>
+  </data>
+  <data name="City_LIUBYMIVKA" xml:space="preserve">
+    <value>Liubymivka</value>
+  </data>
+  <data name="City_MASANDRA" xml:space="preserve">
+    <value>Masandra</value>
+  </data>
+  <data name="City_BILKY" xml:space="preserve">
+    <value>Bilky</value>
+  </data>
+  <data name="City_YASNOHIRKA" xml:space="preserve">
+    <value>Yasnohirka</value>
+  </data>
+  <data name="City_BILYTSKE" xml:space="preserve">
+    <value>Bilytske</value>
+  </data>
+  <data name="City_POCHAIV" xml:space="preserve">
+    <value>Pochaiv</value>
+  </data>
+  <data name="City_OLEKSANDRIVKA" xml:space="preserve">
+    <value>Oleksandrivka</value>
+  </data>
+  <data name="City_VUHLEHIRSK" xml:space="preserve">
+    <value>Vuhlehirsk</value>
+  </data>
+  <data name="City_ZORYNSK" xml:space="preserve">
+    <value>Zorynsk</value>
+  </data>
+  <data name="City_KOMYSHANY" xml:space="preserve">
+    <value>Komyshany</value>
+  </data>
+  <data name="City_OLEKSIIEVO-DRUZHKIVKA" xml:space="preserve">
+    <value>Oleksiievo-Druzhkivka</value>
+  </data>
+  <data name="City_PISKIVKA" xml:space="preserve">
+    <value>Piskivka</value>
+  </data>
+  <data name="City_HOLMIVSKYI" xml:space="preserve">
+    <value>Holmivskyi</value>
+  </data>
+  <data name="City_NOVODRUZHESK" xml:space="preserve">
+    <value>Novodruzhesk</value>
+  </data>
+  <data name="City_KARNAUKHIVKA" xml:space="preserve">
+    <value>Karnaukhivka</value>
+  </data>
+  <data name="City_VELIKAYA BERËZOVITSA" xml:space="preserve">
+    <value>Velikaya Berëzovitsa</value>
+  </data>
+  <data name="City_ROZKISHNE" xml:space="preserve">
+    <value>Rozkishne</value>
+  </data>
+  <data name="City_VORZEL" xml:space="preserve">
+    <value>Vorzel</value>
+  </data>
+  <data name="City_SHEPETIVKA" xml:space="preserve">
+    <value>Shepetivka</value>
+  </data>
+  <data name="City_HALYCH" xml:space="preserve">
+    <value>Halych</value>
+  </data>
+  <data name="City_PETROPAVLIVS’KA BORSHCHAHIVKA" xml:space="preserve">
+    <value>Petropavlivs’ka Borshchahivka</value>
+  </data>
+  <data name="City_BALABYNE" xml:space="preserve">
+    <value>Balabyne</value>
+  </data>
+  <data name="City_STARYI KRYM" xml:space="preserve">
+    <value>Staryi Krym</value>
+  </data>
+  <data name="City_ZELENIVKA" xml:space="preserve">
+    <value>Zelenivka</value>
+  </data>
+  <data name="City_CHORNUKHYNE" xml:space="preserve">
+    <value>Chornukhyne</value>
+  </data>
+  <data name="City_KOTSYUBYNS’KE" xml:space="preserve">
+    <value>Kotsyubyns’ke</value>
+  </data>
+  <data name="City_KOREIZ" xml:space="preserve">
+    <value>Koreiz</value>
+  </data>
+  <data name="City_BRYUKHOVYCHI" xml:space="preserve">
+    <value>Bryukhovychi</value>
+  </data>
+  <data name="City_HORENKA" xml:space="preserve">
+    <value>Horenka</value>
+  </data>
+  <data name="City_CHABANY" xml:space="preserve">
+    <value>Chabany</value>
+  </data>
+  <data name="City_TEPLE" xml:space="preserve">
+    <value>Teple</value>
+  </data>
+  <data name="City_ZALIZNE" xml:space="preserve">
+    <value>Zalizne</value>
+  </data>
+  <data name="City_KHOTIV" xml:space="preserve">
+    <value>Khotiv</value>
+  </data>
+  <data name="City_NOVOOLEKSANDRIVKA" xml:space="preserve">
+    <value>Novooleksandrivka</value>
+  </data>
+  <data name="City_ZAOZERNE" xml:space="preserve">
+    <value>Zaozerne</value>
+  </data>
+  <data name="City_ALMAZNA" xml:space="preserve">
+    <value>Almazna</value>
+  </data>
+  <data name="City_SHABELKIVKA" xml:space="preserve">
+    <value>Shabelkivka</value>
+  </data>
+  <data name="City_OBROSHINO" xml:space="preserve">
+    <value>Obroshino</value>
+  </data>
+  <data name="City_KRYKHIVTSI" xml:space="preserve">
+    <value>Krykhivtsi</value>
+  </data>
+  <data name="City_NOVOPILLIA" xml:space="preserve">
+    <value>Novopillia</value>
+  </data>
+  <data name="City_ZAITSEVE" xml:space="preserve">
+    <value>Zaitseve</value>
+  </data>
+  <data name="City_SIMEIZ" xml:space="preserve">
+    <value>Simeiz</value>
+  </data>
+  <data name="City_NOVOSILKY" xml:space="preserve">
+    <value>Novosilky</value>
+  </data>
+  <data name="City_YASYNIVKA" xml:space="preserve">
+    <value>Yasynivka</value>
+  </data>
+  <data name="City_KRYUKIVSHCHYNA" xml:space="preserve">
+    <value>Kryukivshchyna</value>
+  </data>
+  <data name="City_SHAKHTARSKE" xml:space="preserve">
+    <value>Shakhtarske</value>
+  </data>
+  <data name="City_MYKHAYLIVKA-RUBEZHIVKA" xml:space="preserve">
+    <value>Mykhaylivka-Rubezhivka</value>
+  </data>
+  <data name="City_VALIANIVSKE" xml:space="preserve">
+    <value>Valianivske</value>
+  </data>
+  <data name="City_MALOKATERYNIVKA" xml:space="preserve">
+    <value>Malokaterynivka</value>
+  </data>
+  <data name="City_YUZHNA LOMUVATKA" xml:space="preserve">
+    <value>Yuzhna Lomuvatka</value>
+  </data>
+  <data name="City_SHCHERBYNIVKA" xml:space="preserve">
+    <value>Shcherbynivka</value>
+  </data>
+  <data name="City_VYLOK" xml:space="preserve">
+    <value>Vylok</value>
+  </data>
+  <data name="City_TOVSTE" xml:space="preserve">
+    <value>Tovste</value>
+  </data>
+  <data name="City_PIATYPILLIA" xml:space="preserve">
+    <value>Piatypillia</value>
+  </data>
+  <data name="City_HATNE" xml:space="preserve">
+    <value>Hatne</value>
+  </data>
+  <data name="City_BULAVYNSKE" xml:space="preserve">
+    <value>Bulavynske</value>
+  </data>
+  <data name="City_DUBOVE" xml:space="preserve">
+    <value>Dubove</value>
+  </data>
+  <data name="City_KULYNYCHI" xml:space="preserve">
+    <value>Kulynychi</value>
+  </data>
+  <data name="City_SADKY" xml:space="preserve">
+    <value>Sadky</value>
+  </data>
+  <data name="City_KRASNOTORKA" xml:space="preserve">
+    <value>Krasnotorka</value>
+  </data>
+  <data name="City_PERVOMAISKYI" xml:space="preserve">
+    <value>Pervomaiskyi</value>
+  </data>
+  <data name="City_BRYTIVKA" xml:space="preserve">
+    <value>Brytivka</value>
+  </data>
+  <data name="City_BLYZHNIE" xml:space="preserve">
+    <value>Blyzhnie</value>
+  </data>
+  <data name="City_MYKHAILIVKA" xml:space="preserve">
+    <value>Mykhailivka</value>
+  </data>
+  <data name="City_LARYNE" xml:space="preserve">
+    <value>Laryne</value>
+  </data>
+  <data name="City_VEDMEZHE" xml:space="preserve">
+    <value>Vedmezhe</value>
+  </data>
+  <data name="City_VOLODYMYR-VOLYNSKYI" xml:space="preserve">
+    <value>Volodymyr-Volynskyi</value>
+  </data>
+  <data name="Verify" xml:space="preserve">
+    <value>Verify</value>
+  </data>
+  <data name="CheckByNumberTitle" xml:space="preserve">
+    <value>Check by license plate</value>
+  </data>
+  <data name="CheckByNumberSubtitle" xml:space="preserve">
+    <value>Data from open MIA registry</value>
+  </data>
+  <data name="CheckStatusClean" xml:space="preserve">
+    <value>LEGALLY CLEAN</value>
+  </data>
+  <data name="CheckLabelMakeModel" xml:space="preserve">
+    <value>MAKE/MODEL</value>
+  </data>
+  <data name="CheckLabelYear" xml:space="preserve">
+    <value>YEAR</value>
+  </data>
+  <data name="CheckLabelColor" xml:space="preserve">
+    <value>COLOR</value>
+  </data>
+  <data name="CheckLabelEngine" xml:space="preserve">
+    <value>ENGINE CAPACITY</value>
+  </data>
+  <data name="CheckLabelDate" xml:space="preserve">
+    <value>REGISTRATION DATE</value>
+  </data>
+  <data name="CheckLabelOperation" xml:space="preserve">
+    <value>LAST OPERATION</value>
+  </data>
+  <data name="CheckInfoNotFound" xml:space="preserve">
+    <value>Information not found</value>
+  </data>
+  <data name="CarDescriptionMileage" xml:space="preserve">
+    <value>Mileage</value>
+  </data>
+  <data name="CarDescriptionGear" xml:space="preserve">
+    <value>Gear type</value>
+  </data>
+  <data name="CarDescriptionFuelType" xml:space="preserve">
+    <value>Fuel type</value>
+  </data>
+  <data name="CarDescriptionCity" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="CarDescriptionLicensePlate" xml:space="preserve">
+    <value>License Plate</value>
+  </data>
+  <data name="CarDescriptionTitle" xml:space="preserve">
+    <value>Car Description</value>
+  </data>
+  <data name="BodyType_SEDAN" xml:space="preserve">
+    <value>Sedan</value>
+  </data>
+  <data name="BodyType_HATCHBACK" xml:space="preserve">
+    <value>Hatchback</value>
+  </data>
+  <data name="BodyType_WAGON" xml:space="preserve">
+    <value>Wagon</value>
+  </data>
+  <data name="BodyType_LIFTBACK" xml:space="preserve">
+    <value>Liftback</value>
+  </data>
+  <data name="BodyType_COUPE" xml:space="preserve">
+    <value>Coupe</value>
+  </data>
+  <data name="BodyType_CONVERTIBLE" xml:space="preserve">
+    <value>Convertible</value>
+  </data>
+  <data name="BodyType_ROADSTER" xml:space="preserve">
+    <value>Roadster</value>
+  </data>
+  <data name="BodyType_LIMOUSINE" xml:space="preserve">
+    <value>Limousine</value>
+  </data>
+  <data name="BodyType_SUV" xml:space="preserve">
+    <value>SUV</value>
+  </data>
+  <data name="BodyType_CROSSOVER" xml:space="preserve">
+    <value>Crossover</value>
+  </data>
+  <data name="BodyType_PICKUP" xml:space="preserve">
+    <value>Pickup</value>
+  </data>
+  <data name="BodyType_MINIVAN" xml:space="preserve">
+    <value>Minivan</value>
+  </data>
+  <data name="BodyType_VAN" xml:space="preserve">
+    <value>Van</value>
+  </data>
+  <data name="BodyType_MINIBUS" xml:space="preserve">
+    <value>Minibus</value>
+  </data>
+  <data name="BodyType_TRUCK_CAB" xml:space="preserve">
+    <value>Truck cab</value>
+  </data>
+  <data name="BodyType_CHASSIS_CAB" xml:space="preserve">
+    <value>Chassis cab</value>
+  </data>
+  <data name="BodyType_FLATBED" xml:space="preserve">
+    <value>Flatbed truck</value>
+  </data>
+  <data name="BodyType_DUMP_TRUCK" xml:space="preserve">
+    <value>Dump truck</value>
+  </data>
+  <data name="BodyType_MOTORCYCLE" xml:space="preserve">
+    <value>Motorcycle</value>
+  </data>
+  <data name="BodyType_SCOOTER" xml:space="preserve">
+    <value>Scooter</value>
+  </data>
+  <data name="BodyType_ATV" xml:space="preserve">
+    <value>ATV</value>
   </data>
 </root>

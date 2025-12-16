@@ -6,7 +6,7 @@ namespace AutoMarket.Popups
     public partial class VehicleTypeFilterPopup : Popup
     {
         // Ми передаємо список сюди при створенні
-        public VehicleTypeFilterPopup(List<VehicleType> types)
+        public VehicleTypeFilterPopup(List<VehicleTypeDto> types)
         {
             InitializeComponent();
             BindingContext = new { VehicleTypes = types };
@@ -24,7 +24,7 @@ namespace AutoMarket.Popups
         // Коли користувач обрав елемент
         private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var selectedType = e.CurrentSelection.FirstOrDefault() as VehicleType;
+            var selectedType = e.CurrentSelection.FirstOrDefault() as VehicleTypeDto;
             if (selectedType != null)
             {
                 Close(selectedType); // Повертаємо об'єкт VehicleType
