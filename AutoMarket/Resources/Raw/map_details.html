@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        html, body, #map {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        // Ініціалізуємо карту (центр поки що на Україні, зум менший)
+        // 👇 Додаємо купу параметрів 'false', щоб відключити взаємодію
+        var map = L.map('map', {
+            zoomControl: false,
+            dragging: false,        // Забороняємо тягати карту
+            scrollWheelZoom: false, // Забороняємо зум колесом/пальцями
+            doubleClickZoom: false,
+            boxZoom: false,
+            tap: false,
+            touchZoom: false
+        }).setView([49.0, 31.0], 5);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: ''
+        }).addTo(map);
+
+        var marker;
+
+        // Функція, яку ми будемо викликати з C#
+        function showCarLocation(lat, lng) {
+            // Переміщуємо карту
+            map.setView([lat, lng], 13);
+
+            // Якщо маркер вже є - видаляємо старий
+            if (marker) {
+                map.removeLayer(marker);
+            }
+
+            // Ставимо новий маркер
+            marker = L.marker([lat, lng]).addTo(map);
+        }
+    </script>
+</body>
+</html>

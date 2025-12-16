@@ -108,6 +108,10 @@
                     <Image x:Name="LettersCheckmark" Source="checkmark.png" WidthRequest="16" HeightRequest="16" Opacity="0.5"/>
                     <Label x:Name="LettersRequirementLabel" Text="Великі і малі латинські літери" Style="{StaticResource PasswordRequirementLabelStyle}" TextColor="Gray"/>
                 </HorizontalStackLayout>
+                <HorizontalStackLayout Spacing="8">
+                    <Image x:Name="SpecialCheckmark" Source="checkmark.png" WidthRequest="16" HeightRequest="16" Opacity="0.5"/>
+                    <Label x:Name="SpecialRequirementLabel" Text="Спеціальний знак" Style="{StaticResource PasswordRequirementLabelStyle}" TextColor="Gray"/>
+                </HorizontalStackLayout>
             </VerticalStackLayout>
 
             

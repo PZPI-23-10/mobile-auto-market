@@ -12,8 +12,12 @@ namespace AutoMarket
     {
         private readonly HttpClient _httpClient;
        
-        private readonly string _baseUrl = "https://backend-auto-market.onrender.com/api";
+        private readonly string _baseUrl = "https://backend-auto-market-wih5h.ondigitalocean.app/api";
 
+        private readonly System.Text.Json.JsonSerializerOptions _serializerOptions = new()
+        {
+            PropertyNameCaseInsensitive = true
+        };
         public ApiService()
         {
             _httpClient = new HttpClient();
@@ -24,7 +28,7 @@ namespace AutoMarket
        
         public async Task<string> RegisterAsync(RegisterRequest request)
         {
-            string url = $"{_baseUrl}/register";
+            string url = $"{_baseUrl}/Auth/register";
             try
             {
                 HttpResponseMessage response = await _httpClient.PostAsJsonAsync(url, request);
@@ -295,56 +299,11 @@ namespace AutoMarket
 
 
 
-        /* public async Task<(string Url, string Error)> UploadToCloudinaryAsync(string filePath)
-         {
-             string cloudName = "dbazwsili";
-             string uploadPreset = "automarket_app";
-             string url = $"https://api.cloudinary.com/v1_1/{cloudName}/image/upload?upload_preset={uploadPreset}";
-
-             try
-             {
-
-                 using var fileStream = File.OpenRead(filePath);
-                 using var streamContent = new StreamContent(fileStream);
-
-
-                 streamContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("image/jpeg");
-
-                 using var multipartFormContent = new MultipartFormDataContent();
-
-                 // Додаємо сам файл. Третій параметр - це ім'я файлу, яке побачить сервер.
-                 multipartFormContent.Add(streamContent, "file", Path.GetFileName(filePath));
-
-                 // Додаємо назву пресету
-                 *//*multipartFormContent.Add(new StringContent(uploadPreset), "upload_preset");*//*
-
-                 // Відправляємо запит
-                 var response = await _httpClient.PostAsync(url, multipartFormContent);
-
-                 if (response.IsSuccessStatusCode)
-                 {
-                     var cloudinaryResponse = await response.Content.ReadFromJsonAsync<CloudinaryResponse>();
-                     // Перевір назву властивості у Models/CloudinaryResponse.cs
-                     return (cloudinaryResponse.secure_Url, null);
-                 }
-                 else
-                 {
-                     string error = await response.Content.ReadAsStringAsync();
-
-                     Debug.WriteLine($"Помилка Cloudinary (File Upload): {error}");
-                     return (null, error);
-                 }
-             }
-             catch (Exception ex)
-             {
-                 Debug.WriteLine($"Критична помилка Cloudinary (File Upload): {ex.Message}");
-                 return (null, $"Помилка підключення: {ex.Message}");
-             }
-         }*/
+      
 
 
 
-        // Прибираємо 'email' з параметрів, він більше не потрібен
+        
         public async Task<bool> VerifyEmailCodeAsync(string code, string token = null)
         {
             string url = $"{_baseUrl}/Auth/verify-email";
@@ -391,7 +350,7 @@ namespace AutoMarket
                 rememberMe = true
             };
 
-            string url = $"{_baseUrl}/auth/android/google";
+            string url = $"{_baseUrl}/Auth/android/google";
 
             try
             {
@@ -546,9 +505,486 @@ namespace AutoMarket
             }
         }
 
+        // --------------------------------------------------------------------------------------- ниже для вивода авто api 
+
+        public async Task<CarCheckInfo> CheckCarByNumberAsync(string licensePlate)
+        {
+            // 1. Чистимо номер від пробілів та кирилиці/латиниці (API хоче чистий рядок)
+            // Але для простоти передамо як є, зазвичай API розумне.
+            // Краще прибрати пробіли.
+            string cleanNumber = licensePlate.Replace(" ", "").ToUpper();
+
+            // 2. URL сервісу
+            string apiKey = "27c52a7ec72f857964951cbd9f06cf0e"; // Твій ключ
+            string url = $"https://baza-gai.com.ua/nomer/{cleanNumber}";
+
+            try
+            {
+                // 3. Створюємо запит з заголовком
+                var request = new HttpRequestMessage(HttpMethod.Get, url);
+                request.Headers.Add("Accept", "application/json");
+                request.Headers.Add("X-Api-Key", apiKey);
+
+                var response = await _httpClient.SendAsync(request);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var result = await response.Content.ReadFromJsonAsync<CarCheckInfo>();
+                    return result;
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine($"GAI API Error: {response.StatusCode}");
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"GAI API Exception: {ex.Message}");
+                return null;
+            }
+        }
+
+        // 1. Отримати Типи транспорту
+        public async Task<List<VehicleTypeDto>> GetVehicleTypesAsync()
+        {
+            try
+            {
+                // Формуємо повне посилання: .../api/VehicleType
+                string url = $"{_baseUrl}/VehicleType";
+                return await _httpClient.GetFromJsonAsync<List<VehicleTypeDto>>(url);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Помилка отримання типів: {ex.Message}");
+                return new List<VehicleTypeDto>(); // Повертаємо пустий список, щоб програма не впала
+            }
+        }
+
+        // 2. Отримати Марки (залежить від Типу транспорту)
+        public async Task<List<VehicleBrandDto>> GetBrandsByTypeAsync(int typeId)
+        {
+            try
+            {
+                string url = $"{_baseUrl}/VehicleBrand/for-type/{typeId}";
+                return await _httpClient.GetFromJsonAsync<List<VehicleBrandDto>>(url);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Помилка отримання марок: {ex.Message}");
+                return new List<VehicleBrandDto>();
+            }
+        }
+
+        // Оновлений метод: фільтрує і по Бренду, і по Типу
+        public async Task<List<VehicleModelDto>> GetModelsByBrandAsync(int brandId, int typeId)
+        {
+            // Додаємо vehicleTypeId у запит
+            string url = $"{_baseUrl}/VehicleModel?brandId={brandId}&vehicleTypeId={typeId}";
+
+            try
+            {
+                var response = await _httpClient.GetAsync(url);
+                string jsonResponse = await response.Content.ReadAsStringAsync();
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var options = new System.Text.Json.JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    };
+                    var result = System.Text.Json.JsonSerializer.Deserialize<List<VehicleModelDto>>(jsonResponse, options);
+                    return result ?? new List<VehicleModelDto>();
+                }
+                else
+                {
+                    return new List<VehicleModelDto>();
+                }
+            }
+            catch
+            {
+                return new List<VehicleModelDto>();
+            }
+        }
+
+        // 4. Отримати Регіони
+        public async Task<List<RegionDto>> GetRegionsAsync()
+        {
+            try
+            {
+                string url = $"{_baseUrl}/Region";
+                return await _httpClient.GetFromJsonAsync<List<RegionDto>>(url);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Помилка отримання регіонів: {ex.Message}");
+                return new List<RegionDto>();
+            }
+        }
+
+        // 5. Отримати Міста (залежить від Регіону)
+        public async Task<List<CityDto>> GetCitiesByRegionAsync(int regionId)
+        {
+            try
+            {
+                string url = $"{_baseUrl}/City/for-region/{regionId}";
+                return await _httpClient.GetFromJsonAsync<List<CityDto>>(url);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Помилка отримання міст: {ex.Message}");
+                return new List<CityDto>();
+            }
+        }
+
+        // 6. Отримати Пальне
+        public async Task<List<FuelTypeDto>> GetFuelTypesAsync()
+        {
+            try
+            {
+                string url = $"{_baseUrl}/FuelType";
+                return await _httpClient.GetFromJsonAsync<List<FuelTypeDto>>(url);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Помилка отримання пального: {ex.Message}");
+                return new List<FuelTypeDto>();
+            }
+        }
+
+        // 7. Отримати КПП
+        public async Task<List<GearTypeDto>> GetGearTypesAsync()
+        {
+            try
+            {
+                string url = $"{_baseUrl}/GearType";
+                return await _httpClient.GetFromJsonAsync<List<GearTypeDto>>(url);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Помилка отримання КПП: {ex.Message}");
+                return new List<GearTypeDto>();
+            }
+        }
 
 
 
+
+
+
+
+
+        // --- ГАРАНТОВАНЕ ОТРИМАННЯ СПИСКУ (БЕЗ ФІЛЬТРІВ) ---
+        public async Task<List<CarListing>> GetAllListingsAsync()
+        {
+            // Перевір, чи точно Listing з великої. Якщо сервер Linux - це важливо.
+            string url = $"{_baseUrl}/Listing";
+
+            try
+            {
+                // 1. Отримуємо "сиру" відповідь
+                var response = await _httpClient.GetAsync(url);
+                string jsonResponse = await response.Content.ReadAsStringAsync();
+
+                // --- ДІАГНОСТИКА (ДИВИСЬ У ВІКНО OUTPUT) ---
+                System.Diagnostics.Debug.WriteLine("=================================");
+                System.Diagnostics.Debug.WriteLine($"[LISTING API] STATUS: {response.StatusCode}");
+                System.Diagnostics.Debug.WriteLine($"[LISTING API] JSON: {jsonResponse}");
+                System.Diagnostics.Debug.WriteLine("=================================");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var options = new System.Text.Json.JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    };
+
+                    var result = System.Text.Json.JsonSerializer.Deserialize<List<CarListing>>(jsonResponse, options);
+
+                    System.Diagnostics.Debug.WriteLine($"[LISTING API] Розпізнано авто: {result?.Count ?? 0}");
+                    return result ?? new List<CarListing>();
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine($"[LISTING API] ERROR: {response.ReasonPhrase}");
+                    return new List<CarListing>();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"[LISTING API] CRITICAL ERROR: {ex.Message}");
+                return new List<CarListing>();
+            }
+        }
+
+        // ... тут залиш інші свої методи (Login, Register, GetMakes...), не чіпай їх
+        // Додай сюди методи для фільтрів (GetMakesAsync і т.д.) з минулих разів, 
+        // якщо вони видалилися, але головне зараз - Listings.
+
+        // Отримати Типи Кузова
+        // (Можна брати всі, або якщо є ендпоінт /for-type/{id} - краще його, але поки візьмемо загальний)
+        
+
+        public async Task<List<BaseDto>> GetConditionsAsync()
+        {
+            string url = $"{_baseUrl}/VehicleCondition";
+            try
+            {
+                return await _httpClient.GetFromJsonAsync<List<BaseDto>>(url);
+            }
+            catch { return new List<BaseDto>(); }
+        }
+
+        public async Task<List<BaseDto>> GetBodyTypesAsync()
+        {
+            string url = $"{_baseUrl}/VehicleBodyType";
+            try
+            {
+                return await _httpClient.GetFromJsonAsync<List<BaseDto>>(url);
+            }
+            catch { return new List<BaseDto>(); }
+        }
+
+        public async Task<List<ColorDto>> GetColorsAsync()
+        {
+            string url = $"{_baseUrl}/Color";
+            try
+            {
+                return await _httpClient.GetFromJsonAsync<List<ColorDto>>(url);
+            }
+            catch { return new List<ColorDto>(); }
+        }
+
+        // --- МЕТОД СТВОРЕННЯ ОГОЛОШЕННЯ ---
+        public async Task<bool> CreateListingAsync(
+            int modelId,
+            int bodyTypeId,
+            int gearTypeId,
+            int fuelTypeId,
+            int conditionId,
+            int cityId,
+            int year,
+            int mileage,
+            string number,
+            string colorHex,
+            double price,
+            string description,
+            bool hasAccident,
+            List<FileResult> photos)
+        {
+            string url = $"{_baseUrl}/Listing";
+
+            try
+            {
+                using var content = new MultipartFormDataContent();
+
+                // 1. Додаємо текстові/числові поля
+                content.Add(new StringContent(modelId.ToString()), "ModelId");
+                content.Add(new StringContent(bodyTypeId.ToString()), "BodyTypeId");
+                content.Add(new StringContent(gearTypeId.ToString()), "GearTypeId");
+                content.Add(new StringContent(fuelTypeId.ToString()), "FuelTypeId");
+                content.Add(new StringContent(conditionId.ToString()), "ConditionId");
+                content.Add(new StringContent(cityId.ToString()), "CityId");
+                content.Add(new StringContent(year.ToString()), "Year");
+                content.Add(new StringContent(mileage.ToString()), "Mileage");
+                content.Add(new StringContent(number ?? ""), "Number"); // Номер може бути пустим
+                content.Add(new StringContent(colorHex ?? "#FFFFFF"), "ColorHex");
+                content.Add(new StringContent(price.ToString(System.Globalization.CultureInfo.InvariantCulture)), "Price"); // Щоб була крапка, а не кома
+                content.Add(new StringContent(description ?? ""), "Description");
+                content.Add(new StringContent(hasAccident.ToString().ToLower()), "HasAccident"); // true/false
+
+                // 2. Додаємо фотографії (ВАРІАНТ ЯК НА WEB)
+                if (photos != null)
+                {
+                    // Використовуємо for замість foreach, бо нам потрібен індекс i (0, 1, 2...)
+                    for (int i = 0; i < photos.Count; i++)
+                    {
+                        var file = photos[i];
+
+                        // А. Читаємо файл у пам'ять
+                        using var stream = await file.OpenReadAsync();
+                        using var memoryStream = new MemoryStream();
+                        await stream.CopyToAsync(memoryStream);
+                        var fileBytes = memoryStream.ToArray();
+
+                        // Б. Створюємо контент файлу
+                        var fileContent = new ByteArrayContent(fileBytes);
+                        string mimeType = file.ContentType ?? "image/jpeg";
+                        fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(mimeType);
+
+                        string fileName = file.FileName;
+                        // Страховка на розширення
+                        if (!fileName.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) &&
+                            !fileName.EndsWith(".jpeg", StringComparison.OrdinalIgnoreCase) &&
+                            !fileName.EndsWith(".png", StringComparison.OrdinalIgnoreCase))
+                        {
+                            fileName += ".jpg";
+                        }
+
+                        // В. !!! ГОЛОВНА ЗМІНА: Формуємо ключі як на WEB !!!
+
+                        // 1. Сам файл: NewPhotos[0].File
+                        string fileKey = $"NewPhotos[{i}].File";
+                        content.Add(fileContent, fileKey, fileName);
+
+                        // 2. Порядок сортування: NewPhotos[0].SortOrder
+                        string sortOrderKey = $"NewPhotos[{i}].SortOrder";
+                        content.Add(new StringContent(i.ToString()), sortOrderKey);
+
+                        System.Diagnostics.Debug.WriteLine($"[UPLOAD WEB-STYLE] {fileKey} -> {fileName}");
+                    }
+                }
+
+                // 3. Додаємо Токен (Авторизація)
+                var token = await SecureStorage.GetAsync("auth_token");
+                if (!string.IsNullOrEmpty(token))
+                {
+                    _httpClient.DefaultRequestHeaders.Authorization =
+                        new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+                }
+
+                // 4. Відправляємо
+                var response = await _httpClient.PostAsync(url, content);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    var error = await response.Content.ReadAsStringAsync();
+                    System.Diagnostics.Debug.WriteLine($"[CREATE LISTING ERROR] {response.StatusCode}: {error}");
+                }
+
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"[CREATE LISTING CRITICAL] {ex.Message}");
+                return false;
+            }
+        }
+
+        public async Task<List<Chat>> GetMyChatsAsync(string token)
+        {
+            string url = $"{_baseUrl}/Chat/my";
+
+            try
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+
+                var response = await _httpClient.GetAsync(url);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var chats = await response.Content.ReadFromJsonAsync<List<Chat>>();
+                    return chats ?? new List<Chat>();
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error getting chats: {ex.Message}");
+            }
+
+            return new List<Chat>(); // Повертаємо пустий список у разі помилки
+        }
+
+        public async Task<Chat> GetOrCreateChatAsync(int otherUserId, string token)
+        {
+            string url = $"{_baseUrl}/Chat/with/{otherUserId}";
+
+            if (string.IsNullOrEmpty(token)) return null;
+
+            try
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+
+                // Робимо запит
+                var response = await _httpClient.PostAsync(url, null);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    // 1. Читаємо відповідь як рядок (щоб бачити, що там прийшло)
+                    var jsonResponse = await response.Content.ReadAsStringAsync();
+
+                    // Якщо сервер повернув пустоту, але код 200/201 - це дивно, але буває.
+                    if (string.IsNullOrWhiteSpace(jsonResponse))
+                    {
+                        // Можна спробувати почекати 200мс і спробувати ще раз, якщо бекенд тупить
+                        // Але поки просто повернемо null і подивимося логи
+                        System.Diagnostics.Debug.WriteLine("⚠️ Сервер створив чат, але не повернув об'єкт.");
+                        return null;
+                    }
+
+                    // 2. Використовуємо _serializerOptions (ВАЖЛИВО!)
+                    // Це виправить проблему, якщо сервер шле "id", а ми чекаємо "Id"
+                    var chat = System.Text.Json.JsonSerializer.Deserialize<Chat>(jsonResponse, _serializerOptions);
+                    return chat;
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine($"❌ API Error: {response.StatusCode}");
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"❌ Error GetOrCreateChat: {ex.Message}");
+            }
+
+            return null;
+        }
+
+
+
+        // Метод для завантаження історії повідомлень
+        public async Task<List<ChatMessageDto>> GetChatHistoryAsync(int chatId, string token)
+        {
+            string url = $"{_baseUrl}/Chat/{chatId}/history";
+
+            try
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+
+                var response = await _httpClient.GetAsync(url);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var messages = await response.Content.ReadFromJsonAsync<List<ChatMessageDto>>();
+                    return messages ?? new List<ChatMessageDto>();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error loading history: {ex.Message}");
+            }
+
+            return new List<ChatMessageDto>();
+        }
+
+
+        // Отримати кількість непрочитаних повідомлень для конкретного чату
+        public async Task<int> GetUnreadCountAsync(int chatId, string token)
+        {
+            string url = $"{_baseUrl}/Chat/{chatId}/unreadCount";
+
+            try
+            {
+                _httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+
+                var response = await _httpClient.GetStringAsync(url);
+
+                if (int.TryParse(response, out int count))
+                {
+                    return count;
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error fetching unread count: {ex.Message}");
+            }
+
+            return 0; // Якщо помилка - показуємо 0
+        }
 
     }
 

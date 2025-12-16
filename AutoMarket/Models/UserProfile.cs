@@ -1,7 +1,8 @@
 ﻿using System.Text.Json.Serialization;
-
+using Microsoft.Maui.Controls.Internals;
 namespace AutoMarket.Models
 {
+    [Preserve(AllMembers = true)]
     public class UserProfile
     {
         public int id { get; set; }
@@ -15,7 +16,7 @@ namespace AutoMarket.Models
         public string aboutYourself { get; set; }
 
         public bool isVerified { get; set; }
-        public string urlPhoto { get; set; }
+        public string avatarUrl { get; set; }
 
     }
 }

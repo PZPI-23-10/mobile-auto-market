@@ -1,4 +1,4 @@
-using AutoMarket.Models;
+п»їusing AutoMarket.Models;
 using System.Diagnostics;
 
 namespace AutoMarket;
@@ -20,7 +20,14 @@ public partial class ProfileEdit : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        await LoadUserProfile();
+        try
+        {
+            await LoadUserProfile();
+        }
+        catch (Exception ex)
+        {
+            System.Diagnostics.Debug.WriteLine($"CRASH PREVENTED: {ex}");
+        }
     }
 
     private async Task LoadUserProfile()
@@ -30,68 +37,67 @@ public partial class ProfileEdit : ContentPage
 
         if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(token))
         {
-            await DisplayAlert("Помилка", "Сесія не знайдена. Увійдіть знову.", "OK");
-
+            await DisplayAlert("РџРѕРјРёР»РєР°", "РЎРµСЃС–СЏ РЅРµ Р·РЅР°Р№РґРµРЅР°. РЈРІС–Р№РґС–С‚СЊ Р·РЅРѕРІСѓ.", "OK");
             return;
         }
 
+        // Р—Р°РїРёС‚ РґРѕ API
         var (profile, error) = await _apiService.GetUserProfileAsync(userId, token);
 
         if (error != null)
         {
-            await DisplayAlert("Помилка завантаження профілю", error, "OK");
-
-
+            await DisplayAlert("РџРѕРјРёР»РєР° Р·Р°РІР°РЅС‚Р°Р¶РµРЅРЅСЏ", error, "OK");
+            return;
         }
-        else if (profile != null)
+
+        if (profile == null) return;
+
+        // рџ”Ґ 2. Р“Р°СЂР°РЅС‚СѓС”РјРѕ, С‰Рѕ UI РѕРЅРѕРІР»СЋС”С‚СЊСЃСЏ РІ РіРѕР»РѕРІРЅРѕРјСѓ РїРѕС‚РѕС†С–
+        // Р¦Рµ СЂСЏС‚СѓС” РІС–Рґ РєСЂР°С€С–РІ, СЏРєС‰Рѕ API РїРѕРІРµСЂРЅСѓРІ РІС–РґРїРѕРІС–РґСЊ Сѓ С„РѕРЅРѕРІРѕРјСѓ РїРѕС‚РѕС†С–
+        MainThread.BeginInvokeOnMainThread(() =>
         {
-            FirstNameEntry.Text = profile.firstName;
-            LastNameEntry.Text = profile.lastName;
-            PhoneNumberEntry.Text = profile.phoneNumber;
-            if (profile.dateOfBirth.HasValue)
+            try
             {
-                // Якщо дата є, встановлюємо її
-                DateOfBirthPicker.Date = profile.dateOfBirth.Value.ToLocalTime();
+                FirstNameEntry.Text = profile.firstName;
+                LastNameEntry.Text = profile.lastName;
+                PhoneNumberEntry.Text = profile.phoneNumber;
+                CountryEntry.Text = profile.country;
+                AddressEntry.Text = profile.address;
+                AboutYourselfEditor.Text = profile.aboutYourself;
+
+                // рџ‘‡ Р’РРџР РђР’Р›Р•РќРќРЇ Р›РћР“Р†РљР (Р·Р±РµСЂС–РіР°С”РјРѕ email)
+                _currentUserEmail = profile.email;
+
+                // Р‘РµР·РїРµС‡РЅР° СЂРѕР±РѕС‚Р° Р· РґР°С‚Р°РјРё
+                if (profile.dateOfBirth.HasValue)
+                {
+                    DateOfBirthPicker.Date = profile.dateOfBirth.Value.ToLocalTime();
+                }
+                else
+                {
+                    DateOfBirthPicker.Date = DateTime.Now.AddYears(-18);
+                }
+
+                // РђРІР°С‚Р°СЂРєР°
+                _currentAvatarUrl = profile.avatarUrl;
+                if (!string.IsNullOrEmpty(_currentAvatarUrl))
+                {
+                    AvatarImageButton.Source = _currentAvatarUrl;
+                }
+                else
+                {
+                    AvatarImageButton.Source = "profile_icon.png";
+                }
+
+                // РљРЅРѕРїРєР° РІРµСЂРёС„С–РєР°С†С–С—
+                VerifyEmailButton.IsVisible = !profile.isVerified;
             }
-            else
+            catch (Exception ex)
             {
-                // Якщо дати немає (null), ставимо якусь дату за замовчуванням
-                // Наприклад, 18 років тому
-                DateOfBirthPicker.Date = DateTime.Now.AddYears(-18);
+                // РЇРєС‰Рѕ UI РІРїР°РґРµ РїСЂРё РјР°Р»СЋРІР°РЅРЅС– - РјРё С†Рµ РїРѕР±Р°С‡РёРјРѕ, Р°Р»Рµ РїСЂРѕРіСЂР°РјР° РЅРµ Р·Р°РєСЂРёС”С‚СЊСЃСЏ
+                System.Diagnostics.Debug.WriteLine($"UI Error: {ex.Message}");
             }
-            CountryEntry.Text = profile.country;
-            AddressEntry.Text = profile.address;
-            AboutYourselfEditor.Text = profile.aboutYourself;
-
-            _currentAvatarUrl = profile.urlPhoto;
-            if (!string.IsNullOrEmpty(_currentAvatarUrl))
-            {
-
-                AvatarImageButton.Source = _currentAvatarUrl;
-            }
-            else
-            {
-
-                AvatarImageButton.Source = "profile_icon.png";
-            }
-            if (profile.isVerified)
-            {
-                VerifyEmailButton.IsVisible = false;
-
-            }
-            else
-            {
-                VerifyEmailButton.IsVisible = true;
-
-            }
-
-
-        }
-        else
-        {
-
-            await DisplayAlert("Помилка", "Не вдалося завантажити профіль (невідома причина).", "OK");
-        }
+        });
     }
 
 
@@ -101,17 +107,17 @@ public partial class ProfileEdit : ContentPage
         {
             var result = await MediaPicker.PickPhotoAsync(new MediaPickerOptions
             {
-                Title = "Виберіть аватар"
+                Title = "Р’РёР±РµСЂС–С‚СЊ Р°РІР°С‚Р°СЂ"
             });
 
             if (result == null) return;
 
-            _newAvatarFileResult = result; // <-- НОВИЙ КОД
-            AvatarImageButton.Source = ImageSource.FromFile(result.FullPath); // <-- НОВИЙ КОD
+            _newAvatarFileResult = result; // <-- РќРћР’РР™ РљРћР”
+            AvatarImageButton.Source = ImageSource.FromFile(result.FullPath); // <-- РќРћР’РР™ РљРћD
         }
         catch (Exception ex)
         {
-            await DisplayAlert("Помилка", $"Не вдалося вибрати фото: {ex.Message}", "OK");
+            await DisplayAlert("РџРѕРјРёР»РєР°", $"РќРµ РІРґР°Р»РѕСЃСЏ РІРёР±СЂР°С‚Рё С„РѕС‚Рѕ: {ex.Message}", "OK");
         }
     }
 
@@ -119,57 +125,57 @@ public partial class ProfileEdit : ContentPage
     {
         ChangeInfoButton.IsEnabled = false;
 
-        // 1. Перевіряємо токен сесії
+        // 1. РџРµСЂРµРІС–СЂСЏС”РјРѕ С‚РѕРєРµРЅ СЃРµСЃС–С—
         string token = await SecureStorage.GetAsync("auth_token");
         if (string.IsNullOrEmpty(token))
         {
-            await DisplayAlert("Помилка", "Сесія не знайдена. Будь ласка, увійдіть знову.", "OK");
+            await DisplayAlert("РџРѕРјРёР»РєР°", "РЎРµСЃС–СЏ РЅРµ Р·РЅР°Р№РґРµРЅР°. Р‘СѓРґСЊ Р»Р°СЃРєР°, СѓРІС–Р№РґС–С‚СЊ Р·РЅРѕРІСѓ.", "OK");
             ChangeInfoButton.IsEnabled = true;
             return;
         }
 
-        // --- ПОЧАТОК НОВОГО БЛОКУ: Валідація полів ---
+        // --- РџРћР§РђРўРћРљ РќРћР’РћР“Рћ Р‘Р›РћРљРЈ: Р’Р°Р»С–РґР°С†С–СЏ РїРѕР»С–РІ ---
 
-        // 2. Перевіряємо, чи заповнені обов'язкові поля
+        // 2. РџРµСЂРµРІС–СЂСЏС”РјРѕ, С‡Рё Р·Р°РїРѕРІРЅРµРЅС– РѕР±РѕРІ'СЏР·РєРѕРІС– РїРѕР»СЏ
         if (string.IsNullOrWhiteSpace(FirstNameEntry.Text))
         {
-            await DisplayAlert("Порожнє поле", "Будь ласка, введіть ваше ім'я.", "OK");
-            ChangeInfoButton.IsEnabled = true; // Вмикаємо кнопку назад
-            return; // Зупиняємо виконання
+            await DisplayAlert("РџРѕСЂРѕР¶РЅС” РїРѕР»Рµ", "Р‘СѓРґСЊ Р»Р°СЃРєР°, РІРІРµРґС–С‚СЊ РІР°С€Рµ С–Рј'СЏ.", "OK");
+            ChangeInfoButton.IsEnabled = true; // Р’РјРёРєР°С”РјРѕ РєРЅРѕРїРєСѓ РЅР°Р·Р°Рґ
+            return; // Р—СѓРїРёРЅСЏС”РјРѕ РІРёРєРѕРЅР°РЅРЅСЏ
         }
 
         if (string.IsNullOrWhiteSpace(LastNameEntry.Text))
         {
-            await DisplayAlert("Порожнє поле", "Будь ласка, введіть ваше прізвище.", "OK");
+            await DisplayAlert("РџРѕСЂРѕР¶РЅС” РїРѕР»Рµ", "Р‘СѓРґСЊ Р»Р°СЃРєР°, РІРІРµРґС–С‚СЊ РІР°С€Рµ РїСЂС–Р·РІРёС‰Рµ.", "OK");
             ChangeInfoButton.IsEnabled = true;
             return;
         }
 
         if (string.IsNullOrWhiteSpace(PhoneNumberEntry.Text))
         {
-            await DisplayAlert("Порожнє поле", "Будь ласка, введіть ваш номер телефону.", "OK");
+            await DisplayAlert("РџРѕСЂРѕР¶РЅС” РїРѕР»Рµ", "Р‘СѓРґСЊ Р»Р°СЃРєР°, РІРІРµРґС–С‚СЊ РІР°С€ РЅРѕРјРµСЂ С‚РµР»РµС„РѕРЅСѓ.", "OK");
             ChangeInfoButton.IsEnabled = true;
             return;
         }
         if (string.IsNullOrWhiteSpace(CountryEntry.Text))
         {
-            await DisplayAlert("Порожнє поле", "Будь ласка, введіть вашу країну.", "OK");
+            await DisplayAlert("РџРѕСЂРѕР¶РЅС” РїРѕР»Рµ", "Р‘СѓРґСЊ Р»Р°СЃРєР°, РІРІРµРґС–С‚СЊ РІР°С€Сѓ РєСЂР°С—РЅСѓ.", "OK");
             ChangeInfoButton.IsEnabled = true;
             return;
         }
         if (string.IsNullOrWhiteSpace(AddressEntry.Text))
         {
-            await DisplayAlert("Порожнє поле", "Будь ласка, введіть вашу адресу.", "OK");
+            await DisplayAlert("РџРѕСЂРѕР¶РЅС” РїРѕР»Рµ", "Р‘СѓРґСЊ Р»Р°СЃРєР°, РІРІРµРґС–С‚СЊ РІР°С€Сѓ Р°РґСЂРµСЃСѓ.", "OK");
             ChangeInfoButton.IsEnabled = true;
             return;
         }
 
-        // (Можеш додати сюди інші перевірки, наприклад, на 'Country' або 'Address', якщо вони обов'язкові)
+        // (РњРѕР¶РµС€ РґРѕРґР°С‚Рё СЃСЋРґРё С–РЅС€С– РїРµСЂРµРІС–СЂРєРё, РЅР°РїСЂРёРєР»Р°Рґ, РЅР° 'Country' Р°Р±Рѕ 'Address', СЏРєС‰Рѕ РІРѕРЅРё РѕР±РѕРІ'СЏР·РєРѕРІС–)
 
-        // --- КІНЕЦЬ НОВОГО БЛОКУ ---
+        // --- РљР†РќР•Р¦Р¬ РќРћР’РћР“Рћ Р‘Р›РћРљРЈ ---
 
 
-        // --- ПОЧАТОК ТВОЄЇ ЛОГІКИ API ---
+        // --- РџРћР§РђРўРћРљ РўР’РћР„Р‡ Р›РћР“Р†РљР API ---
 
         Stream photoStream = null;
         string photoFileName = null;
@@ -177,26 +183,26 @@ public partial class ProfileEdit : ContentPage
 
         try
         {
-            // 3. Збираємо дані з полів (тепер ми знаємо, що вони не порожні)
+            // 3. Р—Р±РёСЂР°С”РјРѕ РґР°РЅС– Р· РїРѕР»С–РІ (С‚РµРїРµСЂ РјРё Р·РЅР°С”РјРѕ, С‰Рѕ РІРѕРЅРё РЅРµ РїРѕСЂРѕР¶РЅС–)
             var profileData = new EditProfileRequest
             {
-                firstName = FirstNameEntry.Text.Trim(), // .Trim() прибирає зайві пробіли
+                firstName = FirstNameEntry.Text.Trim(), // .Trim() РїСЂРёР±РёСЂР°С” Р·Р°Р№РІС– РїСЂРѕР±С–Р»Рё
                 lastName = LastNameEntry.Text.Trim(),
                 phoneNumber = PhoneNumberEntry.Text.Trim(),
                 dateOfBirth = DateOfBirthPicker.Date.ToUniversalTime(),
                 country = CountryEntry.Text.Trim(),
                 address = AddressEntry.Text.Trim(),
-                aboutYourself = AboutYourselfEditor.Text.Trim(),
+                aboutYourself = AboutYourselfEditor.Text?.Trim() ?? "",
             };
 
-            // 4. Готуємо файл, ЯКЩО він був обраний
+            // 4. Р“РѕС‚СѓС”РјРѕ С„Р°Р№Р», РЇРљР©Рћ РІС–РЅ Р±СѓРІ РѕР±СЂР°РЅРёР№
             if (_newAvatarFileResult != null)
             {
                 photoStream = await _newAvatarFileResult.OpenReadAsync();
                 photoFileName = _newAvatarFileResult.FileName;
             }
 
-            // 5. Викликаємо НОВИЙ метод ApiService
+            // 5. Р’РёРєР»РёРєР°С”РјРѕ РќРћР’РР™ РјРµС‚РѕРґ ApiService
             serverResponse = await _apiService.UpdateUserProfileAsync(
                 profileData,
                 photoStream,
@@ -206,53 +212,54 @@ public partial class ProfileEdit : ContentPage
         }
         catch (Exception ex)
         {
-            // Ловимо будь-які помилки під час підготовки або відправки
+            // Р›РѕРІРёРјРѕ Р±СѓРґСЊ-СЏРєС– РїРѕРјРёР»РєРё РїС–Рґ С‡Р°СЃ РїС–РґРіРѕС‚РѕРІРєРё Р°Р±Рѕ РІС–РґРїСЂР°РІРєРё
             Debug.WriteLine($"[OnSaveClicked] Critical Error: {ex.Message}");
-            serverResponse = $"Критична помилка: {ex.Message}";
+            serverResponse = $"РљСЂРёС‚РёС‡РЅР° РїРѕРјРёР»РєР°: {ex.Message}";
         }
         finally
         {
-            // 6. ДУЖЕ ВАЖЛИВО: закриваємо стрім файлу, щоб звільнити пам'ять
+            // 6. Р”РЈР–Р• Р’РђР–Р›РР’Рћ: Р·Р°РєСЂРёРІР°С”РјРѕ СЃС‚СЂС–Рј С„Р°Р№Р»Сѓ, С‰РѕР± Р·РІС–Р»СЊРЅРёС‚Рё РїР°Рј'СЏС‚СЊ
             photoStream?.Close();
         }
 
-        // --- КІНЕЦЬ ЛОГІКИ API ---
+        // --- РљР†РќР•Р¦Р¬ Р›РћР“Р†РљР API ---
 
-        // 7. Обробляємо відповідь сервера
-        System.Diagnostics.Debug.WriteLine($"Відповідь сервера: '{serverResponse}'");
+        // 7. РћР±СЂРѕР±Р»СЏС”РјРѕ РІС–РґРїРѕРІС–РґСЊ СЃРµСЂРІРµСЂР°
+        System.Diagnostics.Debug.WriteLine($"Р’С–РґРїРѕРІС–РґСЊ СЃРµСЂРІРµСЂР°: '{serverResponse}'");
 
         bool isSuccess = serverResponse == "OK" ||
                          (serverResponse != null &&
-                          !serverResponse.Contains("Помилка", StringComparison.OrdinalIgnoreCase) &&
-                          !serverResponse.Contains("Статус:", StringComparison.OrdinalIgnoreCase));
+                          !serverResponse.Contains("РџРѕРјРёР»РєР°", StringComparison.OrdinalIgnoreCase) &&
+                          !serverResponse.Contains("РЎС‚Р°С‚СѓСЃ:", StringComparison.OrdinalIgnoreCase));
 
         if (isSuccess)
         {
-            await DisplayAlert("Успіх", "Профіль оновлено.", "OK");
+            await DisplayAlert("РЈСЃРїС–С…", "РџСЂРѕС„С–Р»СЊ РѕРЅРѕРІР»РµРЅРѕ.", "OK");
 
-            _newAvatarFileResult = null; // Скидаємо вибраний файл
-            await LoadUserProfile(); // Оновлюємо дані на екрані з сервера
+            _newAvatarFileResult = null; // РЎРєРёРґР°С”РјРѕ РІРёР±СЂР°РЅРёР№ С„Р°Р№Р»
+            await LoadUserProfile(); // РћРЅРѕРІР»СЋС”РјРѕ РґР°РЅС– РЅР° РµРєСЂР°РЅС– Р· СЃРµСЂРІРµСЂР°
+            await Shell.Current.GoToAsync($"//{nameof(ProfilePage)}");
         }
         else
         {
-            // Показуємо помилку, яку повернув сервер
-            await DisplayAlert("Помилка оновлення", serverResponse ?? "Невідома помилка", "OK");
+            // РџРѕРєР°Р·СѓС”РјРѕ РїРѕРјРёР»РєСѓ, СЏРєСѓ РїРѕРІРµСЂРЅСѓРІ СЃРµСЂРІРµСЂ
+            await DisplayAlert("РџРѕРјРёР»РєР° РѕРЅРѕРІР»РµРЅРЅСЏ", serverResponse ?? "РќРµРІС–РґРѕРјР° РїРѕРјРёР»РєР°", "OK");
         }
 
-        // 8. Вмикаємо кнопку назад
+        // 8. Р’РјРёРєР°С”РјРѕ РєРЅРѕРїРєСѓ РЅР°Р·Р°Рґ
         ChangeInfoButton.IsEnabled = true;
     }
     private async void OnVerifyEmailClicked(object sender, EventArgs e)
     {
-        // НЕПРАВИЛЬНО (бере старі дані):
+        // РќР•РџР РђР’РР›Р¬РќРћ (Р±РµСЂРµ СЃС‚Р°СЂС– РґР°РЅС–):
         // string userEmail = await SecureStorage.GetAsync("user_email"); 
 
-        // ПРАВИЛЬНО (бере актуальні дані, завантажені щойно):
+        // РџР РђР’РР›Р¬РќРћ (Р±РµСЂРµ Р°РєС‚СѓР°Р»СЊРЅС– РґР°РЅС–, Р·Р°РІР°РЅС‚Р°Р¶РµРЅС– С‰РѕР№РЅРѕ):
         string userEmail = _currentUserEmail;
 
         if (string.IsNullOrWhiteSpace(userEmail))
         {
-            await DisplayAlert("Помилка", "Не вдалося отримати ваш Email з профілю. Спробуйте перезавантажити сторінку.", "OK");
+            await DisplayAlert("РџРѕРјРёР»РєР°", "РќРµ РІРґР°Р»РѕСЃСЏ РѕС‚СЂРёРјР°С‚Рё РІР°С€ Email Р· РїСЂРѕС„С–Р»СЋ. РЎРїСЂРѕР±СѓР№С‚Рµ РїРµСЂРµР·Р°РІР°РЅС‚Р°Р¶РёС‚Рё СЃС‚РѕСЂС–РЅРєСѓ.", "OK");
             return;
         }
 
@@ -260,12 +267,12 @@ public partial class ProfileEdit : ContentPage
 
         if (success)
         {
-            // Тепер 'userEmail' - це АКТУАЛЬНА пошта
+            // РўРµРїРµСЂ 'userEmail' - С†Рµ РђРљРўРЈРђР›Р¬РќРђ РїРѕС€С‚Р°
             await Navigation.PushAsync(new ConfirmationPage(VerificationReason.EmailConfirmation, userEmail));
         }
         else
         {
-            await DisplayAlert("Помилка", "Не вдалося відправити код підтвердження. Спробуйте ще раз.", "OK");
+            await DisplayAlert("РџРѕРјРёР»РєР°", "РќРµ РІРґР°Р»РѕСЃСЏ РІС–РґРїСЂР°РІРёС‚Рё РєРѕРґ РїС–РґС‚РІРµСЂРґР¶РµРЅРЅСЏ. РЎРїСЂРѕР±СѓР№С‚Рµ С‰Рµ СЂР°Р·.", "OK");
         }
     }
     private async void OnChangePasswordClicked(object sender, EventArgs e)

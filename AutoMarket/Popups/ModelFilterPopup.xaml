@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               xmlns:models="clr-namespace:AutoMarket.Models"
+               x:Class="AutoMarket.Popups.ModelFilterPopup"
+               Color="Transparent">
+
+    <Border x:Name="MainBorder" 
+            BackgroundColor="White" 
+            StrokeShape="RoundRectangle 20,20,0,0" 
+            VerticalOptions="End" 
+            HorizontalOptions="Fill">
+
+        <Grid RowDefinitions="Auto, *">
+
+            <Grid Grid.Row="0" ColumnDefinitions="*, Auto" Padding="20,15">
+                <Label Text="Оберіть модель" FontAttributes="Bold" FontSize="18" TextColor="Black" VerticalOptions="Center"/>
+                <Button Grid.Column="1" Text="X" BackgroundColor="Transparent" TextColor="Black" Clicked="OnCloseButtonClicked"/>
+            </Grid>
+
+            <CollectionView Grid.Row="1" 
+                            ItemsSource="{Binding Models}" 
+                            SelectionMode="Single" 
+                            SelectionChanged="OnSelectionChanged">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:VehicleModelDto">
+                        <Border Padding="20,15" StrokeThickness="0" BackgroundColor="Transparent">
+                            <Label Text="{Binding Name}" 
+                                   FontSize="16" 
+                                   TextColor="Black"/>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+                <CollectionView.EmptyView>
+                    <Label Text="Список порожній (Дані не відобразились)" 
+                           TextColor="Red" 
+                           HorizontalOptions="Center" 
+                           VerticalOptions="Center"/>
+                </CollectionView.EmptyView>
+            </CollectionView>
+        </Grid>
+    </Border>
+</toolkit:Popup>

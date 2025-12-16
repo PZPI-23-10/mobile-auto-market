@@ -1,0 +1,1329 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\cardetailspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:cardetailspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\cardetailspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:cardetailspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\viewmodel\\cardetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:viewmodel\\cardetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\viewmodel\\chatsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:viewmodel\\chatsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\viewmodel\\conversationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:viewmodel\\conversationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\chatpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:chatpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\chatpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:chatpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\models\\colordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:models\\colordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\models\\filtermodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:models\\filtermodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\models\\editprofilerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:models\\editprofilerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\models\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:models\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\models\\carcheckinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:models\\carcheckinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\models\\carlisting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:models\\carlisting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\models\\vehiclemodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:models\\vehiclemodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\models\\chatmessagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:models\\chatmessagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\models\\chat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:models\\chat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\conversationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:conversationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\resources\\raw\\map_details.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:resources\\raw\\map_details.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\signup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:signup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\signup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:signup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\fullmappage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:fullmappage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\fullmappage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:fullmappage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\chatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:chatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\resources\\strings\\appresources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:resources\\strings\\appresources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\profilepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:profilepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\conversationpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:conversationpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\profileedit.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:profileedit.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\viewmodel\\addlistingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:viewmodel\\addlistingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\maillogin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:maillogin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\profilepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:profilepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\profileedit.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:profileedit.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\viewmodel\\profilepageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:viewmodel\\profilepageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\helpers\\messagedatatemplateselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:helpers\\messagedatatemplateselector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\services\\localizationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:services\\localizationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\helpers\\dynamictranslateconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:helpers\\dynamictranslateconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\resources\\strings\\appresources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:resources\\strings\\appresources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\popups\\fuelfilterpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:popups\\fuelfilterpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\popups\\fuelfilterpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:popups\\fuelfilterpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\helpers\\dynamicmultitranslateconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:helpers\\dynamicmultitranslateconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\helpers\\translateextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:helpers\\translateextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\addlistingpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:addlistingpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\automarket.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:automarket.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\addlistingpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:addlistingpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\popups\\singleyearpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:popups\\singleyearpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\popups\\conditionpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:popups\\conditionpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\popups\\conditionpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:popups\\conditionpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\popups\\colorpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:popups\\colorpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\popups\\colorpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:popups\\colorpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\popups\\bodytypepopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:popups\\bodytypepopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\popups\\singleyearpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:popups\\singleyearpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\popups\\bodytypepopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:popups\\bodytypepopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\popups\\vehicletypefilterpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:popups\\vehicletypefilterpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\platforms\\android\\androidmanifest.xml||{4E01A4BC-CFCF-452C-8C08-51352512D197}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:platforms\\android\\androidmanifest.xml||{4E01A4BC-CFCF-452C-8C08-51352512D197}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\popups\\gearfilterpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:popups\\gearfilterpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\popups\\gearfilterpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:popups\\gearfilterpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\popups\\cityfilterpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:popups\\cityfilterpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\popups\\cityfilterpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:popups\\cityfilterpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\popups\\regionfilterpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:popups\\regionfilterpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\popups\\regionfilterpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:popups\\regionfilterpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\popups\\pricefilterpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:popups\\pricefilterpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\popups\\pricefilterpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:popups\\pricefilterpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\popups\\yearfilterpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:popups\\yearfilterpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\popups\\yearfilterpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:popups\\yearfilterpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\popups\\modelfilterpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:popups\\modelfilterpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\popups\\modelfilterpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:popups\\modelfilterpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\popups\\brandfilterpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:popups\\brandfilterpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\popups\\brandfilterpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:popups\\brandfilterpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|c:\\users\\maksk\\documents\\github\\mobile-auto-market\\automarket\\popups\\vehicletypefilterpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6133FE63-7D70-4494-9758-76AC7AB0100E}|AutoMarket.csproj|solutionrelative:popups\\vehicletypefilterpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "ProfilePage.xaml",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ProfilePage.xaml",
+              "RelativeDocumentMoniker": "ProfilePage.xaml",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ProfilePage.xaml",
+              "RelativeToolTip": "ProfilePage.xaml",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAuwBEAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-18T14:39:18.5Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppShell.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\AppShell.xaml.cs",
+              "RelativeDocumentMoniker": "AppShell.xaml.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\AppShell.xaml.cs",
+              "RelativeToolTip": "AppShell.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T13:42:27.9Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "AppResources.resx",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Resources\\Strings\\AppResources.resx",
+              "RelativeDocumentMoniker": "Resources\\Strings\\AppResources.resx",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Resources\\Strings\\AppResources.resx",
+              "RelativeToolTip": "Resources\\Strings\\AppResources.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-11-18T19:32:47.319Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ChatsViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ViewModel\\ChatsViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\ChatsViewModel.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ViewModel\\ChatsViewModel.cs",
+              "RelativeToolTip": "ViewModel\\ChatsViewModel.cs",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAwwJUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T13:36:21.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CarDetailsViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ViewModel\\CarDetailsViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\CarDetailsViewModel.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ViewModel\\CarDetailsViewModel.cs",
+              "RelativeToolTip": "ViewModel\\CarDetailsViewModel.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAmwKAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T16:52:39.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CarDetailsPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\CarDetailsPage.xaml.cs",
+              "RelativeDocumentMoniker": "CarDetailsPage.xaml.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\CarDetailsPage.xaml.cs",
+              "RelativeToolTip": "CarDetailsPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T16:54:57.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CarDetailsPage.xaml",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\CarDetailsPage.xaml",
+              "RelativeDocumentMoniker": "CarDetailsPage.xaml",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\CarDetailsPage.xaml",
+              "RelativeToolTip": "CarDetailsPage.xaml",
+              "ViewState": "AgIAALsAAAAAAAAAAAAAAOEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-09T16:54:39.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "MauiProgram.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\MauiProgram.cs",
+              "RelativeToolTip": "MauiProgram.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAcwAcAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T15:52:14.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ConversationViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ViewModel\\ConversationViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\ConversationViewModel.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ViewModel\\ConversationViewModel.cs",
+              "RelativeToolTip": "ViewModel\\ConversationViewModel.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAwCsAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T19:13:36.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\App.xaml",
+              "RelativeDocumentMoniker": "App.xaml",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\App.xaml",
+              "RelativeToolTip": "App.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-13T11:12:49.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AppShell.xaml",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\AppShell.xaml",
+              "RelativeDocumentMoniker": "AppShell.xaml",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\AppShell.xaml",
+              "RelativeToolTip": "AppShell.xaml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAADEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-09T17:05:08.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ColorDto.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Models\\ColorDto.cs",
+              "RelativeDocumentMoniker": "Models\\ColorDto.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Models\\ColorDto.cs",
+              "RelativeToolTip": "Models\\ColorDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T10:52:44.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "EditProfileRequest.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Models\\EditProfileRequest.cs",
+              "RelativeDocumentMoniker": "Models\\EditProfileRequest.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Models\\EditProfileRequest.cs",
+              "RelativeToolTip": "Models\\EditProfileRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T13:18:20.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "FilterModels.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Models\\FilterModels.cs",
+              "RelativeDocumentMoniker": "Models\\FilterModels.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Models\\FilterModels.cs",
+              "RelativeToolTip": "Models\\FilterModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T15:39:56.081Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\App.xaml.cs",
+              "RelativeDocumentMoniker": "App.xaml.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\App.xaml.cs",
+              "RelativeToolTip": "App.xaml.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAACYAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T12:53:39.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ChatPage.xaml",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ChatPage.xaml",
+              "RelativeDocumentMoniker": "ChatPage.xaml",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ChatPage.xaml",
+              "RelativeToolTip": "ChatPage.xaml",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAFwAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-14T13:37:06.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ChatPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ChatPage.xaml.cs",
+              "RelativeDocumentMoniker": "ChatPage.xaml.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ChatPage.xaml.cs",
+              "RelativeToolTip": "ChatPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T13:34:50.714Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "UserProfile.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Models\\UserProfile.cs",
+              "RelativeDocumentMoniker": "Models\\UserProfile.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Models\\UserProfile.cs",
+              "RelativeToolTip": "Models\\UserProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T13:18:10.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CarCheckInfo.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Models\\CarCheckInfo.cs",
+              "RelativeDocumentMoniker": "Models\\CarCheckInfo.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Models\\CarCheckInfo.cs",
+              "RelativeToolTip": "Models\\CarCheckInfo.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAiwF4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T12:48:59.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CarListing.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Models\\CarListing.cs",
+              "RelativeDocumentMoniker": "Models\\CarListing.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Models\\CarListing.cs",
+              "RelativeToolTip": "Models\\CarListing.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAwwCcAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T14:50:37.743Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ChatMessageDto.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Models\\ChatMessageDto.cs",
+              "RelativeDocumentMoniker": "Models\\ChatMessageDto.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Models\\ChatMessageDto.cs",
+              "RelativeToolTip": "Models\\ChatMessageDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T12:22:12.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Chat.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Models\\Chat.cs",
+              "RelativeDocumentMoniker": "Models\\Chat.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Models\\Chat.cs",
+              "RelativeToolTip": "Models\\Chat.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAuwCMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T13:39:38.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ApiService.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ApiService.cs",
+              "RelativeDocumentMoniker": "ApiService.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ApiService.cs",
+              "RelativeToolTip": "ApiService.cs",
+              "ViewState": "AgIAAOECAAAAAAAAAAA3wKUDAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T15:40:17.89Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "VehicleModels.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Models\\VehicleModels.cs",
+              "RelativeDocumentMoniker": "Models\\VehicleModels.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Models\\VehicleModels.cs",
+              "RelativeToolTip": "Models\\VehicleModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T10:18:13.255Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ConversationPage.xaml",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ConversationPage.xaml",
+              "RelativeDocumentMoniker": "ConversationPage.xaml",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ConversationPage.xaml",
+              "RelativeToolTip": "ConversationPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-14T13:48:17.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "map_details.html",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Resources\\Raw\\map_details.html",
+              "RelativeDocumentMoniker": "Resources\\Raw\\map_details.html",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Resources\\Raw\\map_details.html",
+              "RelativeToolTip": "Resources\\Raw\\map_details.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-16T14:41:59.352Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "FullMapPage.xaml",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\FullMapPage.xaml",
+              "RelativeDocumentMoniker": "FullMapPage.xaml",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\FullMapPage.xaml",
+              "RelativeToolTip": "FullMapPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-16T15:17:19.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "FullMapPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\FullMapPage.xaml.cs",
+              "RelativeDocumentMoniker": "FullMapPage.xaml.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\FullMapPage.xaml.cs",
+              "RelativeToolTip": "FullMapPage.xaml.cs",
+              "ViewState": "AgIAAJIAAAAAAAAAAAAswL8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T15:17:42.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "SignUp.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\SignUp.xaml.cs",
+              "RelativeDocumentMoniker": "SignUp.xaml.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\SignUp.xaml.cs",
+              "RelativeToolTip": "SignUp.xaml.cs",
+              "ViewState": "AgIAAOUAAAAAAAAAAAAiwPcAAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T17:46:29.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "SignUp.xaml",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\SignUp.xaml",
+              "RelativeDocumentMoniker": "SignUp.xaml",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\SignUp.xaml",
+              "RelativeToolTip": "SignUp.xaml",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAawGQAAACJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-16T17:45:16.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ConversationPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ConversationPage.xaml.cs",
+              "RelativeDocumentMoniker": "ConversationPage.xaml.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ConversationPage.xaml.cs",
+              "RelativeToolTip": "ConversationPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T13:48:24.251Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ChatService.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ChatService.cs",
+              "RelativeDocumentMoniker": "ChatService.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ChatService.cs",
+              "RelativeToolTip": "ChatService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T13:34:01.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "ProfileEdit.xaml",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ProfileEdit.xaml",
+              "RelativeDocumentMoniker": "ProfileEdit.xaml",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ProfileEdit.xaml",
+              "RelativeToolTip": "ProfileEdit.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-22T13:24:10.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "AddListingViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ViewModel\\AddListingViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\AddListingViewModel.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ViewModel\\AddListingViewModel.cs",
+              "RelativeToolTip": "ViewModel\\AddListingViewModel.cs",
+              "ViewState": "AgIAAF4CAAAAAAAAAAAkwGICAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T09:19:41.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "ProfilePage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ProfilePage.xaml.cs",
+              "RelativeDocumentMoniker": "ProfilePage.xaml.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ProfilePage.xaml.cs",
+              "RelativeToolTip": "ProfilePage.xaml.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAcwEkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T13:15:49.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "ProfileEdit.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ProfileEdit.xaml.cs",
+              "RelativeDocumentMoniker": "ProfileEdit.xaml.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ProfileEdit.xaml.cs",
+              "RelativeToolTip": "ProfileEdit.xaml.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAIwCwAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T21:48:08.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "MailLogin.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\MailLogin.xaml.cs",
+              "RelativeDocumentMoniker": "MailLogin.xaml.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\MailLogin.xaml.cs",
+              "RelativeToolTip": "MailLogin.xaml.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAcwHYAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T09:19:51.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Login.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Login.xaml.cs",
+              "RelativeDocumentMoniker": "Login.xaml.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Login.xaml.cs",
+              "RelativeToolTip": "Login.xaml.cs",
+              "ViewState": "AgIAAH4AAAAAAAAAAIBJwIEAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T09:19:51.271Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "ProfilePageViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ViewModel\\ProfilePageViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\ProfilePageViewModel.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\ViewModel\\ProfilePageViewModel.cs",
+              "RelativeToolTip": "ViewModel\\ProfilePageViewModel.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwDcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T16:52:02.356Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "MessageDataTemplateSelector.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Helpers\\MessageDataTemplateSelector.cs",
+              "RelativeDocumentMoniker": "Helpers\\MessageDataTemplateSelector.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Helpers\\MessageDataTemplateSelector.cs",
+              "RelativeToolTip": "Helpers\\MessageDataTemplateSelector.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T17:22:07.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "DynamicTranslateConverter.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Helpers\\DynamicTranslateConverter.cs",
+              "RelativeDocumentMoniker": "Helpers\\DynamicTranslateConverter.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Helpers\\DynamicTranslateConverter.cs",
+              "RelativeToolTip": "Helpers\\DynamicTranslateConverter.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAwwBkAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T10:47:19.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "LocalizationManager.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Services\\LocalizationManager.cs",
+              "RelativeDocumentMoniker": "Services\\LocalizationManager.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Services\\LocalizationManager.cs",
+              "RelativeToolTip": "Services\\LocalizationManager.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAowCAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T10:41:22.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\MainPage.xaml",
+              "RelativeDocumentMoniker": "MainPage.xaml",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\MainPage.xaml",
+              "RelativeToolTip": "MainPage.xaml",
+              "ViewState": "AgIAAP4AAAAAAAAAAAAkwBQBAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-18T20:15:25.925Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "AppResources.resx",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Resources\\Strings\\AppResources.resx",
+              "RelativeDocumentMoniker": "Resources\\Strings\\AppResources.resx",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Resources\\Strings\\AppResources.resx",
+              "RelativeToolTip": "Resources\\Strings\\AppResources.resx",
+              "ViewState": "AgIAAOYAAAAAAAAAAABRwOoAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-12-13T17:00:36.935Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "DynamicMultiTranslateConverter.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Helpers\\DynamicMultiTranslateConverter.cs",
+              "RelativeDocumentMoniker": "Helpers\\DynamicMultiTranslateConverter.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Helpers\\DynamicMultiTranslateConverter.cs",
+              "RelativeToolTip": "Helpers\\DynamicMultiTranslateConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAUwB8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T12:00:17.963Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "TranslateExtension.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Helpers\\TranslateExtension.cs",
+              "RelativeDocumentMoniker": "Helpers\\TranslateExtension.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Helpers\\TranslateExtension.cs",
+              "RelativeToolTip": "Helpers\\TranslateExtension.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T10:40:39.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "AutoMarket.csproj",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\AutoMarket.csproj",
+              "RelativeDocumentMoniker": "AutoMarket.csproj",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\AutoMarket.csproj",
+              "RelativeToolTip": "AutoMarket.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-09T16:54:27.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "ColorPopup.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\ColorPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\ColorPopup.xaml.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\ColorPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\ColorPopup.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T10:53:23.718Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "ColorPopup.xaml",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\ColorPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\ColorPopup.xaml",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\ColorPopup.xaml",
+              "RelativeToolTip": "Popups\\ColorPopup.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-22T10:53:06.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "ConditionPopup.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\ConditionPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\ConditionPopup.xaml.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\ConditionPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\ConditionPopup.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T10:48:09.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "ConditionPopup.xaml",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\ConditionPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\ConditionPopup.xaml",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\ConditionPopup.xaml",
+              "RelativeToolTip": "Popups\\ConditionPopup.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-22T10:47:59.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "SingleYearPopup.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\SingleYearPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\SingleYearPopup.xaml.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\SingleYearPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\SingleYearPopup.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T09:55:58.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "SingleYearPopup.xaml",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\SingleYearPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\SingleYearPopup.xaml",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\SingleYearPopup.xaml",
+              "RelativeToolTip": "Popups\\SingleYearPopup.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-22T09:55:49.359Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "BodyTypePopup.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\BodyTypePopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\BodyTypePopup.xaml.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\BodyTypePopup.xaml.cs",
+              "RelativeToolTip": "Popups\\BodyTypePopup.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T09:55:27.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "BodyTypePopup.xaml",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\BodyTypePopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\BodyTypePopup.xaml",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\BodyTypePopup.xaml",
+              "RelativeToolTip": "Popups\\BodyTypePopup.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-22T09:55:18.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "AddListingPage.xaml",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\AddListingPage.xaml",
+              "RelativeDocumentMoniker": "AddListingPage.xaml",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\AddListingPage.xaml",
+              "RelativeToolTip": "AddListingPage.xaml",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAQwAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-22T09:21:09.928Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "AddListingPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\AddListingPage.xaml.cs",
+              "RelativeDocumentMoniker": "AddListingPage.xaml.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\AddListingPage.xaml.cs",
+              "RelativeToolTip": "AddListingPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAowAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T09:20:20.311Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "AndroidManifest.xml",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Platforms\\Android\\AndroidManifest.xml",
+              "RelativeDocumentMoniker": "Platforms\\Android\\AndroidManifest.xml",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Platforms\\Android\\AndroidManifest.xml",
+              "RelativeToolTip": "Platforms\\Android\\AndroidManifest.xml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-11-20T14:51:00.425Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "GearFilterPopup.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\GearFilterPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\GearFilterPopup.xaml.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\GearFilterPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\GearFilterPopup.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T14:21:09.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "GearFilterPopup.xaml",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\GearFilterPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\GearFilterPopup.xaml",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\GearFilterPopup.xaml",
+              "RelativeToolTip": "Popups\\GearFilterPopup.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-20T14:21:02.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "FuelFilterPopup.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\FuelFilterPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\FuelFilterPopup.xaml.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\FuelFilterPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\FuelFilterPopup.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvyMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T14:16:56.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "FuelFilterPopup.xaml",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\FuelFilterPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\FuelFilterPopup.xaml",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\FuelFilterPopup.xaml",
+              "RelativeToolTip": "Popups\\FuelFilterPopup.xaml",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAkwC4AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-20T14:16:49.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "CityFilterPopup.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\CityFilterPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\CityFilterPopup.xaml.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\CityFilterPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\CityFilterPopup.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T14:10:32.767Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "CityFilterPopup.xaml",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\CityFilterPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\CityFilterPopup.xaml",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\CityFilterPopup.xaml",
+              "RelativeToolTip": "Popups\\CityFilterPopup.xaml",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAIwCcAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-20T14:10:20.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "RegionFilterPopup.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\RegionFilterPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\RegionFilterPopup.xaml.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\RegionFilterPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\RegionFilterPopup.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAIwB0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T14:03:53.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "RegionFilterPopup.xaml",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\RegionFilterPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\RegionFilterPopup.xaml",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\RegionFilterPopup.xaml",
+              "RelativeToolTip": "Popups\\RegionFilterPopup.xaml",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAIwCcAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-20T14:03:43.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "PriceFilterPopup.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\PriceFilterPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\PriceFilterPopup.xaml.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\PriceFilterPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\PriceFilterPopup.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T13:38:24.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "PriceFilterPopup.xaml",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\PriceFilterPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\PriceFilterPopup.xaml",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\PriceFilterPopup.xaml",
+              "RelativeToolTip": "Popups\\PriceFilterPopup.xaml",
+              "ViewState": "AgIAACUAAAAAAAAAAIBZwEkAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-20T13:38:15.53Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "YearFilterPopup.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\YearFilterPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\YearFilterPopup.xaml.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\YearFilterPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\YearFilterPopup.xaml.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAIBZwDkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T12:39:23.982Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "YearFilterPopup.xaml",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\YearFilterPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\YearFilterPopup.xaml",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\YearFilterPopup.xaml",
+              "RelativeToolTip": "Popups\\YearFilterPopup.xaml",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAuwIQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-20T12:39:09.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "ModelFilterPopup.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\ModelFilterPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\ModelFilterPopup.xaml.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\ModelFilterPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\ModelFilterPopup.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T16:24:05.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "ModelFilterPopup.xaml",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\ModelFilterPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\ModelFilterPopup.xaml",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\ModelFilterPopup.xaml",
+              "RelativeToolTip": "Popups\\ModelFilterPopup.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-19T16:23:51.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "BrandFilterPopup.xaml",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\BrandFilterPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\BrandFilterPopup.xaml",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\BrandFilterPopup.xaml",
+              "RelativeToolTip": "Popups\\BrandFilterPopup.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-19T16:22:58.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "BrandFilterPopup.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\BrandFilterPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\BrandFilterPopup.xaml.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\BrandFilterPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\BrandFilterPopup.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T16:23:08.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "MainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\MainPage.xaml.cs",
+              "RelativeToolTip": "MainPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T15:50:03.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 76,
+              "Title": "VehicleTypeFilterPopup.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\VehicleTypeFilterPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Popups\\VehicleTypeFilterPopup.xaml.cs",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\VehicleTypeFilterPopup.xaml.cs",
+              "RelativeToolTip": "Popups\\VehicleTypeFilterPopup.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T15:49:12.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "VehicleTypeFilterPopup.xaml",
+              "DocumentMoniker": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\VehicleTypeFilterPopup.xaml",
+              "RelativeDocumentMoniker": "Popups\\VehicleTypeFilterPopup.xaml",
+              "ToolTip": "C:\\Users\\maksk\\Documents\\GitHub\\mobile-auto-market\\AutoMarket\\Popups\\VehicleTypeFilterPopup.xaml",
+              "RelativeToolTip": "Popups\\VehicleTypeFilterPopup.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-19T15:54:26.193Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

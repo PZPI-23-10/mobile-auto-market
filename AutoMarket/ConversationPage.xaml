@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:AutoMarket.ViewModels"
+             x:Class="AutoMarket.ConversationPage"
+             Shell.TabBarIsVisible="False"
+             BackgroundColor="#121212"
+Shell.TitleColor="#121212"
+Shell.BackgroundColor="#121212" 
+Shell.ForegroundColor="White">
+
+    <Shell.TitleView>
+        <HorizontalStackLayout VerticalOptions="Center" Spacing="10" Margin="0,0,10,0">
+
+            <Image Source="{Binding CurrentChat.ImageUrl}" 
+                   Aspect="AspectFill"
+                   HeightRequest="40" 
+                   WidthRequest="40"
+                   VerticalOptions="Center">
+                <Image.Clip>
+                    <EllipseGeometry Center="20,20" RadiusX="20" RadiusY="20"/>
+                </Image.Clip>
+            </Image>
+
+            <Label Text="{Binding CurrentChat.Title}" 
+                   TextColor="White" 
+                   FontSize="18" 
+                   FontAttributes="Bold"
+                   VerticalOptions="Center"
+                   LineBreakMode="TailTruncation"/>
+
+        </HorizontalStackLayout>
+    </Shell.TitleView>
+    <Grid RowDefinitions="*, Auto">
+
+        <CollectionView Grid.Row="0" 
+                        ItemsSource="{Binding Messages}"
+                        Margin="0,0,0,10">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="8"/>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10, 0">
+
+                        <Border x:Name="MessageContainer"
+                                Padding="12, 8"
+                                StrokeThickness="0"
+                                MaximumWidthRequest="280">
+
+                            <VerticalStackLayout Spacing="4">
+                                <Label Text="{Binding Text}" 
+                                       TextColor="White" 
+                                       FontSize="16"/>
+
+                                <HorizontalStackLayout Spacing="5" HorizontalOptions="End">
+                                    <Label Text="{Binding SentAt, StringFormat='{0:HH:mm}'}" 
+                                           TextColor="#E0E0E0" 
+                                           FontSize="11"
+                                           Opacity="0.7"/>
+
+                                    <Label x:Name="ReadStatus"
+                                           Text="✓" 
+                                           TextColor="#E0E0E0" 
+                                           FontSize="12"
+                                           VerticalOptions="End">
+
+                                        <Label.Triggers>
+                                            <DataTrigger TargetType="Label" Binding="{Binding IsRead}" Value="True">
+                                                <Setter Property="Text" Value="✓✓"/>
+                                                <Setter Property="TextColor" Value="#40C4FF"/>
+                                            </DataTrigger>
+                                        </Label.Triggers>
+
+                                    </Label>
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+
+                            <Border.Triggers>
+                                <DataTrigger TargetType="Border" Binding="{Binding IsMine}" Value="True">
+                                    <Setter Property="BackgroundColor" Value="DarkOrange"/>
+                                    <Setter Property="HorizontalOptions" Value="End"/>
+                                    <Setter Property="StrokeShape" Value="RoundRectangle 20,20,20,0"/>
+                                </DataTrigger>
+
+                                <DataTrigger TargetType="Border" Binding="{Binding IsMine}" Value="False">
+                                    <Setter Property="BackgroundColor" Value="#2A2A2A"/>
+                                    <Setter Property="HorizontalOptions" Value="Start"/>
+                                    <Setter Property="StrokeShape" Value="RoundRectangle 20,20,0,20"/>
+                                </DataTrigger>
+                            </Border.Triggers>
+                        </Border>
+
+                        <Grid.Triggers>
+                            <DataTrigger TargetType="Grid" Binding="{Binding IsMine}" Value="False">
+                                <Setter TargetName="ReadStatus" Property="IsVisible" Value="False"/>
+                            </DataTrigger>
+                        </Grid.Triggers>
+
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Grid Grid.Row="1" ColumnDefinitions="*, Auto" Padding="10, 5" BackgroundColor="#1E1E1E">
+            <Border Grid.Column="0" 
+                    BackgroundColor="#2A2A2A" 
+                    StrokeShape="RoundRectangle 25"
+                    Padding="15,0" 
+                    StrokeThickness="0">
+                <Entry Placeholder="Повідомлення..." 
+                       Text="{Binding NewMessageText}" 
+                       TextColor="White"
+                       PlaceholderColor="#888"
+                       BackgroundColor="Transparent"/>
+            </Border>
+
+            <Button Grid.Column="1" 
+                    Text="➤" 
+                    Margin="10,0,0,0"
+                    WidthRequest="50" HeightRequest="50"
+                    CornerRadius="25"
+                    BackgroundColor="DarkOrange"
+                    TextColor="White"
+                    Command="{Binding SendMessageCommand}"/>
+        </Grid>
+
+    </Grid>
+</ContentPage>

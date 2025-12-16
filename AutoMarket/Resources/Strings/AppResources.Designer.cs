@@ -61,6 +61,15 @@ namespace AutoMarket.Resources.Strings {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Скинути фільтри.
+        /// </summary>
+        public static string Action_ResetFilters {
+            get {
+                return ResourceManager.GetString("Action_ResetFilters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Додавання оголошення.
         /// </summary>
         public static string AddListingTitle {
@@ -70,29 +79,11 @@ namespace AutoMarket.Resources.Strings {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Всі.
+        ///   Ищет локализованную строку, похожую на Шукати.
         /// </summary>
-        public static string ConditionAll {
+        public static string Button_Search {
             get {
-                return ResourceManager.GetString("ConditionAll", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Нові.
-        /// </summary>
-        public static string ConditionNew {
-            get {
-                return ResourceManager.GetString("ConditionNew", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Вживані.
-        /// </summary>
-        public static string ConditionUsed {
-            get {
-                return ResourceManager.GetString("ConditionUsed", resourceCulture);
+                return ResourceManager.GetString("Button_Search", resourceCulture);
             }
         }
         
@@ -261,72 +252,162 @@ namespace AutoMarket.Resources.Strings {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Марка.
         /// </summary>
-        public static string FilterMake {
+        public static string Filter_Brand {
             get {
-                return ResourceManager.GetString("FilterMake", resourceCulture);
+                return ResourceManager.GetString("Filter_Brand", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Модель.
+        ///   Ищет локализованную строку, похожую на Місто.
         /// </summary>
-        public static string FilterModel {
+        public static string Filter_City {
             get {
-                return ResourceManager.GetString("FilterModel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Вартість.
-        /// </summary>
-        public static string FilterPrice {
-            get {
-                return ResourceManager.GetString("FilterPrice", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Регіон.
-        /// </summary>
-        public static string FilterRegion {
-            get {
-                return ResourceManager.GetString("FilterRegion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Коробка передач.
-        /// </summary>
-        public static string FilterTransmission {
-            get {
-                return ResourceManager.GetString("FilterTransmission", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Тип транспорту.
-        /// </summary>
-        public static string FilterVehicleType {
-            get {
-                return ResourceManager.GetString("FilterVehicleType", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Рік випуску.
-        /// </summary>
-        public static string FilterYear {
-            get {
-                return ResourceManager.GetString("FilterYear", resourceCulture);
+                return ResourceManager.GetString("Filter_City", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Ищет локализованную строку, похожую на Пальне.
         /// </summary>
+        public static string Filter_Fuel {
+            get {
+                return ResourceManager.GetString("Filter_Fuel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Коробка передач.
+        /// </summary>
+        public static string Filter_Gearbox {
+            get {
+                return ResourceManager.GetString("Filter_Gearbox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Модель.
+        /// </summary>
+        public static string Filter_Model {
+            get {
+                return ResourceManager.GetString("Filter_Model", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вартість.
+        /// </summary>
+        public static string Filter_Price {
+            get {
+                return ResourceManager.GetString("Filter_Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Регіон.
+        /// </summary>
+        public static string Filter_Region {
+            get {
+                return ResourceManager.GetString("Filter_Region", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Тип транспорту.
+        /// </summary>
+        public static string Filter_TransportType {
+            get {
+                return ResourceManager.GetString("Filter_TransportType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Рік випуску.
+        /// </summary>
+        public static string Filter_Year {
+            get {
+                return ResourceManager.GetString("Filter_Year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Бензин.
+        /// </summary>
+        public static string Fuel_BENSIN {
+            get {
+                return ResourceManager.GetString("Fuel_BENSIN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Дизель.
+        /// </summary>
+        public static string Fuel_DIESEL {
+            get {
+                return ResourceManager.GetString("Fuel_DIESEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Електро.
+        /// </summary>
+        public static string Fuel_ELECTRIC {
+            get {
+                return ResourceManager.GetString("Fuel_ELECTRIC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Газ.
+        /// </summary>
+        public static string Fuel_GAS {
+            get {
+                return ResourceManager.GetString("Fuel_GAS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Паливо.
+        /// </summary>
         public static string FuelFilterText {
             get {
                 return ResourceManager.GetString("FuelFilterText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Автомат.
+        /// </summary>
+        public static string Gear_AUTOMATIC {
+            get {
+                return ResourceManager.GetString("Gear_AUTOMATIC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Механіка.
+        /// </summary>
+        public static string Gear_MANUAL {
+            get {
+                return ResourceManager.GetString("Gear_MANUAL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Робот.
+        /// </summary>
+        public static string Gear_ROBOT {
+            get {
+                return ResourceManager.GetString("Gear_ROBOT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Варіатор.
+        /// </summary>
+        public static string Gear_VARIATOR {
+            get {
+                return ResourceManager.GetString("Gear_VARIATOR", resourceCulture);
             }
         }
         
@@ -513,9 +594,9 @@ namespace AutoMarket.Resources.Strings {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Головна.
         /// </summary>
-        public static string PageTitleMain {
+        public static string PageTitle_Main {
             get {
-                return ResourceManager.GetString("PageTitleMain", resourceCulture);
+                return ResourceManager.GetString("PageTitle_Main", resourceCulture);
             }
         }
         
@@ -552,6 +633,33 @@ namespace AutoMarket.Resources.Strings {
         public static string SearchButtonText {
             get {
                 return ResourceManager.GetString("SearchButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Всі.
+        /// </summary>
+        public static string Tab_All {
+            get {
+                return ResourceManager.GetString("Tab_All", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Нові.
+        /// </summary>
+        public static string Tab_New {
+            get {
+                return ResourceManager.GetString("Tab_New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вживані.
+        /// </summary>
+        public static string Tab_Used {
+            get {
+                return ResourceManager.GetString("Tab_Used", resourceCulture);
             }
         }
         
