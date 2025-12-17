@@ -174,13 +174,13 @@ namespace AutoMarket
 
 
         public async Task<string> UpdateUserProfileAsync(EditProfileRequest profileData,
-                                                Stream photoStream, // Новий параметр
-                                                string photoFileName, // Новий параметр
-                                                string token)
+                                          Stream photoStream, // Новий параметр
+                                          string photoFileName, // Новий параметр
+                                          string token)
         {
-            
+
             string url = $"{_baseUrl}/Profile/update";
-           
+
 
             try
             {
@@ -853,6 +853,8 @@ namespace AutoMarket
             double price,
             string description,
             bool hasAccident,
+            double latitude,
+            double longitude,
             List<FileResult> photos)
         {
             string url = $"{_baseUrl}/Listing";
@@ -875,6 +877,8 @@ namespace AutoMarket
                 content.Add(new StringContent(price.ToString(System.Globalization.CultureInfo.InvariantCulture)), "Price"); // Щоб була крапка, а не кома
                 content.Add(new StringContent(description ?? ""), "Description");
                 content.Add(new StringContent(hasAccident.ToString().ToLower()), "HasAccident"); // true/false
+                content.Add(new StringContent(latitude.ToString(System.Globalization.CultureInfo.InvariantCulture)), "latitude");
+                content.Add(new StringContent(longitude.ToString(System.Globalization.CultureInfo.InvariantCulture)), "longitude");
 
                 // 2. Додаємо фотографії (ВАРІАНТ ЯК НА WEB)
                 if (photos != null)

@@ -62,7 +62,7 @@ public partial class ProfileEdit : ContentPage
             }
             CountryEntry.Text = profile.country;
             AddressEntry.Text = profile.address;
-            AboutYourselfEditor.Text = profile.aboutYourself;
+            AboutYourselfEditor.Text = profile.aboutUrself;
 
             _currentAvatarUrl = profile.avatarUrl;
             if (!string.IsNullOrEmpty(_currentAvatarUrl))

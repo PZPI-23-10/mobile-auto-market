@@ -447,7 +447,52 @@
                 </toolkit:Expander.Content>
             </toolkit:Expander>
 
+            <toolkit:Expander IsExpanded="false">
+                <toolkit:Expander.Header>
+                    <Grid ColumnDefinitions="Auto, *" ColumnSpacing="15" Padding="10">
+                        <Label Grid.Column="0" Text="6" FontSize="18" FontAttributes="Bold" TextColor="#888"/>
+                        <Label Grid.Column="1" Text="Місцезнаходження" FontSize="16" FontAttributes="Bold" TextColor="Black" VerticalOptions="Center"/>
+                    </Grid>
+                </toolkit:Expander.Header>
 
+                <toolkit:Expander.Content>
+                    <Border Margin="0,0,0,10" 
+                Stroke="#E0E0E0" 
+                StrokeThickness="1" 
+                BackgroundColor="#F5F5F5" 
+                StrokeShape="RoundRectangle 8"
+                HeightRequest="120"
+                Padding="0">
+
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenMapPickerCommand}"/>
+                        </Border.GestureRecognizers>
+
+                        <Grid>
+                            <VerticalStackLayout VerticalOptions="Center" 
+                                     HorizontalOptions="Center" 
+                                     Spacing="10">
+                                <VerticalStackLayout.Triggers>
+                                    <DataTrigger TargetType="VerticalStackLayout" Binding="{Binding IsLocationSelected}" Value="True">
+                                        <Setter Property="IsVisible" Value="False"/>
+                                    </DataTrigger>
+                                </VerticalStackLayout.Triggers>
+
+                                <Label Text="🗺️" FontSize="40" HorizontalOptions="Center"/>
+                                <Label Text="{Binding LocationStatusText}" TextColor="Gray" HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+
+                            <Grid BackgroundColor="#E8F5E9" IsVisible="{Binding IsLocationSelected}">
+                                <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="5">
+                                    <Label Text="✅" FontSize="30" HorizontalOptions="Center"/>
+                                    <Label Text="Локацію закріплено!" TextColor="#2E7D32" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding LocationStatusText}" TextColor="#1B5E20" FontSize="12" HorizontalOptions="Center"/>
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </toolkit:Expander.Content>
+            </toolkit:Expander>
             <Button Text="{helpers:Translate ListingSubmitButton}"
                     Command="{Binding SubmitCommand}"
                     BackgroundColor="#80B918" 

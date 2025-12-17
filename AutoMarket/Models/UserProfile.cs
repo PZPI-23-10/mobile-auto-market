@@ -13,7 +13,7 @@ namespace AutoMarket.Models
         public DateTime? dateOfBirth { get; set; }
         public string phoneNumber { get; set; }
         public string address { get; set; }
-        public string aboutYourself { get; set; }
+        public string aboutUrself { get; set; }
 
         public bool isVerified { get; set; }
         public string avatarUrl { get; set; }

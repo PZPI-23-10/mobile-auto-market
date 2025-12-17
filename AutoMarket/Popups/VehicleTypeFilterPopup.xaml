@@ -7,10 +7,6 @@
                x:Class="AutoMarket.Popups.VehicleTypeFilterPopup"
                Color="Transparent">
 
-    <toolkit:Popup.Resources>
-        <helpers:DynamicTranslateConverter x:Key="DynamicTranslate"/>
-    </toolkit:Popup.Resources>
-
     <Border x:Name="MainBorder" 
             BackgroundColor="White"
             StrokeShape="RoundRectangle 20,20,0,0"
@@ -23,28 +19,42 @@
                 <Label Text="{helpers:Translate VehicleTypePopupTitle}" 
                        FontAttributes="Bold" 
                        FontSize="18" 
+                       TextColor="#1A1A1A"
                        VerticalOptions="Center"/>
 
                 <ImageButton Grid.Column="1" 
                              Source="close_icon.png" 
                              HeightRequest="30" 
                              WidthRequest="30" 
-                             Clicked="OnCloseButtonClicked">
+                             Clicked="OnCloseButtonClicked"
+                             BackgroundColor="Transparent">
                 </ImageButton>
             </Grid>
+
+            <BoxView Grid.Row="0" VerticalOptions="End" HeightRequest="1" Color="#E0E0E0"/>
 
             <CollectionView Grid.Row="1" 
                             ItemsSource="{Binding VehicleTypes}" 
                             SelectionMode="Single" 
                             SelectionChanged="OnSelectionChanged">
+
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:VehicleTypeDto">
                         <Border Padding="20,15" StrokeThickness="0" BackgroundColor="Transparent">
-
-                            <Label Text="{Binding Name, Converter={StaticResource DynamicTranslate}, ConverterParameter='VehicleType_'}" 
+                            <Label Text="{Binding Name}" 
                                    FontSize="16" 
-                                   TextColor="Black"/>
+                                   TextColor="#333333"/>
 
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup Name="CommonStates">
+                                    <VisualState Name="Normal" />
+                                    <VisualState Name="Selected">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="#F0F0F0" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
                         </Border>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

@@ -3,6 +3,7 @@ using CommunityToolkit.Maui;
 using AutoMarket.ViewModels;
 using AutoMarket.ViewModel;
 using AutoMarket.Views;// !! Додайте це, щоб MAUI знав про CarListing
+using Plugin.LocalNotification;
 
 namespace AutoMarket
 {
@@ -13,6 +14,7 @@ namespace AutoMarket
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseLocalNotification()
                 .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {

@@ -1284,4 +1284,43 @@
   <data name="BodyType_ATV" xml:space="preserve">
     <value>Квадроцикл</value>
   </data>
+  <data name="PageTitle_Profile" xml:space="preserve">
+    <value>Мій профіль</value>
+  </data>
+  <data name="Profile_NamePlaceholder" xml:space="preserve">
+    <value>Ім'я Користувача</value>
+  </data>
+  <data name="Profile_StatusOnline" xml:space="preserve">
+    <value>В мережі</value>
+  </data>
+  <data name="Profile_Reviews" xml:space="preserve">
+    <value>Відгуків</value>
+  </data>
+  <data name="Profile_MyListings" xml:space="preserve">
+    <value>Мої оголошення</value>
+  </data>
+  <data name="Profile_SecurityPrivacy" xml:space="preserve">
+    <value>Безпека та Конфіденційність</value>
+  </data>
+  <data name="Profile_Settings" xml:space="preserve">
+    <value>Налаштування</value>
+  </data>
+  <data name="Profile_Logout" xml:space="preserve">
+    <value>Вийти з профілю</value>
+  </data>
+  <data name="PageTitle_MyListings" xml:space="preserve">
+    <value>Мої оголошення</value>
+  </data>
+  <data name="MyListings_Empty" xml:space="preserve">
+    <value>У вас ще немає оголошень</value>
+  </data>
+  <data name="Listing_StatusActive" xml:space="preserve">
+    <value>Активне</value>
+  </data>
+  <data name="Listing_DeleteButton" xml:space="preserve">
+    <value>Видалити оголошення</value>
+  </data>
+  <data name="PageTitle_Favorites" xml:space="preserve">
+    <value>Обрані</value>
+  </data>
 </root>

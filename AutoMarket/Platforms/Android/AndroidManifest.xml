@@ -7,4 +7,5 @@
 	<uses-permission android:name="android.permission.CAPTURE_AUDIO_OUTPUT" />
 	<uses-permission android:name="android.permission.CAPTURE_SECURE_VIDEO_OUTPUT" />
 	<uses-permission android:name="android.permission.CAPTURE_VIDEO_OUTPUT" />
+	<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 </manifest>

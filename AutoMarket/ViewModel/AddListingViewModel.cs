@@ -1,17 +1,21 @@
-﻿using System.Collections.ObjectModel;
+﻿using AutoMarket.Models;
+using AutoMarket.Popups;
+using AutoMarket.Services;
+using CommunityToolkit.Maui.Views;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using Plugin.LocalNotification;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
-using AutoMarket.Services;
-using AutoMarket.Models;
-using CommunityToolkit.Maui.Views;
-using AutoMarket.Popups;
 
 namespace AutoMarket.ViewModel
 {
-    public class AddListingViewModel : INotifyPropertyChanged
+    public class AddListingViewModel : INotifyPropertyChanged, IQueryAttributable
     {
         private readonly ApiService _apiService;
+        private readonly INotificationService _notificationService;
 
         // --- 1. КОЛЕКЦІЯ ФОТОГРАФІЙ ---
         public ObservableCollection<ImageSource> DisplayPhotos { get; set; } = new();
@@ -286,6 +290,43 @@ namespace AutoMarket.ViewModel
             }
         }
 
+        // ===============================
+        //      КРОК 6: РОЗТАШУВАННЯ
+        // ===============================
+
+        private double _latitude;
+        public double Latitude
+        {
+            get => _latitude;
+            set { _latitude = value; OnPropertyChanged(); }
+        }
+
+        private double _longitude;
+        public double Longitude
+        {
+            get => _longitude;
+            set { _longitude = value; OnPropertyChanged(); }
+        }
+
+        // Чи обрав користувач локацію? (Впливає на колір блоку)
+        private bool _isLocationSelected;
+        public bool IsLocationSelected
+        {
+            get => _isLocationSelected;
+            set { _isLocationSelected = value; OnPropertyChanged(); }
+        }
+
+        // Текст підказки (наприклад: "Натисніть..." або "Координати: 50.45, 30.52")
+        private string _locationStatusText = "Натисніть, щоб вказати на мапі";
+        public string LocationStatusText
+        {
+            get => _locationStatusText;
+            set { _locationStatusText = value; OnPropertyChanged(); }
+        }
+
+        // Команда для відкриття сторінки з мапою
+        public ICommand OpenMapPickerCommand { get; }
+
         // --- КОМАНДИ ---
         public ICommand AddPhotoCommand { get; }
         public ICommand RemovePhotoCommand { get; }
@@ -303,9 +344,10 @@ namespace AutoMarket.ViewModel
         public ICommand SubmitCommand { get; }
         public ICommand CheckPlateCommand { get; }
 
-        public AddListingViewModel(ApiService apiService)
+        public AddListingViewModel(ApiService apiService, INotificationService notificationService)
         {
             _apiService = apiService;
+            _notificationService = notificationService;
 
             AddPhotoCommand = new Command(OnAddPhoto);
             RemovePhotoCommand = new Command<ImageSource>(OnRemovePhoto);
@@ -322,6 +364,7 @@ namespace AutoMarket.ViewModel
             CheckPlateCommand = new Command(OnCheckPlate);
             SelectFuelCommand = new Command(OnSelectFuel);
             SelectGearCommand = new Command(OnSelectGear);
+            OpenMapPickerCommand = new Command(async () => await Shell.Current.GoToAsync("PickLocationPage"));
             SubmitCommand = new Command(OnSubmit, () => !IsBusy);
 
             _availableColors = new List<ColorDto>
@@ -337,6 +380,7 @@ namespace AutoMarket.ViewModel
                 new ColorDto { Name = "Бежевий", HexCode = "#F5F5DC" },
                 new ColorDto { Name = "Жовтий", HexCode = "#FFFF00" }
             };
+            _notificationService = notificationService;
         }
 
         // --- Логіка ---
@@ -555,6 +599,25 @@ namespace AutoMarket.ViewModel
             if (result is GearTypeDto item) SelectedGear = item;
         }
 
+        // Цей метод спрацьовує автоматично, коли ми повертаємося зі сторінки мапи
+        public void ApplyQueryAttributes(IDictionary<string, object> query)
+        {
+            // Перевіряємо, чи прийшли координати
+            if (query.ContainsKey("lat") && query.ContainsKey("lon"))
+            {
+                // Парсимо рядки в double (використовуємо InvariantCulture, щоб крапка сприймалася правильно)
+                double.TryParse(query["lat"].ToString(), System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out double lat);
+                double.TryParse(query["lon"].ToString(), System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out double lon);
+
+                Latitude = lat;
+                Longitude = lon;
+
+                // Оновлюємо інтерфейс
+                IsLocationSelected = true;
+                LocationStatusText = $"Координати: {lat:F5}, {lon:F5}";
+            }
+        }
+
         private async void OnSubmit()
         {
             if (IsBusy) return;
@@ -618,6 +681,8 @@ namespace AutoMarket.ViewModel
                     price: priceUsd,
                     description: Description,
                     hasAccident: HasAccident,
+                    latitude: Latitude,
+                    longitude: Longitude,
                     photos: _filesToSend
                 );
 
@@ -625,7 +690,25 @@ namespace AutoMarket.ViewModel
 
                 if (success)
                 {
+                    //  НОВИЙ КОД: ВІДПРАВКА СПОВІЩЕННЯ 
+                    var request = new NotificationRequest
+                    {
+                        NotificationId = new Random().Next(1000, 9999), // Випадковий ID
+                        Title = "AutoMarket",
+                        Description = "Дякуємо! Ваше авто успішно виставлене на продаж.",
+                        BadgeNumber = 1,
+                        Schedule = new NotificationRequestSchedule
+                        {
+                            NotifyTime = DateTime.Now.AddSeconds(1) // Покаже через 1 секунду
+                        }
+                    };
+
+                    // Відправляємо пуш 
+                    await _notificationService.Show(request);
+                    
+
                     await App.Current.MainPage.DisplayAlert("Успіх", "Оголошення успішно створено!", "ОК");
+
                     // Повертаємось назад на головну
                     await Shell.Current.GoToAsync("//MainPage");
                 }
@@ -640,5 +723,6 @@ namespace AutoMarket.ViewModel
                 await App.Current.MainPage.DisplayAlert("Критична помилка", ex.Message, "ОК");
             }
         }
+
     }
 }

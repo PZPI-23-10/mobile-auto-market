@@ -2,9 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:AutoMarket.ViewModel"
+             xmlns:helpers="clr-namespace:AutoMarket.Helpers"
              xmlns:models="clr-namespace:AutoMarket.Models"
              x:Class="AutoMarket.Views.MyListingsPage"
-             Title="Мої оголошення"
+             Title="{helpers:Translate PageTitle_MyListings}"
              BackgroundColor="#F5F5F5">
 
     <Grid>
@@ -22,7 +23,7 @@
             <CollectionView.EmptyView>
                 <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="10" Padding="30">
                     <Label Text="📂" FontSize="50" HorizontalOptions="Center"/>
-                    <Label Text="У вас ще немає оголошень" 
+                    <Label Text="{helpers:Translate MyListings_Empty}" 
                            FontSize="18" TextColor="Gray" HorizontalOptions="Center"/>
                 </VerticalStackLayout>
             </CollectionView.EmptyView>
@@ -45,11 +46,11 @@
                                         <Label Text="{Binding PriceUsdFormatted}" TextColor="#4CAF50" FontSize="20" FontAttributes="Bold"/>
                                     </HorizontalStackLayout>
 
-                                    <Label Text="Активне" TextColor="Green" FontSize="12"/>
+                                    <Label Text="{helpers:Translate Listing_StatusActive}" TextColor="Green" FontSize="12"/>
                                 </StackLayout>
 
                                 <Button Grid.Row="2"
-                                        Text="Видалити оголошення"
+                                        Text="{helpers:Translate Listing_DeleteButton}"
                                         BackgroundColor="#E64444"
                                         TextColor="White"
                                         FontAttributes="Bold"

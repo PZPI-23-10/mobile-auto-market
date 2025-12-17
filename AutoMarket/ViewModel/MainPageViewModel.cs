@@ -17,6 +17,16 @@ namespace AutoMarket.ViewModel
     {
         private readonly ApiService _apiService;
 
+        private readonly Dictionary<string, string> _typeTranslations = new()
+        {
+            { "PASSENGER_CAR", "Легкові" },
+            { "TRUCK", "Вантажівки" },
+            { "MOTORCYCLE", "Мотоцикли" },
+            { "BUS", "Автобуси" },
+            { "TRAILER", "Причепи" },
+            { "SPECIAL", "Спецтехніка" }
+            // Додай сюди інші типи, які є в твоїй БД
+        };
         // --- Списки даних для вибору ---
         public ObservableCollection<VehicleTypeDto> VehicleTypes { get; set; } = new();
         public ObservableCollection<VehicleBrandDto> Brands { get; set; } = new();
@@ -118,7 +128,24 @@ namespace AutoMarket.ViewModel
         // Ми беремо переклад напряму з менеджера. 
         // При перезапуску AppShell тут буде вже нова мова.
 
-        public string SelectedTypeName => SelectedType?.Name ?? LocalizationManager.Instance["Filter_TransportType"];
+        public string SelectedTypeName
+        {
+            get
+            {
+                // Якщо нічого не обрано - показуємо стандартний текст "Тип транспорту"
+                if (SelectedType == null)
+                    return LocalizationManager.Instance["Filter_TransportType"];
+
+                // Спробуємо знайти переклад у словнику
+                if (_typeTranslations.TryGetValue(SelectedType.Name, out string translatedName))
+                {
+                    return translatedName; // Повертаємо "Легкові"
+                }
+
+                // Якщо перекладу немає - повертаємо як є ("PASSENGER_CAR")
+                return SelectedType.Name;
+            }
+        }
         public string SelectedBrandName => SelectedBrand?.Name ?? LocalizationManager.Instance["Filter_Brand"];
         public string SelectedModelName => SelectedModel?.Name ?? LocalizationManager.Instance["Filter_Model"];
         public string SelectedRegionName => SelectedRegion?.Name ?? LocalizationManager.Instance["Filter_Region"];
@@ -309,27 +336,47 @@ namespace AutoMarket.ViewModel
 
         private async void OnSelectType()
         {
+            // 1. Перевірка: якщо список порожній, пробуємо завантажити
             if (VehicleTypes == null || VehicleTypes.Count == 0)
             {
-                // Пробуємо завантажити ще раз, якщо список порожній
                 await LoadInitialDataAsync();
                 if (VehicleTypes.Count == 0)
                 {
-                    // ЗАМІНА
-                    await App.Current.MainPage.DisplayAlert(
-                        LocalizationManager.Instance["Alert_Error"],
-                        LocalizationManager.Instance["Error_ListEmpty_Type"],
-                        "OK");
+                    // Можна додати повідомлення про помилку, якщо список все одно пустий
                     return;
                 }
             }
 
-            var popup = new VehicleTypeFilterPopup(VehicleTypes.ToList());
+            // 2. "Магія" для відображення:
+            // Ми створюємо ТИМЧАСОВИЙ список копій DTO.
+            // В ці копії ми записуємо українські назви замість англійських.
+            var uiList = VehicleTypes.Select(vt => new VehicleTypeDto
+            {
+                Id = vt.Id, // ID зберігаємо обов'язково! По ньому будемо шукати оригінал.
+
+                // Підміняємо ім'я: якщо є в словнику - беремо переклад, інакше - оригінал
+                Name = _typeTranslations.ContainsKey(vt.Name)
+                       ? _typeTranslations[vt.Name]
+                       : vt.Name
+            }).ToList();
+
+            // 3. Відкриваємо ТВІЙ кастомний Popup з гарним списком
+            var popup = new VehicleTypeFilterPopup(uiList);
             var result = await App.Current.MainPage.ShowPopupAsync(popup);
 
-            if (result is VehicleTypeDto selectedType)
+            // 4. Обробка результату
+            if (result is VehicleTypeDto tempSelected)
             {
-                SelectedType = selectedType;
+                // У tempSelected зараз назва "Легкові", а нам для API треба "PASSENGER_CAR".
+                // Тому ми беремо ID вибраного елемента і шукаємо ОРИГІНАЛ у головному списку.
+                var originalDto = VehicleTypes.FirstOrDefault(x => x.Id == tempSelected.Id);
+
+                if (originalDto != null)
+                {
+                    // Присвоюємо оригінальний об'єкт. 
+                    // Властивість SelectedTypeName сама підтягне переклад для кнопки на екрані.
+                    SelectedType = originalDto;
+                }
             }
         }
 

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:AutoMarket.Helpers"
              x:Class="AutoMarket.Views.ProfilePage"
-             Title="Мій профіль"
+             Title="{helpers:Translate PageTitle_Profile}"
              BackgroundColor="White">
     <ScrollView>
         <VerticalStackLayout Spacing="0" Padding="0">
@@ -23,15 +24,15 @@
                     </Image>
 
                     <VerticalStackLayout VerticalOptions="Center" Spacing="5">
-                        <Label x:Name="FirstName" Text="Ім'я Користувача" FontSize="20" FontAttributes="Bold" TextColor="#1A1A1A" />
-                        <Label Text="В мережі" FontSize="12" TextColor="Green" />
+                        <Label x:Name="FirstName" Text="{helpers:Translate Profile_NamePlaceholder}" FontSize="20" FontAttributes="Bold" TextColor="#1A1A1A" />
+                        <Label Text="{helpers:Translate Profile_StatusOnline}" FontSize="12" TextColor="Green" />
                     </VerticalStackLayout>
                 </HorizontalStackLayout>
 
                 <HorizontalStackLayout Grid.Row="1" Spacing="15">
                     <Label Text="⭐️ 0 / 5" FontSize="14" TextColor="#1A1A1A" />
                     <Label Text="•" FontSize="14" TextColor="#6B6B6B" />
-                    <Label Text="0 Відгуків" FontSize="14" TextColor="#007AFF" />
+                    <Label Text="{helpers:Translate Profile_Reviews}" FontSize="14" TextColor="#007AFF" />
                 </HorizontalStackLayout>
             </Grid>
 
@@ -43,7 +44,7 @@
                     <TapGestureRecognizer Tapped="OnMyListingsTapped" />
                 </Grid.GestureRecognizers>
                 <Label Text="📋" Grid.Column="0" FontSize="20" VerticalOptions="Center" />
-                <Label Text="Мої оголошення" Grid.Column="1" VerticalOptions="Center" TextColor="#1A1A1A" Margin="15, 0" />
+                <Label Text="{helpers:Translate Profile_MyListings}" Grid.Column="1" VerticalOptions="Center" TextColor="#1A1A1A" Margin="15, 0" />
                 <Label Text=">" Grid.Column="2" FontSize="20" TextColor="#6B6B6B" VerticalOptions="Center" />
             </Grid>
             <BoxView HeightRequest="1" BackgroundColor="#E0E0E0" Margin="20, 0" />
@@ -51,7 +52,7 @@
 
             <Grid Padding="20" BackgroundColor="White" ColumnDefinitions="Auto, *, Auto">
                 <Label Text="🔒" Grid.Column="0" FontSize="20" VerticalOptions="Center" />
-                <Label Text="Безпека та Конфіденційність" Grid.Column="1" VerticalOptions="Center" TextColor="#1A1A1A" Margin="15, 0" />
+                <Label Text="{helpers:Translate Profile_SecurityPrivacy}" Grid.Column="1" VerticalOptions="Center" TextColor="#1A1A1A" Margin="15, 0" />
                 <Label Text=">" Grid.Column="2" FontSize="20" TextColor="#6B6B6B" VerticalOptions="Center" />
             </Grid>
             <BoxView HeightRequest="1" BackgroundColor="#E0E0E0" Margin="20, 0" />
@@ -62,13 +63,13 @@
                 </Grid.GestureRecognizers>
 
                 <Label Text="⚙️" Grid.Column="0" FontSize="20" VerticalOptions="Center" />
-                <Label Text="Налаштування" Grid.Column="1" VerticalOptions="Center" TextColor="#1A1A1A" Margin="15, 0" />
+                <Label Text="{helpers:Translate Profile_Settings}" Grid.Column="1" VerticalOptions="Center" TextColor="#1A1A1A" Margin="15, 0" />
                 <Label Text=">" Grid.Column="2" FontSize="20" TextColor="#6B6B6B" VerticalOptions="Center" />
             </Grid>
             <BoxView HeightRequest="1" BackgroundColor="#E0E0E0" Margin="20, 0" />
 
             <VerticalStackLayout Spacing="10" Padding="20, 20, 20, 0" BackgroundColor="White">
-                <Label Text="Зміна Мови " FontSize="16" TextColor="#6B6B6B"/>
+                <Label Text="Зміна Мови (Language change) " FontSize="16" TextColor="#6B6B6B"/>
                 <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
                     <Button Grid.Column="0" 
                         Text="Українська" 
@@ -87,7 +88,7 @@
 
             <Button x:Name="ExitProfileButton"
                     Clicked="ExitProfileButtonClicked"
-                Text="Вийти з профілю" 
+                Text="{helpers:Translate Profile_Logout}" 
                     Margin="20, 20, 20, 0"
                     BackgroundColor="#E64444"
                     TextColor="White"

@@ -2887,6 +2887,24 @@ namespace AutoMarket.Resources.Strings {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Видалити оголошення.
+        /// </summary>
+        public static string Listing_DeleteButton {
+            get {
+                return ResourceManager.GetString("Listing_DeleteButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Активне.
+        /// </summary>
+        public static string Listing_StatusActive {
+            get {
+                return ResourceManager.GetString("Listing_StatusActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Додати фото.
         /// </summary>
         public static string ListingAddPhoto {
@@ -3049,11 +3067,47 @@ namespace AutoMarket.Resources.Strings {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на У вас ще немає оголошень.
+        /// </summary>
+        public static string MyListings_Empty {
+            get {
+                return ResourceManager.GetString("MyListings_Empty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Обрані.
+        /// </summary>
+        public static string PageTitle_Favorites {
+            get {
+                return ResourceManager.GetString("PageTitle_Favorites", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Головна.
         /// </summary>
         public static string PageTitle_Main {
             get {
                 return ResourceManager.GetString("PageTitle_Main", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Мої оголошення.
+        /// </summary>
+        public static string PageTitle_MyListings {
+            get {
+                return ResourceManager.GetString("PageTitle_MyListings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Мій профіль.
+        /// </summary>
+        public static string PageTitle_Profile {
+            get {
+                return ResourceManager.GetString("PageTitle_Profile", resourceCulture);
             }
         }
         
@@ -3090,6 +3144,69 @@ namespace AutoMarket.Resources.Strings {
         public static string PricePopupTitle {
             get {
                 return ResourceManager.GetString("PricePopupTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вийти з профілю.
+        /// </summary>
+        public static string Profile_Logout {
+            get {
+                return ResourceManager.GetString("Profile_Logout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Мої оголошення.
+        /// </summary>
+        public static string Profile_MyListings {
+            get {
+                return ResourceManager.GetString("Profile_MyListings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ім&apos;я Користувача.
+        /// </summary>
+        public static string Profile_NamePlaceholder {
+            get {
+                return ResourceManager.GetString("Profile_NamePlaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Відгуків.
+        /// </summary>
+        public static string Profile_Reviews {
+            get {
+                return ResourceManager.GetString("Profile_Reviews", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Безпека та Конфіденційність.
+        /// </summary>
+        public static string Profile_SecurityPrivacy {
+            get {
+                return ResourceManager.GetString("Profile_SecurityPrivacy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Налаштування.
+        /// </summary>
+        public static string Profile_Settings {
+            get {
+                return ResourceManager.GetString("Profile_Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на В мережі.
+        /// </summary>
+        public static string Profile_StatusOnline {
+            get {
+                return ResourceManager.GetString("Profile_StatusOnline", resourceCulture);
             }
         }
         

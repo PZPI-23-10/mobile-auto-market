@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.SignalR.Client;
-using AutoMarket.Models; // Твої моделі (Chat, ChatMessage)
+﻿using AutoMarket.Models; // Твої моделі (Chat, ChatMessage)
+using Microsoft.AspNetCore.SignalR.Client;
+using Plugin.LocalNotification;
+using Plugin.LocalNotification.AndroidOption;
 
 public class ChatHubService
 {
@@ -24,6 +26,48 @@ public class ChatHubService
         _hubConnection.On<ChatMessageDto>("ReceiveMessage", (message) =>
         {
             OnMessageReceived?.Invoke(message);
+            MainThread.BeginInvokeOnMainThread(async () =>
+            {
+                try
+                {
+                    // Перевіряємо, чи ми ЗАРАЗ не в чаті
+                    var currentPage = Shell.Current?.CurrentPage;
+
+                    // Якщо назва сторінки НЕ "ChatPage" (або як вона у вас називається)
+                    // Тоді показуємо сповіщення
+                    bool isChatOpen = currentPage != null && currentPage.GetType().Name.Contains("Chat");
+
+                    if (!isChatOpen)
+                    {
+                        var request = new NotificationRequest
+                        {
+                            NotificationId = new Random().Next(1000, 9999),
+
+                            // 👇 ВИПРАВЛЕННЯ ТУТ 👇
+                            // SenderId - це число, тому просто пишемо статичний текст, 
+                            // або форматуємо рядок: $"Від: {message.SenderId}"
+                            Title = "Нове повідомлення",
+
+                            // Тут використовуємо Text, бо у твоїй моделі поле називається Text
+                            Description = message.Text ?? "Вам написали",
+
+                            BadgeNumber = 1,
+                            Android = new AndroidOptions
+                            {
+                                // IconSmallName = { ResourceName = "message_icon" } 
+                            }
+                        };
+
+                        await LocalNotificationCenter.Current.Show(request);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Щоб не крашнуло, якщо щось піде не так
+                    System.Diagnostics.Debug.WriteLine($"Notification Error: {ex.Message}");
+                }
+            });
+
         });
 
         // 👇 НОВЕ 2: Слухаємо сигнал від сервера "MessagesRead"

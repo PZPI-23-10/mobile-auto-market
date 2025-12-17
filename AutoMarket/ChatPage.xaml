@@ -18,7 +18,6 @@
 
                 <CollectionView.EmptyView>
                     <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="10">
-                        <Button Text="➕ Створити тест-чат" Command="{Binding CreateTestChatCommand}" />
                         <Label Text="📭" FontSize="50" HorizontalOptions="Center"/>
                         <Label Text="У вас поки немає повідомлень" 
                                TextColor="Gray" 

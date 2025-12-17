@@ -1284,4 +1284,43 @@
   <data name="BodyType_ATV" xml:space="preserve">
     <value>ATV</value>
   </data>
+  <data name="PageTitle_Profile" xml:space="preserve">
+    <value>My Profile</value>
+  </data>
+  <data name="Profile_NamePlaceholder" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="Profile_StatusOnline" xml:space="preserve">
+    <value>Online</value>
+  </data>
+  <data name="Profile_Reviews" xml:space="preserve">
+    <value>Reviews</value>
+  </data>
+  <data name="Profile_MyListings" xml:space="preserve">
+    <value>My Listings</value>
+  </data>
+  <data name="Profile_SecurityPrivacy" xml:space="preserve">
+    <value>Security &amp; Privacy</value>
+  </data>
+  <data name="Profile_Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Profile_Logout" xml:space="preserve">
+    <value>Log Out</value>
+  </data>
+  <data name="PageTitle_MyListings" xml:space="preserve">
+    <value>My Listings</value>
+  </data>
+  <data name="MyListings_Empty" xml:space="preserve">
+    <value>You have no listings yet</value>
+  </data>
+  <data name="Listing_StatusActive" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Listing_DeleteButton" xml:space="preserve">
+    <value>Delete Listing</value>
+  </data>
+  <data name="PageTitle_Favorites" xml:space="preserve">
+    <value>Favorites</value>
+  </data>
 </root>

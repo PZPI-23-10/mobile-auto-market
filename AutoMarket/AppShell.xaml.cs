@@ -26,6 +26,7 @@ namespace AutoMarket
             Routing.RegisterRoute(nameof(ChatPage), typeof(ChatPage));
             Routing.RegisterRoute(nameof(ConversationPage), typeof(ConversationPage));
             Routing.RegisterRoute(nameof(FullMapPage), typeof(FullMapPage));
+            Routing.RegisterRoute(nameof(PickLocationPage), typeof(PickLocationPage));
 
 
 

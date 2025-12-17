@@ -5,7 +5,7 @@
              xmlns:models="clr-namespace:AutoMarket.Models"
              xmlns:helpers="clr-namespace:AutoMarket.Helpers"
              x:Class="AutoMarket.Views.FavoritesPage"
-             Title="Favorites"
+             Title="{helpers:Translate PageTitle_Favorites}"
              BackgroundColor="#F5F5F5">
 
     <ContentPage.Resources>
